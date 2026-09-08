@@ -85,6 +85,9 @@ Agregar el Lean UX Canvas en `assets/research/lean-ux-canvas.png` y enlazarlo cu
 
 ## 1.3 Segmentos objetivo
 
+Los segmentos objetivo de la plataforma se centran en los responsables de la adquisición de mercadería, gestión de pagos y salud financiera de los comercios.[cite: 2]
+
 | Segmento | Características | Necesidades principales |
-|---|---|---|
-| [Segmento 1] | [Características] | [Necesidades] |
+| :--- | :--- | :--- |
+| **Dueños de Negocios (Mypes)** | Propietarios de tiendas (electrónica, ropa, abarrotes, etc.) que toman decisiones de compra e inversión. Suelen solicitar préstamos y negociar créditos con proveedores. | • Visualizar la deuda total de un vistazo.<br>• Llevar el control de los cronogramas de préstamos.<br>• Saber exactamente cuánto se le debe a un proveedor específico.<br>• Acceder rápidamente a los vouchers de abonos realizados. |
+| **Administradores / Encargados de Finanzas** | Personal operativo encargado de registrar facturas, ejecutar transferencias bancarias a proveedores y mantener la contabilidad al día. | • Interfaz rápida para registrar compras bimonetarias (Soles/Dólares).<br>• Sistema de alertas o visualización de días restantes para vencimiento de facturas.<br>• Herramienta para editar, duplicar o eliminar compras erróneas.<br>• Generación y descarga de reportes en PDF y Excel para cuadrar caja. |
