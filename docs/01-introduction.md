@@ -81,7 +81,10 @@ Nuestra solución busca abordar esta situación mediante una plataforma web que 
 * **Hypothesis Statement 4 - Exportación y Reportes:** Creemos que lograremos facilitar el trabajo contable si los usuarios logran filtrar sus deudas por rangos de fecha y proveedor, y exportar estos reportes consolidados en formato PDF o Excel.
 
 #### 1.2.2.4 Lean UX Canvas
-Agregar el Lean UX Canvas en `assets/research/lean-ux-canvas.png` y enlazarlo cuando esté disponible.
+
+A continuación se presenta el Lean UX Canvas con las hipótesis, problemas y soluciones planteadas para el Gestor de Compras y Deudas:
+
+![Lean UX Canvas de la aplicación](assets/research/lean-ux-canvas.jpg)
 
 ## 1.3 Segmentos objetivo
 
