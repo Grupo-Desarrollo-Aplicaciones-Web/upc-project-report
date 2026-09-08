@@ -85,7 +85,7 @@ Agregar el Lean UX Canvas en `assets/research/lean-ux-canvas.png` y enlazarlo cu
 
 ## 1.3 Segmentos objetivo
 
-Los segmentos objetivo de la plataforma se centran en los responsables de la adquisición de mercadería, gestión de pagos y salud financiera de los comercios.[cite: 2]
+Los segmentos objetivo de la plataforma se centran en los responsables de la adquisición de mercadería, gestión de pagos y salud financiera de los comercios.
 
 | Segmento | Características | Necesidades principales |
 | :--- | :--- | :--- |
