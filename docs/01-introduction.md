@@ -30,7 +30,7 @@ A continuación se presenta la ficha de cada integrante del equipo, indicando su
 
 La plataforma es una solución web de control de deudas y compras desarrollada para negocios que requieren verificar, registrar y analizar sus obligaciones financieras y el estado de sus pagos a proveedores y entidades bancarias.
 
-### 1.2.1 Antecedentes y problemática[cite: 2]
+### 1.2.1 Antecedentes y problemática
 
 Los negocios minoristas y mayoristas (como tiendas de electrónica, textiles o abarrotes) necesitan mantener un inventario constante, lo que implica compras frecuentes a crédito con diversos proveedores. 
 Actualmente, muchos de estos negocios gestionan sus cuentas por pagar y préstamos utilizando cuadernos físicos, hojas de cálculo no estandarizadas o simplemente confiando en la memoria. Esta descentralización genera un severo descontrol: se extravían comprobantes de abonos, se vencen las fechas límite de las facturas (generando penalidades o ruptura de relaciones comerciales) y existe un desconocimiento de la deuda real consolidada en un momento dado.
@@ -39,32 +39,48 @@ Actualmente, muchos de estos negocios gestionan sus cuentas por pagar y préstam
 
 | Pregunta | Descripción |
 | :--- | :--- |
-| **What** - ¿Cuál es el problema?[cite: 2] | Los dueños de negocios carecen de un sistema centralizado para registrar, visualizar y gestionar eficientemente sus compras a crédito, abonos parciales, deudas totales y cronogramas de préstamos. |
-| **When** - ¿Cuándo ocurre?[cite: 2] | Al momento de realizar nuevas compras, registrar adelantos de pago, solicitar créditos bancarios y al intentar cuadrar cuentas a fin de mes. |
-| **Where** - ¿Dónde ocurre?[cite: 2] | En la administración financiera diaria del negocio y en la interacción de pago con proveedores y bancos. |
-| **Who** - ¿Quiénes están involucrados?[cite: 2] | Dueños de negocios (electrónica, textiles, dulcerías, etc.), administradores, contadores y proveedores. |
-| **Why** - ¿Por qué representa un problema?[cite: 2] | Porque la informalidad en el registro provoca pérdida de comprobantes de pago, vencimiento de facturas, sobreendeudamiento y falta de claridad sobre el flujo de caja saliente. |
-| **How** - ¿Cómo se presenta el problema?[cite: 2] | Mediante facturas vencidas no identificadas a tiempo, historiales de pago incompletos por comprobantes extraviados, y dificultad para calcular el interés y cuotas de préstamos adquiridos. |
-| **How much** - ¿Cuál es su impacto?[cite: 2] | Impacta negativamente en la liquidez del negocio, genera gastos adicionales por morosidad y reduce el tiempo útil del administrador al tener que conciliar deudas manualmente. |
+| **What** - ¿Cuál es el problema? | Los dueños de negocios carecen de un sistema centralizado para registrar, visualizar y gestionar eficientemente sus compras a crédito, abonos parciales, deudas totales y cronogramas de préstamos. |
+| **When** - ¿Cuándo ocurre? | Al momento de realizar nuevas compras, registrar adelantos de pago, solicitar créditos bancarios y al intentar cuadrar cuentas a fin de mes. |
+| **Where** - ¿Dónde ocurre?| En la administración financiera diaria del negocio y en la interacción de pago con proveedores y bancos. |
+| **Who** - ¿Quiénes están involucrados? | Dueños de negocios (electrónica, textiles, dulcerías, etc.), administradores, contadores y proveedores. |
+| **Why** - ¿Por qué representa un problema? | Porque la informalidad en el registro provoca pérdida de comprobantes de pago, vencimiento de facturas, sobreendeudamiento y falta de claridad sobre el flujo de caja saliente. |
+| **How** - ¿Cómo se presenta el problema? | Mediante facturas vencidas no identificadas a tiempo, historiales de pago incompletos por comprobantes extraviados, y dificultad para calcular el interés y cuotas de préstamos adquiridos. |
+| **How much** - ¿Cuál es su impacto?| Impacta negativamente en la liquidez del negocio, genera gastos adicionales por morosidad y reduce el tiempo útil del administrador al tener que conciliar deudas manualmente. |
 
 ### 1.2.2 Lean UX Process
 
 #### 1.2.2.1 Lean UX Problem Statements
+Los negocios de venta de productos necesitan controlar de manera precisa las deudas generadas por compras a proveedores y préstamos. Los procesos actuales basados en apuntes físicos o información dispersa dificultan conocer rápidamente el estado de las facturas, los montos exactos adeudados por proveedor y los comprobantes de los abonos ya realizados.
+
+Nuestra solución busca abordar esta situación mediante una plataforma web que centralice el registro de compras (en soles o dólares), permita adjuntar comprobantes digitales, calcule cronogramas de préstamos y ofrezca reportes exportables. Nuestro enfoque inicial estará dirigido a dueños de mypes y administradores financieros.
 
 #### 1.2.2.2 Lean UX Assumptions
 
-##### Assumptions Worksheet
+**Business Outcomes**
+* Creemos que los negocios necesitan mejorar el control preventivo de sus fechas de pago a proveedores.
+* Creemos que centralizar las imágenes de los comprobantes de pago reducirá las disputas por cobros indebidos.
+* Creemos que la plataforma disminuirá el porcentaje de facturas vencidas mediante una visualización clara del estado de la deuda.
 
-##### Business Outcomes
+**User Outcomes**
+* Creemos que los dueños de negocio desean visualizar su deuda total consolidada en un Dashboard intuitivo (separado por moneda).
+* Creemos que los usuarios necesitan poder registrar compras con abonos iniciales y agregar pagos parciales con su respectiva fecha y comprobante.
+* Creemos que los administradores necesitan filtrar deudas por proveedor y exportar reportes en PDF y Excel para la contabilidad mensual.
 
-##### User Outcomes
-
-##### Features
+**Features**
+* Dashboard interactivo con métricas de deuda total, registro de compras y facturas vencidas/pendientes.
+* Módulo de registro de compras con soporte bimonetario (Soles/Dólares) y carga de imágenes.
+* Panel flotante para el registro de abonos y consulta del historial de pagos por compra.
+* Sección de gestión de préstamos bancarios con cálculo automático de cuotas e intereses.
+* Generador de reportes con filtros por fecha, proveedor y moneda, exportable a Excel/PDF.
 
 #### 1.2.2.3 Lean UX Hypothesis Statements
 
-#### 1.2.2.4 Lean UX Canvas
+* **Hypothesis Statement 1 - Dashboard de Deudas:** Creemos que lograremos reducir el índice de facturas vencidas si los administradores logran visualizar de inmediato su deuda total, el número de compras y los días restantes para el pago mediante un panel central consolidado.
+* **Hypothesis Statement 2 - Registro de Abonos:** Creemos que lograremos mejorar la transparencia financiera si los usuarios pueden registrar abonos individuales adjuntando imágenes de los vouchers, consolidando así el historial de pagos de cada compra en un solo lugar.
+* **Hypothesis Statement 3 - Control de Préstamos:** Creemos que lograremos mejorar la gestión de liquidez de los negocios si los dueños logran registrar los préstamos (ya sean otorgados o recibidos), configurando la tasa de interés, la frecuencia y número de cuotas para previsualizar el cronograma de pagos.
+* **Hypothesis Statement 4 - Exportación y Reportes:** Creemos que lograremos facilitar el trabajo contable si los usuarios logran filtrar sus deudas por rangos de fecha y proveedor, y exportar estos reportes consolidados en formato PDF o Excel.
 
+#### 1.2.2.4 Lean UX Canvas
 Agregar el Lean UX Canvas en `assets/research/lean-ux-canvas.png` y enlazarlo cuando esté disponible.
 
 ## 1.3 Segmentos objetivo
