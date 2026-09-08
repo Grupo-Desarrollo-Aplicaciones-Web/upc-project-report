@@ -26,7 +26,7 @@ A continuación se presenta la ficha de cada integrante del equipo, indicando su
 | **Azabache Bregante Christopher** | u20231b188 |  |
 | **Miguel Angel Egocheaga Suyo** | u202215188 |  |
 
-## 1.2 Solution Profile[cite: 2]
+## 1.2 Solution Profile
 
 La plataforma es una solución web de control de deudas y compras desarrollada para negocios que requieren verificar, registrar y analizar sus obligaciones financieras y el estado de sus pagos a proveedores y entidades bancarias.
 
