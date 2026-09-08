@@ -17,9 +17,14 @@ Consolidarnos como la plataforma estándar de control de pasivos para mypes en l
 
 ### 1.1.2 Perfiles de integrantes del equipo
 
+A continuación se presenta la ficha de cada integrante del equipo, indicando su código de estudiante y un resumen de sus responsabilidades y perfil técnico para el desarrollo de la aplicación.[cite: 2]
+
 | Integrante | Código | Perfil y responsabilidades |
-|---|---|---|
-| [Nombre] | [Código] | [Perfil] |
+| :--- | :--- | :--- |
+| **Juan Manuel Santos Torres** | u20221a371 | Estudiante de Ingeniería de Software. Encargado del desarrollo de interfaces web y arquitectura frontend (React). Aporta visión comercial y enfoque de producto gracias a su experiencia práctica en la gestión operativa de negocios de electrónica. |
+| **Sebastián Gutarra Velapatiño** | u20241A314 ||
+| **Azabache Bregante Christopher** | u20231b188 |  |
+| **Miguel Angel Egocheaga Suyo** | u202215188 |  |
 
 ## 1.2 Solution Profile
 
