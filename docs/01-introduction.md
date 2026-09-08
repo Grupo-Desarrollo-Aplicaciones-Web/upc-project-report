@@ -84,7 +84,7 @@ Nuestra solución busca abordar esta situación mediante una plataforma web que 
 
 A continuación se presenta el Lean UX Canvas con las hipótesis, problemas y soluciones planteadas para el Gestor de Compras y Deudas:
 
-![Lean UX Canvas de la aplicación](assets/research/lean-ux-canvas.jpg)
+![Lean UX Canvas de la aplicación](../assets/research/lean-ux-canvas.jpg)
 
 ## 1.3 Segmentos objetivo
 
