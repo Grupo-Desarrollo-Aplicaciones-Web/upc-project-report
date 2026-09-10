@@ -12,18 +12,58 @@ CREDITOR propone centralizar las compras a crédito, los abonos y los préstamos
 
 También se consideran alternativas sustitutas los cuadernos, las hojas de cálculo y el almacenamiento de comprobantes en carpetas o conversaciones. Su uso por los segmentos de CREDITOR es un supuesto del capítulo I que se explorará en las entrevistas; todavía no representa un hallazgo de campo.
 
+### 2.1.1 Análisis competitivo
+
+**Propósito del análisis:** identificar capacidades compartidas, oportunidades de diferenciación y riesgos para una solución centrada en el control cotidiano de deudas de mypes.
+
+**Pregunta guía:** ¿qué valor podría aportar CREDITOR a un dueño o administrador que necesita conocer cuánto debe, cuándo debe pagar y qué abonos ya realizó, frente a las alternativas disponibles?
+
+**Método y alcance:** revisión documental de fuentes oficiales consultadas el 10 de septiembre de 2026. Se analiza Alegra con su oferta peruana y una guía internacional, Odoo con su documentación de la versión 19.0 y Zoho Books con su documentación de la edición estadounidense. Las funciones pueden depender de la edición, configuración o plan; la revisión de Zoho no acredita adecuación tributaria al Perú. No se realizaron pruebas comparativas de uso ni se contrataron planes. Las capacidades de CREDITOR son propuestas del proyecto, todavía no funcionalidades implementadas.
+
+#### Competitive Analysis Landscape
+
+| Dimensión | CREDITOR — propuesta | Alegra Contabilidad | Odoo 19.0 | Zoho Books |
+|---|---|---|---|---|
+| Enfoque del producto | Control operativo de compras, abonos y préstamos de mypes. | Gestión contable y facturación para pymes. [Fuente][alegra-peru] | Gestión de facturas y préstamos dentro del módulo contable. [Fuentes][odoo-facturas] y [préstamos][odoo-prestamos] | Gestión de compras y pagos integrada al registro contable. [Fuente][zoho-facturas] |
+| Registro de compras y vencimientos | Proveedor, importe, moneda, comprobante y fecha límite. | Consulta de facturas de compra, montos adeudados y vencimientos. [Fuente][alegra-cxp] | Facturas con proveedor, fecha y condiciones de pago. [Fuente][odoo-facturas] | Facturas con proveedor, fecha límite y condiciones de pago. [Fuente][zoho-facturas] |
+| Abonos e historial | Asociar cada abono con la compra y mostrar el saldo restante. | La guía contempla abonos que afectan los saldos reportados. [Fuente][alegra-cxp] | Pagos parciales y saldo pendiente de la factura. [Fuente][odoo-facturas] | Pagos parciales y consulta de pagos registrados por factura. [Fuente][zoho-facturas] |
+| Evidencias digitales | Adjuntar comprobantes de compras y vouchers de abonos. | El vínculo de un archivo con cada abono no se verificó en las fuentes consultadas. | Carga de facturas en PDF; no se verificó aquí el adjunto por abono. [Fuente][odoo-facturas] | Adjuntos y notas en el registro del pago. [Fuente][zoho-facturas] |
+| Consulta de deuda | Dashboard con saldos separados en soles y dólares y estado de vencimientos. | Reporte de cuentas por pagar con filtros de consulta. [Fuente][alegra-cxp] | Reporte de antigüedad de deuda con detalle por proveedor. [Fuente][odoo-facturas] | Reporte por proveedor con importes facturados, pagados y saldo. [Fuente][zoho-reportes] |
+| Préstamos y cuotas | Registro de préstamos y visualización de cronogramas. | No verificado en las fuentes consultadas. | Cronogramas importados, calculados o registrados manualmente, con capital e intereses. [Fuente][odoo-prestamos] | No verificado en las fuentes consultadas. |
+| Salida de información | Reportes filtrados exportables a PDF y Excel. | Descarga de reportes y exportación de facturas de proveedor. [Fuente][alegra-cxp] | Exportación del reporte de deuda a PDF y XLSX. [Fuente][odoo-facturas] | Reporte de saldos con rango de fechas y filtros; formatos de exportación no verificados aquí. [Fuente][zoho-reportes] |
+
+**Criterio de lectura:** “no verificado” identifica una limitación de esta revisión; no significa que el competidor carezca de esa función. Tampoco se atribuye exclusividad a CREDITOR por proponer abonos, adjuntos o cronogramas, ya que existen capacidades equivalentes documentadas.
+
+#### Fortalezas, limitaciones y oportunidades para CREDITOR
+
+Las fortalezas siguientes se apoyan en las capacidades documentadas. Las limitaciones de encaje y las oportunidades son interpretaciones del equipo que deberán contrastarse con usuarios; no son defectos demostrados de los competidores.
+
+| Alternativa | Fortaleza relevante | Limitación de encaje o cuestión por validar | Oportunidad propuesta para CREDITOR |
+|---|---|---|---|
+| Alegra Contabilidad | Reúne distintas tareas de gestión y ofrece una propuesta para el mercado peruano. | Determinar si el usuario necesita esa amplitud o busca resolver principalmente el seguimiento de sus pagos. | Evaluar una experiencia centrada en las tareas de consultar deuda y registrar abonos. |
+| Odoo | Cubre tanto obligaciones con proveedores como cronogramas de préstamos. | Evaluar cuánto acompañamiento requiere el segmento para configurar y utilizar el flujo contable descrito. | Probar un registro guiado que emplee el vocabulario cotidiano del comerciante. |
+| Zoho Books | Conecta facturas, pagos y documentos de respaldo. | Comprobar el encaje del flujo y de la edición disponible con la operación concreta del negocio. | Validar una navegación por compra que permita recuperar rápidamente cada voucher y saldo. |
+| Registros manuales y hojas de cálculo | Pueden adaptarse a la forma de trabajo que el negocio ya conoce. | Investigar cómo mantienen consistentes los saldos, fechas y comprobantes cuando participan varias personas. | Comprobar si centralizar los registros reduce búsquedas y conciliaciones manuales. |
+
+CREDITOR parte con una propuesta de alcance específico, pero aún debe demostrar utilidad y facilidad de uso. La principal oportunidad planteada es facilitar un flujo continuo de consulta de deuda, registro de abono y recuperación del comprobante. Sus riesgos iniciales son la falta de validación con usuarios, el esfuerzo necesario para mantener los registros al día y la preferencia por herramientas ya adoptadas. No se plantea competir por un precio menor hasta conocer los costos del proyecto y la disposición de pago del segmento.
+
+#### Fuentes del análisis
+
+- Alegra. (s. f.). [Software contable y de facturación para Pymes en Perú][alegra-peru].
+- Alegra. (s. f.). [Genera el reporte de cuentas por pagar en Alegra][alegra-cxp]. Guía internacional.
+- Odoo. (s. f.). [Vendor bills][odoo-facturas]. Documentación oficial 19.0, archivo fuente.
+- Odoo. (s. f.). [Loans management][odoo-prestamos]. Documentación oficial 19.0, archivo fuente.
+- Zoho. (s. f.). [Basic Functions in Bills][zoho-facturas]. Ayuda de Zoho Books, edición estadounidense.
+- Zoho. (s. f.). [Payables Reports][zoho-reportes]. Ayuda de Zoho Books, edición estadounidense.
+
+Todas las fuentes fueron consultadas el 10 de septiembre de 2026.
+
 [alegra-peru]: https://www.alegra.com/peru/contabilidad/
 [alegra-cxp]: https://ayuda.alegra.com/int/genera-el-reporte-de-cuentas-por-pagar-en-alegra
 [odoo-facturas]: https://github.com/odoo/documentation/blob/19.0/content/applications/finance/accounting/vendor_bills.rst
 [odoo-prestamos]: https://github.com/odoo/documentation/blob/19.0/content/applications/finance/accounting/bank/loans.rst
 [zoho-facturas]: https://www.zoho.com/us/books/help/bills/basic-functions.html
 [zoho-reportes]: https://www.zoho.com/us/books/help/reports/payables.html
-
-### 2.1.1 Análisis competitivo
-
-| Competidor | Perfil | Fortalezas | Debilidades | Diferenciación propuesta |
-|---|---|---|---|---|
-| [Competidor] | [Descripción] | [Fortalezas] | [Debilidades] | [Diferenciación] |
 
 ### 2.1.2 Estrategias y tácticas frente a competidores
 
