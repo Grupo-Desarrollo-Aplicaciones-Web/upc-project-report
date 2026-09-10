@@ -79,6 +79,10 @@ Las estrategias se plantean a partir del análisis anterior y de las hipótesis 
 
 ## 2.2 Entrevistas
 
+Se propone realizar entrevistas para comprender cómo los usuarios gestionan actualmente las compras a crédito, los pagos a proveedores y los préstamos. La investigación permitirá contrastar los supuestos del capítulo I y las oportunidades del análisis competitivo antes de definir requisitos detallados.
+
+Esta sección presenta el diseño de la investigación. Las entrevistas aún deben ejecutarse; sus registros y hallazgos se documentarán posteriormente en las secciones 2.2.2 y 2.2.3.
+
 ### 2.2.1 Diseño de entrevistas
 
 Definir objetivos, segmentos, criterios de selección y preguntas.
