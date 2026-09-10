@@ -10,7 +10,11 @@ Esta sección establece los lineamientos visuales y comunicacionales que guiará
 
 El logotipo de Creditor representa la perpetuidad de los flujos de dinero con el símbolo de infinito, además una flecha hacia arriba que da a entender que el dinero del usuario aumentará porque este sacará mejor provecho de sus finanzas, al no olvidar pagar sus deudas a tiempo gracias a nuestra aplicación web.
 
-![Lean UX Canvas de la aplicación](../assets/branding/creditorlogo.jpg)
+<div align="center">
+  <img src="../assets/research/lean-ux-canvas.jpg"
+       alt="Lean UX Canvas de la aplicación"
+       width="700">
+</div>
   
 b. Tipografía
 - Colores
