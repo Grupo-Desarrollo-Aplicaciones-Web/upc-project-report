@@ -85,7 +85,103 @@ Esta sección presenta el diseño de la investigación. Las entrevistas aún deb
 
 ### 2.2.1 Diseño de entrevistas
 
-Definir objetivos, segmentos, criterios de selección y preguntas.
+#### Objetivo general
+
+Comprender las prácticas, dificultades y criterios de decisión de dueños y administradores de mypes al registrar obligaciones, programar pagos y consultar comprobantes, para orientar el alcance y la experiencia de CREDITOR.
+
+#### Objetivos específicos
+
+- Reconstruir el proceso desde una compra a crédito hasta su cancelación y conciliación.
+- Identificar cómo se consultan saldos y vencimientos y cómo se priorizan los pagos.
+- Explorar el registro de abonos, la conservación de vouchers y el tratamiento de discrepancias.
+- Conocer cómo se gestionan préstamos y operaciones en soles o dólares, cuando correspondan.
+- Identificar información necesaria para reportes, barreras de adopción y criterios para elegir una herramienta.
+
+#### Segmentos y selección de participantes
+
+Se propone un muestreo intencional inicial de seis personas: tres dueños de negocio y tres administradores o encargados de finanzas. Es una meta de reclutamiento, no una cantidad de entrevistas realizadas ni una muestra estadísticamente representativa. Se buscarán participantes de al menos tres negocios y dos rubros comerciales; si los relatos revelan procesos distintos o vacíos relevantes, se ampliará la convocatoria.
+
+| Segmento | Perfil y criterios de inclusión | Necesidades que se busca explorar |
+|---|---|---|
+| S1. Dueños de negocios | Persona adulta que dirige una mype comercial, decide o supervisa sus pagos y ha intervenido en una compra a crédito o préstamo del negocio durante los últimos tres meses. | Visibilidad de obligaciones, priorización de pagos, gestión de liquidez y seguimiento de préstamos. |
+| S2. Administradores o encargados de finanzas | Persona adulta que registra compras, procesa abonos o concilia saldos de una mype y ha realizado al menos una de estas tareas durante los últimos tres meses. | Registro cotidiano, control de vencimientos, recuperación de comprobantes y preparación de reportes. |
+
+Se buscará diversidad de herramientas actuales: cuadernos, hojas de cálculo o software. No será obligatorio usar dólares ni tener préstamos, ya que su ausencia también ayuda a delimitar el alcance. Quien cumpla ambos roles se registrará una sola vez, con un rol principal y sus responsabilidades adicionales. Se excluirá a personas sin participación directa reciente en estas tareas.
+
+#### Modalidad y procedimiento
+
+Las entrevistas serán individuales, semiestructuradas y en español, de aproximadamente 30 a 40 minutos, presencialmente o por videollamada según disponibilidad. Un integrante conducirá la conversación y otro tomará notas, cuando sea posible.
+
+| Momento | Duración aproximada | Actividad |
+|---|---|---|
+| Apertura | 5 minutos | Explicar el propósito académico, confirmar el perfil y solicitar consentimiento para participar y, por separado, para grabar. |
+| Experiencia actual | 15 a 20 minutos | Aplicar las preguntas comunes y reconstruir una operación reciente mediante repreguntas. |
+| Profundización por segmento | 5 a 10 minutos | Explorar decisiones del dueño o tareas operativas del administrador. |
+| Cierre | 5 minutos | Resumir lo entendido, pedir correcciones y explorar la reacción a la propuesta de CREDITOR. |
+
+La conversación comenzará por experiencias concretas sin presentar primero la solución. Se evitarán preguntas que presupongan errores o que sugieran una respuesta favorable. Se utilizarán repreguntas como “¿qué ocurrió después?”, “¿cómo lo comprobaste?” y “¿puedes contarme un ejemplo reciente?”. Si una pregunta no corresponde a la experiencia del participante, se registrará como no aplicable.
+
+#### Presentación y consentimiento
+
+“Somos estudiantes de Aplicaciones Web de la UPC y queremos comprender cómo se administran las compras y los pagos en los negocios. La entrevista es voluntaria: puedes omitir preguntas o terminar cuando desees. No necesitamos montos exactos, datos bancarios ni documentos identificables. ¿Aceptas participar? ¿Autorizas que grabemos la conversación para analizarla con el equipo del curso?”
+
+Si no se autoriza la grabación, se tomarán notas con permiso. Los participantes se identificarán mediante códigos, por ejemplo S1-01 o S2-01. Los registros originales se conservarán en una carpeta de acceso restringido al equipo; en el repositorio se incluirán únicamente resúmenes anonimizados y evidencias autorizadas. No se publicarán vouchers reales, números de cuenta ni información identificable de clientes o proveedores.
+
+#### Guion común
+
+| ID | Pregunta | Propósito |
+|---|---|---|
+| G-01 | ¿A qué se dedica el negocio y qué responsabilidades tienes en sus compras y pagos? | Ubicar el contexto y confirmar el rol. |
+| G-02 | Cuéntame la última compra a crédito en la que participaste, desde que se acordó hasta el último pago o su estado actual. ¿Qué registraron y quién intervino? | Reconstruir el flujo real. |
+| G-03 | Si hoy necesitas conocer lo que el negocio debe a un proveedor, ¿cómo lo averiguas y cómo verificas que el saldo sea correcto? | Explorar consulta y confiabilidad de saldos. |
+| G-04 | ¿Cómo identifican los pagos que se acercan? Cuéntame una ocasión reciente en la que tuvieron que decidir qué pagar primero. | Comprender vencimientos y priorización. |
+| G-05 | Cuando una compra se paga en partes, ¿cómo registran cada abono y el saldo restante? ¿Dónde guardan y cómo buscan sus comprobantes? | Explorar pagos parciales y trazabilidad. |
+| G-06 | ¿Alguna vez el saldo que tenían registrado fue distinto al indicado por un proveedor? Si ocurrió, ¿cómo lo resolvieron? Si no, ¿cómo lo comprueban habitualmente? | Investigar conciliación sin presuponer fallas. |
+| G-07 | ¿En qué monedas compran y pagan? Si utilizan soles y dólares, ¿cómo llevan los saldos y qué hacen cuando pagan en una moneda diferente a la compra? | Explorar la necesidad bimonetaria. |
+| G-08 | ¿El negocio ha recibido o concedido préstamos? Si corresponde, ¿cómo consultan las cuotas, intereses y fechas de pago? | Delimitar los tipos de préstamo y su seguimiento. |
+| G-09 | ¿Qué información preparan para revisar las deudas o compartirla con el contador? ¿Cómo la obtienen, en qué formato y cuánto tiempo les tomó la última vez? | Identificar reportes y esfuerzo actual. |
+
+#### Preguntas para S1: dueños de negocios
+
+| ID | Pregunta | Propósito |
+|---|---|---|
+| D-01 | Antes de aceptar una nueva compra a crédito o un préstamo, ¿qué información revisas? Cuéntame una decisión reciente. | Comprender decisiones de endeudamiento. |
+| D-02 | ¿Cómo distribuyes la revisión, autorización y ejecución de pagos entre las personas del negocio? | Identificar responsabilidades y controles. |
+| D-03 | ¿Qué parte del control de las deudas te resulta más difícil o te toma más tiempo? ¿Qué consecuencias tuvo la última vez? | Priorizar problemas según experiencias. |
+| D-04 | ¿Has evaluado o usado una herramienta para estas tareas? ¿Qué determinó tu elección y qué tendría que ocurrir para cambiarla? | Explorar alternativas y barreras de cambio. |
+| D-05 | ¿El negocio paga actualmente por alguna herramienta de gestión? Sin indicar importes si no deseas, ¿cómo deciden si ese gasto vale la pena? | Explorar criterios económicos sin proponer un precio. |
+
+#### Preguntas para S2: administradores o encargados de finanzas
+
+| ID | Pregunta | Propósito |
+|---|---|---|
+| A-01 | ¿Qué datos necesitas para registrar una compra y qué haces cuando falta alguno o el comprobante llega después? | Identificar campos y excepciones. |
+| A-02 | ¿Qué sucede cuando registran un importe incorrecto, duplican una compra o se revierte un pago? ¿Quién puede corregirlo? | Explorar correcciones y permisos. |
+| A-03 | Si otra persona registra o paga la misma compra, ¿cómo te enteras y cómo evitan duplicar el trabajo? | Comprender coordinación entre usuarios. |
+| A-04 | ¿Desde qué dispositivo y en qué momento registras los pagos? ¿Qué haces si no puedes registrarlos inmediatamente? | Reconocer condiciones de uso y barreras de registro. |
+| A-05 | En el último cierre o revisión de cuentas, ¿qué tuviste que buscar o volver a registrar? ¿Qué información te habría facilitado esa tarea? | Identificar oportunidades de consulta y exportación. |
+
+#### Cierre y exploración de la propuesta
+
+Después de explorar el proceso actual, se presentará brevemente CREDITOR como una propuesta web para reunir compras, abonos y préstamos, consultar saldos por moneda y generar reportes. Se aclarará que todavía está en desarrollo.
+
+1. De las tareas que describiste, ¿cuáles encajarían en esta propuesta y cuáles quedarían sin resolver?
+2. ¿En qué situaciones preferirías seguir usando tu herramienta actual?
+3. ¿Qué necesitarías comprobar antes de registrar información del negocio en una herramienta como esta?
+4. ¿Qué aspecto importante de tu trabajo no hemos tratado?
+
+La reacción a esta descripción se registrará como opinión sobre el concepto. No se interpretará como validación de usabilidad, intención de compra confirmada ni evidencia de reducción de errores.
+
+#### Relación del guion con las hipótesis del capítulo I
+
+| Hipótesis | Preguntas relacionadas | Evidencia que se buscará |
+|---|---|---|
+| H1. Dashboard de deudas | G-03, G-04, D-01, D-03 | Cómo consultan obligaciones, priorizan pagos y detectan vencimientos. |
+| H2. Registro de abonos | G-02, G-05, G-06, A-01, A-02, A-03, A-04 | Cómo mantienen saldos y comprobantes, resuelven diferencias y actualizan registros. |
+| H3. Control de préstamos | G-08, D-01 | Tipos de préstamos utilizados y dificultades de seguimiento de cuotas. |
+| H4. Exportación y reportes | G-09, A-05 | Información, filtros, formatos y destinatarios de los reportes. |
+
+Por cada entrevista se registrarán el código, segmento, rubro, fecha, modalidad, duración, consentimiento y notas por pregunta. El análisis posterior distinguirá hechos relatados, opiniones e interpretaciones del equipo; incluirá coincidencias y casos que contradigan las hipótesis. Las entrevistas ayudarán a refinar necesidades y prioridades, mientras que la evaluación de facilidad de uso y resultados requerirá pruebas posteriores.
 
 ### 2.2.2 Registro de entrevistas
 
