@@ -6,47 +6,42 @@ Esta sección establece los lineamientos visuales y comunicacionales que guiará
 
 ### 4.1.1 General Style Guidelines
 
-a. Branding
+#### a. Branding
 
 El logotipo de Creditor representa la perpetuidad de los flujos de dinero con el símbolo de infinito, además una flecha hacia arriba que da a entender que el dinero del usuario aumentará porque este sacará mejor provecho de sus finanzas, al no olvidar pagar sus deudas a tiempo gracias a nuestra aplicación web.
 
 <div align="center">
   <img src="../assets/branding/creditorlogo.jpg"
        alt="Lean UX Canvas de la aplicación"
-       width="700">
+       width="600">
 </div>
 
-b. Tipografía
+#### b. Tipografía
 
-* Familia única: Inter (Google Fonts), con fallback system-ui, -apple-system, Segoe UI, Roboto, sans-serif. Sans-serif geométrica, neutral y de alta legibilidad en cifras — clave para montos y tasas.
+Primaria: Montserrat - para títulos y subtítulos
 
-* Jerarquía:
-H1 / hero: 800, tamaño fluido clamp(2.2rem, 5vw, 3.4rem), letter-spacing: -0.02em.
-H2 / secciones: 800, clamp(1.75rem, 3.2vw, 2.5rem), tracking negativo.
-H3 / tarjetas: 700, ~1.05–1.15rem.
-Cuerpo: 400–500, 1rem–1.05rem, line-height ~1.6, color atenuado.
-Etiquetas/eyebrow: 700, 0.78rem, MAYÚSCULAS con letter-spacing: 0.08em.
-Botones: 600, 0.95rem.
+Secundaria: Inter - por su legilibilidad para textos explicativos
 
-* Regla: títulos compactos (tracking negativo) + párrafos aireados (line-height alto).
+![Fuentes](../assets/branding/fuentes.png)
 
-c. Colores
+#### c. Colores
 
-* Primario marca: #2563eb (azul confianza), hover #1d4ed8, fondo suave de marca #e8efff.
-* Éxito: #10b981 (verde: "al día", pagos completados).
-* Alerta: #f59e0b (cuotas por vencer) · Peligro: #ef4444 (mora/vencido).
-* Neutros: texto #101828, texto secundario #5a6478, borde #e3e8f2, superficie #ffffff, superficie suave #f5f7fb.
-* Oscuros (footer/bandas): #0b1020 y #121a33, con texto #eef2ff.
+* Azul: Primario marca #2563eb, hover #1d4ed8, fondo suave de marca #e8efff.
+* Verde #10b981: Éxito, pagos al día, pagos completados.
+* Amarillo #f59e0b: Alerta, cuota por vencer. 
+* Rojo #ef4444: Peligro, mora, vencido.
+
+![Colores](../assets/branding/colores.png)
 
 El azul elegido como primario está reservado solo para acciones y marca. El semáforo verde/ámbar/rojo será usado exclusivamente para estados de deuda, no de forma decorativa.
 
-d. Iconografía
+#### d. Iconografía
 
 * Estilo actual: pictogramas planos monocromos dentro de un contenedor redondeado con fondo --brand-soft.
 * Criterio: línea uniforme (~1.5–2px), esquinas redondeadas, metáfora literal y financiera (documento, tarjeta, reloj, campana, recibo, gráfico).
 * Tamaño 24px en tarjetas, 20px inline; siempre acompañados de texto.
 
-e. Tono de comunicación
+#### e. Tono de comunicación
 
 El tono elegido para la página es un punto medio entre cercano y profesional; por ejemplo "tutea" al usuario, en frases tales como "controla tus préstamos". 
 Así también el lenguaje será claro, al consistir de frases cortas comprensibles para el usuario, y concreto, al estar orientadas a la acción con sus respectivas cifras verificables.
