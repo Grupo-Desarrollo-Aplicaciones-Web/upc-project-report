@@ -49,6 +49,33 @@ Por último será bilingüe consistente, ya que se implementó el boton de i18n 
 
 ### 4.1.2 Web Style Guidelines
 
+Esta sección explica los principios de diseño de CREDITOR en su experiencia web, asegurando que todos los elementos de la interfaz sean consistentes y funcionales. El objetivo es crear un sistema de diseño que facilite el trabajo de los desarrolladores y mantenga una identidad visual coherente.
+
+#### **Diseño Responsive**
+
+Para asegurar que la página se ajuste correctamente a distintos tamaños de pantalla y que el contenido siga siendo comprensible y visualmente atractivo, se empleará CSS junto con media queries. Estas herramientas permitirán definir estilos específicos según la resolución del dispositivo. Elementos fundamentales, como la barra de navegación y el pie de página, se adaptarán automáticamente para garantizar una experiencia óptima en diversos dispositivos. Siguiendo los siguientes breakpoints:
+
+| Dispositivo | Ancho mínimo | Ejemplo de uso           |
+| ----------- | ------------ | ------------------------ |
+| Mobile      | ≥ 320px      | Teléfonos                |
+| Tablet      | ≥ 768px      | iPad / tablets genéricas |
+| Laptop      | ≥ 1024px     | Monitores y laptops      |
+| Wide Screen | ≥ 1440px     | Pantallas grandes o TV   |
+
+#### Patrón de Diseño para la Landing Page (Patrón Z)
+Para el diseño de nuestra página de inicio, se utilizará el Patrón Z. Este es un patrón visual que guía la mirada del usuario de manera intencionada, similar al recorrido de la letra "Z". A continuación, te explico los elementos clave de este patrón que se aplican en tu diseño:
+
+- Punto de partida (Superior Izquierda): La mirada del usuario se posa primero en el logotipo de WARISMART, que está estratégicamente colocado en la esquina superior izquierda. Esto establece inmediatamente la identidad de la marca.
+
+- Movimiento horizontal (Superior Derecha): Desde el logo, el ojo se mueve de forma natural hacia la derecha, donde se encuentran los elementos del menú de navegación (Inicio, Nosotros, Servicios, Contacto). Esta línea horizontal permite que el usuario escanee rápidamente las opciones disponibles.
+
+- Diagonal descendente: La vista desciende en diagonal hacia la sección principal del contenido. En tu landing page, esto se evidencia en el bloque hero-blue y el texto "Impulsa tu negocio con tecnología que entiende el retail", que capta la atención con su mensaje principal y una llamada a la acción.
+
+- Movimiento horizontal final (Inferior): Finalmente, la mirada se mueve a través de la sección inferior, donde se encuentran elementos de prueba social como los testimonios de clientes y los logotipos de los socios. Este punto final refuerza la credibilidad y anima al usuario a tomar una decisión, como el registro o el inicio de sesión.
+Este patrón Z es muy efectivo porque respeta el proceso de escaneo natural del ojo y asegura que la información más importante—la marca, la navegación, la propuesta de valor y la prueba social—sea vista en un orden lógico, guiando al usuario de forma clara a través de la página.
+
+![Patronzeta](../assets/branding/PATRONZ.jpg)
+
 ## 4.2 Information Architecture
 
 ### 4.2.1 Organization Systems
@@ -63,9 +90,19 @@ Por último será bilingüe consistente, ya que se implementó el boton de i18n 
 
 ## 4.3 Landing Page UI Design
 
+A continuación presentamos los diseños de wireframes y mock ups de la landing page hechos en Figma, puede visualizarlo mediante este link: https://www.figma.com/design/OQWWAsxRTtOPJcWfFUtCq3/Sin-t%C3%ADtulo?node-id=12-2&t=mUB6VBiUbwbcGxJq-1
+
 ### 4.3.1 Landing Page Wireframes
 
+![Wireframe 1](../assets/branding/wiref1.png)
+![Wireframe 2](../assets/branding/wiref2.png)
+![Wireframe 3](../assets/branding/wiref3.png)
+
 ### 4.3.2 Landing Page Mock-ups
+
+![Mockup 1](../assets/branding/mock1.png)
+![Mockup 2](../assets/branding/mock2.png)
+![Mockup 3](../assets/branding/mock3.png)
 
 ## 4.4 Web Applications UX/UI Design
 
