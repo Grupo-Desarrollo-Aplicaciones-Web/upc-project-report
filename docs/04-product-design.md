@@ -108,11 +108,11 @@ Para evitar la confusión y garantizar que las etiquetas sean claras y concisas,
 
 * Etiquetas de Acción (Verbos): Las etiquetas en botones y enlaces clave se basarán en verbos de acción.
 
-Ejemplos: "Añadir Operación", "Cambiar Suscripción", "Editar".
+* * Ejemplos: "Añadir Operación", "Cambiar Suscripción", "Editar".
 
 * Etiquetas de Contenido (Sustantivos): Las etiquetas que describen secciones o conjuntos de datos serán sustantivos directos.
 
-Ejemplos: "Historial", "Suscripciones".
+* * Ejemplos: "Historial", "Suscripciones".
 
 * Etiquetas de Asociación: Se usarán etiquetas mínimas para representar información más compleja. Por ejemplo, en la barra de navegación, la etiqueta "Mis Operaciones" representa en la mente del usuario toda la información y las acciones relacionadas con sus créditos y préstamos.
 
@@ -123,16 +123,22 @@ Con el objetivo de optimizar la visibilidad de CREDITOR en motores de búsqueda 
 * Landing Page
 
 Title: CREDITOR-Controla tus operaciones financieras
+
 Meta Description: CREDITOR te ofrece plataforma para el registro de todas tus operaciones: créditos, préstamos, deudas.
+
 Meta Keywords: Préstamos, Créditos, Deudas, Operaciones Bancarias, Finanzas.
+
 Meta Author: FullTechs Team
 
 
 * Web Application
 
 Title: CREDITOR
+
 Meta Description: Contabiliza tus finanzas en una plataforma intuitiva, personalizable y que te servirá como tu asistente.
+
 Meta Keywords: Préstamos, Créditos, Deudas, Operaciones Bancarias, Finanzas.
+
 Meta Author: FullTechs Team
 
 ### 4.2.4 Searching Systems
