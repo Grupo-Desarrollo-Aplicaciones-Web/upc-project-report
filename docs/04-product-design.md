@@ -74,19 +74,116 @@ Para el diseño de nuestra página de inicio, se utilizará el Patrón Z. Este e
 - Movimiento horizontal final (Inferior): Finalmente, la mirada se mueve a través de la sección inferior, donde se encuentran elementos de prueba social como los testimonios de clientes y los logotipos de los socios. Este punto final refuerza la credibilidad y anima al usuario a tomar una decisión, como el registro o el inicio de sesión.
 Este patrón Z es muy efectivo porque respeta el proceso de escaneo natural del ojo y asegura que la información más importante—la marca, la navegación, la propuesta de valor y la prueba social—sea vista en un orden lógico, guiando al usuario de forma clara a través de la página.
 
+Un ejemplo de ello se puede visualizar con la aplicación Evernote:
+
 ![Patronzeta](../assets/branding/PATRONZ.jpg)
 
 ## 4.2 Information Architecture
 
 ### 4.2.1 Organization Systems
 
+CREDITOR organiza su información aplicando sistemas de organización visual y esquemas de categorización:
+
+A) Organización visual del contenido
+
++ Jerárquica: Menú superior con secciones principales (Inicio, Mis Operaciones, Suscripciones, Mi Cuenta).
+
++ Secuencial: Procesos guiados paso a paso sobre cómo registrar la operación, datos a rellenar y más.
+
++ Matriz: Sección de calendario donde observará las fechas de pago, de cobro, entre otros.
+
+B) Esquemas de categorización del contenido
+
++ Alfabético: Listado de bancos con los que realiza sus respectivas transacciones de dinero o podrá añadir uno de su preferencia.
+
++ Cronológico: Historial de créditos y préstamos con la fecha en que los registró en la aplicación.
+
++ Por tipo de datos: Al registrar dicha operación se procede a un ingreso de datos, los cuales pueden ser: monto, tasa, plazo, frecuencia.
+
+
+
 ### 4.2.2 Labeling Systems
+
+Para evitar la confusión y garantizar que las etiquetas sean claras y concisas, se han definido los siguientes principios basados en la función de cada elemento:
+
+* Etiquetas de Acción (Verbos): Las etiquetas en botones y enlaces clave se basarán en verbos de acción.
+
+Ejemplos: "Añadir Operación", "Cambiar Suscripción", "Editar".
+
+* Etiquetas de Contenido (Sustantivos): Las etiquetas que describen secciones o conjuntos de datos serán sustantivos directos.
+
+Ejemplos: "Historial", "Suscripciones".
+
+* Etiquetas de Asociación: Se usarán etiquetas mínimas para representar información más compleja. Por ejemplo, en la barra de navegación, la etiqueta "Mis Operaciones" representa en la mente del usuario toda la información y las acciones relacionadas con sus créditos y préstamos.
 
 ### 4.2.3 SEO Tags and Meta Tags
 
+Con el objetivo de optimizar la visibilidad de CREDITOR en motores de búsqueda y mejorar la accesibilidad de la información, se han definido los principales SEO Tags y Meta Tags que serán implementados en la Landing Page y la Web Application.
+
+* Landing Page
+
+Title: CREDITOR-Controla tus operaciones financieras
+Meta Description: CREDITOR te ofrece plataforma para el registro de todas tus operaciones: créditos, préstamos, deudas.
+Meta Keywords: Préstamos, Créditos, Deudas, Operaciones Bancarias, Finanzas.
+Meta Author: FullTechs Team
+
+
+* Web Application
+
+Title: CREDITOR
+Meta Description: Contabiliza tus finanzas en una plataforma intuitiva, personalizable y que te servirá como tu asistente.
+Meta Keywords: Préstamos, Créditos, Deudas, Operaciones Bancarias, Finanzas.
+Meta Author: FullTechs Team
+
 ### 4.2.4 Searching Systems
 
+La búsqueda es una herramienta vital para manejar el volumen de información de un negocio. Se ofrecerán múltiples opciones para que el usuario encuentre lo que necesita sin complicaciones, utilizando el patrón de búsqueda con filtros.
+
+* Búsqueda Global: Un campo de búsqueda principal en la Navbar permitirá a los usuarios buscar productos, proveedores o clientes desde cualquier lugar de la aplicación.
+
+* Búsqueda con Filtros: En páginas con listados extensos, como Inventario o Reportes de Ventas, se ofrecerá un sistema de filtros avanzado. Los usuarios podrán filtrar la información por categoría, proveedor, rango de fechas, o estado.
+
+* Búsqueda por Fecha: En el apartado de Operaciones, el usuario podrá ver su historial mediante un calendario que muestra todos los días del mes, cuando haya registrado una operación verá un punto en su respectivo día.
+
 ### 4.2.5 Navigation Systems
+
+Organizamos las secciones, permitiendo a los usuarios desplazarse sin dificultad entre distintas funcionalidades. La navegación está basada en una barra de menú principal, accesos rápidos y una estructura jerárquica clara que guía al usuario en su recorrido.
+
+#### **Landing Page Navigation**
+
+La Landing Page de CREDITOR se estructura con un diseño claro y accesible, facilitando la exploración para nuevos usuarios.
+
+##### **Elementos de Navegación en la Landing Page**
+
+- **Menú principal fijo** en la parte superior con accesos rápidos a secciones clave.
+- **Botones de acción (CTA - Call to Action)** estratégicamente ubicados para dirigir a los usuarios hacia la Web Application.
+- **Enlaces internos** dentro del contenido para conectar secciones relacionadas.
+- **Scroll guiado** con transiciones suaves para facilitar la lectura y exploración.
+
+##### **Flujo de Navegación en la Landing Page**
+
+1. **Características** muestra todas las funcionalidades de la página a los nuevos usuarios.
+2. **Cómo funciona** explcia brevemente en 4 pasos qué hace la aplicación.
+3. **Planes** muestra los 3 planes en los que se puede suscribir el nuevo usuario de la página.
+4. **Preguntas** resuelve algunas dudas frecuentes acerca de la página.
+5. **Iniciar Sesión/Probar Gratis** para acceder a la aplicación.
+
+#### **Web Application Navigation**
+
+##### **Tipos de Navegación en la Web Application**
+
+- **Menú lateral dinámico** con secciones diferenciadas según el usuario.
+- **Búsqueda global** con filtros avanzados para encontrar espacios específicos.
+- **Navegación basada en tarjetas** con accesos rápidos a información relevante.
+- **Atajos contextuales** que sugieren acciones según el comportamiento del usuario.
+
+#### **Flujo de Navegación en la Web Application**
+
+1. Inician sesión y llegan al **Inicio** con dashboard sobre el resumen de sus finanzas.
+2. Se dirigen a **Mis Operaciones** para añadir nuevas operaciones o visualizar las que ya tiene registradas.
+3. Si va a **Suscripciones** podrá ver el plan vigente que está pagando o cambiar a otro según le convenga.
+4. Por último podrá ver sus datos personales en **Mi Cuenta** e ir a opciones de configuración.
+
 
 ## 4.3 Landing Page UI Design
 
