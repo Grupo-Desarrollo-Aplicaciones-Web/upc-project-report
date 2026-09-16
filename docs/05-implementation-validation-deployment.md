@@ -245,7 +245,111 @@ Ejemplos propuestos: `docs: add CreditFlow Lean UX Canvas`, `fix: clarify demo f
 
 No existen configuraciones de ESLint o Prettier en el ZIP ni scripts de lint o test. Su adopción puede planificarse posteriormente; no se presentan como controles automáticos existentes.
 ### 5.1.4 Software Deployment Configuration
+#### Estado y plataforma prevista
 
+La landing **todavía no está publicada**. Se plantea GitHub Pages porque el incremento puede entregarse como HTML, CSS y JavaScript compilados. No requiere un servidor de aplicación para ejecutar sus interacciones locales.
+
+Las capturas muestran un icono de repositorio privado. Antes de configurar Pages, el equipo debe verificar que el plan de la organización permita Pages para ese repositorio; no se debe asumir disponibilidad ni cambiar su visibilidad automáticamente. [Disponibilidad de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
+
+| Parámetro | Valor propuesto para CreditFlow |
+|---|---|
+| Repositorio | `Grupo-Desarrollo-Aplicaciones-Web/creditor-landing-page`. |
+| Rama de publicación | `main`, después de integrar el incremento revisado. |
+| Fuente en Settings → Pages | GitHub Actions. |
+| Runtime de compilación | Node 22.x, compatible con el requisito desde 22.12.0. |
+| Instalación | `npm ci`. |
+| Build | `npm run build`. |
+| Artefacto | Contenido de `dist/`. |
+| Base | `/creditor-landing-page/`. |
+| URL esperada, aún no publicada | `https://grupo-desarrollo-aplicaciones-web.github.io/creditor-landing-page/`. |
+| Dominio propio | No definido. |
+| Credenciales adicionales de aplicación | No requeridas para esta demostración. |
+
+#### Ajuste de Vite
+
+El archivo actual contiene únicamente el plugin de Vue. Para alojar este repositorio bajo su subdirectorio se propone reemplazarlo por:
+
+```js
+import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [vue()],
+  base: '/creditor-landing-page/',
+})
+```
+
+La ruta base evita que los recursos compilados se busquen en la raíz de la organización. Si el nombre del repositorio o el dominio cambian, se debe revisar este valor. Vite documenta el uso de `base` para sitios de proyecto y la publicación del resultado compilado mediante Actions. [Guía oficial de despliegue de Vite](https://vite.dev/guide/static-deploy.html).
+
+Para el favicon se propone una ruta explícitamente ligada a Vite en `index.html`:
+
+```html
+<link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+```
+
+#### Automatización propuesta
+
+Agregar `.github/workflows/deploy.yml` al repositorio de la landing, no al informe. El workflow separa compilación y publicación, usa el lockfile y restringe el job de despliegue a `main`. Los SHA de las acciones corresponden a referencias publicadas en la guía de Vite consultada; su adopción no prueba una ejecución exitosa en este repositorio.
+
+```yaml
+name: Deploy CreditFlow landing
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: creditflow-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
+        with:
+          path: dist
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publish.outputs.page_url }}
+    steps:
+      - name: Publish compiled landing
+        id: publish
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346
+
+```
+
+#### Procedimiento de activación
+
+1. Comprobar acceso a Settings, Actions y Pages y compatibilidad del plan de la organización.
+2. Crear una rama para preparar `vite.config.js`, favicon y workflow.
+3. Ejecutar instalación, compilación y previsualización; revisar consola y recursos.
+4. Abrir un PR para revisar los cambios e integrarlos en la rama acordada.
+5. Seleccionar GitHub Actions como fuente de Pages.
+6. Integrar el incremento listo en `main` y revisar el resultado del workflow.
+7. Utilizar la URL que devuelva la ejecución, verificarla y registrarla como evidencia.
+
+#### Verificación posterior y recuperación
+
+Se debe comprobar que el documento, JavaScript, CSS y favicon carguen sin errores 404; que las anclas, idiomas, simulador, FAQ y formulario mantengan su comportamiento; y que no se interprete la confirmación local como un envío real. Registrar fecha, commit publicado, URL del workflow, resultado y captura.
+
+Si una publicación introduce un problema, preparar un commit de reversión del cambio causante y revisar la nueva compilación. Una reversión de un merge exige identificar correctamente su padre principal; no debe ejecutarse a ciegas. Los commits y ejecuciones anteriores se conservan para trazabilidad.
+
+No se incorpora un mecanismo de rutas SPA porque esta landing navega mediante anclas, sin Vue Router. `dist/` y `node_modules/` permanecen excluidos por `.gitignore`; el workflow transfiere el artefacto compilado.
 ## 5.2 Landing Page, Services & Applications Implementation
 
 La documentación detallada de cada iteración se encuentra en [`docs/sprints`](sprints/README.md).
