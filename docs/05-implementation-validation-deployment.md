@@ -422,6 +422,8 @@ La revisión actual es estática. Se dispone de código y capturas de historial;
 
 ## 5.3 Validation Interviews
 
+Las entrevistas de validación están **pendientes de realización**. Esta sección define un protocolo para evaluar la landing con potenciales usuarios. No incluye citas, participantes reales ni resultados inventados.
+
 ### 5.3.1 Diseño de entrevistas
 
 ### 5.3.2 Registro de entrevistas
