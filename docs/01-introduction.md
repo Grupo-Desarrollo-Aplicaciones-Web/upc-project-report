@@ -44,3 +44,45 @@ CREDITOR parte de este problema como una hipótesis. La investigación de campo 
 | **How much** | El impacto económico y de tiempo no se cuantificará hasta contar con datos de entrevistas y fuentes secundarias verificables. |
 
 La validación incluirá entrevistas por segmento y una revisión de fuentes secundarias. No se publicarán cifras de frecuencia, ahorro o morosidad sin indicar su fuente, fecha y alcance.
+
+### 1.2.2 Lean UX Process
+
+#### 1.2.2.1 Lean UX Problem Statement
+
+**Brand New Initiative.** CREDITOR busca lograr que los responsables de una mype puedan identificar sus obligaciones próximas y consultar el saldo de una compra sin reconstruir la información desde varias fuentes. Está diseñada para dueños de negocio y administradores o encargados de finanzas que registran compras, abonos o pagos a proveedores. Actualmente, estas personas pueden depender de apuntes, hojas de cálculo, mensajes o archivos separados, lo que puede volver lenta la consulta de un saldo o la verificación de un comprobante.
+
+CREDITOR propone centralizar compras a crédito, abonos, comprobantes, vencimientos y reportes. El primer segmento de evaluación estará formado por dueños de mypes y administradores que hayan participado recientemente en compras o pagos. Se considerará una señal inicial de valor si, durante una prueba posterior con tareas definidas, las personas pueden localizar una obligación y su saldo con menor cantidad de pasos que en su método actual. La métrica, muestra y comparación se definirán después de las entrevistas; no existe todavía una medición de resultado.
+
+#### 1.2.2.2 Lean UX Assumptions
+
+| Tipo | Supuesto |
+|---|---|
+| Business Assumption | Las mypes con compras a crédito considerarán útil una herramienta enfocada en la consulta de cuentas por pagar. |
+| Business Outcome Assumption | Una vista clara de vencimientos y saldos podría favorecer el uso recurrente de la plataforma para revisar obligaciones. |
+| User Assumption | Los dueños y administradores participan de forma distinta en la decisión, el registro y la ejecución de pagos. |
+| User Outcome & Benefit Assumption | Las personas podrían beneficiarse de consultar la compra, sus abonos y comprobantes en un mismo registro. |
+| Feature Assumption F-01 | Un dashboard con deuda por moneda y estado de vencimiento facilitaría priorizar la revisión de obligaciones. |
+| Feature Assumption F-02 | Un registro de compra con proveedor, importe, moneda, fecha límite y comprobante permitiría conservar información básica de la obligación. |
+| Feature Assumption F-03 | Un historial de abonos con fecha, importe y voucher permitiría reconstruir el saldo de una compra. |
+| Feature Assumption F-04 | Un módulo de préstamos con cuotas y fechas permitiría consultar obligaciones financieras adicionales cuando el segmento las utilice. |
+| Feature Assumption F-05 | Un reporte filtrable por fecha, proveedor y moneda facilitaría preparar una revisión o compartir información con contabilidad. |
+
+Estos supuestos se contrastarán en entrevistas y pruebas de usabilidad. Ninguno representa todavía una afirmación validada sobre comportamiento, intención de compra o impacto económico.
+
+#### 1.2.2.3 Lean UX Hypothesis Statements
+
+| ID | Hipótesis |
+|---|---|
+| H-01 | We believe we will achieve faster review of upcoming obligations if owners and finance administrators attain visibility of balances and due dates with a consolidated debt dashboard. |
+| H-02 | We believe we will achieve more complete purchase records if owners and finance administrators attain traceability of a credit purchase with a structured purchase form and receipt attachment. |
+| H-03 | We believe we will achieve easier balance verification if owners and finance administrators attain a chronological record of partial payments with an installment history and voucher attachment. |
+| H-04 | We believe we will achieve clearer consultation of financial commitments if business owners attain access to installment dates and amounts with a loan schedule module. |
+| H-05 | We believe we will achieve faster preparation of debt reviews if finance administrators attain filtered obligation information with exportable reports by supplier, date and currency. |
+
+Cada hipótesis relaciona una feature assumption con un resultado que deberá medirse en una iteración posterior. La investigación inicial podrá confirmar relevancia y lenguaje del problema, pero no probará por sí misma los resultados de uso propuestos.
+
+#### 1.2.2.4 Lean UX Canvas
+
+El Lean UX Canvas existente resume el problema, los segmentos, los supuestos y las soluciones iniciales.
+
+![Lean UX Canvas de CREDITOR](../assets/research/lean-ux-canvas.jpg)
