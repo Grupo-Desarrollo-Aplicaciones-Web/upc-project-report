@@ -34,6 +34,17 @@ También se consideran alternativas sustitutas los cuadernos, las hojas de cálc
 
 **Criterio de lectura:** “no verificado” identifica una limitación de esta revisión; no significa que el competidor carezca de esa función. Tampoco se atribuye exclusividad a CREDITOR por proponer abonos, adjuntos o cronogramas, ya que existen capacidades equivalentes documentadas.
 
+
+#### Posicionamiento, canales y condiciones de comparación
+
+| Solución | Segmento y estrategia visible | Servicios, precios y canales observados | Logo y evidencia pendiente |
+|---|---|---|---|
+| CREDITOR | Mypes que requieren concentrarse en obligaciones con proveedores, abonos y consulta de saldos. La propuesta de diferenciación se validará con los segmentos. | Landing, futura aplicación web y API REST. El precio no ha sido definido ni comunicado. | Usar el logotipo propio disponible en `assets/branding/creditorlogo.jpg`. |
+| Alegra Contabilidad | Pymes que requieren contabilidad, facturación y gestión empresarial. | Oferta web y planes mostrados en su sitio oficial; los precios, planes y condiciones deben citarse con fecha al preparar la entrega. | Incorporar logo desde la fuente oficial o un recurso con autorización de uso. |
+| Odoo | Organizaciones que requieren módulos configurables de gestión empresarial. | Aplicación web, módulos de contabilidad y documentación oficial de funcionalidades. | Incorporar logo desde la fuente oficial o un recurso con autorización de uso. |
+| Zoho Books | Pequeños negocios que buscan una herramienta de contabilidad y gestión de proveedores. | Plataforma web y documentación oficial de facturas, pagos y reportes. | Incorporar logo desde la fuente oficial o un recurso con autorización de uso. |
+
+El análisis no compara precios ni afirma una ventaja comercial mientras no se documenten planes equivalentes, país, moneda, fecha de consulta y condiciones de cada oferta. Los logos de terceros no se descargarán ni republicarán sin una fuente o licencia apropiada; la versión final debe mostrar la fuente junto a cada recurso.
 #### Fortalezas, limitaciones y oportunidades para CREDITOR
 
 Las fortalezas siguientes se apoyan en las capacidades documentadas. Las limitaciones de encaje y las oportunidades son interpretaciones del equipo que deberán contrastarse con usuarios; no son defectos demostrados de los competidores.
@@ -210,4 +221,5 @@ Por cada entrevista se registrarán el código, segmento, rubro, fecha, modalida
 | Término | Definición | Contexto |
 |---|---|---|
 | [Término] | [Definición] | [Bounded context] |
+
 
