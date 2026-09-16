@@ -80,3 +80,48 @@ La primera versión prioriza filtros por proveedor, rango de fechas, moneda y es
 ### 4.2.5 Navigation Systems
 
 La landing usa navegación por secciones y CTA hacia contacto o la futura aplicación. La aplicación usa navegación lateral para módulos de dominio, migas de pan en vistas de detalle y enlaces explícitos para regresar a una lista.
+
+## 4.3 Landing Page UI Design
+
+### 4.3.1 Landing Page Wireframes
+
+El wireframe de la landing debe presentar, en este orden: navegación, propuesta de valor, problema, beneficios relacionados con cuentas por pagar, explicación del flujo, formulario de contacto y pie con enlaces legales. Se incorporará una captura o enlace de Figma en `assets/ux/landing-wireframes/`.
+
+### 4.3.2 Landing Page Mock-ups
+
+El mock-up debe emplear los tokens de marca, mantener CTA accesibles y utilizar contenido de CREDITOR. Antes de publicar se verificará que la landing no conserve referencias a CreditFlow, préstamos a clientes o métricas sin fuente.
+
+## 4.4 Web Applications UX/UI Design
+
+### 4.4.1 Web Application Wireframes
+
+Los wireframes previstos cubren dashboard, lista y detalle de compras, registro de compra, historial de abonos, préstamos y reportes. Cada pantalla debe indicar el actor, la historia de usuario y los estados vacíos o de error que atiende.
+
+### 4.4.2 Web Application Wireflow Diagrams
+
+```mermaid
+flowchart LR
+  A[Dashboard] --> B[Purchases]
+  B --> C[Purchase Detail]
+  C --> D[Register Partial Payment]
+  D --> C
+  A --> E[Reports]
+  A --> F[Loans]
+```
+
+### 4.4.3 Web Application Mock-ups
+
+Los mock-ups se crearán cuando la investigación confirme los campos, vocabulario y prioridades. Cada enlace de Figma debe tener permisos de revisión para el docente.
+
+### 4.4.4 Web Application User Flow Diagrams
+
+| Flujo | Inicio | Resultado |
+|---|---|---|
+| Registrar compra | Lista de compras | Compra pendiente con proveedor, importe, moneda y vencimiento. |
+| Registrar abono | Detalle de compra | Abono asociado, voucher y saldo actualizado. |
+| Consultar obligación | Dashboard o proveedor | Saldo, estado y movimientos visibles. |
+| Exportar reporte | Reportes | Resultado filtrado disponible en el formato habilitado. |
+
+## 4.5 Web Applications Prototyping
+
+El prototipo navegable se construirá después de las entrevistas. La evidencia final incluirá enlace de Figma, fecha de validación y tareas usadas en la prueba. Esta versión no declara un prototipo terminado.
