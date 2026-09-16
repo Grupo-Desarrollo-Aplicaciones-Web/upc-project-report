@@ -205,12 +205,41 @@ Por cada entrevista se registrarán el código, segmento, rubro, fecha, modalida
 
 ### 2.2.2 Registro de entrevistas
 
-| Entrevistado | Segmento | Fecha | Evidencia | Resumen |
-|---|---|---|---|---|
-| [Código o nombre autorizado] | [Segmento] | [Fecha] | [Enlace] | [Hallazgos] |
+La meta de AV1 es registrar entre tres y cinco entrevistas por segmento. Cada entrevista debe tener consentimiento, captura autorizada y enlace privado de Microsoft Stream con minuto de inicio y duración. Los datos personales no necesarios se anonimizan.
+
+| Código | Segmento | Rol y rubro | Fecha | Evidencia requerida | Estado |
+|---|---|---|---|---|---|
+| S1-01 | Dueños de mypes | Pendiente de reclutamiento | Pendiente | Captura autorizada, URL Stream, minuto y duración. | Pendiente |
+| S1-02 | Dueños de mypes | Pendiente de reclutamiento | Pendiente | Captura autorizada, URL Stream, minuto y duración. | Pendiente |
+| S1-03 | Dueños de mypes | Pendiente de reclutamiento | Pendiente | Captura autorizada, URL Stream, minuto y duración. | Pendiente |
+| S2-01 | Administradores o finanzas | Pendiente de reclutamiento | Pendiente | Captura autorizada, URL Stream, minuto y duración. | Pendiente |
+| S2-02 | Administradores o finanzas | Pendiente de reclutamiento | Pendiente | Captura autorizada, URL Stream, minuto y duración. | Pendiente |
+| S2-03 | Administradores o finanzas | Pendiente de reclutamiento | Pendiente | Captura autorizada, URL Stream, minuto y duración. | Pendiente |
+
+No se han registrado entrevistas reales en esta versión; por ello no se presentan nombres, hallazgos, porcentajes ni enlaces ficticios.
 
 ### 2.2.3 Análisis de entrevistas
 
+El análisis se realizará después de completar los registros. Para cada respuesta se distinguirán: **hecho relatado**, **opinión**, **necesidad**, **dolor** y **oportunidad**. Se calcularán porcentajes solo sobre el número de entrevistas válidas por segmento y se indicará el denominador.
+
+| Tema | Código de análisis | Preguntas relacionadas | Resultado por registrar |
+|---|---|---|---|
+| Consulta de saldos | SALDO | G-03, G-06 | Herramienta actual, pasos y dificultad relatada. |
+| Vencimientos y prioridad | VENCIMIENTO | G-04, D-01, D-03 | Método de seguimiento y criterio de decisión. |
+| Registro de compras y abonos | REGISTRO | G-02, G-05, A-01 a A-04 | Datos requeridos, errores y comprobantes. |
+| Préstamos | PRESTAMO | G-08, D-01 | Uso, frecuencia y necesidad de cronograma. |
+| Reportes | REPORTE | G-09, A-05 | Destinatario, filtros, formato y esfuerzo. |
+
+La síntesis final incluirá coincidencias, diferencias entre segmentos y evidencia que contradiga las hipótesis iniciales. Solo entonces se actualizarán Personas, Task Matrix, Journey Maps, historias y backlog.
+
+
+#### Criterios de calidad y resguardo
+
+- Confirmar que cada participante cumple los criterios del segmento antes de incluirlo en el análisis.
+- Registrar la fecha, modalidad, duración y consentimiento de cada entrevista.
+- Citar un hallazgo con el código de entrevista y conservar una nota que permita rastrearlo sin revelar datos sensibles.
+- Evitar concluir causalidad, intención de compra o tamaños de mercado con una muestra cualitativa.
+- Reemplazar los registros pendientes por evidencia real antes de exportar el informe final.
 ## 2.3 Needfinding
 
 ### 2.3.1 User Personas
@@ -230,6 +259,8 @@ Por cada entrevista se registrarán el código, segmento, rubro, fecha, modalida
 | Término | Definición | Contexto |
 |---|---|---|
 | [Término] | [Definición] | [Bounded context] |
+
+
 
 
 
