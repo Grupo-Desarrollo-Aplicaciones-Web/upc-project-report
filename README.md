@@ -38,6 +38,7 @@ Repositorio de documentación académica de **CREDITOR**, una plataforma web par
 7. [Capítulo V: Product Implementation, Validation & Deployment](docs/05-implementation-validation-deployment.md)
 8. [Conclusiones y recomendaciones](docs/06-conclusions-recommendations.md)
 9. [Bibliografía y anexos](docs/07-bibliography-appendices.md)
+10. [Control de entrega AV1](docs/08-av1-delivery-checklist.md)
 
 ## Repositorios y entregables
 
@@ -53,3 +54,4 @@ Repositorio de documentación académica de **CREDITOR**, una plataforma web par
 El equipo trabaja con GitFlow: `main` conserva versiones estables, `develop` integra el trabajo aprobado y cada avance se realiza en una rama `feature/<alcance>`. Los mensajes siguen Conventional Commits. La evidencia de cada integrante debe reflejar contribuciones reales realizadas desde su propia identidad de Git.
 
 Consulta [CONTRIBUTING.md](CONTRIBUTING.md) antes de crear ramas, commits o Pull Requests.
+
