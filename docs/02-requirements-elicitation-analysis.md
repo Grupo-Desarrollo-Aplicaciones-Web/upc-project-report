@@ -244,7 +244,25 @@ La síntesis final incluirá coincidencias, diferencias entre segmentos y eviden
 
 ### 2.3.1 User Personas
 
+Las siguientes personas son borradores basados en los criterios de segmento del capítulo I. No representan personas investigadas y deberán actualizarse con citas de las entrevistas antes de la entrega.
+
+| Persona provisional | Objetivo | Contexto y conducta por validar | Necesidades iniciales | Evidencia pendiente |
+|---|---|---|---|---|
+| **Rosa, dueña de mype** | Conocer sus compromisos antes de autorizar o priorizar pagos. | Puede supervisar compras y pagos sin registrar cada operación personalmente. | Resumen de deuda, vencimientos, consulta por proveedor y préstamos. | Entrevistas S1, cita de evidencia y User Persona exportada de UXPressia. |
+| **Diego, encargado de finanzas** | Registrar una compra o abono y recuperar su comprobante al conciliar. | Puede operar con información entregada por otras personas y registrar desde distintos dispositivos. | Campos consistentes, historial de pagos, saldo y reportes filtrables. | Entrevistas S2, cita de evidencia y User Persona exportada de UXPressia. |
+
 ### 2.3.2 User Task Matrix
+
+La matriz usa una valoración inicial para orientar la discusión del backlog; la frecuencia e importancia deben recalibrarse con entrevistas. Escala: 1 = baja, 3 = media, 5 = alta.
+
+| Tarea | Rosa: frecuencia | Rosa: importancia | Diego: frecuencia | Diego: importancia | Validación necesaria |
+|---|---:|---:|---:|---:|---|
+| Consultar saldo por proveedor | 3 | 5 | 4 | 5 | Confirmar frecuencia y momento de consulta. |
+| Revisar próximos vencimientos | 3 | 5 | 4 | 5 | Identificar método actual de priorización. |
+| Registrar una compra a crédito | 2 | 4 | 5 | 5 | Confirmar campos mínimos y responsables. |
+| Registrar un abono y voucher | 2 | 5 | 5 | 5 | Validar evidencia disponible y excepciones. |
+| Consultar préstamo y cuotas | 2 | 3 | 2 | 3 | Determinar si es una necesidad real de ambos segmentos. |
+| Exportar o compartir un reporte | 2 | 4 | 3 | 4 | Conocer destinatario y formato requerido. |
 
 ### 2.3.3 User Journey Mapping
 
@@ -259,6 +277,7 @@ La síntesis final incluirá coincidencias, diferencias entre segmentos y eviden
 | Término | Definición | Contexto |
 |---|---|---|
 | [Término] | [Definición] | [Bounded context] |
+
 
 
 
