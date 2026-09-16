@@ -266,9 +266,34 @@ La matriz usa una valoración inicial para orientar la discusión del backlog; l
 
 ### 2.3.3 User Journey Mapping
 
+El recorrido **As-Is** se documentará en UXPressia a partir de operaciones relatadas. Esta versión identifica puntos a validar, no una secuencia confirmada.
+
+| Etapa | Acción que se investigará | Posible fricción | Evidencia a recoger |
+|---|---|---|---|
+| Compra | Acordar una compra a crédito y recibir comprobante. | Datos incompletos o comprobante fuera del registro principal. | Relato de una compra reciente. |
+| Registro | Anotar importe, proveedor, moneda y fecha límite. | Duplicación, olvido o uso de fuentes separadas. | Herramienta actual y responsable. |
+| Seguimiento | Revisar saldo, vencimiento y prioridad de pago. | Dificultad para reunir información actualizada. | Pasos realizados y tiempo aproximado. |
+| Abono | Ejecutar pago parcial y conservar voucher. | Pérdida de trazabilidad entre pago y compra. | Método de registro y recuperación. |
+| Conciliación | Confirmar saldo o preparar información para revisión. | Búsqueda manual o discrepancia con proveedor. | Ejemplo y resultado relatado. |
+
+La captura o enlace de UXPressia se agregará cuando el recorrido use evidencia real de los participantes.
+
 ### 2.3.4 Empathy Mapping
 
+Los mapas de empatía se construirán después de codificar entrevistas; no se atribuirán pensamientos o emociones a los segmentos sin una cita de evidencia.
+
+| Área | Pregunta de análisis |
+|---|---|
+| Dice y hace | ¿Qué describe la persona que realiza al registrar o revisar una obligación? |
+| Piensa y siente | ¿Qué preocupación o criterio expresa al decidir un pago? |
+| Ve | ¿Qué documentos, pantallas o canales intervienen en su proceso actual? |
+| Escucha | ¿Qué indicaciones recibe de proveedores, dueños, contadores u otras personas? |
+| Dolores | ¿Qué obstáculo, riesgo o esfuerzo se repite en su relato? |
+| Ganancias | ¿Qué resultado concreto espera al completar una tarea? |
+
 ### 2.3.5 As-Is Scenario Mapping
+
+El escenario As-Is final distinguirá actores, acciones, información y sistemas utilizados. La matriz anterior será reemplazada o complementada por una captura de la herramienta elegida y por referencias a los códigos de entrevista.
 
 ## 2.4 Big Picture Event Storming
 
@@ -277,6 +302,7 @@ La matriz usa una valoración inicial para orientar la discusión del backlog; l
 | Término | Definición | Contexto |
 |---|---|---|
 | [Término] | [Definición] | [Bounded context] |
+
 
 
 
