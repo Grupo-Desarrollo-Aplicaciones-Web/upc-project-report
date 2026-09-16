@@ -6,6 +6,8 @@ Se diferencian tres estados: **verificado por inspección**, para hechos visible
 
 ## 5.1 Software Configuration Management
 
+La gestión de configuración organiza los archivos de la landing, sus dependencias, las convenciones de colaboración y la preparación de un despliegue reproducible. También conserva la relación entre el producto y su documentación académica.
+
 ### 5.1.1 Software Development Environment Configuration
 
 | Herramienta | Versión | Propósito |
