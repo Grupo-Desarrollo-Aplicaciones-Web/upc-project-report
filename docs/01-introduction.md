@@ -3,94 +3,44 @@
 ## 1.1 Startup Profile
 
 ### 1.1.1 Descripción de la startup
-Nuestra startup desarrolla una plataforma web de gestión financiera orientada a la administración centralizada de compras, deudas y préstamos para pequeñas y medianas empresas (mypes). La solución está diseñada para adaptarse a diversos rubros comerciales, tales como tiendas de electrónica, dulcerías, comercializadoras de telas y tiendas de ropa.
 
-La plataforma permite a los dueños de negocios y administradores llevar un control exacto de su flujo de caja saliente, ofreciendo un panel principal (Dashboard) que consolida la deuda total, el volumen de compras registradas, el estado de facturas (pendientes, vencidas o a tiempo) y el total abonado. 
+CREDITOR es una propuesta de plataforma web para mypes que necesitan organizar sus compras a crédito, cuentas por pagar, abonos parciales, comprobantes y préstamos. Busca reunir en un mismo espacio la información que normalmente se distribuye entre cuadernos, hojas de cálculo, mensajes y archivos, para facilitar la consulta de saldos y vencimientos.
 
-El núcleo del sistema facilita el registro detallado de nuevas compras (proveedor, fechas límite, moneda local o extranjera, abonos iniciales y comprobantes físicos digitalizados), el seguimiento del historial de pagos mediante la carga de vouchers, y la gestión integral de préstamos bancarios o a terceros con sus respectivos cronogramas de cuotas. Adicionalmente, el sistema permite la exportación de reportes filtrados en formatos PDF y Excel para facilitar la conciliación contable.
+La propuesta contempla un panel de deuda consolidada, registro de compras con proveedor, moneda, fecha límite y comprobante; registro de abonos con voucher; seguimiento de préstamos; y reportes filtrables. Estas capacidades son hipótesis de producto y no deben confundirse con funciones ya validadas o implementadas.
 
-Misión
-Desarrollar una herramienta de gestión financiera intuitiva y accesible que permita a los comercios de múltiples rubros mantener un control riguroso y transparente sobre sus cuentas por pagar, historial de compras y préstamos, optimizando su toma de decisiones.
+**Misión.** Desarrollar una herramienta clara y accesible que ayude a las mypes a mantener un control transparente de sus obligaciones financieras.
 
-Visión
-Consolidarnos como la plataforma estándar de control de pasivos para mypes en la región, eliminando la dependencia de métodos de registro manuales o dispersos y garantizando una gestión de deuda eficiente y libre de penalidades por retrasos.
+**Visión.** Ser una alternativa de apoyo para la gestión diaria de cuentas por pagar de las mypes de la región.
 
 ### 1.1.2 Perfiles de integrantes del equipo
 
-A continuación se presenta la ficha de cada integrante del equipo, indicando su código de estudiante y un resumen de sus responsabilidades y perfil técnico para el desarrollo de la aplicación.[cite: 2]
+Cada perfil se acompaña de una fotografía autorizada y de una descripción revisada por el integrante antes de la entrega. Las fotografías y confirmaciones personales se incorporarán en `assets/team/` cuando el equipo las autorice.
 
-| Integrante | Código | Perfil y responsabilidades |
-| :--- | :--- | :--- |
-| **Juan Manuel Santos Torres** | u20221a371 | Estudiante de Ingeniería de Software. Encargado del desarrollo de interfaces web y arquitectura frontend (React). Aporta visión comercial y enfoque de producto gracias a su experiencia práctica en la gestión operativa de negocios de electrónica. |
-| **Sebastián Gutarra Velapatiño** | u20241A314 ||
-| **Azabache Bregante Christopher** | u20231b188 |  |
-| **Miguel Angel Egocheaga Suyo** | u202215188 |  |
+| Integrante | Código | Perfil y responsabilidad propuesta | Evidencia pendiente |
+|---|---|---|---|
+| Juan Manuel Santos Torres | u20221a371 | Estudiante de Ingeniería de Software. Aporta perspectiva de producto e interfaces web a partir de su experiencia en la operación de negocios comerciales. | Foto autorizada y confirmación de responsabilidades. |
+| Sebastián Gutarra Velapatiño | u20241A314 | Estudiante de Ingeniería de Software. Su perfil técnico, habilidades y responsabilidad en AV1 deben ser redactados y validados por el integrante. | Foto, perfil y evidencia de contribución. |
+| Azabache Bregante Christopher | u20231b188 | Estudiante de Ingeniería de Software. Su perfil técnico, habilidades y responsabilidad en AV1 deben ser redactados y validados por el integrante. | Foto, perfil y evidencia de contribución. |
+| Miguel Angel Egocheaga Suyo | u202215188 | Estudiante de Ingeniería de Software. Organiza avances locales de documentación y landing mediante GitFlow; sus aportes finales se contrastarán con el historial publicado. | Foto autorizada y evidencia publicada tras aprobación del equipo. |
 
 ## 1.2 Solution Profile
 
-La plataforma es una solución web de control de deudas y compras desarrollada para negocios que requieren verificar, registrar y analizar sus obligaciones financieras y el estado de sus pagos a proveedores y entidades bancarias.
-
 ### 1.2.1 Antecedentes y problemática
 
-Los negocios minoristas y mayoristas (como tiendas de electrónica, textiles o abarrotes) necesitan mantener un inventario constante, lo que implica compras frecuentes a crédito con diversos proveedores. 
-Actualmente, muchos de estos negocios gestionan sus cuentas por pagar y préstamos utilizando cuadernos físicos, hojas de cálculo no estandarizadas o simplemente confiando en la memoria. Esta descentralización genera un severo descontrol: se extravían comprobantes de abonos, se vencen las fechas límite de las facturas (generando penalidades o ruptura de relaciones comerciales) y existe un desconocimiento de la deuda real consolidada en un momento dado.
+Las mypes comerciales realizan compras frecuentes a proveedores y, en algunos casos, administran créditos o préstamos para sostener su operación. Cuando las fechas, importes, comprobantes y abonos se registran en medios separados, consultar un saldo o reconstruir una operación puede requerir buscar en múltiples fuentes.
 
-**Análisis 5W2H**[cite: 2]
+CREDITOR parte de este problema como una hipótesis. La investigación de campo definirá qué prácticas ocurren realmente, qué información se necesita conservar y qué tareas deben priorizarse.
 
-| Pregunta | Descripción |
-| :--- | :--- |
-| **What** - ¿Cuál es el problema? | Los dueños de negocios carecen de un sistema centralizado para registrar, visualizar y gestionar eficientemente sus compras a crédito, abonos parciales, deudas totales y cronogramas de préstamos. |
-| **When** - ¿Cuándo ocurre? | Al momento de realizar nuevas compras, registrar adelantos de pago, solicitar créditos bancarios y al intentar cuadrar cuentas a fin de mes. |
-| **Where** - ¿Dónde ocurre?| En la administración financiera diaria del negocio y en la interacción de pago con proveedores y bancos. |
-| **Who** - ¿Quiénes están involucrados? | Dueños de negocios (electrónica, textiles, dulcerías, etc.), administradores, contadores y proveedores. |
-| **Why** - ¿Por qué representa un problema? | Porque la informalidad en el registro provoca pérdida de comprobantes de pago, vencimiento de facturas, sobreendeudamiento y falta de claridad sobre el flujo de caja saliente. |
-| **How** - ¿Cómo se presenta el problema? | Mediante facturas vencidas no identificadas a tiempo, historiales de pago incompletos por comprobantes extraviados, y dificultad para calcular el interés y cuotas de préstamos adquiridos. |
-| **How much** - ¿Cuál es su impacto?| Impacta negativamente en la liquidez del negocio, genera gastos adicionales por morosidad y reduce el tiempo útil del administrador al tener que conciliar deudas manualmente. |
+#### Análisis 5W2H
 
-### 1.2.2 Lean UX Process
+| Pregunta | Hipótesis inicial que debe validarse |
+|---|---|
+| **What** | Los responsables de negocio pueden carecer de una vista unificada de compras a crédito, abonos y obligaciones pendientes. |
+| **When** | Al registrar una compra, ejecutar un pago parcial, revisar una fecha de vencimiento o preparar una conciliación. |
+| **Where** | En la administración financiera cotidiana de una mype y en la comunicación con proveedores, contadores o entidades financieras. |
+| **Who** | Dueños de negocio y administradores o encargados de finanzas que intervienen directamente en compras o pagos. |
+| **Why** | La información dispersa podría dificultar conocer el saldo vigente, sustentar un pago o priorizar obligaciones. |
+| **How** | Mediante búsquedas manuales en cuadernos, hojas de cálculo, mensajes o carpetas de comprobantes. |
+| **How much** | El impacto económico y de tiempo no se cuantificará hasta contar con datos de entrevistas y fuentes secundarias verificables. |
 
-#### 1.2.2.1 Lean UX Problem Statements
-Los negocios de venta de productos necesitan controlar de manera precisa las deudas generadas por compras a proveedores y préstamos. Los procesos actuales basados en apuntes físicos o información dispersa dificultan conocer rápidamente el estado de las facturas, los montos exactos adeudados por proveedor y los comprobantes de los abonos ya realizados.
-
-Nuestra solución busca abordar esta situación mediante una plataforma web que centralice el registro de compras (en soles o dólares), permita adjuntar comprobantes digitales, calcule cronogramas de préstamos y ofrezca reportes exportables. Nuestro enfoque inicial estará dirigido a dueños de mypes y administradores financieros.
-
-#### 1.2.2.2 Lean UX Assumptions
-
-**Business Outcomes**
-* Creemos que los negocios necesitan mejorar el control preventivo de sus fechas de pago a proveedores.
-* Creemos que centralizar las imágenes de los comprobantes de pago reducirá las disputas por cobros indebidos.
-* Creemos que la plataforma disminuirá el porcentaje de facturas vencidas mediante una visualización clara del estado de la deuda.
-
-**User Outcomes**
-* Creemos que los dueños de negocio desean visualizar su deuda total consolidada en un Dashboard intuitivo (separado por moneda).
-* Creemos que los usuarios necesitan poder registrar compras con abonos iniciales y agregar pagos parciales con su respectiva fecha y comprobante.
-* Creemos que los administradores necesitan filtrar deudas por proveedor y exportar reportes en PDF y Excel para la contabilidad mensual.
-
-**Features**
-* Dashboard interactivo con métricas de deuda total, registro de compras y facturas vencidas/pendientes.
-* Módulo de registro de compras con soporte bimonetario (Soles/Dólares) y carga de imágenes.
-* Panel flotante para el registro de abonos y consulta del historial de pagos por compra.
-* Sección de gestión de préstamos bancarios con cálculo automático de cuotas e intereses.
-* Generador de reportes con filtros por fecha, proveedor y moneda, exportable a Excel/PDF.
-
-#### 1.2.2.3 Lean UX Hypothesis Statements
-
-* **Hypothesis Statement 1 - Dashboard de Deudas:** Creemos que lograremos reducir el índice de facturas vencidas si los administradores logran visualizar de inmediato su deuda total, el número de compras y los días restantes para el pago mediante un panel central consolidado.
-* **Hypothesis Statement 2 - Registro de Abonos:** Creemos que lograremos mejorar la transparencia financiera si los usuarios pueden registrar abonos individuales adjuntando imágenes de los vouchers, consolidando así el historial de pagos de cada compra en un solo lugar.
-* **Hypothesis Statement 3 - Control de Préstamos:** Creemos que lograremos mejorar la gestión de liquidez de los negocios si los dueños logran registrar los préstamos (ya sean otorgados o recibidos), configurando la tasa de interés, la frecuencia y número de cuotas para previsualizar el cronograma de pagos.
-* **Hypothesis Statement 4 - Exportación y Reportes:** Creemos que lograremos facilitar el trabajo contable si los usuarios logran filtrar sus deudas por rangos de fecha y proveedor, y exportar estos reportes consolidados en formato PDF o Excel.
-
-#### 1.2.2.4 Lean UX Canvas
-
-A continuación se presenta el Lean UX Canvas con las hipótesis, problemas y soluciones planteadas para el Gestor de Compras y Deudas:
-
-![Lean UX Canvas de la aplicación](../assets/research/lean-ux-canvas.jpg)
-
-## 1.3 Segmentos objetivo
-
-Los segmentos objetivo de la plataforma se centran en los responsables de la adquisición de mercadería, gestión de pagos y salud financiera de los comercios.
-
-| Segmento | Características | Necesidades principales |
-| :--- | :--- | :--- |
-| **Dueños de Negocios (Mypes)** | Propietarios de tiendas (electrónica, ropa, abarrotes, etc.) que toman decisiones de compra e inversión. Suelen solicitar préstamos y negociar créditos con proveedores. | • Visualizar la deuda total de un vistazo.<br>• Llevar el control de los cronogramas de préstamos.<br>• Saber exactamente cuánto se le debe a un proveedor específico.<br>• Acceder rápidamente a los vouchers de abonos realizados. |
-| **Administradores / Encargados de Finanzas** | Personal operativo encargado de registrar facturas, ejecutar transferencias bancarias a proveedores y mantener la contabilidad al día. | • Interfaz rápida para registrar compras bimonetarias (Soles/Dólares).<br>• Sistema de alertas o visualización de días restantes para vencimiento de facturas.<br>• Herramienta para editar, duplicar o eliminar compras erróneas.<br>• Generación y descarga de reportes en PDF y Excel para cuadrar caja. |
+La validación incluirá entrevistas por segmento y una revisión de fuentes secundarias. No se publicarán cifras de frecuencia, ahorro o morosidad sin indicar su fuente, fecha y alcance.
