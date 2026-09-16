@@ -232,6 +232,14 @@ El análisis se realizará después de completar los registros. Para cada respue
 
 La síntesis final incluirá coincidencias, diferencias entre segmentos y evidencia que contradiga las hipótesis iniciales. Solo entonces se actualizarán Personas, Task Matrix, Journey Maps, historias y backlog.
 
+
+#### Criterios de calidad y resguardo
+
+- Confirmar que cada participante cumple los criterios del segmento antes de incluirlo en el análisis.
+- Registrar la fecha, modalidad, duración y consentimiento de cada entrevista.
+- Citar un hallazgo con el código de entrevista y conservar una nota que permita rastrearlo sin revelar datos sensibles.
+- Evitar concluir causalidad, intención de compra o tamaños de mercado con una muestra cualitativa.
+- Reemplazar los registros pendientes por evidencia real antes de exportar el informe final.
 ## 2.3 Needfinding
 
 ### 2.3.1 User Personas
@@ -251,6 +259,7 @@ La síntesis final incluirá coincidencias, diferencias entre segmentos y eviden
 | Término | Definición | Contexto |
 |---|---|---|
 | [Término] | [Definición] | [Bounded context] |
+
 
 
 
