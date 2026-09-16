@@ -41,3 +41,29 @@ Durante una prueba moderada posterior a la implementación del flujo de consulta
 | Developer | Integra una interfaz con servicios documentados. | API REST, contratos y documentación OpenAPI. | TS-001, TS-002, TS-003 |
 
 La versión visual del Impact Map deberá elaborarse en UXPressia y enlazarse o exportarse a `assets/research/impact-map/` cuando cuente con los actores y prioridades validados.
+
+## 3.3 Product Backlog
+
+La prioridad expresa la hipótesis actual de valor y se revisará con la investigación. Los story points usan una escala relativa de Fibonacci: 1, 2, 3, 5 y 8.
+
+| Orden | ID | Título | Prioridad | Story points | Sprint propuesto | Estado |
+|---:|---|---|---|---:|---|---|
+| 1 | US-001 | Conocer CREDITOR | Must | 3 | Sprint 1 | Pendiente de implementar/revisar en landing |
+| 2 | US-002 | Solicitar contacto | Must | 5 | Sprint 1 | Pendiente de integración con servicio aprobado |
+| 3 | US-003 | Consultar condiciones | Must | 2 | Sprint 1 | Pendiente de implementar en landing |
+| 4 | US-004 | Consultar obligaciones | Must | 8 | Sprint 2 | Planificada |
+| 5 | US-005 | Registrar compra a crédito | Must | 8 | Sprint 2 | Planificada |
+| 6 | US-006 | Registrar abono | Must | 5 | Sprint 2 | Planificada |
+| 7 | US-007 | Revisar historial de pagos | Should | 5 | Sprint 2 | Planificada |
+| 8 | US-008 | Exportar reporte de deuda | Should | 5 | Sprint 3 | Planificada |
+| 9 | US-009 | Consultar préstamo | Could | 8 | Sprint 3 | Planificada |
+
+La captura del backlog de la herramienta elegida y su URL pública o accesible al docente se incorporarán antes de la entrega.
+
+### 3.3.1 Technical Stories
+
+| ID | Descripción | Criterios de aceptación | Prioridad |
+|---|---|---|---|
+| TS-001 | Como **Developer**, quiero exponer compras mediante una API REST para que la aplicación consulte y registre obligaciones. | **Dado** que la solicitud `GET /api/v1/purchases` es válida, **cuando** el servicio recibe la petición, **entonces** responde `200 OK` con una colección paginada.<br>**Dado** que la solicitud `POST /api/v1/purchases` contiene datos inválidos, **cuando** el servicio la valida, **entonces** responde `400 Bad Request` con errores de campo. | Must |
+| TS-002 | Como **Developer**, quiero exponer abonos asociados a una compra para que la aplicación actualice el saldo. | **Dado** que la compra existe y tiene saldo pendiente, **cuando** el servicio recibe `POST /api/v1/purchases/{purchaseId}/payments`, **entonces** responde `201 Created` con el abono y saldo resultante.<br>**Dado** que el importe excede el saldo permitido, **cuando** valida la solicitud, **entonces** responde `422 Unprocessable Entity` con el motivo. | Must |
+| TS-003 | Como **Developer**, quiero publicar contratos OpenAPI para que la integración tenga solicitudes y respuestas documentadas. | **Dado** que el servicio está disponible, **cuando** se accede al documento OpenAPI, **entonces** se describen rutas, esquemas y códigos de respuesta vigentes. | Should |
