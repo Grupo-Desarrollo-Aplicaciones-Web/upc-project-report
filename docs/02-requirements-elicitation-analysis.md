@@ -297,11 +297,44 @@ El escenario As-Is final distinguirá actores, acciones, información y sistemas
 
 ## 2.4 Big Picture Event Storming
 
+El EventStorming inicial delimita conversaciones del dominio; no representa todavía eventos observados en producción. La sesión definitiva debe conservar una captura de FigJam u otra herramienta, participantes, fecha y decisiones tomadas.
+
+```mermaid
+flowchart LR
+  A[Purchase Registered] --> B[Payment Due]
+  B --> C[Partial Payment Recorded]
+  C --> D{Balance Settled?}
+  D -- No --> B
+  D -- Yes --> E[Purchase Settled]
+  F[Loan Registered] --> G[Installment Due]
+  G --> H[Loan Installment Recorded]
+```
+
+| Evento de dominio | Comando o actor relacionado | Pregunta abierta |
+|---|---|---|
+| Purchase Registered | Registrar compra / administrador | ¿Qué campos y validaciones son indispensables? |
+| Payment Due | Consultar vencimientos / dueño o administrador | ¿Cómo se calcula o prioriza la fecha? |
+| Partial Payment Recorded | Registrar abono / administrador | ¿Qué evidencia del pago se permite adjuntar? |
+| Purchase Settled | Confirmar saldo / administrador | ¿Cómo se resuelven ajustes o reversos? |
+| Loan Registered | Registrar préstamo / dueño | ¿Qué tipos de préstamos usan realmente los segmentos? |
+| Loan Installment Recorded | Registrar cuota / administrador | ¿Cómo se relaciona con el saldo de préstamo? |
+
 ## 2.5 Ubiquitous Language
+
+Los términos de dominio se nombran en inglés para mantener consistencia futura entre interfaz, API y modelo de datos. La definición se revisará con el equipo y con hallazgos de investigación.
 
 | Término | Definición | Contexto |
 |---|---|---|
-| [Término] | [Definición] | [Bounded context] |
+| **Supplier** | Persona o empresa a la que la mype compra bienes o servicios y a la que puede deber un saldo. | Accounts Payable |
+| **Credit Purchase** | Compra cuya obligación no se cancela por completo en el momento del registro. | Accounts Payable |
+| **Due Date** | Fecha límite acordada para cumplir con una obligación. | Accounts Payable |
+| **Partial Payment** | Abono que reduce, pero no liquida, el saldo de una compra o préstamo. | Payments |
+| **Payment Voucher** | Evidencia digital asociada a un pago registrado. | Payments |
+| **Outstanding Balance** | Importe pendiente luego de considerar los pagos aplicados. | Accounts Payable |
+| **Loan** | Obligación financiera registrada con principal, tasa, frecuencia y cronograma cuando aplique. | Loans |
+| **Installment** | Cuota programada de un préstamo. | Loans |
+| **Debt Report** | Consulta filtrada de obligaciones para revisión, seguimiento o exportación. | Reporting |
+
 
 
 
