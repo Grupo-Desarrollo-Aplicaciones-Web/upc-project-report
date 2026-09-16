@@ -169,7 +169,81 @@ Como regla propuesta, el autor no debe contabilizar una aprobación propia como 
 Cada historia tendrá un ID `US-LP-xx`, cada tarea `T-LP-xx`, cada prueba `TC-LP-xx` y cada hallazgo heurístico `HEU-xx`. El sprint relacionará estas referencias con componentes y capturas. Una vez creados los Issues y PR, se añadirán sus enlaces reales; no se generan números ficticios.
 
 ### 5.1.3 Source Code Style Guide & Conventions
+La guía distingue las convenciones observadas de los acuerdos propuestos para mantener la consistencia en siguientes cambios.
 
+#### Vue y organización de componentes
+
+Los diez componentes utilizan archivos `.vue` y `<script setup>`. La estructura habitual organiza lógica, plantilla y `<style scoped>`. `App.vue` funciona como composición de secciones y evita concentrar en un único archivo toda la presentación.
+
+| Elemento | Convención observada | Ejemplo |
+|---|---|---|
+| Archivos y componentes | PascalCase | `LoanSimulator.vue`, `TheHeader.vue`. |
+| Estado simple | `ref` | `menuOpen`, `anual`, `meses`. |
+| Formulario | Objeto `reactive` | `form` con nombre, correo y empresa. |
+| Valores derivados | `computed` | Cuota, interés total, tarjetas y etiquetas. |
+| Iteración de listas | `v-for` con `:key` | Características, preguntas y planes. |
+| Formularios | `v-model` y `@submit.prevent` | Captura local sin recarga. |
+| Eventos globales | Alta y baja en ciclo de vida | Listener de scroll en el encabezado. |
+| Encapsulación visual | `<style scoped>` | Reglas de cada sección. |
+
+Los componentes no exponen contratos propios de `props` o `emits` en la versión revisada. Consumen directamente el composable de traducción y mantienen estado local cuando lo requieren. No se documentan stores o servicios inexistentes.
+
+#### JavaScript
+
+Se observan imports ES Modules, preferencia por `const`, funciones flecha, comillas simples y omisión de punto y coma. Las variables usan camelCase. El código combina nombres en inglés y español: `menuOpen`, `totalPagar`, `enviado`, `tasaAnual`.
+
+Para nuevos cambios se propone mantener el estilo del archivo y usar nombres descriptivos. Una unificación de idioma deberá realizarse en un refactor separado para facilitar revisión. Los cálculos derivados deben permanecer en funciones o propiedades calculadas; no deben duplicarse en plantillas.
+
+La lógica numérica debe distinguir datos de entrada, transformación de tasas y presentación. El formato monetario no debe reemplazar el valor numérico utilizado en el cálculo. Las condiciones especiales, como tasa cero, deben tener una salida definida.
+
+#### HTML y accesibilidad
+
+La estructura utiliza `header`, `nav`, `main`, `section`, `article` y `footer`. El inicio contiene el título principal y las secciones cuentan con encabezados. Hay atributos `aria-expanded` en el menú y FAQ y `aria-pressed` en el selector de idioma.
+
+Para siguientes cambios se establecen como criterios: etiquetas visibles asociadas a campos, mensajes de error relacionados con el campo correspondiente, foco visible, botones con nombre accesible y navegación con teclado. Estas condiciones no se presentan como totalmente cumplidas: el formulario de solicitud utiliza placeholders sin etiquetas y los avisos no tienen una región viva explícita.
+
+#### CSS y diseño
+
+Los estilos siguen una nomenclatura similar a BEM, con bloques, elementos y modificadores: `hero__title`, `btn--primary`, `header--scrolled`. Las utilidades compartidas se definen en `src/style.css`; las reglas de cada sección se mantienen en su componente.
+
+| Token o regla | Valor encontrado | Uso |
+|---|---|---|
+| `--brand` | `#2563eb` | Color principal. |
+| `--brand-dark` | `#1d4ed8` | Variación de énfasis. |
+| `--surface` | `#ffffff` | Superficies principales. |
+| `--text` | `#101828` | Texto principal. |
+| `--text-soft` | `#5a6478` | Texto secundario. |
+| `--radius` / `--radius-sm` | 16 px / 10 px | Bordes redondeados. |
+| `--max-width` | 1140 px | Ancho máximo del contenedor. |
+| Tipografía | Inter con alternativas del sistema | Identidad visual y fallback. |
+| Ancho mínimo del documento | 320 px | Límite base definido en `body`. |
+
+Se emplean Grid, Flexbox y tamaños con `clamp()`. Los breakpoints varían según componente, incluidos 520, 560, 640, 720, 860, 900 y 960 px. Su presencia no sustituye la comprobación visual en navegador.
+
+#### Internacionalización
+
+Los textos se centralizan en diccionarios `es` y `en`. `t('ruta.clave')` resuelve valores y permite interpolar parámetros. El idioma se detecta primero desde almacenamiento y luego desde el navegador. Al cambiarlo se actualizan `html[lang]`, el título y la descripción meta.
+
+Se propone que cualquier nuevo texto tenga ambas traducciones. Las claves deben expresar propósito, no posición visual. Los metadatos Open Graph no se actualizan con `setLocale` en la versión inspeccionada. Cambiar de idioma también cambia la moneda formateada en el panel y simulador, pero no convierte importes mediante un tipo de cambio.
+
+#### Convenciones de commits
+
+Formato propuesto: `tipo: descripción breve en inglés` o `tipo(alcance): descripción`.
+
+| Tipo | Uso |
+|---|---|
+| `feat` | Nueva funcionalidad de la landing. |
+| `fix` | Corrección de comportamiento o presentación incorrectos. |
+| `docs` | Capítulos, guías, entrevistas, canvas y evidencias documentales. |
+| `style` | Formato del código sin cambio de comportamiento. |
+| `refactor` | Reorganización interna conservando comportamiento. |
+| `test` | Incorporación o modificación de pruebas. |
+| `ci` | Automatización en GitHub Actions. |
+| `chore` | Mantenimiento y configuración auxiliar. |
+
+Ejemplos propuestos: `docs: add CreditFlow Lean UX Canvas`, `fix: clarify demo form confirmation`, `ci: add GitHub Pages deployment workflow`. La convención documental usa `docs` aunque algunos commits históricos del informe utilicen `feat`.
+
+No existen configuraciones de ESLint o Prettier en el ZIP ni scripts de lint o test. Su adopción puede planificarse posteriormente; no se presentan como controles automáticos existentes.
 ### 5.1.4 Software Deployment Configuration
 
 ## 5.2 Landing Page, Services & Applications Implementation
