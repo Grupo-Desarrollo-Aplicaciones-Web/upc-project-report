@@ -86,3 +86,21 @@ Cada hipótesis relaciona una feature assumption con un resultado que deberá me
 El Lean UX Canvas existente resume el problema, los segmentos, los supuestos y las soluciones iniciales.
 
 ![Lean UX Canvas de CREDITOR](../assets/research/lean-ux-canvas.jpg)
+
+## 1.3 Segmentos objetivo
+
+CREDITOR trabajará inicialmente con dos segmentos definidos por responsabilidades, no por tamaño de mercado estimado. La pertenencia al segmento se verificará en la entrevista mediante participación reciente en compras, pagos o revisión de obligaciones.
+
+| Segmento | Perfil demográfico y operativo | Necesidad por contrastar | Criterio de inclusión para investigación |
+|---|---|---|---|
+| S1. Dueños de mypes comerciales | Personas adultas que dirigen un negocio comercial y toman o supervisan decisiones de compra, endeudamiento o pago. | Consultar obligaciones y decidir qué pago revisar o autorizar. | Haber participado durante los últimos tres meses en una compra a crédito, pago a proveedor o préstamo del negocio. |
+| S2. Administradores o encargados de finanzas | Personas adultas responsables de registrar compras, preparar pagos, conciliar saldos o conservar comprobantes en una mype. | Registrar operaciones, recuperar vouchers y preparar información para una revisión financiera. | Haber realizado durante los últimos tres meses al menos una tarea directa de registro, pago o conciliación. |
+
+La investigación secundaria para caracterizar el contexto de las mypes se incorporará con fuentes oficiales, año y universo de medición. Hasta entonces, el informe no atribuye porcentajes, niveles de digitalización ni frecuencia de deuda a estos segmentos.
+
+### Relación entre segmentos y propuesta inicial
+
+| Segmento | Tarea principal | Funcionalidad a explorar | Riesgo a validar |
+|---|---|---|---|
+| S1 | Revisar obligaciones y decidir prioridades. | Dashboard, consulta por proveedor y cronograma de préstamos. | Que la consulta no sea una tarea frecuente o que se delegue por completo. |
+| S2 | Registrar y verificar operaciones. | Registro de compras, abonos, comprobantes y reportes. | Que el registro se realice en otra herramienta obligatoria o por otra persona. |
