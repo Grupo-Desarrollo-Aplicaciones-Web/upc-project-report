@@ -244,21 +244,99 @@ La síntesis final incluirá coincidencias, diferencias entre segmentos y eviden
 
 ### 2.3.1 User Personas
 
+Las siguientes personas son borradores basados en los criterios de segmento del capítulo I. No representan personas investigadas y deberán actualizarse con citas de las entrevistas antes de la entrega.
+
+| Persona provisional | Objetivo | Contexto y conducta por validar | Necesidades iniciales | Evidencia pendiente |
+|---|---|---|---|---|
+| **Rosa, dueña de mype** | Conocer sus compromisos antes de autorizar o priorizar pagos. | Puede supervisar compras y pagos sin registrar cada operación personalmente. | Resumen de deuda, vencimientos, consulta por proveedor y préstamos. | Entrevistas S1, cita de evidencia y User Persona exportada de UXPressia. |
+| **Diego, encargado de finanzas** | Registrar una compra o abono y recuperar su comprobante al conciliar. | Puede operar con información entregada por otras personas y registrar desde distintos dispositivos. | Campos consistentes, historial de pagos, saldo y reportes filtrables. | Entrevistas S2, cita de evidencia y User Persona exportada de UXPressia. |
+
 ### 2.3.2 User Task Matrix
+
+La matriz usa una valoración inicial para orientar la discusión del backlog; la frecuencia e importancia deben recalibrarse con entrevistas. Escala: 1 = baja, 3 = media, 5 = alta.
+
+| Tarea | Rosa: frecuencia | Rosa: importancia | Diego: frecuencia | Diego: importancia | Validación necesaria |
+|---|---:|---:|---:|---:|---|
+| Consultar saldo por proveedor | 3 | 5 | 4 | 5 | Confirmar frecuencia y momento de consulta. |
+| Revisar próximos vencimientos | 3 | 5 | 4 | 5 | Identificar método actual de priorización. |
+| Registrar una compra a crédito | 2 | 4 | 5 | 5 | Confirmar campos mínimos y responsables. |
+| Registrar un abono y voucher | 2 | 5 | 5 | 5 | Validar evidencia disponible y excepciones. |
+| Consultar préstamo y cuotas | 2 | 3 | 2 | 3 | Determinar si es una necesidad real de ambos segmentos. |
+| Exportar o compartir un reporte | 2 | 4 | 3 | 4 | Conocer destinatario y formato requerido. |
 
 ### 2.3.3 User Journey Mapping
 
+El recorrido **As-Is** se documentará en UXPressia a partir de operaciones relatadas. Esta versión identifica puntos a validar, no una secuencia confirmada.
+
+| Etapa | Acción que se investigará | Posible fricción | Evidencia a recoger |
+|---|---|---|---|
+| Compra | Acordar una compra a crédito y recibir comprobante. | Datos incompletos o comprobante fuera del registro principal. | Relato de una compra reciente. |
+| Registro | Anotar importe, proveedor, moneda y fecha límite. | Duplicación, olvido o uso de fuentes separadas. | Herramienta actual y responsable. |
+| Seguimiento | Revisar saldo, vencimiento y prioridad de pago. | Dificultad para reunir información actualizada. | Pasos realizados y tiempo aproximado. |
+| Abono | Ejecutar pago parcial y conservar voucher. | Pérdida de trazabilidad entre pago y compra. | Método de registro y recuperación. |
+| Conciliación | Confirmar saldo o preparar información para revisión. | Búsqueda manual o discrepancia con proveedor. | Ejemplo y resultado relatado. |
+
+La captura o enlace de UXPressia se agregará cuando el recorrido use evidencia real de los participantes.
+
 ### 2.3.4 Empathy Mapping
+
+Los mapas de empatía se construirán después de codificar entrevistas; no se atribuirán pensamientos o emociones a los segmentos sin una cita de evidencia.
+
+| Área | Pregunta de análisis |
+|---|---|
+| Dice y hace | ¿Qué describe la persona que realiza al registrar o revisar una obligación? |
+| Piensa y siente | ¿Qué preocupación o criterio expresa al decidir un pago? |
+| Ve | ¿Qué documentos, pantallas o canales intervienen en su proceso actual? |
+| Escucha | ¿Qué indicaciones recibe de proveedores, dueños, contadores u otras personas? |
+| Dolores | ¿Qué obstáculo, riesgo o esfuerzo se repite en su relato? |
+| Ganancias | ¿Qué resultado concreto espera al completar una tarea? |
 
 ### 2.3.5 As-Is Scenario Mapping
 
+El escenario As-Is final distinguirá actores, acciones, información y sistemas utilizados. La matriz anterior será reemplazada o complementada por una captura de la herramienta elegida y por referencias a los códigos de entrevista.
+
 ## 2.4 Big Picture Event Storming
+
+El EventStorming inicial delimita conversaciones del dominio; no representa todavía eventos observados en producción. La sesión definitiva debe conservar una captura de FigJam u otra herramienta, participantes, fecha y decisiones tomadas.
+
+```mermaid
+flowchart LR
+  A[Purchase Registered] --> B[Payment Due]
+  B --> C[Partial Payment Recorded]
+  C --> D{Balance Settled?}
+  D -- No --> B
+  D -- Yes --> E[Purchase Settled]
+  F[Loan Registered] --> G[Installment Due]
+  G --> H[Loan Installment Recorded]
+```
+
+| Evento de dominio | Comando o actor relacionado | Pregunta abierta |
+|---|---|---|
+| Purchase Registered | Registrar compra / administrador | ¿Qué campos y validaciones son indispensables? |
+| Payment Due | Consultar vencimientos / dueño o administrador | ¿Cómo se calcula o prioriza la fecha? |
+| Partial Payment Recorded | Registrar abono / administrador | ¿Qué evidencia del pago se permite adjuntar? |
+| Purchase Settled | Confirmar saldo / administrador | ¿Cómo se resuelven ajustes o reversos? |
+| Loan Registered | Registrar préstamo / dueño | ¿Qué tipos de préstamos usan realmente los segmentos? |
+| Loan Installment Recorded | Registrar cuota / administrador | ¿Cómo se relaciona con el saldo de préstamo? |
 
 ## 2.5 Ubiquitous Language
 
+Los términos de dominio se nombran en inglés para mantener consistencia futura entre interfaz, API y modelo de datos. La definición se revisará con el equipo y con hallazgos de investigación.
+
 | Término | Definición | Contexto |
 |---|---|---|
-| [Término] | [Definición] | [Bounded context] |
+| **Supplier** | Persona o empresa a la que la mype compra bienes o servicios y a la que puede deber un saldo. | Accounts Payable |
+| **Credit Purchase** | Compra cuya obligación no se cancela por completo en el momento del registro. | Accounts Payable |
+| **Due Date** | Fecha límite acordada para cumplir con una obligación. | Accounts Payable |
+| **Partial Payment** | Abono que reduce, pero no liquida, el saldo de una compra o préstamo. | Payments |
+| **Payment Voucher** | Evidencia digital asociada a un pago registrado. | Payments |
+| **Outstanding Balance** | Importe pendiente luego de considerar los pagos aplicados. | Accounts Payable |
+| **Loan** | Obligación financiera registrada con principal, tasa, frecuencia y cronograma cuando aplique. | Loans |
+| **Installment** | Cuota programada de un préstamo. | Loans |
+| **Debt Report** | Consulta filtrada de obligaciones para revisión, seguimiento o exportación. | Reporting |
+
+
+
 
 
 
