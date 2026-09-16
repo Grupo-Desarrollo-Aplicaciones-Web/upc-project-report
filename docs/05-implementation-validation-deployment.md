@@ -89,8 +89,84 @@ Vue es la única dependencia directa de ejecución declarada. No se incluyen Vue
 La tipografía Inter se solicita a Google Fonts y dispone de fuentes de sistema como alternativa. Las métricas, nombres y valores de cartera del panel provienen de datos locales. La única persistencia observada es la preferencia de idioma mediante la clave `creditflow-locale` de `localStorage`.
 
 ### 5.1.2 Source Code Management
+#### Organización de repositorios
 
-Describir la organización de repositorios, ramas y Pull Requests.
+| Repositorio | Propósito | Contenido |
+|---|---|---|
+| [creditor-landing-page](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/creditor-landing-page) | Código de la presentación pública de CreditFlow. | Vue, estilos, traducciones, recursos y configuración de compilación. |
+| [upc-project-report](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report) | Informe académico y evidencias. | Capítulos, documentación de sprint, investigación y capturas. |
+
+El nombre técnico del repositorio `creditor-landing-page` se conserva, aunque la marca del producto sea CreditFlow. Esta diferencia no requiere renombrar el repositorio para redactar o publicar la documentación.
+
+#### Estado observado en GitHub
+
+La captura del informe muestra `main` como rama predeterminada, `develop` y las ramas `feature/cap4` y `feature/capitulo-2-competidores-entrevistas`. En esa captura, `develop` aparece 16 commits detrás de `main`; `feature/cap4`, 16 detrás y 6 por delante; y `feature/capitulo-2-competidores-entrevistas`, 0 detrás y 5 por delante. Son valores de ese momento, no un estado actualizado consultado en línea.
+
+La captura del historial de la landing muestra la rama `develop` y commits del 14 de septiembre de 2026 con mensajes de incorporación e integración de funcionalidades. Los mensajes `merge:` evidencian la intención declarada de integrar cambios; sin inspeccionar los padres de cada commit no bastan para demostrar la topología de las fusiones.
+
+La captura de Pull Requests corresponde al **repositorio del informe** y muestra cero abiertos y cero cerrados. No se cuenta con evidencia de revisiones por PR realizadas en la landing. Por tanto, se documenta la estrategia siguiente como una práctica a formalizar, no como una revisión por pares ya completada.
+
+![Ramas del repositorio del informe](creditflow-documentacion/informe/assets/evidence/report-branches.png)
+
+![Pull Requests del repositorio del informe](creditflow-documentacion/informe/assets/evidence/report-pull-requests.png)
+
+#### Estrategia de ramas propuesta
+
+Se propone un flujo ligero de integración con `main`, `develop` y ramas de trabajo. No se afirma la adopción completa de GitFlow, puesto que no se acreditan ramas `release/` o `hotfix/` ni el proceso completo asociado.
+
+| Rama | Función propuesta | Regla de integración |
+|---|---|---|
+| `main` | Referencia estable y futura fuente de publicación. | Recibir un incremento revisado y compilable. |
+| `develop` | Integración de los cambios de la siguiente entrega. | Recibir cambios pequeños desde ramas de trabajo. |
+| `feature/<objetivo>` | Trabajo aislado sobre funcionalidad o un capítulo. | Abrir PR hacia `develop` cuando sea revisable. |
+| `fix/<problema>` | Corrección identificable. | Documentar comportamiento anterior y corrección. |
+
+Para el informe se proponen `feature/chapter-1-creditflow` y `feature/chapter-5-landing`. Para la preparación de despliegue, `feature/github-pages`. Estos nombres son ejemplos a crear, no ramas verificadas.
+
+Antes de crear una rama desde `develop`, se debe revisar la divergencia observada y sincronizarla mediante una integración revisada de `main`. No se recomienda reemplazar su historial ni forzar un push para ocultar las diferencias.
+
+#### Flujo de trabajo propuesto
+
+1. Definir una tarea con alcance y criterio de aceptación.
+2. Actualizar referencias remotas y revisar las diferencias entre ramas.
+3. Crear la rama de trabajo desde la base acordada y sincronizada.
+4. Realizar un cambio coherente y comprobar el diff.
+5. Registrar un commit que describa el cambio real.
+6. Publicar la rama y abrir un PR hacia `develop`.
+7. Solicitar una revisión, atender observaciones y conservar evidencia.
+8. Integrar el incremento revisado de `develop` hacia `main` al preparar la entrega.
+
+```bash
+git fetch origin
+git switch develop
+git pull --ff-only origin develop
+git switch -c feature/chapter-5-landing
+# Editar únicamente los archivos correspondientes a la tarea.
+git diff
+# Agregar rutas concretas; evitar incorporar archivos ajenos.
+git add docs/chapter-v.md
+git commit -m "docs: document landing development environment"
+git push -u origin feature/chapter-5-landing
+```
+
+Los comandos suponen que `develop` ya fue sincronizada cuando correspondía y que la ruta del informe existe. Si el archivo del capítulo tiene otro nombre, debe utilizarse su ruta real.
+
+#### Contenido de un Pull Request
+
+| Campo | Contenido requerido |
+|---|---|
+| Título | Cambio principal en una frase. |
+| Motivo | Problema que resuelve o sección que completa. |
+| Alcance | Archivos y funciones modificados. |
+| Verificación | Comandos ejecutados, revisión de enlaces o pruebas, con resultado real. |
+| Evidencia | Captura, commit o enlace a ejecución cuando corresponda. |
+| Limitaciones | Elementos pendientes y decisiones por confirmar. |
+
+Como regla propuesta, el autor no debe contabilizar una aprobación propia como revisión de otro integrante. La existencia de un commit de documentación demuestra la incorporación de ese contenido en esa fecha; no demuestra que una entrevista, reunión o prueba descrita haya ocurrido.
+
+#### Trazabilidad
+
+Cada historia tendrá un ID `US-LP-xx`, cada tarea `T-LP-xx`, cada prueba `TC-LP-xx` y cada hallazgo heurístico `HEU-xx`. El sprint relacionará estas referencias con componentes y capturas. Una vez creados los Issues y PR, se añadirán sus enlaces reales; no se generan números ficticios.
 
 ### 5.1.3 Source Code Style Guide & Conventions
 
