@@ -1,8 +1,8 @@
-# [Nombre del producto] - Project Report
+# CREDITOR - Project Report
 
-Repositorio de documentación académica del proyecto **[Nombre del producto]**, desarrollado por **[Nombre de la startup o equipo]**.
+Repositorio de documentación académica de **CREDITOR**, una plataforma web para que las mypes registren compras a crédito, cuentas por pagar, abonos, préstamos y reportes de obligaciones.
 
-> Estado: plantilla inicial. Reemplazar los textos entre corchetes con la información real del proyecto.
+> Estado de AV1: documento en elaboración. Las evidencias que dependen de entrevistas, prototipos, despliegues, videos o trabajo de otros integrantes se identifican de forma explícita y se incorporarán únicamente cuando existan.
 
 ## Información académica
 
@@ -11,19 +11,21 @@ Repositorio de documentación académica del proyecto **[Nombre del producto]**,
 | Universidad | Universidad Peruana de Ciencias Aplicadas |
 | Facultad | Facultad de Ingeniería |
 | Programa | Ingeniería de Software |
-| Curso | [Código y nombre del curso] |
-| NRC | [NRC] |
-| Ciclo | [Año-ciclo] |
-| Docente | [Nombre del docente] |
-| Equipo | [Nombre del equipo] |
-| Producto | [Nombre del producto] |
+| Curso | Aplicaciones Web |
+| NRC | Pendiente de confirmación por el equipo |
+| Ciclo | 2026-20 |
+| Docente | Pendiente de confirmación por el equipo |
+| Equipo | CREDITOR |
+| Producto | CREDITOR |
 
 ## Integrantes
 
 | Código | Apellidos y nombres | Carrera | Perfil de GitHub |
 |---|---|---|---|
-| [Código] | [Integrante 1] | Ingeniería de Software | [@usuario](https://github.com/) |
-| [Código] | [Integrante 2] | Ingeniería de Software | [@usuario](https://github.com/) |
+| u20221a371 | Juan Manuel Santos Torres | Ingeniería de Software | Pendiente de confirmar |
+| u20241A314 | Sebastián Gutarra Velapatiño | Ingeniería de Software | Pendiente de confirmar |
+| u20231b188 | Azabache Bregante Christopher | Ingeniería de Software | Pendiente de confirmar |
+| u202215188 | Miguel Angel Egocheaga Suyo | Ingeniería de Software | [@MiguelAngel0107](https://github.com/MiguelAngel0107) |
 
 ## Estructura del informe
 
@@ -37,25 +39,17 @@ Repositorio de documentación académica del proyecto **[Nombre del producto]**,
 8. [Conclusiones y recomendaciones](docs/06-conclusions-recommendations.md)
 9. [Bibliografía y anexos](docs/07-bibliography-appendices.md)
 
-## Sprints
-
-La evidencia de cada iteración se mantiene separada para facilitar la revisión:
-
-- [Sprint 1](docs/sprints/sprint-01.md)
-- [Sprint 2](docs/sprints/sprint-02.md)
-- [Sprint 3](docs/sprints/sprint-03.md)
-- [Sprint 4](docs/sprints/sprint-04.md)
-
 ## Repositorios y entregables
 
-| Entregable | URL | Despliegue |
+| Entregable | URL | Estado |
 |---|---|---|
-| Documentación | [Pendiente](https://github.com/) | No aplica |
-| Landing page | [Pendiente](https://github.com/) | [Pendiente](https://example.com/) |
-| Frontend | [Pendiente](https://github.com/) | [Pendiente](https://example.com/) |
-| Backend | [Pendiente](https://github.com/) | [Pendiente](https://example.com/) |
+| Documentación | [upc-project-report](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report) | En elaboración local |
+| Landing page | [creditor-landing-page](https://github.com/MiguelAngel0107/creditor-landing-page) | Requiere rebranding, validación y despliegue |
+| Aplicación web | Pendiente de crear | Planificada para iteraciones posteriores |
+| Servicios REST | Pendiente de crear | Planificados para iteraciones posteriores |
 
-## Colaboración
+## Flujo de colaboración
+
+El equipo trabaja con GitFlow: `main` conserva versiones estables, `develop` integra el trabajo aprobado y cada avance se realiza en una rama `feature/<alcance>`. Los mensajes siguen Conventional Commits. La evidencia de cada integrante debe reflejar contribuciones reales realizadas desde su propia identidad de Git.
 
 Consulta [CONTRIBUTING.md](CONTRIBUTING.md) antes de crear ramas, commits o Pull Requests.
-
