@@ -34,6 +34,17 @@ También se consideran alternativas sustitutas los cuadernos, las hojas de cálc
 
 **Criterio de lectura:** “no verificado” identifica una limitación de esta revisión; no significa que el competidor carezca de esa función. Tampoco se atribuye exclusividad a CREDITOR por proponer abonos, adjuntos o cronogramas, ya que existen capacidades equivalentes documentadas.
 
+
+#### Posicionamiento, canales y condiciones de comparación
+
+| Solución | Segmento y estrategia visible | Servicios, precios y canales observados | Logo y evidencia pendiente |
+|---|---|---|---|
+| CREDITOR | Mypes que requieren concentrarse en obligaciones con proveedores, abonos y consulta de saldos. La propuesta de diferenciación se validará con los segmentos. | Landing, futura aplicación web y API REST. El precio no ha sido definido ni comunicado. | Usar el logotipo propio disponible en `assets/branding/creditorlogo.jpg`. |
+| Alegra Contabilidad | Pymes que requieren contabilidad, facturación y gestión empresarial. | Oferta web y planes mostrados en su sitio oficial; los precios, planes y condiciones deben citarse con fecha al preparar la entrega. | Incorporar logo desde la fuente oficial o un recurso con autorización de uso. |
+| Odoo | Organizaciones que requieren módulos configurables de gestión empresarial. | Aplicación web, módulos de contabilidad y documentación oficial de funcionalidades. | Incorporar logo desde la fuente oficial o un recurso con autorización de uso. |
+| Zoho Books | Pequeños negocios que buscan una herramienta de contabilidad y gestión de proveedores. | Plataforma web y documentación oficial de facturas, pagos y reportes. | Incorporar logo desde la fuente oficial o un recurso con autorización de uso. |
+
+El análisis no compara precios ni afirma una ventaja comercial mientras no se documenten planes equivalentes, país, moneda, fecha de consulta y condiciones de cada oferta. Los logos de terceros no se descargarán ni republicarán sin una fuente o licencia apropiada; la versión final debe mostrar la fuente junto a cada recurso.
 #### Fortalezas, limitaciones y oportunidades para CREDITOR
 
 Las fortalezas siguientes se apoyan en las capacidades documentadas. Las limitaciones de encaje y las oportunidades son interpretaciones del equipo que deberán contrastarse con usuarios; no son defectos demostrados de los competidores.
@@ -77,6 +88,15 @@ Las estrategias se plantean a partir del análisis anterior y de las hipótesis 
 | Adopción gradual | El usuario puede preferir mantener sus herramientas actuales si cambiar implica duplicar trabajo. | Proponer un piloto con pocas compras, orientación inicial y reportes exportables para compartir con el contador. | Barreras de adopción relatadas y continuidad de uso observada durante un futuro piloto. |
 | Captación por demostraciones del flujo | El beneficio propuesto debe resultar comprensible para dueños y administradores. | Mostrar en la landing page ejemplos de consulta de deuda y registro de abonos; solicitar comentarios a negocios de los rubros objetivo. | Comprensión de la propuesta e interés en participar en pruebas, diferenciados de una intención de compra. |
 
+
+#### Criterios para revisar la estrategia
+
+| Decisión propuesta | Evidencia que la respalda o falta | Criterio de revisión |
+|---|---|---|
+| Hablar de control de obligaciones y no de contabilidad integral. | Análisis documental; falta validación con entrevistas. | Confirmar que el segmento reconoce el problema y no requiere primero una suite contable completa. |
+| Priorizar compras, abonos, saldos y vencimientos. | Hipótesis Lean UX; falta evaluación de frecuencia e importancia. | Ordenar el backlog después de analizar tareas y entrevistas. |
+| Mantener el precio fuera de la landing inicial. | No existe investigación de disposición de pago. | Definir precio únicamente tras comparar alternativas y recoger criterios de los participantes. |
+| Comunicar una propuesta clara y comprobable. | La landing actual debe ser reescrita para CREDITOR. | Eliminar métricas promocionales sin fuente y vincular los CTA a flujos reales. |
 ## 2.2 Entrevistas
 
 Se propone realizar entrevistas para comprender cómo los usuarios gestionan actualmente las compras a crédito, los pagos a proveedores y los préstamos. La investigación permitirá contrastar los supuestos del capítulo I y las oportunidades del análisis competitivo antes de definir requisitos detallados.
@@ -210,4 +230,6 @@ Por cada entrevista se registrarán el código, segmento, rubro, fecha, modalida
 | Término | Definición | Contexto |
 |---|---|---|
 | [Término] | [Definición] | [Bounded context] |
+
+
 
