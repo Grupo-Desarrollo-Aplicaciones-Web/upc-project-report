@@ -350,9 +350,75 @@ Se debe comprobar que el documento, JavaScript, CSS y favicon carguen sin errore
 Si una publicación introduce un problema, preparar un commit de reversión del cambio causante y revisar la nueva compilación. Una reversión de un merge exige identificar correctamente su padre principal; no debe ejecutarse a ciegas. Los commits y ejecuciones anteriores se conservan para trazabilidad.
 
 No se incorpora un mecanismo de rutas SPA porque esta landing navega mediante anclas, sin Vue Router. `dist/` y `node_modules/` permanecen excluidos por `.gitignore`; el workflow transfiere el artefacto compilado.
+
 ## 5.2 Landing Page, Services & Applications Implementation
 
-La documentación detallada de cada iteración se encuentra en [`docs/sprints`](sprints/README.md).
+La documentación detallada de la primera iteración se encuentra en [`docs/sprints`](creditflow-documentacion/informe/docs/sprints/README.md), específicamente en [Sprint 1](creditflow-documentacion/informe/docs/sprints/sprint-1.md). No se documentan iteraciones posteriores inexistentes.
+
+### Alcance de implementación
+
+El incremento presenta CreditFlow y permite explorar interacciones de una landing. La página se monta desde `src/main.js` sobre `#app`, aplica el idioma inicial y renderiza los componentes importados por `App.vue`.
+
+| Orden | Componente | Función y comportamiento observado |
+|---|---|---|
+| 1 | `TheHeader.vue` | Marca, navegación sticky, botones ES/EN, menú móvil y accesos comerciales. El estado de scroll cambia a partir de 12 px; el menú se cierra al seleccionar una sección. |
+| 2 | `HeroSection.vue` | Título principal, CTAs y panel ilustrativo. Muestra cartera 486230, crecimiento 12.4%, porcentajes 78/14/8 y tres próximas cuotas fijas. |
+| 3 | `FeaturesSection.vue` | Seis tarjetas derivadas del diccionario: préstamos, líneas de crédito, deudas, recordatorios, pagos y reportes. |
+| 4 | `HowItWorks.vue` | Cuatro pasos numerados: cliente, crédito, cobranza y análisis. Son explicación del flujo previsto. |
+| 5 | `StatsBand.vue` | Franja de cifras promocionales obtenidas del diccionario. Sin fuente de medición implementada. |
+| 6 | `LoanSimulator.vue` | Tres controles de rango y cálculo reactivo de cuota, total e interés. |
+| 7 | `PricingSection.vue` | Tres planes y alternancia mensual/anual. Los dos primeros tienen precios numéricos; el tercero es personalizado. |
+| 8 | `FaqSection.vue` | Cinco preguntas. La primera está abierta inicialmente; pulsarla la cierra y abrir otra cierra la anterior. |
+| 9 | `CtaSection.vue` | Nombre, correo y empresa opcional. Valida localmente y sustituye el formulario por una confirmación. |
+| 10 | `TheFooter.vue` | Marca, grupos de enlaces, año actual y referencias legales. Los enlaces secundarios son placeholders `#`. |
+
+### Navegación y presentación
+
+Las secciones enlazables son `#inicio`, `#caracteristicas`, `#como-funciona`, `#simulador`, `#planes`, `#faq` y `#demo`. Los CTAs principales y los planes conducen a `#demo`. El enlace `#login` del encabezado carece de destino implementado y debe corregirse o identificarse como una función futura.
+
+El diseño usa superficies claras, azul como color principal, gradientes de énfasis y tarjetas. La navegación cambia a menú colapsado en anchos de hasta 900 px. Las columnas se reducen según el componente; la adaptación está definida en CSS, pendiente de pruebas visuales registradas.
+
+### Internacionalización y formato monetario
+
+`useI18n()` expone `locale`, `t`, `money`, `setLocale`, `toggleLocale` y `otherLocale`. El diccionario contiene objetos y listas que los componentes consumen de forma reactiva. La búsqueda de una traducción intenta primero el idioma seleccionado y después español; si falta la clave, devuelve su ruta.
+
+La selección persiste en `localStorage`. `setLocale` actualiza el atributo de idioma del documento y sus metadatos básicos. El formato monetario se obtiene con `Intl.NumberFormat`: español usa `es-PE/PEN` e inglés usa `en-US/USD`. No existe una operación de cambio de divisa: el valor numérico se conserva.
+
+### Simulador: entradas, cálculo y límites
+
+| Entrada | Inicial | Mínimo | Máximo | Incremento |
+|---|---:|---:|---:|---:|
+| Monto | 10000 | 500 | 100000 | 500 |
+| Tasa anual porcentual | 24 | 0 | 80 | 0.5 |
+| Plazo en meses | 12 | 3 | 60 | 1 |
+
+El código calcula `i = tasaAnual / 100 / 12` y, para `i ≠ 0`, utiliza:
+
+```text
+cuota = monto × i / (1 − (1 + i)^(−meses))
+totalPagar = cuota × meses
+totalInteres = totalPagar − monto
+```
+
+Si la tasa es cero, la cuota es `monto / meses`. El redondeo de presentación lo realiza el formateador monetario; no se construye una tabla de amortización con ajuste de última cuota.
+
+**Hallazgo de coherencia matemática.** La etiqueta española dice “Tasa anual (TEA)”, pero la transformación implementada divide entre doce. Si la entrada representa una tasa efectiva anual, la tasa mensual equivalente se obtiene como `(1 + tasaAnual / 100) ** (1 / 12) - 1`. El equipo debe decidir entre corregir la transformación o renombrar y explicar la tasa utilizada. La evaluación no considera resuelto ese hallazgo.
+
+Con los valores iniciales y la fórmula actual, el resultado de referencia es aproximadamente 945.60 por mes, 11347.15 de total y 1347.15 de interés. Son valores calculados para contrastar el algoritmo, no evidencia de una prueba visual aprobada ni de una oferta de crédito.
+
+### Planes y formulario
+
+Los precios mensuales definidos son 39 y 89; la vista anual aplica `Math.round(precio × 0.8)`, por lo que muestra 31 y 71 como importe mensual facturado anualmente. El símbolo `$` está fijo en este componente y no utiliza `money()`. El redondeo hace que el descuento mostrado no sea exactamente 20% en ambos casos; se propone ajustar el mensaje o conservar decimales. No se procesa contratación ni cobro.
+
+El formulario usa `novalidate` y validaciones propias. Exige nombre y correo no vacíos tras comprobar `trim()`, y valida el correo con una expresión regular. La empresa es opcional. Al superar esas comprobaciones cambia `enviado` a verdadero y muestra nombre y correo en el mensaje de éxito.
+
+No hay llamada HTTP, persistencia ni notificación. El mensaje de que se enviarán accesos no se corresponde con una operación real. Se propone identificar explícitamente la demostración y permitir editar los datos después de la confirmación.
+
+### Límites de esta entrega
+
+No existen registro de clientes, CRUD de créditos, autenticación, exportación, recordatorios automáticos ni consulta remota de cartera. Su presencia en los textos representa la visión comercial. Las afirmaciones sobre seguridad, respaldos y disponibilidad también requieren implementación y evidencia futuras.
+
+La revisión actual es estática. Se dispone de código y capturas de historial; permanecen pendientes la ejecución documentada de pruebas en navegador, la publicación y las entrevistas con usuarios.
 
 ## 5.3 Validation Interviews
 
