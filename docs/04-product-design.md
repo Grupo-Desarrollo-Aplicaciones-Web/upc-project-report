@@ -125,3 +125,54 @@ Los mock-ups se crearán cuando la investigación confirme los campos, vocabular
 ## 4.5 Web Applications Prototyping
 
 El prototipo navegable se construirá después de las entrevistas. La evidencia final incluirá enlace de Figma, fecha de validación y tareas usadas en la prueba. Esta versión no declara un prototipo terminado.
+
+## 4.6 Domain-Driven Software Architecture
+
+### 4.6.1 Design-Level Event Storming
+
+El diseño detallado ampliará el Big Picture EventStorming con comandos, políticas, agregados y eventos. La evidencia colaborativa debe guardarse en `assets/architecture/eventstorming/`.
+
+### 4.6.2 Software Architecture Context Diagram
+
+```mermaid
+flowchart LR
+  Owner[Business Owner] --> App[CREDITOR Web Application]
+  Admin[Finance Administrator] --> App
+  Visitor[Visitor] --> Landing[CREDITOR Landing]
+  Landing --> Contact[Approved Contact Service]
+  App --> Api[CREDITOR REST API]
+  Api --> Db[(Relational Database)]
+```
+
+### 4.6.3 Software Architecture Container Diagram
+
+| Contenedor | Tecnología objetivo | Responsabilidad |
+|---|---|---|
+| Landing | HTML5, CSS3, JavaScript | Comunicar propuesta, captar consultas y enlazar al producto. |
+| Web Application | Vue, HTML, CSS, JavaScript, PrimeVue | Presentar flujos de cuentas por pagar a usuarios autenticados. |
+| REST API | ASP.NET Core, C#, Entity Framework Core, OpenAPI | Aplicar reglas de dominio y exponer contratos HTTP. |
+| Database | PostgreSQL o MySQL | Persistir organizaciones, proveedores, compras, pagos y préstamos. |
+
+### 4.6.4 Software Architecture Component Diagrams
+
+La API se separará inicialmente en componentes de Accounts Payable, Payments, Loans, Reporting e Identity. El diseño definitivo dependerá de las historias priorizadas y de los límites confirmados en el EventStorming.
+
+## 4.7 Software Object-Oriented Design
+
+### 4.7.1 Class Diagrams
+
+```mermaid
+classDiagram
+  class Supplier { +UUID id +String name }
+  class Purchase { +UUID id +Decimal totalAmount +Date dueDate +Decimal outstandingBalance }
+  class Payment { +UUID id +Decimal amount +Date paidOn }
+  class Loan { +UUID id +Decimal principal +Decimal annualRate }
+  Supplier "1" --> "0..*" Purchase
+  Purchase "1" --> "0..*" Payment
+```
+
+## 4.8 Database Design
+
+### 4.8.1 Database Diagrams
+
+El modelo relacional inicial se mantiene en [`database/schema.sql`](../database/schema.sql). Antes de implementar, se debe decidir el motor, aplicar migraciones y revisar restricciones con las historias de usuario validadas.
