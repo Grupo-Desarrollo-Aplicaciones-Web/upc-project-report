@@ -796,19 +796,6 @@ Atender primero HEU-01, HEU-02, HEU-06 y HEU-09 porque afectan la comprensión d
 
 Cada corrección debe incluir commit, descripción, caso de verificación y evidencia. Repetir las tareas afectadas y revisar ambos idiomas. Un hallazgo se cierra cuando se cumple su criterio y existe evidencia; agregarlo al backlog no lo resuelve.
 
-#### Estado de los videos de la entrega
-
-No se incorporan enlaces ni contenido ficticio para las secciones 5.4 Video About-the-Product y 5.5 Video About-the-Team. Ambos materiales quedan fuera de este documento hasta que el equipo disponga de videos reales. Si la plantilla del curso exige mantener los encabezados, conservar únicamente su estado pendiente.
-
-#### Referencias y evidencia utilizada
-
-- Código entregado: `creditor-landing-page-develop.zip`, referencia `7597586799b350cbdeffec3b9fec4a42b1f55f3d`.
-- Capturas proporcionadas: ramas, Pull Requests e historial del informe; historial de la landing.
-- [Repositorio de la landing](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/creditor-landing-page). Su contenido fue inspeccionado desde el ZIP; no se verificó acceso remoto autenticado.
-- [Repositorio del informe](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report). Historial y ramas documentados desde las capturas.
-- [Vite: despliegue estático](https://vite.dev/guide/static-deploy.html).
-- [GitHub: disponibilidad y funcionamiento de Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
-- [Nielsen Norman Group: diez heurísticas de usabilidad](https://www.nngroup.com/articles/ten-usability-heuristics/).
 ## 5.4 Video About-the-Product
 
 - **URL:** [Pendiente]
