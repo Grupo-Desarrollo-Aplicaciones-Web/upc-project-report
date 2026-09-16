@@ -334,11 +334,3 @@ Los términos de dominio se nombran en inglés para mantener consistencia futura
 | **Loan** | Obligación financiera registrada con principal, tasa, frecuencia y cronograma cuando aplique. | Loans |
 | **Installment** | Cuota programada de un préstamo. | Loans |
 | **Debt Report** | Consulta filtrada de obligaciones para revisión, seguimiento o exportación. | Reporting |
-
-
-
-
-
-
-
-
