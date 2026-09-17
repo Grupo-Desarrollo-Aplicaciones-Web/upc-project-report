@@ -19,6 +19,8 @@ CREDITOR comunica control de obligaciones y claridad operativa. El símbolo de i
 | Títulos | Montserrat | Usar pesos semibold o bold y una jerarquía semántica de encabezados. |
 | Texto y controles | Inter | Mantener tamaño legible, alto contraste y oraciones breves. |
 
+![Muestra tipográfica de CREDITOR](../assets/branding/fuentes.png)
+
 #### Colores
 
 | Token | Valor | Uso |
@@ -34,6 +36,8 @@ CREDITOR comunica control de obligaciones y claridad operativa. El símbolo de i
 
 Los estados no dependen únicamente del color: se acompañan de etiqueta, icono o texto equivalente.
 
+![Paleta de colores de CREDITOR](../assets/branding/colores.png)
+
 #### Iconografía y tono
 
 Los iconos usan metáforas claras —documento, proveedor, calendario, recibo y reporte— y siempre incluyen una etiqueta accesible cuando no son decorativos. El tono es profesional, directo y comprensible: explica acciones y estados sin usar promesas financieras sin sustento.
@@ -45,6 +49,9 @@ Los iconos usan metáforas claras —documento, proveedor, calendario, recibo y 
 - Mantener contraste suficiente, foco visible, navegación por teclado y atributos ARIA cuando el control lo requiera.
 - La interfaz y mensajes de API usarán inglés como idioma base (`en_US`) y español latinoamericano como alternativa (`es_419`).
 - Las cifras comerciales o métricas de beneficio deberán indicar su fuente; de lo contrario se eliminan del contenido público.
+- La landing aplica un patrón Z para ordenar marca, navegación, propuesta de valor y llamada a la acción.
+
+![Referencia visual del patrón Z](../assets/branding/PATRONZ.jpg)
 
 ## 4.2 Information Architecture
 
@@ -83,13 +90,27 @@ La landing usa navegación por secciones y CTA hacia contacto o la futura aplica
 
 ## 4.3 Landing Page UI Design
 
+Los wireframes y mock-ups se elaboraron en Figma: [archivo de diseño](https://www.figma.com/design/OQWWAsxRTtOPJcWfFUtCq3/Sin-t%C3%ADtulo?node-id=12-2&t=mUB6VBiUbwbcGxJq-1).
+
 ### 4.3.1 Landing Page Wireframes
 
-El wireframe de la landing debe presentar, en este orden: navegación, propuesta de valor, problema, beneficios relacionados con cuentas por pagar, explicación del flujo, formulario de contacto y pie con enlaces legales. Se incorporará una captura o enlace de Figma en `assets/ux/landing-wireframes/`.
+El wireframe de la landing debe presentar, en este orden: navegación, propuesta de valor, problema, beneficios relacionados con cuentas por pagar, explicación del flujo, formulario de contacto y pie con enlaces legales.
+
+![Wireframe 1](../assets/branding/wiref1.png)
+
+![Wireframe 2](../assets/branding/wiref2.png)
+
+![Wireframe 3](../assets/branding/wiref3.png)
 
 ### 4.3.2 Landing Page Mock-ups
 
 El mock-up debe emplear los tokens de marca, mantener CTA accesibles y utilizar contenido de CREDITOR. Antes de publicar se verificará que la landing no conserve referencias a CreditFlow, préstamos a clientes o métricas sin fuente.
+
+![Mock-up 1](../assets/branding/mock1.png)
+
+![Mock-up 2](../assets/branding/mock2.png)
+
+![Mock-up 3](../assets/branding/mock3.png)
 
 ## 4.4 Web Applications UX/UI Design
 
@@ -176,3 +197,4 @@ classDiagram
 ### 4.8.1 Database Diagrams
 
 El modelo relacional inicial se mantiene en [`database/schema.sql`](../database/schema.sql). Antes de implementar, se debe decidir el motor, aplicar migraciones y revisar restricciones con las historias de usuario validadas.
+
