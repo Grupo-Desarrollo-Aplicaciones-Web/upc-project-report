@@ -19,7 +19,7 @@ Cada perfil se acompaña de una fotografía autorizada y de una descripción rev
 | Integrante | Código | Perfil y responsabilidad propuesta | Evidencia pendiente |
 |---|---|---|---|
 | Juan Manuel Santos Torres | u20221a371 | Estudiante de Ingeniería de Software. Aporta perspectiva de producto e interfaces web a partir de su experiencia en la operación de negocios comerciales. | Foto autorizada y confirmación de responsabilidades. |
-| Sebastián Gutarra Velapatiño | u20241A314 | Estudiante de Ingeniería de Software. Su perfil técnico, habilidades y responsabilidad en AV1 deben ser redactados y validados por el integrante. | Foto, perfil y evidencia de contribución. |
+| Sebastián Gutarra Velapatiño | u20241A314 | Estudiante de Ingeniería de Software. Aportaré con mis conocimientos en frontend para esta primera entrega. Mi responsabilidad fue el capítulo 4 Product Design | Foto, perfil y evidencia de contribución. |
 | Azabache Bregante Christopher | u20231b188 | Estudiante de Ingeniería de Software. Su perfil técnico, habilidades y responsabilidad en AV1 deben ser redactados y validados por el integrante. | Foto, perfil y evidencia de contribución. |
 | Miguel Angel Egocheaga Suyo | u202215188 | Estudiante de Ingeniería de Software. Organiza avances locales de documentación y landing mediante GitFlow; sus aportes finales se contrastarán con el historial publicado. | Foto autorizada y evidencia publicada tras aprobación del equipo. |
 
@@ -73,11 +73,11 @@ Estos supuestos se contrastarán en entrevistas y pruebas de usabilidad. Ninguno
 
 | ID | Hipótesis |
 |---|---|
-| H-01 | We believe we will achieve faster review of upcoming obligations if owners and finance administrators attain visibility of balances and due dates with a consolidated debt dashboard. |
-| H-02 | We believe we will achieve more complete purchase records if owners and finance administrators attain traceability of a credit purchase with a structured purchase form and receipt attachment. |
-| H-03 | We believe we will achieve easier balance verification if owners and finance administrators attain a chronological record of partial payments with an installment history and voucher attachment. |
-| H-04 | We believe we will achieve clearer consultation of financial commitments if business owners attain access to installment dates and amounts with a loan schedule module. |
-| H-05 | We believe we will achieve faster preparation of debt reviews if finance administrators attain filtered obligation information with exportable reports by supplier, date and currency. |
+| **H-01** | Creemos que lograremos una revisión más rápida de las obligaciones pendientes si los propietarios y administradores financieros obtienen visibilidad de los saldos y las fechas de vencimiento mediante un panel consolidado de deudas. |
+| **H-02** | Creemos que lograremos registros de compras más completos si los propietarios y administradores financieros obtienen trazabilidad de una compra a crédito mediante un formulario de compra estructurado y la posibilidad de adjuntar el comprobante. |
+| **H-03** | Creemos que lograremos una verificación más sencilla de los saldos si los propietarios y administradores financieros obtienen un registro cronológico de los pagos parciales mediante un historial de cuotas y la posibilidad de adjuntar el comprobante de pago. |
+| **H-04** | Creemos que lograremos una consulta más clara de los compromisos financieros si los propietarios de negocios obtienen acceso a las fechas y montos de las cuotas mediante un módulo de cronograma de préstamos. |
+| **H-05** | Creemos que lograremos una preparación más rápida de las revisiones de deudas si los administradores financieros obtienen información filtrada sobre las obligaciones mediante reportes exportables por proveedor, fecha y moneda. |
 
 Cada hipótesis relaciona una feature assumption con un resultado que deberá medirse en una iteración posterior. La investigación inicial podrá confirmar relevancia y lenguaje del problema, pero no probará por sí misma los resultados de uso propuestos.
 
