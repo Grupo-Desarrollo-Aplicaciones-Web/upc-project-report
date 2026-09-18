@@ -1,0 +1,57 @@
+erDiagram
+  BUSINESSES ||--o{ SUPPLIERS : owns
+  BUSINESSES ||--o{ PURCHASES : owns
+  SUPPLIERS ||--o{ PURCHASES : supplies
+  PURCHASES ||--o{ PAYMENTS : receives
+  BUSINESSES ||--o{ LOANS : owns
+  LOANS ||--o{ LOAN_INSTALLMENTS : schedules
+
+  BUSINESSES {
+    uuid id PK
+    varchar name
+    timestamp created_at
+  }
+  SUPPLIERS {
+    uuid id PK
+    uuid business_id FK
+    varchar name
+    varchar tax_identifier
+    timestamp created_at
+  }
+  PURCHASES {
+    uuid id PK
+    uuid business_id FK
+    uuid supplier_id FK
+    char currency_code
+    decimal total_amount
+    date due_date
+    varchar receipt_url
+    varchar status
+    timestamp created_at
+  }
+  PAYMENTS {
+    uuid id PK
+    uuid purchase_id FK
+    decimal amount
+    date paid_on
+    varchar voucher_url
+    timestamp created_at
+  }
+  LOANS {
+    uuid id PK
+    uuid business_id FK
+    decimal principal
+    char currency_code
+    decimal annual_rate
+    int installment_count
+    date first_due_date
+    timestamp created_at
+  }
+  LOAN_INSTALLMENTS {
+    uuid id PK
+    uuid loan_id FK
+    int installment_number
+    date due_date
+    decimal amount
+    varchar status
+  }

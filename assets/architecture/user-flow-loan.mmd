@@ -1,0 +1,8 @@
+flowchart TB
+  A[Propietario abre Préstamos] --> B{Hay préstamos}
+  B -- No --> C[Mostrar estado vacío explicativo]
+  B -- Sí --> D[Seleccionar préstamo]
+  D --> E{Hay cronograma}
+  E -- No --> F[Informar que faltan cuotas por configurar]
+  E -- Sí --> G[Ver principal, moneda y próximos vencimientos]
+  G --> H[Consultar detalle de cuota]

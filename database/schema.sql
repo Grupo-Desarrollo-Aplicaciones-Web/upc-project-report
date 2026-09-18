@@ -1,4 +1,4 @@
--- CREDITOR: modelo relacional inicial para discusión de diseño.
+-- CREDITOR: modelo relacional propuesto para PostgreSQL.
 -- Este archivo no representa una base de datos desplegada ni contiene datos personales.
 
 CREATE TABLE businesses (
@@ -12,19 +12,21 @@ CREATE TABLE suppliers (
   business_id UUID NOT NULL REFERENCES businesses(id),
   name VARCHAR(160) NOT NULL,
   tax_identifier VARCHAR(32),
-  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (id, business_id)
 );
 
 CREATE TABLE purchases (
   id UUID PRIMARY KEY,
   business_id UUID NOT NULL REFERENCES businesses(id),
-  supplier_id UUID NOT NULL REFERENCES suppliers(id),
+  supplier_id UUID NOT NULL,
   currency_code CHAR(3) NOT NULL CHECK (currency_code IN ('PEN', 'USD')),
   total_amount DECIMAL(14,2) NOT NULL CHECK (total_amount > 0),
   due_date DATE NOT NULL,
   receipt_url VARCHAR(500),
   status VARCHAR(20) NOT NULL CHECK (status IN ('PENDING', 'PARTIALLY_PAID', 'SETTLED', 'OVERDUE')),
-  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (supplier_id, business_id) REFERENCES suppliers(id, business_id)
 );
 
 CREATE TABLE payments (
@@ -56,3 +58,13 @@ CREATE TABLE loan_installments (
   status VARCHAR(20) NOT NULL CHECK (status IN ('PENDING', 'PAID', 'OVERDUE')),
   UNIQUE (loan_id, installment_number)
 );
+
+-- Apoyan los filtros y recorridos descritos en US-004, US-007 y US-009.
+CREATE INDEX idx_purchases_business_due_status
+  ON purchases (business_id, due_date, status);
+
+CREATE INDEX idx_payments_purchase_paid_on
+  ON payments (purchase_id, paid_on);
+
+CREATE INDEX idx_loan_installments_loan_due_date
+  ON loan_installments (loan_id, due_date);

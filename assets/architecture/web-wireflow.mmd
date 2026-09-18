@@ -1,0 +1,13 @@
+flowchart LR
+  A[Dashboard] --> B[Compras]
+  B --> C[Detalle de compra]
+  B --> D[Nueva compra]
+  D --> E{Datos válidos}
+  E -- Sí --> C
+  E -- No --> D
+  C --> F[Registrar abono]
+  F --> G{Importe válido y no mayor al saldo}
+  G -- Sí --> C
+  G -- No --> F
+  A --> H[Préstamos]
+  A --> I[Reportes]
