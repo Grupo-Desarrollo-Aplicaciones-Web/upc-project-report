@@ -246,10 +246,17 @@ La síntesis final incluirá coincidencias, diferencias entre segmentos y eviden
 
 Las siguientes personas son borradores basados en los criterios de segmento del capítulo I. No representan personas investigadas y deberán actualizarse con citas de las entrevistas antes de la entrega.
 
-| Persona provisional | Objetivo | Contexto y conducta por validar | Necesidades iniciales | Evidencia pendiente |
-|---|---|---|---|---|
-| **Rosa, dueña de mype** | Conocer sus compromisos antes de autorizar o priorizar pagos. | Puede supervisar compras y pagos sin registrar cada operación personalmente. | Resumen de deuda, vencimientos, consulta por proveedor y préstamos. | Entrevistas S1, cita de evidencia y User Persona exportada de UXPressia. |
-| **Diego, encargado de finanzas** | Registrar una compra o abono y recuperar su comprobante al conciliar. | Puede operar con información entregada por otras personas y registrar desde distintos dispositivos. | Campos consistentes, historial de pagos, saldo y reportes filtrables. | Entrevistas S2, cita de evidencia y User Persona exportada de UXPressia. |
+| Persona provisional | Objetivo | Contexto y conducta por validar | Necesidades iniciales |
+|---|---|---|---|
+| **Rosa, dueña de mype** | Conocer sus compromisos antes de autorizar o priorizar pagos. | Puede supervisar compras y pagos sin registrar cada operación personalmente. | Resumen de deuda, vencimientos, consulta por proveedor y préstamos. | 
+
+<img src="../assets/research/Rosa%20Vargas.png" alt="" width="150">
+
+| Persona provisional | Objetivo | Contexto y conducta por validar | Necesidades iniciales |
+|---|---|---|---|
+| **Diego, encargado de finanzas** | Registrar una compra o abono y recuperar su comprobante al conciliar. | Puede operar con información entregada por otras personas y registrar desde distintos dispositivos. | Campos consistentes, historial de pagos, saldo y reportes filtrables. | 
+
+<img src="../assets/research/Diego%20Gutiérrez.png" alt="" width="150">
 
 ### 2.3.2 User Task Matrix
 
