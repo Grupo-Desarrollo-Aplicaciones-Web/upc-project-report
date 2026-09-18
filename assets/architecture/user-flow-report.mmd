@@ -1,0 +1,12 @@
+flowchart TB
+  A[Administrador abre Reportes] --> B[Elige proveedor, fechas, moneda y estado]
+  B --> C[Consultar obligaciones]
+  C --> D{Hay resultados}
+  D -- No --> E[Indicar resultado vacío y conservar filtros]
+  E --> B
+  D -- Sí --> F[Revisar importes por moneda]
+  F --> G[Exportar en el formato habilitado]
+  G --> H{Exportación completada}
+  H -- No --> I[Mostrar error y permitir reintento]
+  I --> G
+  H -- Sí --> J[Descargar archivo]

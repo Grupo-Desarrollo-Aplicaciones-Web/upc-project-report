@@ -1,29 +1,43 @@
-# [Nombre del producto] - Project Report
+<div align="center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png"><br>
+</div>
+<h3 align="center"> Universidad Peruana de Ciencias Aplicadas </h3>
 
-Repositorio de documentación académica del proyecto **[Nombre del producto]**, desarrollado por **[Nombre de la startup o equipo]**.
+<h3 align="center">Carrera de  Ingeniería de Software </h3>
 
-> Estado: plantilla inicial. Reemplazar los textos entre corchetes con la información real del proyecto.
+<h3 align="center">1ASI0730 </h3>
+<h3 align="center">Aplicaciones Web</h3>
+<h3 align="center"> NRC </h3>
+<h3 align="center"> 16127 </h3>
 
-## Información académica
+<h3 align="center">Informe del Trabajo Final</h3>
 
-| Campo | Detalle |
-|---|---|
-| Universidad | Universidad Peruana de Ciencias Aplicadas |
-| Facultad | Facultad de Ingeniería |
-| Programa | Ingeniería de Software |
-| Curso | [Código y nombre del curso] |
-| NRC | [NRC] |
-| Ciclo | [Año-ciclo] |
-| Docente | [Nombre del docente] |
-| Equipo | [Nombre del equipo] |
-| Producto | [Nombre del producto] |
 
-## Integrantes
+<h3 align="center"> Docente</h3>
+<h3 align="center">Villafuerte Bazan, Oscar Ivan  </h3>
 
-| Código | Apellidos y nombres | Carrera | Perfil de GitHub |
-|---|---|---|---|
-| [Código] | [Integrante 1] | Ingeniería de Software | [@usuario](https://github.com/) |
-| [Código] | [Integrante 2] | Ingeniería de Software | [@usuario](https://github.com/) |
+
+<h3 align="center"> Equipo </h3>
+<h3 align="center"> Grupo 2</h3>
+
+<h3 align="center"> Proyecto</h3>
+<h3 align="center"> CREDITOR </h3>
+
+<h3 align="center"> Integrantes </h3>
+
+| Code | Member |
+| :---: | :--- |
+| u20221a371 | Santos Torres, Juan Manuel |
+| u202215188 | Egocheaga Suyo, Miguel Angel |
+| u20241a314 | Gutarra Velapatiño, Sebastián |
+
+<h3 align="center">Periodo 202620</h3>
+<h3 align="center">Agosto, 2026</h3>
+
+
+
+<div style="page-break-after: always;"></div>
+
 
 ## Estructura del informe
 
@@ -36,26 +50,4 @@ Repositorio de documentación académica del proyecto **[Nombre del producto]**,
 7. [Capítulo V: Product Implementation, Validation & Deployment](docs/05-implementation-validation-deployment.md)
 8. [Conclusiones y recomendaciones](docs/06-conclusions-recommendations.md)
 9. [Bibliografía y anexos](docs/07-bibliography-appendices.md)
-
-## Sprints
-
-La evidencia de cada iteración se mantiene separada para facilitar la revisión:
-
-- [Sprint 1](docs/sprints/sprint-01.md)
-- [Sprint 2](docs/sprints/sprint-02.md)
-- [Sprint 3](docs/sprints/sprint-03.md)
-- [Sprint 4](docs/sprints/sprint-04.md)
-
-## Repositorios y entregables
-
-| Entregable | URL | Despliegue |
-|---|---|---|
-| Documentación | [Pendiente](https://github.com/) | No aplica |
-| Landing page | [Pendiente](https://github.com/) | [Pendiente](https://example.com/) |
-| Frontend | [Pendiente](https://github.com/) | [Pendiente](https://example.com/) |
-| Backend | [Pendiente](https://github.com/) | [Pendiente](https://example.com/) |
-
-## Colaboración
-
-Consulta [CONTRIBUTING.md](CONTRIBUTING.md) antes de crear ramas, commits o Pull Requests.
-
+10. [Control de entrega AV1](docs/08-av1-delivery-checklist.md)

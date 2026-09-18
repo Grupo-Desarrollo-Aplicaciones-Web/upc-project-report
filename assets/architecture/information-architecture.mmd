@@ -1,0 +1,15 @@
+flowchart TB
+  Entry[Visitante] --> Landing[Landing CREDITOR]
+  Landing --> Value[Propuesta y beneficios]
+  Landing --> Contact[Contacto]
+  Landing --> Legal[Información legal]
+  Landing -. Acceso futuro .-> Access[Acceso a la aplicación]
+
+  Access --> Dashboard[Dashboard]
+  Dashboard --> Purchases[Compras]
+  Dashboard --> Suppliers[Proveedores]
+  Dashboard --> Loans[Préstamos]
+  Dashboard --> Reports[Reportes]
+  Purchases --> PurchaseDetail[Detalle de compra]
+  Purchases --> NewPurchase[Nueva compra]
+  PurchaseDetail --> Payments[Abonos e historial]

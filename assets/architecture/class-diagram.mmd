@@ -1,0 +1,63 @@
+classDiagram
+  class Business {
+    +UUID id
+    +String name
+  }
+  class Supplier {
+    +UUID id
+    +UUID businessId
+    +String name
+    +String taxIdentifier
+  }
+  class Purchase {
+    +UUID id
+    +Decimal totalAmount
+    +String currencyCode
+    +Date dueDate
+    +String receiptUrl
+    +PurchaseStatus status
+    +outstandingBalance() Decimal
+    +recordPayment(amount, paidOn) Payment
+  }
+  class Payment {
+    +UUID id
+    +Decimal amount
+    +Date paidOn
+    +String voucherUrl
+  }
+  class Loan {
+    +UUID id
+    +Decimal principal
+    +String currencyCode
+    +Decimal annualRate
+    +Integer installmentCount
+    +schedule() LoanInstallment
+  }
+  class LoanInstallment {
+    +UUID id
+    +Integer installmentNumber
+    +Date dueDate
+    +Decimal amount
+    +InstallmentStatus status
+  }
+  class PurchaseStatus {
+    <<enumeration>>
+    PENDING
+    PARTIALLY_PAID
+    SETTLED
+    OVERDUE
+  }
+  class InstallmentStatus {
+    <<enumeration>>
+    PENDING
+    PAID
+    OVERDUE
+  }
+  Business "1" --> "0..*" Supplier : owns
+  Business "1" --> "0..*" Purchase : owns
+  Business "1" --> "0..*" Loan : owns
+  Supplier "1" --> "0..*" Purchase : supplies
+  Purchase "1" --> "0..*" Payment : receives
+  Loan "1" --> "1..*" LoanInstallment : schedules
+  Purchase --> PurchaseStatus : has
+  LoanInstallment --> InstallmentStatus : has

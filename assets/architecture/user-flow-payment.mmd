@@ -1,0 +1,11 @@
+flowchart TB
+  A[Administrador abre detalle de compra] --> B[Registrar abono]
+  B --> C[Ingresa importe, fecha y voucher opcional]
+  C --> D{Importe válido y menor o igual al saldo}
+  D -- No --> E[Mostrar error y conservar datos]
+  E --> C
+  D -- Sí --> F[Confirmar abono]
+  F --> G{Registro completado}
+  G -- No --> H[Conservar datos y ofrecer reintento]
+  H --> F
+  G -- Sí --> I[Mostrar movimiento y saldo recalculado]

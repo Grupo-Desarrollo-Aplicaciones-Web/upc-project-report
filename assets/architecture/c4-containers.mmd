@@ -1,0 +1,8 @@
+flowchart LR
+  Visitor[Visitante] --> Landing[Landing HTML/CSS/JavaScript]
+  Owner[Propietario] --> Web[Aplicación Vue y PrimeVue]
+  Admin[Administrador] --> Web
+  Landing -. Formulario de contacto futuro .-> Contact[Servicio externo de contacto]
+  Web -->|HTTPS JSON| Api[API REST ASP.NET Core]
+  Api -->|EF Core| Db[(PostgreSQL)]
+  Api -. Archivos autorizados .-> Files[Almacenamiento de comprobantes por definir]

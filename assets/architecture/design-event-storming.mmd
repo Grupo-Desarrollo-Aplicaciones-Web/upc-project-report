@@ -1,0 +1,11 @@
+flowchart LR
+  A[Administrador registra compra] --> B[Compra a crédito registrada]
+  B --> C[Obligación pendiente]
+  C --> D[Administrador registra abono]
+  D --> E{Abono válido}
+  E -- Sí --> F[Abono registrado]
+  F --> G[Saldo actualizado]
+  G --> H{Saldo igual a cero}
+  H -- Sí --> I[Compra saldada]
+  H -- No --> J[Compra parcialmente pagada]
+  E -- No --> K[Abono rechazado con motivo]
