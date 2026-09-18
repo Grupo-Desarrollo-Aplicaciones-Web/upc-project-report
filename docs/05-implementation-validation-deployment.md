@@ -106,9 +106,6 @@ La captura del historial de la landing muestra la rama `develop` y commits del 1
 
 La captura de Pull Requests corresponde al **repositorio del informe** y muestra cero abiertos y cero cerrados. No se cuenta con evidencia de revisiones por PR realizadas en la landing. Por tanto, se documenta la estrategia siguiente como una práctica a formalizar, no como una revisión por pares ya completada.
 
-![Ramas del repositorio del informe](creditor-documentacion/informe/assets/evidence/report-branches.png)
-
-![Pull Requests del repositorio del informe](creditor-documentacion/informe/assets/evidence/report-pull-requests.png)
 
 #### Estrategia de ramas propuesta
 
