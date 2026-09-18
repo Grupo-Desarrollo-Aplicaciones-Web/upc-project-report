@@ -116,7 +116,9 @@ El mock-up debe emplear los tokens de marca, mantener CTA accesibles y utilizar 
 
 ### 4.4.1 Web Application Wireframes
 
-Los wireframes previstos cubren dashboard, lista y detalle de compras, registro de compra, historial de abonos, préstamos y reportes. Cada pantalla debe indicar el actor, la historia de usuario y los estados vacíos o de error que atiende.
+Los wireframes previstos cubren dashboard, lista y detalle de compras, registro de compra, historial de abonos, préstamos y reportes.
+
+![Wireframe web](../assets/branding/webwireframe.png)
 
 ### 4.4.2 Web Application Wireflow Diagrams
 
@@ -132,7 +134,9 @@ flowchart LR
 
 ### 4.4.3 Web Application Mock-ups
 
-Los mock-ups se crearán cuando la investigación confirme los campos, vocabulario y prioridades. Cada enlace de Figma debe tener permisos de revisión para el docente.
+A continuación mostramos la pantalla que obtendrá el usuario cuando esté por registrar una nueva operación. Se le indicará con un texto lo que debe completar en cada campo.
+
+![Mock-up web](../assets/branding/webmockup.png)
 
 ### 4.4.4 Web Application User Flow Diagrams
 
