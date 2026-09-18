@@ -1,0 +1,14 @@
+flowchart LR
+  Web[Aplicación web] --> Controllers[Controladores REST y OpenAPI]
+  Controllers --> Auth[Identity y alcance de organización]
+  Controllers --> AP[Accounts Payable]
+  Controllers --> Pay[Payments]
+  Controllers --> Loans[Loans]
+  Controllers --> Reports[Reporting]
+  Pay --> AP
+  AP --> Repos[Repositorios EF Core]
+  Pay --> Repos
+  Loans --> Repos
+  Reports --> Repos
+  Auth --> Repos
+  Repos --> Db[(PostgreSQL)]

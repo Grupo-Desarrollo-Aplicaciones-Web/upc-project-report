@@ -1,5 +1,7 @@
 # Capítulo IV: Product Design
 
+Este capítulo especifica el diseño **propuesto** para CREDITOR. Los diagramas expresan decisiones de diseño y no prueban que la aplicación, la API o la base de datos estén implementadas. Los artefactos visuales que requieren sesiones con usuarios o enlaces de Figma se identifican como pendientes de validación.
+
 ## 4.1 Style Guidelines
 
 ### 4.1.1 General Style Guidelines
@@ -86,7 +88,16 @@ La primera versión prioriza filtros por proveedor, rango de fechas, moneda y es
 
 ### 4.2.5 Navigation Systems
 
-La landing usa navegación por secciones y CTA hacia contacto o la futura aplicación. La aplicación usa navegación lateral para módulos de dominio, migas de pan en vistas de detalle y enlaces explícitos para regresar a una lista.
+La landing usa navegación por secciones. El CTA para propietarios debe conducir al acceso o vista de **resumen de obligaciones** y el de administradores al acceso o vista de **registro de compras** cuando la aplicación exista. En AV1, ninguno debe simular un ingreso operativo: si solo funciona el contacto, el texto del CTA debe decirlo. La aplicación propuesta usa navegación lateral para Dashboard, Compras, Proveedores, Abonos, Préstamos y Reportes; las vistas de detalle incluyen ruta de retorno a la lista.
+
+| Origen | Acción | Destino previsto | Estado AV1 |
+|---|---|---|---|
+| Landing, propietario | Revisar mis obligaciones | Acceso y luego Dashboard | Pendiente de aplicación web y autenticación. |
+| Landing, administrador | Registrar una compra | Acceso y luego formulario de compra | Pendiente de aplicación web y autenticación. |
+| Dashboard | Seleccionar obligación | Detalle de compra y movimientos | Diseño propuesto. |
+| Detalle de compra | Registrar abono | Formulario de abono, confirmación y retorno al detalle | Diseño propuesto. |
+
+En escritorio se mostrará la navegación lateral con la sección activa. En móvil, un control con nombre accesible abrirá el menú y devolverá el foco al activador al cerrarlo. Las acciones críticas deberán poder completarse con teclado, y el estado activo no dependerá solo del color.
 
 ## 4.3 Landing Page UI Design
 
@@ -94,7 +105,7 @@ Los wireframes y mock-ups se elaboraron en Figma: [archivo de diseño](https://w
 
 ### 4.3.1 Landing Page Wireframes
 
-El wireframe de la landing debe presentar, en este orden: navegación, propuesta de valor, problema, beneficios relacionados con cuentas por pagar, explicación del flujo, formulario de contacto y pie con enlaces legales.
+El recorrido propuesto presenta, en este orden, navegación, problema de las cuentas por pagar, propuesta de CREDITOR, flujo de compra y abono, beneficios verificables, contacto y enlaces legales. La cabecera, el CTA y el pie deben usar el mismo vocabulario que la aplicación. Las siguientes imágenes son bocetos existentes; su contenido todavía requiere revisión frente al alcance de CREDITOR y no acredita una prueba con usuarios.
 
 ![Wireframe 1](../assets/branding/wiref1.png)
 
@@ -104,7 +115,7 @@ El wireframe de la landing debe presentar, en este orden: navegación, propuesta
 
 ### 4.3.2 Landing Page Mock-ups
 
-El mock-up debe emplear los tokens de marca, mantener CTA accesibles y utilizar contenido de CREDITOR. Antes de publicar se verificará que la landing no conserve referencias a CreditFlow, préstamos a clientes o métricas sin fuente.
+Los mock-ups adjuntos muestran la dirección visual, pero contienen textos sobre cartera de créditos, préstamos a clientes, cifras y promesas que no representan la propuesta actual de **cuentas por pagar de la mype**. Son referencia de composición, no diseño final aprobado. La revisión debe cambiar el encabezado por una propuesta como «Organiza tus compras a crédito y abonos», sustituir la cartera de clientes por obligaciones con proveedores y retirar importes, porcentajes o plazos comerciales sin fuente. Los CTA finales se ajustarán a los destinos indicados en 4.2.5.
 
 ![Mock-up 1](../assets/branding/mock1.png)
 
@@ -116,89 +127,153 @@ El mock-up debe emplear los tokens de marca, mantener CTA accesibles y utilizar 
 
 ### 4.4.1 Web Application Wireframes
 
-Los wireframes previstos cubren dashboard, lista y detalle de compras, registro de compra, historial de abonos, préstamos y reportes.
+El conjunto de pantallas se deriva de las historias US-004 a US-009. La siguiente especificación permite producir los wireframes en Figma sin inventar una captura que aún no existe.
 
-![Wireframe web](../assets/branding/webwireframe.png)
+| Vista | Actor e historia | Información y acción principal | Estado alternativo obligatorio |
+|---|---|---|---|
+| Dashboard | Propietario, US-004 | Saldos separados por PEN y USD, vencimientos próximos, enlace a obligación. | Sin compras: explicación y enlace a registrar la primera. |
+| Compras | Administrador, US-005 | Lista con proveedor, importe, moneda, vencimiento, estado y filtros. | Sin resultados: conservar filtros visibles y permitir limpiarlos. |
+| Nueva compra | Administrador, US-005 | Proveedor, importe, moneda, fecha, comprobante y confirmación. | Errores asociados al campo y preservación de datos ingresados. |
+| Detalle de compra | Propietario y administrador, US-004/US-007 | Total, abonos, saldo calculado, vencimiento e historial. | Error de carga con opción de reintento. |
+| Registrar abono | Administrador, US-006 | Importe, fecha y voucher; resumen de saldo antes y después. | Rechazar importe mayor al saldo sin perder la entrada. |
+| Préstamos | Propietario, US-009 | Principal, moneda, tasa informada, cuotas y próximos vencimientos. | Sin préstamos: estado vacío explicativo. |
+| Reportes | Administrador, US-008 | Filtros por proveedor, fecha, moneda y estado; exportación. | Sin coincidencias: distinguirlo de fallo del servicio. |
+
+En móvil, las tablas extensas se transformarán en filas apiladas con nombre de campo visible; el saldo y la fecha de vencimiento deben permanecer legibles sin desplazamiento horizontal.
 
 ### 4.4.2 Web Application Wireflow Diagrams
 
-```mermaid
-flowchart LR
-  A[Dashboard] --> B[Purchases]
-  B --> C[Purchase Detail]
-  C --> D[Register Partial Payment]
-  D --> C
-  A --> E[Reports]
-  A --> F[Loans]
-```
+![Wireflow propuesto de la aplicación web](../assets/architecture/web-wireflow.svg)
+
+[Fuente Mermaid editable](../assets/architecture/web-wireflow.mmd).
+
+El wireflow representa la navegación y los puntos de decisión de US-005 y US-006. El error permanece en el formulario con datos conservados. Los recorridos de reportes y préstamos parten del dashboard, pero requieren sus propios estados de carga, vacío y error en el prototipo.
 
 ### 4.4.3 Web Application Mock-ups
 
-A continuación mostramos la pantalla que obtendrá el usuario cuando esté por registrar una nueva operación. Se le indicará con un texto lo que debe completar en cada campo.
-
-![Mock-up web](../assets/branding/webmockup.png)
+La versión visual debe aplicar los tokens de 4.1 a las vistas de 4.4.1 en escritorio y móvil. En el dashboard, el saldo pendiente y el vencimiento tienen jerarquía mayor que las gráficas. En el detalle de compra, cada abono muestra importe, fecha y vínculo al voucher; el usuario debe poder reconstruir el saldo desde los movimientos. No se deben unir importes de PEN y USD en un único total sin tipo de cambio declarado. Los mock-ups reales y sus enlaces revisables en Figma siguen **pendientes**; este texto es la especificación de diseño, no una captura ficticia.
 
 ### 4.4.4 Web Application User Flow Diagrams
 
-| Flujo | Inicio | Resultado |
+| User goal e historia | Camino esperado | Camino alternativo |
 |---|---|---|
-| Registrar compra | Lista de compras | Compra pendiente con proveedor, importe, moneda y vencimiento. |
-| Registrar abono | Detalle de compra | Abono asociado, voucher y saldo actualizado. |
-| Consultar obligación | Dashboard o proveedor | Saldo, estado y movimientos visibles. |
-| Exportar reporte | Reportes | Resultado filtrado disponible en el formato habilitado. |
+| Registrar una compra, US-005 | Compras → Nueva compra → Confirmar → Detalle con saldo inicial. | Campo inválido o comprobante no admitido → mensaje específico → corregir y reenviar. |
+| Registrar un abono, US-006 | Detalle → Registrar abono → Confirmar → Historial y saldo recalculado. | Abono supera saldo o falla el servicio → conservar datos y explicar la corrección/reintento. |
+| Localizar una obligación, US-004/US-007 | Dashboard → proveedor/compra → detalle y movimientos. | Sin coincidencia → revisar o limpiar filtros; fallo de carga → reintentar. |
+| Exportar deuda, US-008 | Reportes → filtrar → revisar resultado → exportar. | Sin datos → indicar que el archivo estaría vacío y permitir ajustar filtros. |
+| Consultar préstamo, US-009 | Préstamos → detalle → cuotas y vencimientos. | Sin cronograma → indicar que el préstamo aún no está configurado. |
+
+Cada User Flow visual en FigJam, LucidChart u Overflow deberá incluir el objetivo, las pantallas correspondientes y los caminos alternativos anteriores. Su elaboración visual está pendiente; el cuadro fija las rutas para evitar que un prototipo muestre solo el camino exitoso.
 
 ## 4.5 Web Applications Prototyping
 
-El prototipo navegable se construirá después de las entrevistas. La evidencia final incluirá enlace de Figma, fecha de validación y tareas usadas en la prueba. Esta versión no declara un prototipo terminado.
+El prototipo navegable de escritorio y móvil debe conectar las vistas de 4.4 con las rutas exitosas y alternativas de 4.4.4. Como mínimo permitirá localizar una compra, registrar una compra y simular un abono con error recuperable. El flujo de navegación debe registrar actor, historia, ancho de pantalla, versión del prototipo y fecha. Después se adjuntarán enlace de Figma, capturas y video de navegación con permisos de revisión. La versión actual **no declara un prototipo terminado ni una validación realizada**.
 
 ## 4.6 Domain-Driven Software Architecture
 
+Se propone un monolito modular con una API REST propia y una base relacional. Los límites de dominio separan **Accounts Payable** (proveedores y compras), **Payments** (abonos), **Loans** (préstamos y cuotas), **Reporting** (consultas) e **Identity** (acceso a la organización). La separación es lógica; no se presentan microservicios implementados. El diseño se basa en US-004 a US-009 y deberá revisarse con el EventStorming del equipo.
+
 ### 4.6.1 Design-Level Event Storming
 
-El diseño detallado ampliará el Big Picture EventStorming con comandos, políticas, agregados y eventos. La evidencia colaborativa debe guardarse en `assets/architecture/eventstorming/`.
+El siguiente recorrido es una **propuesta de modelado**, no el acta de una sesión colaborativa. Cada evento está escrito en pasado y cada comando expresa una intención del usuario o una política del sistema.
+
+| Contexto / agregado | Comando | Evento | Regla que debe comprobarse |
+|---|---|---|---|
+| Accounts Payable / Supplier | Registrar proveedor | Proveedor registrado | El proveedor pertenece a una organización. |
+| Accounts Payable / Purchase | Registrar compra a crédito | Compra a crédito registrada | Importe positivo, moneda admitida, proveedor de la misma organización y vencimiento informado. |
+| Payments / Purchase | Registrar abono | Abono registrado; saldo actualizado | Importe positivo y no mayor que el saldo pendiente; la moneda se hereda de la compra. |
+| Payments / Payment | Asociar voucher | Voucher asociado al abono | Tipo, tamaño y acceso del archivo deben validarse. |
+| Loans / Loan | Registrar préstamo | Préstamo registrado; cuotas programadas | Principal, tasa, número de cuotas y fecha inicial válidos. |
+| Reporting / proyección de lectura | Consultar obligaciones | Reporte consultado | Filtrar solo datos de la organización y conservar moneda de cada obligación. |
+
+![EventStorming de compra y abono](../assets/architecture/design-event-storming.svg)
+
+[Fuente Mermaid editable](../assets/architecture/design-event-storming.mmd).
+
+La consulta de deuda toma el saldo como `total de compra - suma de abonos válidos`. El vencimiento se clasifica con la fecha y el saldo restante; no se genera una deuda nueva por el simple paso del tiempo. La evidencia de la sesión de EventStorming (participantes, fecha, decisiones y captura) sigue pendiente en `assets/architecture/eventstorming/`.
 
 ### 4.6.2 Software Architecture Context Diagram
 
-```mermaid
-flowchart LR
-  Owner[Business Owner] --> App[CREDITOR Web Application]
-  Admin[Finance Administrator] --> App
-  Visitor[Visitor] --> Landing[CREDITOR Landing]
-  Landing --> Contact[Approved Contact Service]
-  App --> Api[CREDITOR REST API]
-  Api --> Db[(Relational Database)]
-```
+![Diagrama de contexto de CREDITOR](../assets/architecture/c4-context.svg)
 
-### 4.6.3 Software Architecture Container Diagram
+[Fuente Mermaid editable](../assets/architecture/c4-context.mmd).
+
+En el nivel de contexto, CREDITOR es un solo sistema. El propietario consulta obligaciones y préstamos; el administrador registra compras, abonos y reportes; el visitante conoce la propuesta y solicita contacto. El servicio externo es una dependencia **prevista** para cumplir el requisito de integración con terceros, sin proveedor ni contrato confirmados. No se atribuye envío real al formulario de AV1.
+
+### 4.6.3 Software Architecture Container Diagrams
+
+![Diagrama de contenedores de CREDITOR](../assets/architecture/c4-containers.svg)
+
+[Fuente Mermaid editable](../assets/architecture/c4-containers.mmd).
 
 | Contenedor | Tecnología objetivo | Responsabilidad |
 |---|---|---|
-| Landing | HTML5, CSS3, JavaScript | Comunicar propuesta, captar consultas y enlazar al producto. |
-| Web Application | Vue, HTML, CSS, JavaScript, PrimeVue | Presentar flujos de cuentas por pagar a usuarios autenticados. |
-| REST API | ASP.NET Core, C#, Entity Framework Core, OpenAPI | Aplicar reglas de dominio y exponer contratos HTTP. |
-| Database | PostgreSQL o MySQL | Persistir organizaciones, proveedores, compras, pagos y préstamos. |
+| Landing | HTML5, CSS3, JavaScript | Comunicar la propuesta, mostrar CTA honestos y dirigir a contacto o al acceso futuro. |
+| Web Application | Vue, HTML, CSS, JavaScript, PrimeVue | Presentar flujos de cuentas por pagar a usuarios autenticados, en escritorio y móvil. |
+| REST API | ASP.NET Core, C#, Entity Framework Core, OpenAPI | Validar reglas de dominio, aislamiento por organización y contratos HTTP. |
+| Database | PostgreSQL como objetivo de diseño | Persistir organizaciones, proveedores, compras, abonos, préstamos y cuotas. |
+| Servicio externo | Proveedor aún no elegido | Procesar solicitudes de contacto cuando exista integración y consentimiento. |
+
+Las flechas discontinuas son dependencias pendientes. Los comprobantes se representan en el esquema como referencias URL; antes de implementarlos se definirá un almacenamiento privado, política de acceso y retención. La landing inspeccionada utiliza Vue/Vite según el capítulo V; la fila HTML/CSS/JavaScript expresa las tecnologías requeridas, no un cambio de implementación ya efectuado.
 
 ### 4.6.4 Software Architecture Component Diagrams
 
-La API se separará inicialmente en componentes de Accounts Payable, Payments, Loans, Reporting e Identity. El diseño definitivo dependerá de las historias priorizadas y de los límites confirmados en el EventStorming.
+El diagrama descompone la **API propuesta**, no un repositorio de backend ya existente. Los controladores llaman a servicios de aplicación; estos aplican reglas de dominio y acceden a repositorios. Reporting consulta datos del mismo tenant y no altera saldos.
+
+![Diagrama de componentes de la API propuesta](../assets/architecture/c4-components.svg)
+
+[Fuente Mermaid editable](../assets/architecture/c4-components.mmd).
+
+| Componente | Responsabilidad | Contrato inicial relacionado |
+|---|---|---|
+| Accounts Payable | Registrar y consultar proveedores y compras; calcular saldos a partir de abonos. | `GET/POST /api/v1/purchases` (TS-001). |
+| Payments | Validar y registrar abonos, asociar vouchers, devolver saldo resultante. | `POST /api/v1/purchases/{purchaseId}/payments` (TS-002). |
+| Loans | Gestionar préstamos y cronogramas de cuotas. | US-009; ruta por definir. |
+| Reporting | Filtrar obligaciones por proveedor, fecha, moneda y estado. | US-008; formato de exportación por definir. |
+| Identity | Identificar al usuario y restringir los datos a su organización. | Contrato y proveedor de identidad por definir. |
+
+La actualización del saldo y el registro del abono deben ocurrir en una misma transacción. El diseño exige autorización en la API, aun cuando la interfaz oculte una acción. Los endpoints pendientes no se anuncian como implementados.
 
 ## 4.7 Software Object-Oriented Design
 
 ### 4.7.1 Class Diagrams
 
-```mermaid
-classDiagram
-  class Supplier { +UUID id +String name }
-  class Purchase { +UUID id +Decimal totalAmount +Date dueDate +Decimal outstandingBalance }
-  class Payment { +UUID id +Decimal amount +Date paidOn }
-  class Loan { +UUID id +Decimal principal +Decimal annualRate }
-  Supplier "1" --> "0..*" Purchase
-  Purchase "1" --> "0..*" Payment
-```
+![Diagrama de clases del dominio](../assets/architecture/class-diagram.svg)
+
+[Fuente Mermaid editable](../assets/architecture/class-diagram.mmd).
+
+`Purchase` es el agregado que protege la regla de abono máximo y calcula el saldo; `Payment` conserva cada movimiento. `Loan` controla la secuencia de cuotas. Los métodos del diagrama describen responsabilidades de dominio previstas, no clases C# existentes. El catálogo `Supplier` está acotado a `Business`, y una compra solo puede referenciar un proveedor de la misma organización. El modelo de usuarios/roles se detallará cuando exista un contrato de Identity; no se inventa una implementación de autenticación.
 
 ## 4.8 Database Design
 
+Se adopta **PostgreSQL como objetivo de diseño** para concretar el modelo inicial. La definición editable está en [`database/schema.sql`](../database/schema.sql). El saldo de una compra no se almacena como columna independiente: se obtiene de `purchases.total_amount - SUM(payments.amount)`. Así se evita que un abono y el saldo queden desincronizados. Las tablas de Identity y los archivos físicos requieren decisiones posteriores de implementación.
+
 ### 4.8.1 Database Diagrams
 
-El modelo relacional inicial se mantiene en [`database/schema.sql`](../database/schema.sql). Antes de implementar, se debe decidir el motor, aplicar migraciones y revisar restricciones con las historias de usuario validadas.
+![Diagrama entidad relación de CREDITOR](../assets/architecture/database-er-diagram.svg)
+
+[Fuente Mermaid editable](../assets/architecture/database-er-diagram.mmd).
+
+Para revisar cada límite de persistencia sin perder legibilidad, el modelo se presenta también por contexto. **Accounts Payable y Payments** comparten la compra como referencia del abono; **Loans** conserva un cronograma separado. `BUSINESSES` aparece en ambos dibujos porque delimita los datos de una misma organización, no porque se duplique la tabla.
+
+![Diagrama de base de datos para compras y abonos](../assets/architecture/database-accounts-payable.svg)
+
+[Fuente Mermaid editable de compras y abonos](../assets/architecture/database-accounts-payable.mmd).
+
+![Diagrama de base de datos para préstamos y cuotas](../assets/architecture/database-loans.svg)
+
+[Fuente Mermaid editable de préstamos y cuotas](../assets/architecture/database-loans.mmd).
+
+**Lectura del diagrama.** Una organización tiene muchos proveedores, compras y préstamos. Cada compra pertenece a un proveedor y admite cero o más abonos. Cada préstamo programa una o más cuotas. `receipt_url` y `voucher_url` son referencias a comprobantes, no el contenido binario ni prueba de que exista almacenamiento de archivos. La relación `purchases(business_id, supplier_id)` debe impedir que una compra de una organización use un proveedor de otra; el esquema SQL incluye una clave externa compuesta para ello.
+
+| Regla de integridad | Implementación en el diseño |
+|---|---|
+| Identidad de fila | Clave primaria UUID en cada tabla. |
+| Pertenencia y relaciones | Claves externas hacia organización, proveedor, compra o préstamo; proveedor y compra comparten organización. |
+| Valores financieros | `CHECK` para importes positivos y tasa no negativa; monedas iniciales `PEN` y `USD`. |
+| Cronograma | `UNIQUE(loan_id, installment_number)` impide repetir un número de cuota en un préstamo. |
+| Consulta operativa | Índices por organización, vencimiento y estado; por compra/fecha de abono; por préstamo/vencimiento. |
+| Regla transaccional | La API debe impedir abonos superiores al saldo y registrar el abono de manera atómica. Un `CHECK` aislado no puede sumar otras filas. |
+
+`status` de compras y cuotas requiere una política de actualización o cálculo al consultar, porque el paso de la fecha puede cambiar «pendiente» a «vencido». Antes de implementar, se definirán migraciones, autorización por organización, almacenamiento privado de comprobantes y tratamiento de pagos de cuotas. El diagrama es un **diseño inicial trazable al SQL**, no evidencia de una base desplegada.
 

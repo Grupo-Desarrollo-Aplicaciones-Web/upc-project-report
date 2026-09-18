@@ -19,6 +19,7 @@
 | 0.1 | 01/09/2026 | Equipo CREDITOR | Creación de la estructura inicial del informe. |
 | 0.2 | 10/09/2026 | Miguel Angel Egocheaga Suyo | Avance de introducción y diseño de investigación. |
 | 0.3 | 16/09/2026 | Miguel Angel Egocheaga Suyo | Organización local de los avances de AV1 mediante GitFlow. |
+| 0.4 | 18/09/2026 | Miguel Angel Egocheaga Suyo | Ampliación del diseño de producto, diagramas de arquitectura y modelo relacional propuesto para AV1. |
 
 ## Project Report Collaboration Insights
 
