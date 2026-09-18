@@ -417,6 +417,55 @@ No existen registro de clientes, CRUD de créditos, autenticación, exportación
 
 La revisión actual es estática. Se dispone de código y capturas de historial; permanecen pendientes la ejecución documentada de pruebas en navegador, la publicación y las entrevistas con usuarios.
 
+# 5.2.1 Sprint 1: Landing Page de CreditFlow
+
+## 5.2.1.1 Sprint Planning 1
+
+**Naturaleza del registro.** Las fechas, horas, estimaciones y actividades de planificación siguientes se proponen para la semana del 14 al 20 de septiembre de 2026. No existe acta que acredite que la reunión ya ocurrió. La implementación visible tiene commits del 14 de septiembre; el plan organiza su documentación, revisión y preparación de entrega, además de reconstruir el backlog del incremento.
+
+| Sprint # | Sprint 1 |
+|---|---|
+| Sprint Planning Background | Primera entrega de la landing y organización de la evidencia técnica. |
+| Inicio propuesto | Lunes 14/09/2026. |
+| Fin propuesto | Domingo 20/09/2026. |
+| Planificación propuesta | Lunes 14/09/2026, de 19:00 a 20:00, hora de Lima (UTC−5). |
+| Location | Google Meet. |
+| Prepared By | Juan Manuel Santos Torres. |
+| Attendees previstos | Juan Manuel Santos Torres, Sebastián Gutarra Velapatiño y Miguel Angel Egocheaga Suyo. |
+| Sprint n−1 Review Summary | No se dispone de un sprint previo documentado para esta entrega. |
+| Sprint n−1 Retrospective Summary | No aplica como reunión previa; se propone iniciar con acuerdos sobre alcance y evidencia. |
+| Sprint Goal | Consolidar la landing bilingüe de CreditFlow, documentar sus componentes e interacciones, definir su validación y preparar una configuración de publicación estática. |
+| Sprint 1 Velocity | No disponible: no existe una medición de historias aceptadas al cierre. |
+| Sum of Story Points propuestos | 34 SP. |
+| Esfuerzo de tareas estimado | 61 horas-persona; estimación reconstruida, no horas trabajadas acreditadas. |
+| Sprint Review propuesta | Domingo 20/09/2026, 19:00–19:40, Google Meet. |
+| Retrospectiva propuesta | Domingo 20/09/2026, 19:40–20:00, Google Meet. |
+
+### Agenda de planificación propuesta
+
+| Tiempo | Actividad | Salida esperada |
+|---|---|---|
+| 10 min | Revisar visión y alcance. | Distinguir landing y aplicación futura. |
+| 15 min | Revisar código y funcionalidades. | Inventario del incremento disponible. |
+| 15 min | Definir historias y criterios. | Backlog y condiciones de aceptación. |
+| 10 min | Revisar riesgos y dependencias. | Lista de defectos y publicación pendiente. |
+| 10 min | Acordar evidencias y próximos pasos. | Responsables por confirmar y calendario aceptado. |
+
+### Criterios de entrada propuestos
+
+Cada historia deberá especificar usuario, necesidad, alcance y evidencia esperada. Las tareas de corrección deberán referir el componente afectado. Ninguna tarea de backend o persistencia forma parte de este sprint.
+
+### Definition of Done propuesta
+
+1. La funcionalidad prevista está implementada dentro del alcance de la landing.
+2. Los criterios de aceptación cuentan con una verificación registrada.
+3. La compilación finaliza correctamente para el commit de entrega.
+4. Los cambios no introducen errores de navegación, recursos faltantes ni regresiones conocidas.
+5. Los textos ES/EN y los estados de demostración son coherentes.
+6. La documentación identifica archivo, commit y limitaciones.
+7. Los defectos críticos de honestidad de la interacción y comprensión del cálculo están corregidos o la entrega queda explícitamente condicionada.
+
+La existencia de un componente no permite asignar automáticamente `Done` a la historia. A fecha de corte, no hay cierre ni velocidad medida.
 
 ## 5.4 Video About-the-Product
 
