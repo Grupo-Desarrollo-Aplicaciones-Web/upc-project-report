@@ -19,7 +19,7 @@ Cada perfil se acompaña de una fotografía autorizada y de una descripción rev
 | Integrante | Código | Perfil y responsabilidad propuesta | Evidencia pendiente |
 |---|---|---|---|
 | Juan Manuel Santos Torres | u20221a371 | Estudiante de Ingeniería de Software. Aporta perspectiva de producto e interfaces web a partir de su experiencia en la operación de negocios comerciales. | Foto autorizada y confirmación de responsabilidades. |
-| Sebastián Gutarra Velapatiño | u20241A314 | Estudiante de Ingeniería de Software. Aportaré con mis conocimientos en frontend para esta primera entrega. Mi responsabilidad fue el capítulo 4 Product Design | Foto, perfil y evidencia de contribución. |
+| Sebastián Gutarra Velapatiño | u20241A314 | Estudiante de Ingeniería de Software. Aportaré con mis conocimientos en frontend para esta primera entrega. Mi responsabilidad fue el capítulo 4 Product Design | ![Sebastián perfil de integrante](../assets/research//20240110_181602.jpg) |
 | Azabache Bregante Christopher | u20231b188 | Estudiante de Ingeniería de Software. Su perfil técnico, habilidades y responsabilidad en AV1 deben ser redactados y validados por el integrante. | Foto, perfil y evidencia de contribución. |
 | Miguel Angel Egocheaga Suyo | u202215188 | Estudiante de Ingeniería de Software. Organiza avances locales de documentación y landing mediante GitFlow; sus aportes finales se contrastarán con el historial publicado. | Foto autorizada y evidencia publicada tras aprobación del equipo. |
 
