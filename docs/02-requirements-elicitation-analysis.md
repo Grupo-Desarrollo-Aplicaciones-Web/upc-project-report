@@ -209,10 +209,10 @@ La meta de AV1 es registrar entre tres y cinco entrevistas por segmento. Cada en
 
 | Código | Segmento | Rol y rubro | Fecha | Evidencia requerida | Estado |
 |---|---|---|---|---|---|
-| S1-01 | Dueños de mypes | Carlos Mendoza — Propietario y Gerente General (Distribuidora y Ferretería Mendoza — Venta mayorista y minorista de herramientas y materiales de construcción) | 14/09/2026 | Captura autorizada adjunta, [Video de la entrevista](https://youtu.be/Ka9AmFZM3Js) (Inicio: 00:00, Duración: 07:25 min) | Completada |
-| S1-02 | Dueños de mypes | Rocío Paredes — Fundadora y Gerente Comercial (Calzados & Moda Vía Nova — Comercialización de calzado femenino y carteras) | 15/09/2026 | Captura autorizada adjunta, [Video de la entrevista](https://youtu.be/sIYtHGlNyWI) (Inicio: 00:00, Duración: 07:36 min) | Completada |
-| S1-03 | Dueños de mypes | Ernesto Gutarra — Dueño de una tienda de artículos de primera necesidad | 17/09/2026 | Captura autorizada, [Video de la entrevista](https://youtu.be/NuDAKMMTmaY) (Inicio: 00:00, Duración: 07:58 min) | Completada |
-| S2-01 | Administradores o finanzas | Fernando Terry — Administrador y Encargado de Finanzas (Distribuidora de Alimentos del Sur S.A.C. — Distribución mayorista de abarrotes y consumo masivo) | 16/09/2026 | Captura autorizada adjunta, [Video de la entrevista](https://youtu.be/AkhgaNd8Few) (Inicio: 00:00, Duración: 08:13 min) | Completada |
+| S1-01 | Dueños de mypes | Carlos Mendoza — Propietario y Gerente General (Distribuidora y Ferretería Mendoza — Venta mayorista y minorista de herramientas y materiales de construcción) | 14/09/2026 | [Video de la entrevista](https://youtu.be/Ka9AmFZM3Js) (Inicio: 00:00, Duración: 07:25 min) | Completada |
+| S1-02 | Dueños de mypes | Rocío Paredes — Fundadora y Gerente Comercial (Calzados & Moda Vía Nova — Comercialización de calzado femenino y carteras) | 15/09/2026 | [Video de la entrevista](https://youtu.be/sIYtHGlNyWI) (Inicio: 00:00, Duración: 07:36 min) | Completada |
+| S1-03 | Dueños de mypes | Ernesto Gutarra — Dueño de una tienda de artículos de primera necesidad | 17/09/2026 | [Video de la entrevista](https://youtu.be/NuDAKMMTmaY) (Inicio: 00:00, Duración: 07:58 min) | Completada |
+| S2-01 | Administradores o finanzas | Fernando Terry — Administrador y Encargado de Finanzas (Distribuidora de Alimentos del Sur S.A.C. — Distribución mayorista de abarrotes y consumo masivo) | 16/09/2026 | [Video de la entrevista](https://youtu.be/AkhgaNd8Few) (Inicio: 00:00, Duración: 08:13 min) | Completada |
 | S2-02 | Administradores o finanzas | Pendiente de reclutamiento | Pendiente | Captura autorizada, URL del video, minuto y duración. | Pendiente |
 | S2-03 | Administradores o finanzas | Pendiente de reclutamiento | Pendiente | Captura autorizada, URL del video, minuto y duración. | Pendiente |
 
