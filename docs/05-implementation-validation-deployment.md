@@ -765,6 +765,40 @@ La mención a una futura integración ASP.NET en el README y un comentario del f
 | Incidencias y decisión de entrega | Pendiente. |
 
 La dirección esperada por el nombre del repositorio no debe etiquetarse como “sitio publicado” hasta comprobarla. La ejecución local con Vite y la publicación en Pages son evidencias distintas.
+## 5.2.1.8 Team Collaboration Insights during Sprint
+
+### Observaciones sustentadas
+
+El proyecto separa implementación e informe en dos repositorios. Las capturas de la landing agrupan cambios por base, navegación, presentación, simulador y conversión. El informe cuenta con ramas dedicadas a capítulos y antecedentes de trabajo documental. Esta organización ofrece puntos concretos para relacionar cambios con entregables.
+
+La captura de ramas del informe muestra divergencia entre `main` y `develop`; por ello es necesario revisar la base de integración antes de abrir nuevas ramas. La captura de PR del informe no acredita revisión por pares. El código contiene comentarios y un README que hacen visible la condición local del formulario, aunque esa limitación todavía no se expresa correctamente al visitante.
+
+### Acuerdos propuestos
+
+| Aspecto | Acción propuesta | Evidencia futura |
+|---|---|---|
+| Reuniones | Usar Google Meet y conservar un acta breve con decisiones. | Fecha, asistentes, acuerdos y tareas. |
+| Seguimiento | Crear Issues por historia, defecto o tarea documental. | Enlaces e IDs reales. |
+| Integración | Sincronizar ramas y revisar cambios mediante PR. | Diff, revisión y resultado. |
+| Documentación | Mantener separados hechos, propuestas y pruebas pendientes. | Capítulos actualizados. |
+| Validación | Registrar cada prueba con versión, entrada y resultado. | Matriz completada. |
+| Publicación | Asociar URL, workflow y SHA. | Ficha de despliegue. |
+
+### Fortalezas observables
+
+La separación por componentes facilita localizar responsabilidades técnicas. Los diccionarios concentran contenido bilingüe. Los commits visibles contienen mensajes que permiten relacionar grupos de cambios con secciones de la landing.
+
+### Oportunidades de mejora
+
+Resolver enlaces provisionales, aclarar el estado de demostración, alinear la etiqueta de tasa con el cálculo y formalizar los criterios de aceptación. También se propone registrar versiones locales, completar asignaciones y evitar confundir afirmaciones promocionales con evidencia de resultados.
+
+### Retrospectiva propuesta
+
+Durante la reunión de cierre, cada integrante identificará una práctica que convenga mantener, una dificultad concreta y una acción para el siguiente incremento. La acción deberá tener responsable y evidencia de cumplimiento. No se atribuyen comentarios, consensos o reuniones no realizadas.
+
+### Métricas disponibles y pendientes
+
+Se conoce el alcance propuesto de 34 SP y 61 horas-persona estimadas. No existe velocidad real, tiempo efectivo, tasa de defectos ni porcentaje de pruebas aprobadas medidos. Estas métricas se completarán con el cierre y sus registros.
 ## 5.4 Video About-the-Product
 
 - **URL:** [Pendiente]
