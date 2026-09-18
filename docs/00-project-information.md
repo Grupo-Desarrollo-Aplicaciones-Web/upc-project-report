@@ -1,20 +1,5 @@
 # Capítulo 00: Información del proyecto
 
-## 00.1 Datos académicos
-
-| Campo | Detalle |
-|---|---|
-| Universidad | Universidad Peruana de Ciencias Aplicadas |
-| Carrera | Ingeniería de Software |
-| Curso | Aplicaciones Web (1ASI0730) |
-| NRC | 16127 |
-| Docente | Villafuerte Bazan, Oscar Ivan |
-| Periodo | 2026-20 |
-| Equipo | Grupo 2 |
-| Proyecto | CREDITOR |
-| Repositorio del informe | [upc-project-report](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report) |
-| Rama de integración | `develop` |
-
 ## 00.2 Integrantes e identidades de Git
 
 El historial de `develop` permite vincular los aportes con las identidades que cada integrante utilizó. Los conteos corresponden al corte del **18 de septiembre de 2026** y sirven como referencia de trazabilidad; la calidad del aporte se evalúa por los artefactos producidos y no solo por la cantidad de commits.
