@@ -57,6 +57,12 @@ Los iconos usan metáforas claras —documento, proveedor, calendario, recibo y 
 
 ## 4.2 Information Architecture
 
+El mapa separa el contenido público de la aplicación. El enlace de acceso se muestra como destino **futuro** porque la aplicación todavía no está publicada.
+
+![Mapa de arquitectura de información de CREDITOR](../assets/architecture/information-architecture.svg)
+
+[Fuente Mermaid editable del mapa](../assets/architecture/information-architecture.mmd).
+
 ### 4.2.1 Organization Systems
 
 | Área | Contenido | Usuarios |
@@ -141,6 +147,10 @@ El conjunto de pantallas se deriva de las historias US-004 a US-009. La siguient
 
 En móvil, las tablas extensas se transformarán en filas apiladas con nombre de campo visible; el saldo y la fecha de vencimiento deben permanecer legibles sin desplazamiento horizontal.
 
+El equipo incorporó un wireframe de «Mis operaciones». Representa la estructura de navegación y un formulario genérico; todavía no identifica todos los campos de una compra a crédito ni los estados alternativos de la tabla anterior.
+
+![Wireframe web de Mis operaciones aportado por el equipo](../assets/branding/webwireframe.png)
+
 ### 4.4.2 Web Application Wireflow Diagrams
 
 ![Wireflow propuesto de la aplicación web](../assets/architecture/web-wireflow.svg)
@@ -151,7 +161,11 @@ El wireflow representa la navegación y los puntos de decisión de US-005 y US-0
 
 ### 4.4.3 Web Application Mock-ups
 
-La versión visual debe aplicar los tokens de 4.1 a las vistas de 4.4.1 en escritorio y móvil. En el dashboard, el saldo pendiente y el vencimiento tienen jerarquía mayor que las gráficas. En el detalle de compra, cada abono muestra importe, fecha y vínculo al voucher; el usuario debe poder reconstruir el saldo desde los movimientos. No se deben unir importes de PEN y USD en un único total sin tipo de cambio declarado. Los mock-ups reales y sus enlaces revisables en Figma siguen **pendientes**; este texto es la especificación de diseño, no una captura ficticia.
+La versión visual debe aplicar los tokens de 4.1 a las vistas de 4.4.1 en escritorio y móvil. En el dashboard, el saldo pendiente y el vencimiento tienen jerarquía mayor que las gráficas. En el detalle de compra, cada abono muestra importe, fecha y vínculo al voucher; el usuario debe poder reconstruir el saldo desde los movimientos. No se deben unir importes de PEN y USD en un único total sin tipo de cambio declarado.
+
+El equipo aportó un mock-up de «Nueva operación» con campos de monto, tasa, plazo y frecuencia. Es evidencia visual de avance, pero esos campos describen un préstamo y no la compra a crédito con proveedor, moneda y vencimiento que prioriza US-005. Se conserva como borrador para revisar con el equipo. El mock-up final y su enlace revisable en Figma siguen **pendientes**.
+
+![Mock-up web de Nueva operación aportado por el equipo](../assets/branding/webmockup.png)
 
 ### 4.4.4 Web Application User Flow Diagrams
 
@@ -163,7 +177,39 @@ La versión visual debe aplicar los tokens de 4.1 a las vistas de 4.4.1 en escri
 | Exportar deuda, US-008 | Reportes → filtrar → revisar resultado → exportar. | Sin datos → indicar que el archivo estaría vacío y permitir ajustar filtros. |
 | Consultar préstamo, US-009 | Préstamos → detalle → cuotas y vencimientos. | Sin cronograma → indicar que el préstamo aún no está configurado. |
 
-Cada User Flow visual en FigJam, LucidChart u Overflow deberá incluir el objetivo, las pantallas correspondientes y los caminos alternativos anteriores. Su elaboración visual está pendiente; el cuadro fija las rutas para evitar que un prototipo muestre solo el camino exitoso.
+Los siguientes diagramas convierten esos recorridos en flujos visuales **propuestos**. Incluyen la salida esperada y al menos un camino alternativo; no representan pruebas con usuarios ni pantallas implementadas.
+
+**US-005, registrar una compra.**
+
+![User Flow de registro de compra](../assets/architecture/user-flow-purchase.svg)
+
+[Fuente Mermaid editable](../assets/architecture/user-flow-purchase.mmd).
+
+**US-006, registrar un abono.**
+
+![User Flow de registro de abono](../assets/architecture/user-flow-payment.svg)
+
+[Fuente Mermaid editable](../assets/architecture/user-flow-payment.mmd).
+
+**US-004/US-007, localizar una obligación.**
+
+![User Flow de consulta de obligación](../assets/architecture/user-flow-obligation.svg)
+
+[Fuente Mermaid editable](../assets/architecture/user-flow-obligation.mmd).
+
+**US-008, consultar y exportar un reporte.**
+
+![User Flow de reporte](../assets/architecture/user-flow-report.svg)
+
+[Fuente Mermaid editable](../assets/architecture/user-flow-report.mmd).
+
+**US-009, consultar un préstamo.**
+
+![User Flow de consulta de préstamo](../assets/architecture/user-flow-loan.svg)
+
+[Fuente Mermaid editable](../assets/architecture/user-flow-loan.mmd).
+
+La revisión del equipo debe contrastar estos recorridos con entrevistas y con los wireframes finales antes de convertirlos en un prototipo interactivo.
 
 ## 4.5 Web Applications Prototyping
 
@@ -264,7 +310,7 @@ Para revisar cada límite de persistencia sin perder legibilidad, el modelo se p
 
 [Fuente Mermaid editable de préstamos y cuotas](../assets/architecture/database-loans.mmd).
 
-**Lectura del diagrama.** Una organización tiene muchos proveedores, compras y préstamos. Cada compra pertenece a un proveedor y admite cero o más abonos. Cada préstamo programa una o más cuotas. `receipt_url` y `voucher_url` son referencias a comprobantes, no el contenido binario ni prueba de que exista almacenamiento de archivos. La relación `purchases(business_id, supplier_id)` debe impedir que una compra de una organización use un proveedor de otra; el esquema SQL incluye una clave externa compuesta para ello.
+**Lectura del diagrama.** Una organización puede tener proveedores, compras y préstamos. Cada compra pertenece a un proveedor y admite cero o más abonos. Un préstamo puede existir antes de que se configure su cronograma; el flujo publicado deberá exigir al menos una cuota. `receipt_url` y `voucher_url` son referencias a comprobantes, no el contenido binario ni prueba de que exista almacenamiento de archivos. La relación `purchases(business_id, supplier_id)` debe impedir que una compra de una organización use un proveedor de otra; el esquema SQL incluye una clave externa compuesta para ello.
 
 | Regla de integridad | Implementación en el diseño |
 |---|---|
@@ -276,4 +322,3 @@ Para revisar cada límite de persistencia sin perder legibilidad, el modelo se p
 | Regla transaccional | La API debe impedir abonos superiores al saldo y registrar el abono de manera atómica. Un `CHECK` aislado no puede sumar otras filas. |
 
 `status` de compras y cuotas requiere una política de actualización o cálculo al consultar, porque el paso de la fecha puede cambiar «pendiente» a «vencido». Antes de implementar, se definirán migraciones, autorización por organización, almacenamiento privado de comprobantes y tratamiento de pagos de cuotas. El diagrama es un **diseño inicial trazable al SQL**, no evidencia de una base desplegada.
-

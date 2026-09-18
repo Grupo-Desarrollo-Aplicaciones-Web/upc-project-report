@@ -30,9 +30,9 @@ El capítulo IV es parte de AV1. «Diseño documentado» significa que hay una e
 | Ítem | Estado del informe | Evidencia que falta para cerrar AV1 |
 |---|---|---|
 | 4.1 Style Guidelines | Guías generales y web documentadas con marca, tipografía, colores y reglas de accesibilidad. | Verificar su aplicación en la landing final. |
-| 4.2 Information Architecture | Organización, etiquetas, metadatos, búsqueda y navegación definidos. | Validar etiquetas y destinos de CTA con usuarios y aplicación real. |
+| 4.2 Information Architecture | Mapa visual, organización, etiquetas, metadatos, búsqueda y navegación definidos. | Validar etiquetas y destinos de CTA con usuarios y aplicación real. |
 | 4.3 Landing Page UI Design | Wireframes y mock-ups de referencia adjuntos; se identifican textos de CreditFlow que no corresponden a CREDITOR. | Actualizar y enlazar las vistas finales en Figma. |
-| 4.4 Web Applications UX/UI Design | Pantallas, wireflow y caminos esperados/alternativos especificados. | Crear wireframes, mock-ups y User Flows visuales en las herramientas indicadas. |
+| 4.4 Web Applications UX/UI Design | Pantallas, wireflow y cinco User Flows visuales especificados. Se conservaron el wireframe y mock-up aportados por el equipo. | Ajustar el mock-up de préstamo al flujo de compra prioritario, completar pantallas y revisar los flujos en Figma o herramienta equivalente. |
 | 4.5 Web Applications Prototyping | Recorridos y criterios de interacción definidos. | Prototipo navegable de escritorio/móvil, enlace y video de navegación. |
 | 4.6 Domain-Driven Software Architecture | EventStorming de diseño propuesto y diagramas de contexto, contenedores y componentes renderizados. | Sesión colaborativa documentada; revisión de límites de dominio y servicio externo elegido. |
 | 4.7 Software Object-Oriented Design | Diagrama de clases con atributos, métodos, enumeraciones, relaciones y multiplicidades. | Revisión contra las clases C# cuando exista el backend. |

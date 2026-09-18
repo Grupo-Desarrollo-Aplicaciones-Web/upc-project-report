@@ -20,6 +20,7 @@
 | 0.2 | 10/09/2026 | Miguel Angel Egocheaga Suyo | Avance de introducción y diseño de investigación. |
 | 0.3 | 16/09/2026 | Miguel Angel Egocheaga Suyo | Organización local de los avances de AV1 mediante GitFlow. |
 | 0.4 | 18/09/2026 | Miguel Angel Egocheaga Suyo | Ampliación del diseño de producto, diagramas de arquitectura y modelo relacional propuesto para AV1. |
+| 0.5 | 18/09/2026 | Miguel Angel Egocheaga Suyo | Mapa de información, flujos visuales de usuario e integración de los bocetos web aportados por el equipo. |
 
 ## Project Report Collaboration Insights
 

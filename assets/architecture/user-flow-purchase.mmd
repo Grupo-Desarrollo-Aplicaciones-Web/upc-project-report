@@ -1,0 +1,11 @@
+flowchart TB
+  A[Administrador abre Compras] --> B[Nueva compra]
+  B --> C[Completa proveedor, importe, moneda y vencimiento]
+  C --> D{Datos y proveedor válidos}
+  D -- No --> E[Mostrar error y conservar datos]
+  E --> C
+  D -- Sí --> F[Confirmar registro]
+  F --> G{Registro completado}
+  G -- No --> H[Explicar fallo y permitir reintento]
+  H --> F
+  G -- Sí --> I[Detalle de compra con saldo inicial]

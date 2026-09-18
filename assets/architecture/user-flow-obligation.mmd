@@ -1,0 +1,10 @@
+flowchart TB
+  A[Propietario abre Dashboard] --> B[Filtra compras por proveedor, fecha o estado]
+  B --> C{Hay coincidencias}
+  C -- No --> D[Mostrar estado vacío y permitir limpiar filtros]
+  D --> B
+  C -- Sí --> E[Seleccionar compra]
+  E --> F{Detalle disponible}
+  F -- No --> G[Mostrar error y opción de reintento]
+  G --> E
+  F -- Sí --> H[Ver saldo, vencimiento y movimientos]
