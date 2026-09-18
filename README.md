@@ -44,14 +44,13 @@ Repositorio de documentación académica de **CREDITOR**, una plataforma web par
 
 | Entregable | URL | Estado |
 |---|---|---|
-| Documentación | [upc-project-report](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report) | En elaboración local |
+| Documentación | [upc-project-report](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/tree/develop) | Capítulo IV y diagramas integrados en `develop`; AV1 sigue en preparación. |
 | Landing page | [creditor-landing-page](https://github.com/MiguelAngel0107/creditor-landing-page) | Requiere rebranding, validación y despliegue |
 | Aplicación web | Pendiente de crear | Planificada para iteraciones posteriores |
 | Servicios REST | Pendiente de crear | Planificados para iteraciones posteriores |
 
 ## Flujo de colaboración
 
-El equipo trabaja con GitFlow: `main` conserva versiones estables, `develop` integra el trabajo aprobado y cada avance se realiza en una rama `feature/<alcance>`. Los mensajes siguen Conventional Commits. La evidencia de cada integrante debe reflejar contribuciones reales realizadas desde su propia identidad de Git.
+El equipo trabaja con GitFlow: `main` conserva versiones estables y `develop` integra el trabajo de la siguiente entrega. La documentación se desarrolla en ramas `docs/<capitulo>-<tema>` y el código en ramas `feature/<alcance>`. Los mensajes siguen Conventional Commits. La evidencia de cada integrante debe reflejar contribuciones reales realizadas desde su propia identidad de Git.
 
 Consulta [CONTRIBUTING.md](CONTRIBUTING.md) antes de crear ramas, commits o Pull Requests.
-
