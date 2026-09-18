@@ -300,6 +300,8 @@ Se adopta **PostgreSQL como objetivo de diseño** para concretar el modelo inici
 
 [Fuente Mermaid editable](../assets/architecture/database-er-diagram.mmd).
 
+[Versión PNG para la exposición](../assets/architecture/database-er-diagram.png).
+
 Para revisar cada límite de persistencia sin perder legibilidad, el modelo se presenta también por contexto. **Accounts Payable y Payments** comparten la compra como referencia del abono; **Loans** conserva un cronograma separado. `BUSINESSES` aparece en ambos dibujos porque delimita los datos de una misma organización, no porque se duplique la tabla.
 
 ![Diagrama de base de datos para compras y abonos](../assets/architecture/database-accounts-payable.svg)
