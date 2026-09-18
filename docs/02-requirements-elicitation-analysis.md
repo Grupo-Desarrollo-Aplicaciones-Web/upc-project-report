@@ -250,13 +250,13 @@ Las siguientes personas son borradores basados en los criterios de segmento del 
 |---|---|---|---|
 | **Rosa, dueña de mype** | Conocer sus compromisos antes de autorizar o priorizar pagos. | Puede supervisar compras y pagos sin registrar cada operación personalmente. | Resumen de deuda, vencimientos, consulta por proveedor y préstamos. | 
 
-![userpersona1]("../assets/research/Rosa%20Vargas.png")
+![userpersona1](../assets/research/Rosa%20Vargas.png)
 
 | Persona provisional | Objetivo | Contexto y conducta por validar | Necesidades iniciales |
 |---|---|---|---|
 | **Diego, encargado de finanzas** | Registrar una compra o abono y recuperar su comprobante al conciliar. | Puede operar con información entregada por otras personas y registrar desde distintos dispositivos. | Campos consistentes, historial de pagos, saldo y reportes filtrables. | 
 
-![userpersona2]("../assets/research/Diego%20Gutiérrez.png")
+![userpersona2](../assets/research/Diego%20Gutiérrez.png)
 
 ### 2.3.2 User Task Matrix
 
