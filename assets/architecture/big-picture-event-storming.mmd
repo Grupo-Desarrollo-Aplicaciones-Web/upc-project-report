@@ -1,0 +1,22 @@
+flowchart LR
+  Owner["Rosa / Business Owner"] --> Q["Query Obligations · consulta propuesta"]
+  Admin["Diego / Finance Administrator"] --> S["Register Supplier · comando"]
+  S --> SE["Supplier Registered · evento"]
+  Admin --> C["Register Credit Purchase · comando"]
+  SE --> C
+  C --> CE["Credit Purchase Registered · evento"]
+  CE --> Q
+  Admin --> P["Record Payment · comando"]
+  CE --> P
+  P --> V{"Positive amount <= outstanding balance?"}
+  V -->|Yes| PE["Payment Recorded · evento"]
+  V -->|No| R["Validation rejected · respuesta"]
+  PE --> B{"Balance = 0?"}
+  B -->|Yes| E["Purchase Settled · evento"]
+  B -->|No| Q
+  E --> Q
+  Q -. Future iteration .-> L["Loan / Schedule / Debt Report"]
+  classDef command fill:#E8EFFF,stroke:#2563EB;
+  classDef event fill:#FFF1D6,stroke:#B45309;
+  class C,P,S command;
+  class SE,CE,PE,E event;

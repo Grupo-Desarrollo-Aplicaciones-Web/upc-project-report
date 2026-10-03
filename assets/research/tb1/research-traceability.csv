@@ -1,0 +1,6 @@
+﻿hypothesis,feature_assumption,segment,questions,stories,evidence_status,scope
+H-01,F-01,S1/S2,G-03/G-04/D-01/D-03,US-004,PENDIENTE,TB1 local
+H-02,F-02,S2,G-02/A-01/A-02/A-03,US-005,PENDIENTE,TB1 local
+H-03,F-03,S1/S2,G-05/G-06/A-02/A-03/A-04,US-006/US-007,PENDIENTE,TB1 local
+H-04,F-04,S1,G-08/D-01,US-009,PENDIENTE,Futuro
+H-05,F-05,S2,G-09/A-05,US-008,PENDIENTE,Futuro
