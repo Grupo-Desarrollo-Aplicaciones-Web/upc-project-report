@@ -1,0 +1,13 @@
+flowchart TB
+  User[Usuario demo] --> Shell[App shell - idioma - rutas]
+  Shell --> Dashboard[DashboardView]
+  Shell --> List[PurchasesView]
+  Shell --> Form[PurchaseFormView - confirmacion]
+  Shell --> Detail[PurchaseDetailView - PaymentHistory]
+  Shell --> Payment[PaymentFormView - PaymentForm]
+  Dashboard & List & Form & Detail & Payment --> Store[Workspace store]
+  Form & Payment --> Rules[Domain validators - money cents - dates - attachments]
+  Store --> Local[Local repository adapter]
+  Local --> Rules
+  Local --> Storage[(Browser localStorage - fictional data)]
+  Store -. Sustitucion futura .-> HTTP[HTTP adapter ASP.NET API - previsto AV2]
