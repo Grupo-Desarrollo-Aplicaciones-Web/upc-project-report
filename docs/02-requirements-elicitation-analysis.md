@@ -18,19 +18,19 @@ También se consideran alternativas sustitutas los cuadernos, las hojas de cálc
 
 **Pregunta guía:** ¿qué valor podría aportar CREDITOR a un dueño o administrador que necesita conocer cuánto debe, cuándo debe pagar y qué abonos ya realizó, frente a las alternativas disponibles?
 
-**Método y alcance:** revisión documental de fuentes oficiales consultadas el 10 de septiembre de 2026. Se analiza Alegra con su oferta peruana y una guía internacional, Odoo con su documentación de la versión 19.0 y Zoho Books con su documentación de la edición estadounidense. Las funciones pueden depender de la edición, configuración o plan; la revisión de Zoho no acredita adecuación tributaria al Perú. No se realizaron pruebas comparativas de uso ni se contrataron planes. Las capacidades de CREDITOR son propuestas del proyecto, todavía no funcionalidades implementadas.
+**Método y alcance:** revisión documental de fuentes oficiales consultadas el 10 de septiembre de 2026. Se analiza Alegra con su oferta peruana y una guía internacional, Odoo con su documentación de la versión 19.0 y Zoho Books con su documentación de la edición estadounidense. Las funciones pueden depender de la edición, configuración o plan; la revisión de Zoho no acredita adecuación tributaria al Perú. No se realizaron pruebas comparativas de uso ni se contrataron planes. En el corte TB1, CREDITOR implementa localmente compras, abonos, historial y consulta de saldos por moneda; préstamos y exportación de reportes continúan como alcance futuro. Las pruebas técnicas locales no acreditan adopción ni una ventaja frente a los competidores.
 
 #### Competitive Analysis Landscape
 
-| Dimensión | CREDITOR — propuesta | Alegra Contabilidad | Odoo 19.0 | Zoho Books |
+| Dimensión | CREDITOR — incremento local y alcance futuro | Alegra Contabilidad | Odoo 19.0 | Zoho Books |
 |---|---|---|---|---|
 | Enfoque del producto | Control operativo de compras, abonos y préstamos de mypes. | Gestión contable y facturación para pymes. [Fuente][alegra-peru] | Gestión de facturas y préstamos dentro del módulo contable. [Fuentes][odoo-facturas] y [préstamos][odoo-prestamos] | Gestión de compras y pagos integrada al registro contable. [Fuente][zoho-facturas] |
-| Registro de compras y vencimientos | Proveedor, importe, moneda, comprobante y fecha límite. | Consulta de facturas de compra, montos adeudados y vencimientos. [Fuente][alegra-cxp] | Facturas con proveedor, fecha y condiciones de pago. [Fuente][odoo-facturas] | Facturas con proveedor, fecha límite y condiciones de pago. [Fuente][zoho-facturas] |
-| Abonos e historial | Asociar cada abono con la compra y mostrar el saldo restante. | La guía contempla abonos que afectan los saldos reportados. [Fuente][alegra-cxp] | Pagos parciales y saldo pendiente de la factura. [Fuente][odoo-facturas] | Pagos parciales y consulta de pagos registrados por factura. [Fuente][zoho-facturas] |
-| Evidencias digitales | Adjuntar comprobantes de compras y vouchers de abonos. | El vínculo de un archivo con cada abono no se verificó en las fuentes consultadas. | Carga de facturas en PDF; no se verificó aquí el adjunto por abono. [Fuente][odoo-facturas] | Adjuntos y notas en el registro del pago. [Fuente][zoho-facturas] |
-| Consulta de deuda | Dashboard con saldos separados en soles y dólares y estado de vencimientos. | Reporte de cuentas por pagar con filtros de consulta. [Fuente][alegra-cxp] | Reporte de antigüedad de deuda con detalle por proveedor. [Fuente][odoo-facturas] | Reporte por proveedor con importes facturados, pagados y saldo. [Fuente][zoho-reportes] |
-| Préstamos y cuotas | Registro de préstamos y visualización de cronogramas. | No verificado en las fuentes consultadas. | Cronogramas importados, calculados o registrados manualmente, con capital e intereses. [Fuente][odoo-prestamos] | No verificado en las fuentes consultadas. |
-| Salida de información | Reportes filtrados exportables a PDF y Excel. | Descarga de reportes y exportación de facturas de proveedor. [Fuente][alegra-cxp] | Exportación del reporte de deuda a PDF y XLSX. [Fuente][odoo-facturas] | Reporte de saldos con rango de fechas y filtros; formatos de exportación no verificados aquí. [Fuente][zoho-reportes] |
+| Registro de compras y vencimientos | Local TB1: proveedor, referencia, descripción, importe, moneda y fechas de compra/vencimiento. | Consulta de facturas de compra, montos adeudados y vencimientos. [Fuente][alegra-cxp] | Facturas con proveedor, fecha y condiciones de pago. [Fuente][odoo-facturas] | Facturas con proveedor, fecha límite y condiciones de pago. [Fuente][zoho-facturas] |
+| Abonos e historial | Local TB1: asociar cada abono con la compra y mostrar el saldo restante. | La guía contempla abonos que afectan los saldos reportados. [Fuente][alegra-cxp] | Pagos parciales y saldo pendiente de la factura. [Fuente][odoo-facturas] | Pagos parciales y consulta de pagos registrados por factura. [Fuente][zoho-facturas] |
+| Evidencias digitales | Local TB1: adjuntos opcionales PDF, PNG o JPEG de hasta 2 MB en el navegador; almacenamiento centralizado futuro. | El vínculo de un archivo con cada abono no se verificó en las fuentes consultadas. | Carga de facturas en PDF; no se verificó aquí el adjunto por abono. [Fuente][odoo-facturas] | Adjuntos y notas en el registro del pago. [Fuente][zoho-facturas] |
+| Consulta de deuda | Local TB1: dashboard con saldos separados en soles y dólares y estado de vencimientos. | Reporte de cuentas por pagar con filtros de consulta. [Fuente][alegra-cxp] | Reporte de antigüedad de deuda con detalle por proveedor. [Fuente][odoo-facturas] | Reporte por proveedor con importes facturados, pagados y saldo. [Fuente][zoho-reportes] |
+| Préstamos y cuotas | Futuro: registro de préstamos y visualización de cronogramas. | No verificado en las fuentes consultadas. | Cronogramas importados, calculados o registrados manualmente, con capital e intereses. [Fuente][odoo-prestamos] | No verificado en las fuentes consultadas. |
+| Salida de información | Futuro: reportes filtrados exportables a PDF y Excel. | Descarga de reportes y exportación de facturas de proveedor. [Fuente][alegra-cxp] | Exportación del reporte de deuda a PDF y XLSX. [Fuente][odoo-facturas] | Reporte de saldos con rango de fechas y filtros; formatos de exportación no verificados aquí. [Fuente][zoho-reportes] |
 
 **Criterio de lectura:** “no verificado” identifica una limitación de esta revisión; no significa que el competidor carezca de esa función. Tampoco se atribuye exclusividad a CREDITOR por proponer abonos, adjuntos o cronogramas, ya que existen capacidades equivalentes documentadas.
 
@@ -47,7 +47,7 @@ La revisión funcional de septiembre se conserva. La siguiente ampliación consu
 | Marketing observado/propuesto | Propuesto: demostraciones de compra/abono y piloto acotado; sin campañas ejecutadas. | Prueba de 15 días, planes por crecimiento y contenido de ayuda. | Oferta de una aplicación gratis, planes y demostraciones/consultoría. | Prueba, comparación de planes, documentación y recursos de aprendizaje. |
 | Productos y servicios | Landing y frontend local TB1; API propia prevista AV2; loans/reporting futuros. | Contabilidad, facturación y POS, con alcance variable por plan. | Todas las aplicaciones en planes Standard/Custom; opciones de hosting por plan. | Books y ecosistema de aplicaciones; Professional incluye multimoneda y órdenes de compra. |
 | Precios y costos observados | Sin precio; soporte, infraestructura y almacenamiento deben estimarse antes de monetizar. | Perú, PEN, mensual: Emprendedor **S/105**, Pyme **S/152**, IGV incluido. Límite y usuarios dependen del plan. [Fuente oficial](https://www.alegra.com/peru/contabilidad/precios/). | URL pública en USD: Standard **USD24.90/usuario/mes** cobrado anualmente, promoción inicial de 12 meses; regular mostrado **USD31.10**, más impuestos. Región de contratación debe confirmarse. [Planes](https://www.odoo.com/es/pricing), [configurador oficial](https://www.odoo.com/pricing-configurator?plan=standard). | Edición US, USD/organización: Professional **USD50/mes** mensual o **USD40/mes** con cobro anual, 5 usuarios. No acredita adecuación tributaria peruana. [Fuente oficial](https://www.zoho.com/us/books/pricing/). |
-| Canales | Landing y web responsive previstos; acceso local para revisión en esta ejecución. | Web y acceso a aplicaciones; ver oferta Perú y ayuda. | Odoo Online y canales/partners; Custom contempla otras opciones. | Web y aplicaciones móviles publicitadas en la oferta oficial. |
+| Canales | Landing y frontend responsive implementados localmente; publicación TB1 pendiente. | Web y acceso a aplicaciones; ver oferta Perú y ayuda. | Odoo Online y canales/partners; Custom contempla otras opciones. | Web y aplicaciones móviles publicitadas en la oferta oficial. |
 
 Los logos se conservan como recursos identificativos de sus titulares para este análisis académico; su origen y fecha figuran en [registro de fuentes locales](../assets/research/tb1/source-register.md). Su inclusión no expresa respaldo comercial ni una licencia general de marca. Los importes no se convierten entre monedas ni se presentan como condiciones comerciales de CREDITOR.
 
@@ -102,7 +102,7 @@ Las estrategias se plantean a partir del análisis anterior y de las hipótesis 
 | Hablar de control de obligaciones y no de contabilidad integral. | Análisis documental; falta validación con entrevistas. | Confirmar que el segmento reconoce el problema y no requiere primero una suite contable completa. |
 | Priorizar compras, abonos, saldos y vencimientos. | Hipótesis Lean UX; falta evaluación de frecuencia e importancia. | Ordenar el backlog después de analizar tareas y entrevistas. |
 | Mantener el precio fuera de la landing inicial. | No existe investigación de disposición de pago. | Definir precio únicamente tras comparar alternativas y recoger criterios de los participantes. |
-| Comunicar una propuesta clara y comprobable. | La landing actual debe ser reescrita para CREDITOR. | Eliminar métricas promocionales sin fuente y vincular los CTA a flujos reales. |
+| Comunicar una propuesta clara y comprobable. | La landing TB1 ya presenta cuentas por pagar y CTA hacia dashboard/nueva compra locales. | Revisar comprensión con participantes y comprobar los enlaces públicos cuando se autorice el despliegue. |
 ## 2.2 Entrevistas
 
 Se propone realizar entrevistas para comprender cómo los usuarios gestionan actualmente las compras a crédito, los pagos a proveedores y los préstamos. La investigación permitirá contrastar los supuestos del capítulo I y las oportunidades del análisis competitivo antes de definir requisitos detallados.
@@ -234,6 +234,20 @@ La exigencia de investigación es **3 a 5 entrevistas por segmento**. Hay cuatro
 
 El 03/10/2026 se intentó consultar captions públicos automáticos de los cuatro videos únicamente en lectura. La metadata ofreció una pista de subtítulos en español, pero timedtext devolvió contenido vacío; no se obtuvo una transcripción utilizable. Esto no acredita ni invalida las respuestas del video. No se generaron resúmenes, capturas o citas a partir de esa metadata. La revisión humana de los videos originales y la evidencia de Microsoft Stream continúan pendientes. No se subió contenido a servicios externos durante esta ejecución local.
 
+#### Revisión de los registros existentes
+
+El [control de revisión de entrevistas](../assets/research/tb1/interview-review-checklist.csv) concentra las cuatro entradas existentes y las dos entrevistas S2 pendientes. Registra revisor, fecha, comprobaciones y siguiente acción por participante, sin repetir toda la codificación. Cada comprobación se actualizará a **CUMPLE**, **REQUIERE COMPLEMENTO** o **NO VERIFICADO**, indicando la evidencia en el resumen individual. Las dos filas sin participante no se contabilizan como entrevistas realizadas.
+
+| Comprobación | Condición para cerrar la revisión |
+|---|---|
+| Perfil y consentimiento | Confirmar responsabilidad reciente en compras/pagos, segmento principal y autorización de participación, grabación y uso académico de la evidencia. |
+| Grabación y abordaje | Abrir el registro completo; revisar audio/video comprensibles, ambiente, interrupciones y preguntas que no induzcan una respuesta. Registrar incidencias y su efecto en la interpretación. |
+| Cobertura y timing | Relacionar las preguntas efectivamente respondidas con los objetivos del guion y conservar el minuto de cada fragmento útil. La duración declarada de 7–8 minutos exige revisar profundidad; no demuestra por sí sola cobertura suficiente ni invalidez. |
+| Resumen y codificación | Redactar un resumen individual fiel al registro, codificar respuestas con fuente/minuto y revisar inferencias con otro integrante. No convertir ausencia de respuesta en ausencia del problema. |
+| Evidencia de entrega | Añadir captura autorizada y acceso de revisión en Stream con inicio/duración, conservando la relación con el registro original. |
+
+Si una grabación deja objetivos sin responder, se realizará una entrevista complementaria o una repregunta autorizada. Se registrará como continuación del mismo participante para evitar contar dos veces a una persona.
+
 ### 2.2.3 Análisis de entrevistas
 
 Se conserva el esquema de codificación como **base reutilizable**. Hasta disponer de respuestas rastreables no se calculan porcentajes ni se atribuyen hallazgos a S1/S2. Las proporciones futuras usarán solo entrevistas válidas, explicitarán `n/N por segmento` y no se extrapolarán a la población de mypes.
@@ -257,6 +271,28 @@ Se conserva el esquema de codificación como **base reutilizable**. Hasta dispon
 
 El criterio de cierre exige resúmenes, citas/minutos y síntesis por segmento antes de convertir hipótesis de Personas y tareas en resultados investigados. No se asigna causalidad ni intención de compra a una muestra cualitativa.
 
+#### Método de análisis y agrupación de participantes
+
+1. **Revisar el material de origen.** Completar el control de revisión y confirmar el rol principal mediante G-01. S1 agrupa a quienes deciden o supervisan obligaciones; S2, a quienes registran o concilian. Los códigos actuales mantienen el segmento declarado hasta revisar esa respuesta. Si una persona cumple ambos roles, se conserva un único código y se anotan responsabilidades secundarias.
+2. **Codificar fragmentos verificables.** En la plantilla de codificación, cada fila corresponde a una respuesta o fragmento, con participante, pregunta equivalente del guion, tema, minuto de inicio/fin y cita breve o paráfrasis anonimizada. Distinguir **RELATO**, **OPINIÓN** e **INFERENCIA DEL EQUIPO**; una inferencia debe conservar los fragmentos que la sustentan. Usar **SIN RESPUESTA** cuando el registro no cubra la pregunta y **NO APLICA** solo cuando la experiencia declarada lo justifique. Los identificadores G/D/A son una equivalencia analítica: no se afirma que los videos antiguos hayan usado literalmente este guion.
+3. **Comparar dentro de cada segmento.** Agrupar por las variables operacionales siguientes y conservar la referencia al fragmento que justifica cada valor. Primero comparar experiencias S1 entre sí y S2 entre sí; después contrastar patrones comunes y diferencias de responsabilidades. Mantener casos discrepantes y revisar si requieren otra Persona o un escenario alternativo.
+4. **Derivar necesidades y decisiones.** Expresar la necesidad como una tarea o resultado del negocio, antes de proponer una función. Relacionarla con una Persona candidata y una historia existente; si no hay encaje, registrar la brecha para revisar el backlog. Un caso individual puede justificar una excepción, pero no se describe como patrón del segmento. Una coincidencia entre al menos dos relatos permite proponer un patrón recurrente del grupo revisado, con sus límites y casos contrarios; no demuestra saturación ni prevalencia poblacional.
+
+| Variable de agrupación | Valores que se registrarán desde las respuestas | Origen de evidencia |
+|---|---|---|
+| Responsabilidad principal | Decide/supervisa; registra/ejecuta; concilia; combinación y rol principal. | G-01, D-02, A-03. |
+| Forma de consultar y conservar datos | Herramienta o fuente nombrada, pasos y personas consultadas; no verificado si no se relata. | G-02, G-03, G-05, D-04. |
+| Frecuencia y criticidad de la tarea | Frecuencia explícita, último caso concreto y consecuencia descrita. No inferir frecuencia por el cargo. | G-04, G-09, D-03, A-05. |
+| Tratamiento de pagos y discrepancias | Pago parcial/completo, vínculo al comprobante y pasos de comprobación/corrección. | G-05, G-06, A-02, A-03. |
+| Condiciones de uso y coordinación | Dispositivo, momento de registro, participantes, delegación y barreras descritas. | A-03, A-04, D-02, D-04. |
+| Complejidad aplicable | Moneda(s), presencia/ausencia declarada de préstamos, destinatario y formato de reporte. | G-07, G-08, G-09, A-05. |
+
+La [matriz de evidencia de Personas](../assets/research/tb1/persona-evidence-matrix.csv) conecta **participante → pregunta → cita/minuto → necesidad → Persona → historia**. Contiene una fila de revisión planificada por registro existente; las preguntas y destinos candidatos orientan dónde buscar evidencia, sin atribuir respuestas ni confirmar asignaciones. Al revisar los videos, se completará o descartará esa relación y se añadirá una fila por necesidad sustentada; no se multiplicarán filas vacías por cada pregunta.
+
+En esa matriz, `question_to_review` indica la pregunta equivalente que se busca, `variable` el tema de codificación, `minute_start`/`minute_end` el intervalo verificable, `quote_or_paraphrase` el fragmento anonimizado y `need` la interpretación del equipo. `persona_candidate` y `story_candidate` solo se confirman tras contrastar el fragmento con el grupo. `reviewer`/`review_date` y `analysis_status` permiten revisar quién cerró o descartó la relación. **PENDIENTE DE REVISIÓN** no es un hallazgo.
+
+La síntesis final de cada segmento debe describir las tareas compartidas, diferencias, excepciones y efecto en el diseño, citando los códigos de participantes. Los conteos se expresarán como `n/N de registros válidos revisados` y se mantendrán separados de la prioridad estimada por el equipo. Las tareas sin una frecuencia explícita permanecerán sin valor observado.
+
 ## 2.3 Needfinding
 
 ### 2.3.1 User Personas
@@ -268,6 +304,19 @@ Rosa y Diego se conservan como nombres de referencia de los dos segmentos. Las f
 ![Diego: Persona local provisional del segmento S2](../assets/research/tb1/persona-diego-local.svg)
 
 Los PNG históricos `Rosa Vargas.png` y `Diego Gutiérrez.png` se preservan sin alteración. Sus valores de “market size 80 %” y demografía no cuentan con sustento en esta revisión y se excluyen de las fichas vigentes; no deben usarse para caracterizar el mercado o a los participantes.
+
+#### Criterios para cerrar las Personas investigadas
+
+| Criterio | Evidencia necesaria y decisión |
+|---|---|
+| Base del segmento | Alcanzar 3–5 participantes revisados por segmento y confirmar su responsabilidad principal. Tener tres URLs S1 no equivale a tres entrevistas analizadas. |
+| Conjunto de participantes | Identificar los códigos que sustentan cada Persona y las variables por las que se agrupan. Documentar casos distintos; Rosa/Diego pueden cambiar o dividirse si la evidencia no corresponde a los grupos previstos. |
+| Objetivos y necesidades | Cada objetivo, tarea prioritaria, dificultad y condición de uso debe enlazar al menos una necesidad sustentada en la matriz. Distinguir patrones compartidos de casos individuales y conservar contraejemplos. |
+| Contenido de la ficha | Incluir solo datos relatados o síntesis justificadas. Mantener sin dato la demografía, emociones o frecuencia no recogidas; no completar esos campos con estereotipos del rol. |
+| Coherencia entre artefactos | Actualizar User Task Matrix, Journey As-Is y Empathy con los mismos códigos/fuentes; revisar Lean UX e historias cuando contradigan la evidencia. Las emociones requieren una expresión del participante o una observación claramente identificada. |
+| Revisión y formato | Un segundo integrante revisa correspondencia fuente–necesidad–Persona. Registrar fecha, revisor y enlace/exportación UXPressia con acceso para el curso. |
+
+El [control de entrevistas](../assets/research/tb1/interview-review-checklist.csv) permite comprobar la base válida y la [matriz de evidencia](../assets/research/tb1/persona-evidence-matrix.csv) permite comprobar el contenido de cada ficha. Hasta completar ambos, las Personas conservan su condición provisional. La mejora pendiente consiste en incorporar investigación real y actualizar los artefactos con ella.
 
 ### 2.3.2 User Task Matrix
 
