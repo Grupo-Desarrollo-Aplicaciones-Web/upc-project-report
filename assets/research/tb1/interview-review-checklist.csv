@@ -1,0 +1,7 @@
+participant_id,segment_declared,record_status,source_url,declared_date,declared_duration,profile_and_consent_check,recording_quality_check,questions_and_timing_check,summary_and_coding_check,authorized_capture_and_stream_check,reviewer,review_date,next_action
+S1-01,S1,REGISTRO EXISTENTE,https://youtu.be/Ka9AmFZM3Js,2026-09-14,07:25,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,,,Revisar video y completar resumen con fragmentos temporizados
+S1-02,S1,REGISTRO EXISTENTE,https://youtu.be/sIYtHGlNyWI,2026-09-15,07:36,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,,,Revisar video y completar resumen con fragmentos temporizados
+S1-03,S1,REGISTRO EXISTENTE,https://youtu.be/NuDAKMMTmaY,2026-09-17,07:58,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,,,Revisar video y completar resumen con fragmentos temporizados
+S2-01,S2,REGISTRO EXISTENTE,https://youtu.be/AkhgaNd8Few,2026-09-16,08:13,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,,,Revisar video y completar resumen con fragmentos temporizados
+S2-02,S2,SIN PARTICIPANTE,,,,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,,,Reclutar participante elegible y realizar entrevista autorizada
+S2-03,S2,SIN PARTICIPANTE,,,,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,NO VERIFICADO,,,Reclutar participante elegible y realizar entrevista autorizada

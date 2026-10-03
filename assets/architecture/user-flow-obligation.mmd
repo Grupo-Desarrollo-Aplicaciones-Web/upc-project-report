@@ -1,10 +1,22 @@
 flowchart TB
-  A[Propietario abre Dashboard] --> B[Filtra compras por proveedor, fecha o estado]
-  B --> C{Hay coincidencias}
-  C -- No --> D[Mostrar estado vacío y permitir limpiar filtros]
-  D --> B
-  C -- Sí --> E[Seleccionar compra]
-  E --> F{Detalle disponible}
-  F -- No --> G[Mostrar error y opción de reintento]
-  G --> E
-  F -- Sí --> H[Ver saldo, vencimiento y movimientos]
+  A["CON-01 Abrir Dashboard o Compras"] --> B{"Almacenamiento local se carga"}
+  B -- "No: CON-05" --> C["Mostrar fallo de acceso o datos corruptos;<br/>no mostrar listado ni formulario"]
+  C -- Reintentar --> B
+  C -- "Solicitar restablecimiento" --> D["Diálogo: advertir reemplazo por datos de ejemplo"]
+  D -- Cancelar --> C
+  D -- Confirmar --> E{"Restablecimiento completado"}
+  E -- No --> F["Conservar diálogo y mostrar fallo"]
+  F -- Reintentar --> E
+  F -- Cancelar --> C
+  E -- Sí --> B
+  B -- Sí --> G["Filtrar Compras por texto, proveedor,<br/>moneda, estado o vencimiento"]
+  G --> H{"Hay compras registradas"}
+  H -- "No: CON-03" --> I["Mostrar lista vacía y acceso a Nueva compra"]
+  H -- Sí --> J{"Hay coincidencias"}
+  J -- "No: CON-02" --> K["Mostrar Sin resultados;<br/>limpiar o cambiar filtros"]
+  K --> G
+  J -- Sí --> L["Seleccionar compra o abrir su enlace"]
+  L --> M{"Compra disponible"}
+  M -- "No: CON-04" --> N["Mostrar Compra no encontrada;<br/>volver a Compras"]
+  N --> G
+  M -- "Sí: CON-01" --> O["Consultar saldo, vencimiento,<br/>comprobante e historial de abonos"]

@@ -1,0 +1,13 @@
+%%{init: {"themeVariables":{"fontSize":"16px","fontFamily":"Arial"},"flowchart":{"nodeSpacing":24,"rankSpacing":24,"wrappingWidth":240}}}%%
+flowchart TB
+  Owner["Rosa / Business Owner"] --> Q["Query Obligations<br/>Consulta propuesta"]
+  CE["Credit Purchase Registered<br/>Desde parte 1"] --> Q
+  PE["Payment Recorded o Purchase Settled<br/>Desde parte 2"] --> Q
+  Q --> Read["Obligations Reviewed<br/>Observación de consulta propuesta"]
+  Q -. "Iteración futura" .-> L["Loan / Schedule / Debt Report<br/>Alcance por refinar"]
+  classDef actor fill:#EFF6FF,stroke:#0369A1;
+  classDef event fill:#FFF1D6,stroke:#B45309;
+  classDef readModel fill:#E0F2FE,stroke:#0284C7;
+  class Owner actor;
+  class CE,PE event;
+  class Q,Read readModel;

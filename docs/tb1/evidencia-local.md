@@ -44,7 +44,15 @@ Las pruebas de dominio cubren importes positivos, PEN/USD por separado, pertenen
 
 No se observaron errores JavaScript de página en este recorrido. `tools/tb1/capture.cjs` permite repetirlo con ambos servidores locales activos y un perfil temporal de navegador; no captura información personal operativa.
 
-### Exportaciones documentales
+### Revisión de las observaciones recibidas
+
+La [matriz de retroalimentación](feedback-resolution.md) relaciona cada observación con su corrección y la evidencia que permanece pendiente. El 03/10/2026 se capturaron cinco wireframes móviles de la aplicación, cuatro vistas de wireframes de la landing (dos escritorio y dos móvil) y el contacto móvil de la landing ejecutada localmente. El [registro de diseño](../../assets/ux/tb1/design-execution.json) identifica los tamaños de captura y registra ausencia de errores de página y desbordamiento horizontal de la landing. El servidor temporal iniciado por el capturador se detuvo al terminar.
+
+Los diagramas de compra, abono y consulta incluyen 17 caminos identificados y se regeneran desde Mermaid. La matriz del capítulo IV diferencia los caminos documentados de los comprobados por las pruebas ya registradas; estas correcciones de diseño no declaran una nueva ejecución de pruebas del producto.
+
+El exportador del informe comprueba imágenes, enlaces internos y desbordamiento al ancho imprimible de A4. Cada sección numerada inicia una página; si un título padre no tiene contenido propio, comparte el inicio con su primera subsección. El índice enlaza al encabezado correspondiente. El PDF actualizado se revisa visualmente y sus sumas de comprobación se conservan en el manifiesto del paquete.
+
+### Archivos de la entrega local
 
 El paquete de [`deliverables/tb1`](../../deliverables/tb1/README.md) reúne Report PDF, Keynote PPTX/PDF, Performance DOCX/PDF y Supporting ZIP, con fuentes de generación en `tools/tb1/`. Las tablas y diagramas de la presentación son editables. Su comprobación incluye integridad del paquete, geometría, fuente Arial, tablas nativas, suma de los 26 story points y reimportación mediante el generador. Se revisan visualmente las 22 diapositivas y las páginas exportadas.
 

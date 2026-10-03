@@ -74,6 +74,16 @@ Los CTA son configurables mediante `VITE_APP_URL`; requieren el servidor local d
 
 El recorrido actual comprende propuesta, obligaciones ilustrativas, funcionalidades, proceso compra/abono, alcance TB1, preguntas, contacto de demostración y legales. Los [bocetos de AV1](../assets/branding/wiref1.png) y el [archivo Figma histórico](https://www.figma.com/design/OQWWAsxRTtOPJcWfFUtCq3/Sin-t%C3%ADtulo?node-id=12-2) se conservan como referencia. La revisión TB1 debe trasladarse a Figma para cumplir el formato del curso.
 
+La [fuente de wireframes TB1](../assets/ux/tb1/landing-wireframes.html) define la estructura vigente en escritorio y móvil. El primer panel reúne propósito, CTA por segmento y vista ilustrativa del producto; el segundo reúne proceso, alcance, preguntas, contacto y legales. Las columnas se apilan en móvil, la navegación se contrae y ambos CTA siguen visibles. Las cuentas sociales solo se incorporarán cuando el equipo tenga cuentas reales autorizadas; no se enlazan perfiles supuestos.
+
+![Wireframe de landing: propósito y CTA en escritorio](../assets/ux/tb1/wireframe-landing-overview-desktop.png)
+
+![Wireframe de landing: proceso y contacto en escritorio](../assets/ux/tb1/wireframe-landing-process-desktop.png)
+
+![Wireframe móvil de landing: propósito y CTA](../assets/ux/tb1/wireframe-landing-overview-mobile.png)
+
+![Wireframe móvil de landing: proceso, contacto y legales](../assets/ux/tb1/wireframe-landing-process-mobile.png)
+
 ### 4.3.2 Landing Page Mock-ups
 
 Estas capturas son de la nueva landing ejecutada localmente. Sustituyen en la lectura actual los textos históricos sobre cartera de clientes y ofertas sin sustento. Los recursos antiguos se conservan para trazabilidad en `assets/branding/`.
@@ -82,6 +92,10 @@ Estas capturas son de la nueva landing ejecutada localmente. Sustituyen en la le
 
 ![Landing TB1 en móvil, español](../assets/ux/tb1/landing-mobile-es.png)
 
+![Contacto de landing en móvil, español](../assets/ux/tb1/landing-contact-mobile-es.png)
+
+La composición implementada mantiene etiquetas, CTA y enlaces legales en 390 px. La [captura de diseño](../assets/ux/tb1/design-execution.json) registra viewport y fecha: no hubo errores JavaScript ni desbordamiento horizontal en la landing revisada. La publicación HTTPS y su prueba de humo siguen siendo evidencias distintas que deben registrarse después de autorizar deployment.
+
 ## 4.4 Web Applications UX/UI Design
 
 ### 4.4.1 Web Application Wireframes
@@ -89,6 +103,18 @@ Estas capturas son de la nueva landing ejecutada localmente. Sustituyen en la le
 [Fuente editable local de cinco pantallas](../assets/ux/tb1/wireframes.html): dashboard, lista, nueva compra, detalle y abono. Cada pantalla identifica actor, historia y alternativas de vacío/error. El diseño puede abrirse en el navegador y adaptarse a móvil. Son wireframes locales; no se presentan como exportación de Figma.
 
 ![Wireframe de nueva compra](../assets/ux/tb1/wireframe-purchase.png)
+
+Las siguientes cinco exportaciones muestran explícitamente la composición móvil de los mismos flujos a **390 px**, desde la fuente HTML editable. El menú ocupa una fila compacta, las métricas y campos se apilan y las tablas conservan desplazamiento interno cuando es necesario. Cada imagen identifica historia, datos ilustrativos y estado alternativo; no es una captura de una sesión con participantes.
+
+![Wireframe móvil de dashboard](../assets/ux/tb1/wireframe-dashboard-mobile.png)
+
+![Wireframe móvil de lista de compras](../assets/ux/tb1/wireframe-list-mobile.png)
+
+![Wireframe móvil de nueva compra](../assets/ux/tb1/wireframe-purchase-mobile.png)
+
+![Wireframe móvil de detalle e historial](../assets/ux/tb1/wireframe-detail-mobile.png)
+
+![Wireframe móvil de abono con error](../assets/ux/tb1/wireframe-payment-mobile.png)
 
 | Pantalla | Historia | Estado alternativo |
 |---|---|---|
@@ -100,7 +126,7 @@ Estas capturas son de la nueva landing ejecutada localmente. Sustituyen en la le
 
 ### 4.4.2 Web Application Wireflow Diagrams
 
-[Wireflow local con pantallas y alternativas](../assets/ux/tb1/wireflow.html). El recorrido de compra conecta lista, formulario y detalle; el de abono conecta detalle, formulario y saldo actualizado. Debe importarse/recrearse en FigJam, LucidChart u Overflow para el formato exigido. El Mermaid anterior se mantiene como lógica complementaria:
+[Wireflow local con pantallas y alternativas](../assets/ux/tb1/wireflow.html). El recorrido de compra conecta lista, formulario y detalle; el de abono conecta detalle, formulario y saldo actualizado. Debe importarse/recrearse en FigJam, LucidChart u Overflow para el formato exigido. El Mermaid actualizado resume las rutas TB1 y distingue los accesos futuros:
 
 ![Lógica del wireflow](../assets/architecture/web-wireflow.svg)
 
@@ -128,13 +154,63 @@ Las siguientes capturas muestran las vistas implementadas con datos ficticios y 
 | US-008 reportes | Filtros, consulta y exportación futura. | Roadmap, no operación disponible TB1. |
 | US-009 préstamos | Préstamo y cronograma futuro. | Roadmap, no operación disponible TB1. |
 
-![Registro de compra](../assets/architecture/user-flow-purchase.svg)
+Los flujos se presentan en partes conectadas para mantener legibles las decisiones y los retornos en el informe. Cada salida «Continuar en parte» identifica la vista siguiente; los identificadores de escenario coinciden con la matriz de cobertura. El alcance es la organización fija de demostración y su almacenamiento local, sin autenticación ni API desplegada.
 
-![Registro de abono](../assets/architecture/user-flow-payment.svg)
+**Compra, parte 1: entrada, cancelación del formulario y validación.**
 
-![Consulta de obligación](../assets/architecture/user-flow-obligation.svg)
+![Compra: formulario y validación](../assets/architecture/user-flow-purchase-part-1.svg)
 
-Fuentes: [compra](../assets/architecture/user-flow-purchase.mmd), [abono](../assets/architecture/user-flow-payment.mmd), [obligación](../assets/architecture/user-flow-obligation.mmd). Los diagramas de [reportes](../assets/architecture/user-flow-report.mmd) y [préstamos](../assets/architecture/user-flow-loan.mmd) conservan el diseño de Sprint 3.
+**Compra, parte 2: revisión, confirmación y persistencia.**
+
+![Compra: confirmación y persistencia](../assets/architecture/user-flow-purchase-part-2.svg)
+
+**Abono, parte 1: existencia de compra, saldo y formulario.**
+
+![Abono: precondiciones y formulario](../assets/architecture/user-flow-payment-part-1.svg)
+
+**Abono, parte 2: validación y revisión del saldo posterior.**
+
+![Abono: validación de datos y archivo](../assets/architecture/user-flow-payment-part-2.svg)
+
+**Abono, parte 3: confirmación, revalidación y persistencia.**
+
+![Abono: confirmación y persistencia](../assets/architecture/user-flow-payment-part-3.svg)
+
+**Consulta, parte 1: carga y recuperación del almacenamiento.**
+
+![Consulta: carga y recuperación](../assets/architecture/user-flow-obligation-part-1.svg)
+
+**Consulta, parte 2: filtros, estados vacíos y detalle.**
+
+![Consulta: filtros y detalle](../assets/architecture/user-flow-obligation-part-2.svg)
+
+Fuentes completas: [compra](../assets/architecture/user-flow-purchase.mmd), [abono](../assets/architecture/user-flow-payment.mmd), [obligación](../assets/architecture/user-flow-obligation.mmd). Fuentes parciales: compra [1](../assets/architecture/user-flow-purchase-part-1.mmd) y [2](../assets/architecture/user-flow-purchase-part-2.mmd); abono [1](../assets/architecture/user-flow-payment-part-1.mmd), [2](../assets/architecture/user-flow-payment-part-2.mmd) y [3](../assets/architecture/user-flow-payment-part-3.mmd); consulta [1](../assets/architecture/user-flow-obligation-part-1.mmd) y [2](../assets/architecture/user-flow-obligation-part-2.mmd). Los diagramas de [reportes](../assets/architecture/user-flow-report.mmd) y [préstamos](../assets/architecture/user-flow-loan.mmd) conservan el diseño de Sprint 3.
+
+#### Cobertura de caminos alternativos del incremento TB1
+
+Cada identificador aparece en los diagramas y el wireflow. Esta matriz permite revisar el resultado observable y el punto de retorno, incluyendo la diferencia entre cancelar un formulario y cerrar su confirmación. La fuente del comportamiento es el código de `PurchaseFormView`, `PaymentFormView`, `PaymentForm`, `PurchasesView`, `PurchaseDetailView`, `WorkspaceStatus` y el adaptador local del frontend. La cobertura del diseño no implica que todos los escenarios se hayan ejecutado en una prueba de usuario.
+
+| Escenario | Disparador y resultado previsto en el código local | Retorno o continuación |
+|---|---|---|
+| COMP-01 | Compra válida, revisión y confirmación; guarda una compra y muestra saldo inicial igual al importe. | Detalle de la compra. |
+| COMP-02 | Campo obligatorio, importe, moneda, proveedor, fecha, referencia duplicada para el mismo proveedor u archivo inválido; señala error y conserva entrada. | Corregir formulario y volver a revisar. |
+| COMP-03 | Cancelar el formulario antes de guardar; no crea una compra. | Lista de compras. |
+| COMP-04 | Cerrar/cancelar el diálogo de revisión; no guarda ni borra los campos. | Formulario con la entrada anterior. |
+| COMP-05 | Al confirmar falla la escritura o los datos cambiaron en otra pestaña; informa el error y no simula éxito. | Mantener el diálogo; cerrar para corregir o recargar si el mensaje lo requiere. |
+| ABO-01 | Abono válido de 30 en compra de 100; agrega movimiento y muestra saldo 70 en la moneda de la compra. | Detalle e historial. |
+| ABO-02 | La compra de la ruta no existe; muestra explicación y evita registrar abono. | Volver a la lista. |
+| ABO-03 | Saldo cero; informa que la compra está pagada y no ofrece un abono nuevo. | Detalle o lista. |
+| ABO-04 | Abono no positivo o mayor al saldo, fecha inválida o voucher inválido/ilegible; explica el error y mantiene los campos. | Corregir y volver a revisar. |
+| ABO-05 | Cancelar formulario; no agrega movimiento ni modifica saldo. | Detalle de la compra. |
+| ABO-06 | Cancelar el diálogo de revisión; conserva entrada sin registrar abono. | Formulario de abono. |
+| ABO-07 | Falla de escritura, cambio de datos o revalidación del saldo al confirmar; muestra el error sin añadir el movimiento. | Diálogo conservado; corregir/recargar según el error. |
+| CON-01 | Carga y búsqueda válidas; permite consultar total, abonos, saldo y vencimiento por moneda. | Detalle e historial. |
+| CON-02 | Filtros sin coincidencias; conserva filtros y distingue el resultado vacío de un fallo de lectura. | Limpiar o ajustar filtros. |
+| CON-03 | No hay compras; muestra estado vacío con acceso al registro. | Nueva compra. |
+| CON-04 | Compra inexistente; muestra estado específico, sin inventar saldo cero de una compra válida. | Lista de compras. |
+| CON-05 | Datos locales ilegibles o almacenamiento no disponible; informa el fallo en lugar de presentar un dashboard válido. | Reintentar lectura o confirmar restablecimiento de la demo; este último reemplaza los datos ficticios. |
+
+Los casos de importe, fecha, referencia, proveedor, archivo y fallas del adaptador cuentan con pruebas de dominio; la [evidencia de navegador](tb1/evidencia-local.md) registra el recorrido compra–abono–saldo, sobreabono y ruta inexistente. El resto de la matriz conserva su condición de contrato de diseño revisado contra el código, sin afirmar una ejecución no registrada. Préstamos/reportes y autenticación de servidor permanecen fuera de esta matriz TB1.
 
 ## 4.5 Web Applications Prototyping
 

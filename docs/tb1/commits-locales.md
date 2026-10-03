@@ -4,7 +4,7 @@ Corte técnico: 03/10/2026. Sin push ni deployment. Hashes locales, no enlaces r
 
 ## Report
 
-Rama `feature/tb1-delivery`, HEAD `ca3ee095fd3c3a736d597b1c32c66892387a8474`. Rango `9907263..HEAD`.
+Rama `feature/report-rubric-improvements`, HEAD `9a82f907a310745d419f5672574d9c160593dd53`. Rango `9907263..HEAD`.
 
 | SHA | Fecha | Autor y correo | Mensaje | Body |
 |---|---|---|---|---|
@@ -25,12 +25,25 @@ Rama `feature/tb1-delivery`, HEAD `ca3ee095fd3c3a736d597b1c32c66892387a8474`. Ra
 | 2d8dcb2 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(delivery): update TB1 conclusions annexes and submission scope | Sin body |
 | ef18b2b | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(report): correct profile version table and purchase wireframe | Sin body |
 | 967ff5f | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(evidence): record verified local tests and payment screenshots | Sin body |
-| ca3ee09 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | build(delivery): add reproducible local TB1 export and packaging tools |
+| ca3ee09 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | build(delivery): add reproducible local TB1 export and packaging tools | Sin body |
+| e0acf6a | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(gitflow): capture personal feature commits for TB1 review | Sin body |
+| eaa020c | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(report): export complete local TB1 report | Sin body |
+| 7008cd8 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(keynote): add reviewed editable TB1 presentation and PDF | Sin body |
+| 0a41cb6 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(performance): add ungraded participation forms for three members | Sin body |
+| de8f967 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | build(package): preserve TB1 source snapshot and verified artifact checksums | Sin body |
+| 9c1244a | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | chore(gitflow): integrate verified local TB1 delivery | Sin body |
+| d7a7fc6 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(research): trace interview review and persona evidence | Sin body |
+| 15c76d3 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(sprint): group engineering tasks into four to eight hours | Sin body |
+| 6e2048a | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(design): add responsive wireframes and alternative flow paths | Sin body |
+| 7ac34fe | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(sprint): include canonical planning details in chapter five | Sin body |
+| 9dcb4f4 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(domain): split eventstorming into readable report views | Sin body |
+| 9a82f90 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(report): resolve feedback and paginate numbered sections |
 
 Features conservadas para revisión:
 
+- `feature/report-rubric-improvements 9a82f90`
 - `feature/tb1-auditoria-prompt 3f8f34d`
-- `feature/tb1-delivery ca3ee09`
+- `feature/tb1-delivery de8f967`
 - `feature/tb1-requirements-design 3b5fb45`
 - `feature/tb1-research 084ad9a`
 - `feature/tb1-sprint-evidence f16e8bd`

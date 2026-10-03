@@ -28,6 +28,7 @@ Las fuentes de competencia, planes y mercado se consultaron el 03/10/2026 en sit
 | F Paquete TB1 | [Inventario de archivos](../deliverables/tb1/README.md). | Report PDF, Keynote PPTX/PDF, Performance DOCX/PDF y ZIP locales. Performance sin calificación. |
 | G Videos de Exposiciones | [Guion y tiempos](tb1/guion-exposicion.md). | Grabación MP4 y enlace privado Stream pendientes. No se sustituye con capturas. |
 | H Videos de producto/equipo | Alcance AV2. | Preparar About-the-Product/About-the-Team en su hito, sin declarar grabaciones inexistentes. |
+| I Revisión de retroalimentación | [Mejoras y pendientes por observación](tb1/feedback-resolution.md). | Diseño móvil/flujos/maquetación locales revisados; investigación, publicación y video requieren evidencia adicional. |
 
 ## Evidencia de publicación futura
 

@@ -5,6 +5,7 @@ from hashlib import sha256
 import json
 import subprocess
 import zipfile
+from pypdf import PdfReader
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'deliverables/tb1'
@@ -64,6 +65,22 @@ def build():
         'packageFindings': 0, 'layoutFindings': 0, 'reimport': 'pass',
         'nativeTableArithmetic': '26 SP total verified',
         'nativePowerPointExecution': 'Not performed', 'visualReview': 'All 22 rendered slides reviewed'}
+    report_checks = json.loads((ROOT / '.tb1-build/report-checks.json').read_text(encoding='utf-8'))
+    for key in ['unresolvedLinks', 'horizontalOverflow', 'brokenImages']:
+        if report_checks[key]:
+            raise RuntimeError(f'Report export findings: {key}')
+    report_pdf = PdfReader(files[0])
+    if any(not 0 <= report_pdf.get_destination_page_number(dest) < len(report_pdf.pages)
+           for dest in report_pdf.named_destinations.values()):
+        raise RuntimeError('Invalid report PDF destination')
+    manifest['reportValidation'] = {'pages': len(report_pdf.pages),
+        'sections': len(report_checks['sections']),
+        'forcedSectionBreaks': report_checks['forcedSectionBreaks'],
+        'namedDestinations': len(report_pdf.named_destinations),
+        'unresolvedLinks': 0, 'horizontalOverflow': 0, 'brokenImages': 0,
+        'pagination': 'Numbered sections start pages; empty parent headings share the first subsection.',
+        'flowPaths': {'purchase': 5, 'payment': 7, 'query': 5},
+        'researchStatus': 'Four interview records; two S2 interviews and response analysis pending.'}
     zip_path = OUT / (PREFIX + 'supporting-tb1.zip')
     provisional = OUT / 'MANIFEST.json'
     provisional.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

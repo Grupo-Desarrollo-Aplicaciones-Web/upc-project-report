@@ -26,3 +26,5 @@ El criterio de deployment del curso no queda cerrado por build local. Se respet�
 - Features y commits personales permiten revisar cambios sin modificar main.
 - El PDF completo, presentación y formatos abren correctamente.
 - Se identifican fuentes humanas pendientes sin atribuir reuniones/pruebas no realizadas.
+
+La [revisión de retroalimentación](tb1/feedback-resolution.md) identifica las correcciones posteriores: wireframes móviles explícitos, flujos con errores/cancelaciones, tareas de 4–8 horas y PDF con cada sección numerada en página nueva. Completar una mejora documental no cambia por sí solo la calificación del curso ni cierra entrevistas, prototipo en Figma, deployment público o grabación.

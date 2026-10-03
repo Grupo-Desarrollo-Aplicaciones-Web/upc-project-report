@@ -1,0 +1,5 @@
+participant_id,segment_declared,source_url,question_to_review,variable,minute_start,minute_end,quote_or_paraphrase,evidence_type,need,persona_candidate,story_candidate,analysis_status,reviewer,review_date
+S1-01,S1,https://youtu.be/Ka9AmFZM3Js,G-03,SALDO,,,,,,Rosa,US-004,PENDIENTE DE REVISIÓN,,
+S1-02,S1,https://youtu.be/sIYtHGlNyWI,G-04,VENCIMIENTO,,,,,,Rosa,US-004,PENDIENTE DE REVISIÓN,,
+S1-03,S1,https://youtu.be/NuDAKMMTmaY,G-05,ABONO,,,,,,Rosa,US-007,PENDIENTE DE REVISIÓN,,
+S2-01,S2,https://youtu.be/AkhgaNd8Few,G-02,COMPRA,,,,,,Diego,US-005,PENDIENTE DE REVISIÓN,,

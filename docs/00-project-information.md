@@ -36,6 +36,7 @@ El historial de `develop` permite vincular los aportes con las identidades que c
 | 0.7 | 18/09/2026 | Miguel Angel Egocheaga Suyo | Diagramas de información, User Flows, C4, clases y base de datos, junto con el esquema SQL y el control de AV1. | [`3086a32`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/3086a32), [`e6a4efe`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/e6a4efe), [`b84d9a6`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/b84d9a6) |
 | 0.8 | 18/09/2026 | Miguel Angel Egocheaga Suyo | Consolidación del capítulo 00 y trazabilidad de aportes mediante evidencia del historial Git. | Contenido histórico incorporado en el informe AV1. |
 | 0.9, preparación TB1 | 03/10/2026 | Miguel Angel Egocheaga Suyo | Auditoría del enunciado, corrección de investigación/requisitos/modelos, nueva landing y primera frontend locales, Sprint 2 y paquete documental. | [Historial local por features](tb1/commits-locales.md), [ejecución](tb1/evidencia-local.md). No publicado ni release estable. |
+| Revisión de retroalimentación TB1 | 03/10/2026 | Miguel Angel Egocheaga Suyo | Control de entrevistas y evidencia de Personas, wireframes móviles, alternativas de flujos, tareas de 4–8 h y paginación del informe. | [Respuesta por observación](tb1/feedback-resolution.md), fuentes y capturas locales. Corrección documental; sin nueva release ni calificación. |
 
 ## 00.4 Resumen de aportes por integrante
 

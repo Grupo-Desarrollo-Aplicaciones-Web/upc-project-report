@@ -1,0 +1,4 @@
+.flowchart, .flowchart text, .flowchart .label, .flowchart .nodeLabel,
+.flowchart .edgeLabel, .flowchart foreignObject div, .flowchart foreignObject span {
+  font-family: Arial, sans-serif !important;
+}
