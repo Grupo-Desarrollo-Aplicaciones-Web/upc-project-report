@@ -1,5 +1,18 @@
 # Capítulo 00: Información del proyecto
 
+## 00.1 Datos académicos
+
+| Dato | Valor del informe |
+|---|---|
+| Universidad/carrera | Universidad Peruana de Ciencias Aplicadas, Ingeniería de Software. |
+| Curso | 1ASI0730 Aplicaciones Web. |
+| Periodo/NRC | 202620 / 16127. |
+| Docente | Villafuerte Bazan, Oscar Ivan. |
+| Equipo/proyecto | Grupo 2 / CREDITOR. |
+| Hito/corte | TB1 Stage Review, preparación local al 03/10/2026. |
+| Report | [Organización y repositorio](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report). |
+| Fecha de presentación | Confirmar horario: 24 horas antes de la segunda sesión sincrónica semanal. |
+
 ## 00.2 Integrantes e identidades de Git
 
 El historial de `develop` permite vincular los aportes con las identidades que cada integrante utilizó. Los conteos corresponden al corte del **18 de septiembre de 2026** y sirven como referencia de trazabilidad; la calidad del aporte se evalúa por los artefactos producidos y no solo por la cantidad de commits.
@@ -21,7 +34,8 @@ El historial de `develop` permite vincular los aportes con las identidades que c
 | 0.5 | 16/09/2026 al 18/09/2026 | Juan Manuel Santos Torres | Planificación del Sprint 1, criterios de aceptación, protocolo de validación e inspección heurística. | [`d8db0dd`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/d8db0dd), [`dd95c80`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/dd95c80), [`b4aaeb3`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/b4aaeb3) |
 | 0.6 | 17/09/2026 al 18/09/2026 | Sebastián Gutarra Velapatiño | Actualización de entrevistas, incorporación del wireframe y mock-up web, e integración de imágenes de User Personas. | [`c68799f`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/c68799f), [`7c41cda`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/7c41cda), [`25f9923`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/25f9923) |
 | 0.7 | 18/09/2026 | Miguel Angel Egocheaga Suyo | Diagramas de información, User Flows, C4, clases y base de datos, junto con el esquema SQL y el control de AV1. | [`3086a32`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/3086a32), [`e6a4efe`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/e6a4efe), [`b84d9a6`](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/b84d9a6) |
-| 0.8 | 18/09/2026 | Miguel Angel Egocheaga Suyo | Consolidación del capítulo 00 y trazabilidad de aportes mediante evidencia del historial Git. | Rama local `docs/capitulo-00-contribuciones`. |
+| 0.8 | 18/09/2026 | Miguel Angel Egocheaga Suyo | Consolidación del capítulo 00 y trazabilidad de aportes mediante evidencia del historial Git. | Contenido histórico incorporado en el informe AV1. |
+| 0.9, preparación TB1 | 03/10/2026 | Miguel Angel Egocheaga Suyo | Auditoría del enunciado, corrección de investigación/requisitos/modelos, nueva landing y primera frontend locales, Sprint 2 y paquete documental. | [Historial local por features](tb1/commits-locales.md), [ejecución](tb1/evidencia-local.md). No publicado ni release estable. |
 
 ## 00.4 Resumen de aportes por integrante
 
@@ -81,3 +95,15 @@ La tabla resume la responsabilidad que puede demostrarse con el contenido actual
 ## 00.7 Criterio de actualización
 
 Este capítulo atribuye únicamente aportes respaldados por commits o artefactos presentes en el repositorio. Las entrevistas, pruebas con usuarios, despliegues, reuniones o revisiones que ocurran fuera de Git deben añadirse con su fecha, responsable y enlace de evidencia. Antes de entregar, el equipo debe revisar esta matriz y confirmar que describe su trabajo real.
+
+## 00.12 Collaboration Insights de la preparación TB1
+
+La nueva preparación se registra con la identidad de Miguel y conserva los aportes históricos de Juan y Sebastián. No se atribuyen los nuevos commits a otros integrantes. Las features se integraron localmente con merges `--no-ff`, sin cambiar el historial remoto ni publicar una release. El análisis de colaboración se puede reproducir con `git log --format='%h %an <%ae> %s'` en cada repositorio.
+
+| Integrante | Evidencia histórica utilizada | Acción TB1 comprobada | Revisión siguiente |
+|---|---|---|---|
+| Juan Manuel | Problema, Lean UX y planificación/validación de Sprint 1. | Insumos reutilizados. Nuevas acciones TB1 no confirmadas. | Confirmar objetivo/LACX y contrastar hipótesis con entrevistas. |
+| Sebastián | Marca, bocetos y registros de entrevista de AV1. | Insumos reutilizados. Nuevas acciones TB1 no confirmadas. | Revisar las pantallas actuales y trasladarlas a Figma. |
+| Miguel Angel | Requisitos, arquitectura e integración del informe. | Nuevos commits personales de report, landing y frontend, pruebas y paquete local. | Coordinar revisión cruzada, grabación y publicación autorizada. |
+
+Las tablas de commits locales son evidencia de control de versiones. Analíticos GitHub de TB1 y aprobaciones del equipo requieren publicación y participación real posterior; no se incluyen capturas reconstruidas.

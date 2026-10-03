@@ -1,0 +1,115 @@
+{
+  "project": "CREDITOR",
+  "milestone": "TB1",
+  "createdUtc": "2026-10-03T19:38:17.244252+00:00",
+  "scope": "Local preparation; no push, remote creation or new deployment.",
+  "commitBoundary": "Source snapshot before artifact-package commit and local GitFlow merge.",
+  "identity": "MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com>",
+  "repositories": {
+    "report": {
+      "branch": "feature/tb1-delivery",
+      "sourceCommit": "e0acf6aef261926dccacf4467d1b0f71564acd5a",
+      "features": [
+        "feature/tb1-auditoria-prompt 3f8f34d2e1ace1e77fed507becfd9a4de1026d82",
+        "feature/tb1-delivery e0acf6aef261926dccacf4467d1b0f71564acd5a",
+        "feature/tb1-requirements-design 3b5fb452ad1d7970f64ae45882e80ca87950ed4d",
+        "feature/tb1-research 084ad9a599cbcdd588c3477105d3c82108f59062",
+        "feature/tb1-sprint-evidence f16e8bdcc4bb725871d9c8779861b9b825b0140c",
+        "feature/tb1-ux-alignment a3afc5151398248704cfc70aa535b90da19d26ef",
+        "feature/tb1-workflow c2b72880dfea0d40c54031579d0a2ab8ae0d3d69"
+      ],
+      "main": "57c0bd182c1750be143cfe23e75bc9382499fa9b",
+      "originDevelop": "e684054336942cc734267be936791da6df1f7a93"
+    },
+    "landing": {
+      "branch": "develop",
+      "sourceCommit": "cc1b4cf851b676c7b11445beee43ec66a31d6ef5",
+      "features": [
+        "feature/contact-accessibility ed3f923f3674c67c65f50a1f375f0713968fda67",
+        "feature/creditor-content 8fdd291c69362ba04100c1ac91866a7eb0ce6a8e",
+        "feature/frontend-navigation 099ed12a0df006560d04238df89cdecd2c4353b2",
+        "feature/tb1-quality-local 62eceffcaaab4a933a829e1f0ab3e8815fe827ca"
+      ],
+      "main": "01fc92537b59c4cfd17400912bf0efb62edb3f9f",
+      "originDevelop": "cf734ff17d32417323c17a03ccf11a3f4d3a1ade"
+    },
+    "frontend": {
+      "branch": "develop",
+      "sourceCommit": "f4d367fa18fab41408a37bda873325078618a2d4",
+      "features": [
+        "feature/accounts-payable c5452411dab7e287be97f231d04fb6e84e3fb932",
+        "feature/app-foundation e29228776b0d0bc7f2ef3bcc1ce4e76cac59ff86",
+        "feature/payment-history-layout 799dbe30c405672e135baa29ae4191ae70732a94",
+        "feature/purchase-payments ee7150554cec8995da725ae4c050c04c15170beb",
+        "feature/tb1-copy-encoding fa9155c0d09976a5afd240749fcbf0fad7e7ce26",
+        "feature/tb1-quality-local f9cda20685ff33f9f849d9fc58b9512992072b87"
+      ],
+      "main": "9edfe55966ec0e7ac6328e587370313f0ce3273a",
+      "originDevelop": null
+    }
+  },
+  "checks": {
+    "landingUnitTests": 12,
+    "frontendDomainTests": 14,
+    "frontendBrowserTests": 2,
+    "builds": [
+      "landing",
+      "frontend"
+    ],
+    "frontendFinalCssChecks": "Browser tests and build rerun after CSS-only history fix.",
+    "presentationSlides": 22,
+    "performancePages": 3,
+    "reportReferences": "Resolved local Markdown files/images.",
+    "documentPdfExport": "WPS Writer Office-compatible COM; canonical renderer unavailable."
+  },
+  "pendingAcademicEvidence": [
+    "Two S2 interviews and analysis with quotes/timestamps",
+    "Team planning/LACX/board/story acceptance and leader evaluation",
+    "Design sync in required online tools",
+    "Authorized deployment of landing/frontend",
+    "Real recorded exposition MP4/Stream"
+  ],
+  "artifacts": [
+    {
+      "file": "upc-pre-202620-1asi0730-16127-creditor-report-tb1.pdf",
+      "bytes": 31708206,
+      "sha256": "b3db13fb32076ea67936fdd76c2798a8442ff7c4776ce0542e7ff5ded398f079"
+    },
+    {
+      "file": "upc-pre-202620-1asi0730-16127-creditor-keynote-tb1.pptx",
+      "bytes": 6742286,
+      "sha256": "b181b0f7116302beae6eb36beae022fe1286eac83806970313ec914c8dc9fc06"
+    },
+    {
+      "file": "upc-pre-202620-1asi0730-16127-creditor-keynote-tb1.pdf",
+      "bytes": 1900958,
+      "sha256": "b4722b2420913c0f3c27d2e7d03a05743ca73d3774551d471c5dad86796d618e"
+    },
+    {
+      "file": "upc-pre-202620-1asi0730-16127-creditor-performance-tb1.docx",
+      "bytes": 39447,
+      "sha256": "ca94a4dbe7195f5b802829d1f270a1466e1d0815ff26f0af56c8564dc4780bd9"
+    },
+    {
+      "file": "upc-pre-202620-1asi0730-16127-creditor-performance-tb1.pdf",
+      "bytes": 122337,
+      "sha256": "1d9fa03083eb5e290b2e796749117567ccc9e7aa7ae04059c0623e1265188003"
+    }
+  ],
+  "presentationValidation": {
+    "sha256": "b181b0f7116302beae6eb36beae022fe1286eac83806970313ec914c8dc9fc06",
+    "packageFindings": 0,
+    "layoutFindings": 0,
+    "reimport": "pass",
+    "nativeTableArithmetic": "26 SP total verified",
+    "nativePowerPointExecution": "Not performed",
+    "visualReview": "All 22 rendered slides reviewed"
+  },
+  "supportingZip": {
+    "file": "upc-pre-202620-1asi0730-16127-creditor-supporting-tb1.zip",
+    "bytes": 51100671,
+    "sha256": "c57f4bbb28828ee9a86277981b4bff7bb05b53b0f563d0717794e144250ef51f",
+    "entries": 268,
+    "manifestInsideZip": "Source snapshot without ZIP self-checksum to avoid a circular hash."
+  }
+}

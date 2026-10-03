@@ -48,7 +48,7 @@ El equipo evidencia la capacidad de colaborar mediante la distribución del info
 |---|---|---|---|
 | Juan Manuel Santos Torres | Capítulo I, planificación de Sprint 1, protocolo e inspección heurística. | Aportes integrados en `develop`. | Registrar la ejecución de las pruebas o entrevistas que le correspondan, con evidencia autorizada. |
 | Sebastián Gutarra Velapatiño | Style Guidelines, Landing UI Design, bocetos web, entrevistas y recursos de User Personas. | Aportes integrados en `develop`. | Revisar los mock-ups finales para alinearlos con compras a crédito y validar los enlaces de investigación. |
-| Miguel Angel Egocheaga Suyo | Estructura del informe, requisitos, arquitectura, base de datos, checklist e integración. | Aportes integrados en `develop`; capítulo 00 preparado en rama local. | Coordinar revisión del capítulo 00 y mantener trazabilidad de los siguientes PR. |
+| Miguel Angel Egocheaga Suyo | Estructura del informe, requisitos, arquitectura, base de datos, checklist e integración. | Aportes integrados en `develop`; capítulo 00 incorporado en la versión histórica AV1. | Coordinar revisión del capítulo 00 y mantener trazabilidad de los siguientes PR. |
 
 ## 00.10 Reflexión del equipo
 
@@ -59,3 +59,25 @@ El equipo todavía debe mejorar la revisión cruzada y la consistencia del flujo
 ## 00.11 Evidencias que no deben declararse sin respaldo
 
 Para preservar la validez académica, el capítulo 00 no atribuye reuniones, entrevistas, pruebas, despliegues, horas trabajadas o aprobaciones que el repositorio no demuestra. Cuando esas actividades se completen, se registrarán con responsable, fecha, resultado y enlace autorizado. De esta forma, el Student Outcome refleja contribuciones reales y permite que el docente compruebe la participación de cada integrante.
+
+## 00.13 ABET EAC Student Outcome 5 en TB1
+
+Se aplica el formato del Anexo A del enunciado: acciones y conclusiones por integrante para liderazgo conjunto y entorno colaborativo/inclusivo, metas, planificación y cumplimiento. Estas conclusiones delimitan lo comprobado; no sustituyen la reflexión personal ni la evaluación del líder.
+
+### 00.13.1 Liderazgo conjunto
+
+| Integrante | Acciones realizadas comprobables | Conclusión al corte |
+|---|---|---|
+| Juan Manuel Santos Torres | Sus aportes AV1 de problemática/Lean UX y validación orientan la revisión TB1. No se proporcionó evidencia de nuevas reuniones o decisiones TB1. | La base de producto facilita priorizar historias; el liderazgo de la iteración actual necesita confirmación y reflexión propia. |
+| Sebastián Gutarra Velapatiño | Su identidad visual y bocetos AV1 sirven de insumo para las pantallas corregidas. No se atribuyen a él los nuevos commits locales. | El diseño aporta una dirección común; revisar el prototipo y registrar decisiones permitirá evidenciar continuidad de liderazgo. |
+| Miguel Angel Egocheaga Suyo | Preparó features y commits personales para corregir el informe, construir la frontend y alinear landing, modelos, historias y Sprint 2. Registró pruebas y límites del incremento. | La trazabilidad facilita la revisión del equipo; esta preparación técnica todavía requiere aceptación y revisión cruzada. |
+
+### 00.13.2 Colaboración inclusiva, metas, planificación y cumplimiento
+
+| Integrante | Acciones realizadas comprobables | Conclusión al corte |
+|---|---|---|
+| Juan Manuel Santos Torres | Planificación y protocolos históricos conservados. La propuesta LACX asigna revisión de producto, pendiente de acuerdo. | No hay evidencia suficiente para afirmar cumplimiento de una asignación TB1 aún no confirmada. |
+| Sebastián Gutarra Velapatiño | Recursos visuales e investigación históricos conservados. Revisión visual propuesta, pendiente de acuerdo. | Confirmar responsabilidades y compartir revisión permitirá valorar cumplimiento y participación real. |
+| Miguel Angel Egocheaga Suyo | Preparó backlog de 26 SP y tareas estimadas, integró features localmente y comprobó compra/abono/moneda. Distinguió estimaciones, ejecución técnica y evidencia humana faltante. | Se dispone de un incremento reproducible y revisable. La velocidad, horas reales y acuerdos de equipo no pueden derivarse de los commits. |
+
+El equipo debe añadir su reflexión individual, acuerdos y evidencia auténtica antes de declarar alcanzado todo el criterio del hito.

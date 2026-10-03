@@ -19,7 +19,7 @@ Los tres perfiles y fotografías existentes se conservan. El equipo debe confirm
 | Integrante | Código | Perfil y responsabilidad propuesta | Fotografía existente |
 |---|---|---|---|
 | Juan Manuel Santos Torres | u20221a371 | Estudiante de Ingeniería de Software. Aporta perspectiva de producto e interfaces web a partir de su experiencia en la operación de negocios comerciales. |<img src="../assets/research/foto-juan.jpeg" alt="Juan Manuel Santos Torres, integrante" width="150">|
-| Sebastián Gutarra Velapatiño | u20241A314 | Estudiante de Ingeniería de Software. Aportaré con mis conocimientos en frontend para esta primera entrega. Mi responsabilidad fue el capítulo 4 Product Design | <img src="../assets/research/20240110_181602.jpg" alt="Sebastián perfil de integrante" width="150">
+| Sebastián Gutarra Velapatiño | u20241a314 | Estudiante de Ingeniería de Software. Aportó al capítulo IV Product Design en AV1 y participa en la revisión visual propuesta para TB1. | <img src="../assets/research/20240110_181602.jpg" alt="Sebastián perfil de integrante" width="150"> |
 | Miguel Angel Egocheaga Suyo | u202215188 | Estudiante de Ingeniería de Software. Organiza avances locales de documentación y landing mediante GitFlow; sus aportes finales se contrastarán con el historial publicado. | <img src="../assets/research/foto-miguel.jpg" alt="Miguel Angel Egocheaga Suyo, integrante" width="150"> |
 
 ## 1.2 Solution Profile
@@ -44,7 +44,7 @@ La información fragmentada entre cuadernos, hojas de cálculo, mensajes y docum
 
 **Objetivo de la propuesta:** permitir que el negocio conserve la relación proveedor–compra–abono y revise obligaciones por moneda. **Alcance local TB1:** dashboard, registro de compras, registro de abonos e historial (US-004 a US-007), mediante una aplicación Vue/PrimeVue y un adaptador local de demostración. Los datos de ejemplo no son datos de entrevistas ni registros operativos. **Iteraciones posteriores:** préstamos y reportes (US-008/009), API propia ASP.NET Core/EF Core, integración externa y persistencia PostgreSQL. La primera Web Services desplegada corresponde a AV2; TB1 requiere la primera Frontend Web Application. En esta ejecución se preparan y comprueban artefactos localmente; no se declara despliegue nuevo.
 
-La solución no suma PEN y USD como si fueran una moneda, no procesa transferencias bancarias y no sustituye contabilidad o asesoría financiera. La demostración de roles/organizaciones en el navegador no equivale a autenticación o aislamiento de seguridad en producción.
+La solución no suma PEN y USD como si fueran una moneda, no procesa transferencias bancarias y no sustituye contabilidad o asesoría financiera. La aplicación local trabaja con una organización ficticia fija; no implementa inicio de sesión, permisos por rol ni aislamiento de seguridad en el servidor.
 
 ### 1.2.2 Lean UX Process
 

@@ -102,5 +102,3 @@ Estado: **sin nuevo despliegue por alcance de trabajo local**. Build y previsual
 #### 5.2.2.8 Team Collaboration Insights during Sprint
 
 La evidencia histórica del informe conserva aportes de los tres integrantes. La nueva preparación técnica se registra con la identidad de Miguel. Las decisiones propuestas de revisión, tareas de entrevistas, grabación y desempeño se mantienen pendientes de validación del equipo; no se reconstruyen horas trabajadas ni aprobaciones.
-
-
