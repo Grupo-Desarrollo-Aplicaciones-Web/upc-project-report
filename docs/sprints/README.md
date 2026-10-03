@@ -8,4 +8,3 @@
 | 4 | Consolidación de producto y entrega final. | Roadmap TB2. | [Sprint 4](sprint-04.md) |
 
 La evidencia por sprint incluye planificación, LACX, work-items, commits, ejecución, documentación de servicios, publicación y colaboración. Los campos de actividad humana se completan a partir de registros del equipo.
-

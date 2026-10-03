@@ -12,4 +12,3 @@ El incremento inicial incorporó componentes de landing mediante features y merg
 | Configuración de publicación | 076c79d y cf734ff |
 
 [Deployment histórico](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/creditor-landing-page/actions/runs/35305597000). Las estimaciones y tareas redactadas posteriormente no constituyen horas reales ni actas de reuniones. Sprint 2 corrige marca, dominio, idioma, CTA, estados de contacto y evidencia de implementación.
-

@@ -1,5 +1,7 @@
 # Control de entrega AV1
 
+Esta ficha conserva pendientes del corte histórico AV1, no describe el avance actual TB1. Consultar el [control TB1](09-tb1-delivery-checklist.md) y [ejecución local](tb1/evidencia-local.md).
+
 Esta lista organiza los entregables de AV1. Un ítem solo se marca como listo al tener su archivo, enlace o evidencia verificable.
 
 | Entregable | Evidencia esperada | Estado actual |
@@ -8,9 +10,9 @@ Esta lista organiza los entregables de AV1. Un ítem solo se marca como listo al
 | Keynote | Archivo editable y PDF con producto, equipo, avance y fotos autorizadas. | Pendiente. |
 | Individual Member Performance Report | Documento del líder con aportes verificables de cada integrante. | Pendiente. |
 | Supporting files | ZIP con artefactos necesarios para la evaluación. | Pendiente de definir contenido final. |
-| Landing Page | URL HTTPS, commit desplegado, captura y verificación. | Pendiente de rebranding, correcciones y despliegue. |
-| Video About-the-Product | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Pendiente. |
-| Video About-the-Team | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Pendiente. |
+| Landing Page | URL HTTPS, commit desplegado, captura y verificación. | Publicación histórica del 18/09/2026, commit `cf734ff`. Correcciones TB1 locales documentadas aparte. |
+| Video About-the-Product (hito AV2) | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Pendiente. |
+| Video About-the-Team (hito AV2) | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Pendiente. |
 
 ## Revisión previa a publicación
 
