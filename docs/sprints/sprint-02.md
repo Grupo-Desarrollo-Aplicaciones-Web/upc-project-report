@@ -35,20 +35,17 @@ El tablero del curso en Trello/Jira/YouTrack queda pendiente de sincronización.
 
 | Story | Task | Descripción | Est. h | Assigned to | Estado de aceptación |
 |---|---|---|---:|---|---|
-| US-004 | T2-01 | Dashboard de saldos separados por moneda y vencimientos. | 4 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
-| US-004 | T2-02 | Filtros por proveedor/estado/moneda y rutas a detalle. | 3 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
-| US-005 | T2-03 | Formulario de compra con proveedor, moneda, importe, fecha y comprobante demo. | 5 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
-| US-005 | T2-04 | Validar campos, tenant de proveedor y manejo de errores. | 3 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
-| US-006 | T2-05 | Registrar abono y conservar historial/saldo en centavos. | 4 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
-| US-006 | T2-06 | Rechazar importe superior al saldo y conservar formulario. | 2 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
-| US-007 | T2-07 | Detalle con total, movimientos, fecha y referencia del voucher. | 3 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
-| US-001/003 | T2-08 | Landing CREDITOR, CTA por segmento y destinos legales. | 4 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
-| US-002 | T2-09 | Contacto de demostración honesto, sin prometer envío de email. | 2 | Miguel, preparación local | Contrato ajustado al alcance local. |
-| Calidad | T2-10 | Inglés/es419, teclado, responsive y casos automatizados. | 4 | Miguel, preparación local | Verificación técnica local. |
+| US-004 | T2-01 | Dashboard por moneda y vencimientos (4 h), filtros y rutas al detalle (3 h). | 7 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
+| US-005 | T2-03 | Formulario de compra y comprobante demo (5 h), validación de campos/proveedor y errores (3 h). | 8 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
+| US-006 | T2-05 | Registro de abono e historial en centavos (4 h), rechazo de sobreabono y conservación del formulario (2 h). | 6 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
+| US-007 / Calidad | T2-07 | Detalle y voucher (3 h), revisión inglés/es419, teclado, responsive y pruebas del incremento (4 h). | 7 | Miguel, preparación local | Implementación y verificación técnica local. |
+| US-001/002/003 | T2-08 | Landing, CTA y legales (4 h), contacto local sin promesa de envío (2 h). | 6 | Miguel, preparación local | Implementación local; ver evidencia de ejecución. |
 | Report | T2-11 | Investigación, requisitos, modelos y evidencia de Sprint 2. | 5 | Miguel, preparación local | Preparado; fuentes humanas pendientes identificadas. |
 | Entrega | T2-12 | Capturas, PDF, Keynote, formato performance y guion. | 4 | Miguel, preparación local | Artefactos locales; revisión del equipo pendiente. |
 
 Total estimado propuesto: 43 horas. Los estados To-do/In-Process/To-Review/Done del tablero académico se confirmarán con el equipo; la entrega local técnica pasa a To-Review con sus resultados de prueba.
+
+La revisión de la rúbrica agrupa las subtareas originales en **siete Engineering Tasks de 4 a 8 horas**; las horas dentro de la descripción indican su descomposición, no tareas independientes. T2-02 se integra en T2-01, T2-04 en T2-03, T2-06 en T2-05, T2-10 en T2-07 y T2-09 en T2-08. Se conserva el total propuesto de 43 horas y los 26 SP de las historias; no se modifica ni reconstruye tiempo realmente trabajado.
 
 ## 5.2.2.4 Development Evidence for Sprint Review
 
