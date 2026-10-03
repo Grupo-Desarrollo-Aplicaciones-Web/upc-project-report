@@ -18,3 +18,9 @@ Para landing/frontend usar Node.js 22.12+ o 24 y `npm ci` según cada README. La
 8. `python tools/tb1/package_delivery.py`: manifiesto SHA-256 y ZIP con fuentes rastreadas, builds y entregables. No contiene `.git`, dependencias, archivos de entorno privados ni exportaciones personales anteriores.
 
 El manifiesto identifica el commit de fuentes previo al commit del paquete, evitando una referencia circular al commit que contiene el ZIP. Tras guardar el paquete se integra la feature en `develop` mediante `--no-ff`. No ejecutar push, publicación o deployment como parte de estas utilidades.
+
+## Revisión de la retroalimentación
+
+- `node tools/tb1/capture_designs.cjs` exporta los wireframes móviles y la landing desktop/mobile. Puede iniciar un servidor temporal de landing en 5173 si el puerto está libre; detiene únicamente el proceso que inició al terminar. No requiere el frontend activo.
+- `python tools/tb1/render_flows.py --runtime <carpeta-runtime-mermaid>` regenera SVG/PNG de consulta, compra, abono, sus etapas y el wireflow TB1. La carpeta debe incluir `node_modules/@mermaid-js/mermaid-cli` y `puppeteer.json` con el browser instalado. No se incluye ese runtime en el ZIP.
+- `python tools/tb1/update_index.py` sincroniza las ocho secciones del Sprint 2 canónico con el capítulo V y actualiza el índice antes de exportar. El PDF incorpora ese contenido una vez y redirige sus enlaces al capítulo V. Cada sección numerada inicia una página; se agrupan encabezados consecutivos sin contenido intermedio y se conservan párrafos completos. `.tb1-build/report-checks.json` registra enlaces internos, imágenes y ancho.
