@@ -1,0 +1,14 @@
+%%{init: {"themeVariables":{"fontSize":"16px","fontFamily":"Arial"},"flowchart":{"nodeSpacing":24,"rankSpacing":24,"wrappingWidth":240}}}%%
+flowchart TB
+  Admin["Diego / Finance Administrator"] --> S["Register Supplier<br/>Comando"]
+  S --> SE["Supplier Registered<br/>Evento"]
+  Admin --> C["Register Credit Purchase<br/>Comando"]
+  SE --> C
+  C --> CE["Credit Purchase Registered<br/>Evento"]
+  CE --> Next["Continuar:<br/>abono en parte 2; consulta en parte 3"]
+  classDef actor fill:#EFF6FF,stroke:#0369A1;
+  classDef command fill:#E8EFFF,stroke:#2563EB;
+  classDef event fill:#FFF1D6,stroke:#B45309;
+  class Admin actor;
+  class S,C command;
+  class SE,CE event;

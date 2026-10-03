@@ -362,9 +362,13 @@ Los medios concretos utilizados y las rutas alternativas se dejan pendientes; no
 
 El mapa de dominio es una propuesta local que permite discutir compra, abono y revisión de obligaciones. No es acta de una sesión colaborativa realizada. Se exige registrar participantes, fecha, captura y decisiones de la sesión para cerrar la evidencia del curso. Mermaid es una herramienta permitida para EventStorming; el archivo editable y su exportación local representan el modelado, sin sustituir la sesión.
 
-![Big Picture EventStorming propuesto](../assets/architecture/big-picture-event-storming.svg)
+![Big Picture EventStorming propuesto: proveedores y compras](../assets/architecture/big-picture-event-storming-part-1.svg)
 
-[Fuente Mermaid](../assets/architecture/big-picture-event-storming.mmd).
+![Big Picture EventStorming propuesto: abono y saldo](../assets/architecture/big-picture-event-storming-part-2.svg)
+
+![Big Picture EventStorming propuesto: consulta y alcance futuro](../assets/architecture/big-picture-event-storming-part-3.svg)
+
+[Fuente Mermaid completa](../assets/architecture/big-picture-event-storming.mmd). Vistas parciales del mismo modelado: [proveedores y compras](../assets/architecture/big-picture-event-storming-part-1.mmd), [abono y saldo](../assets/architecture/big-picture-event-storming-part-2.mmd), [consulta y alcance futuro](../assets/architecture/big-picture-event-storming-part-3.mmd). Las referencias entre partes representan la continuidad del mapa propuesto, sin acreditar una sesión ni eventos observados.
 
 | Evento propuesto | Actor o comando | Regla/pregunta abierta |
 |---|---|---|
