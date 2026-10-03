@@ -22,7 +22,10 @@ CREATE TABLE purchases (
   supplier_id UUID NOT NULL,
   currency_code CHAR(3) NOT NULL CHECK (currency_code IN ('PEN', 'USD')),
   total_amount DECIMAL(14,2) NOT NULL CHECK (total_amount > 0),
-  due_date DATE NOT NULL,
+  document_reference VARCHAR(80) NOT NULL,
+  description VARCHAR(200) NOT NULL,
+  purchased_on DATE NOT NULL,
+  due_date DATE NOT NULL CHECK (due_date >= purchased_on),
   receipt_url VARCHAR(500),
   status VARCHAR(20) NOT NULL CHECK (status IN ('PENDING', 'PARTIALLY_PAID', 'SETTLED', 'OVERDUE')),
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -45,6 +48,7 @@ CREATE TABLE loans (
   currency_code CHAR(3) NOT NULL CHECK (currency_code IN ('PEN', 'USD')),
   annual_rate DECIMAL(7,4) NOT NULL CHECK (annual_rate >= 0),
   installment_count INTEGER NOT NULL CHECK (installment_count > 0),
+  payment_frequency VARCHAR(20) NOT NULL DEFAULT 'MONTHLY' CHECK (payment_frequency = 'MONTHLY'),
   first_due_date DATE NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
@@ -68,3 +72,5 @@ CREATE INDEX idx_payments_purchase_paid_on
 
 CREATE INDEX idx_loan_installments_loan_due_date
   ON loan_installments (loan_id, due_date);
+
+CREATE UNIQUE INDEX idx_purchases_supplier_reference ON purchases (supplier_id, LOWER(document_reference));

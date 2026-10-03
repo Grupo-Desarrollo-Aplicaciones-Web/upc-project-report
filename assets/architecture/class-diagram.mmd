@@ -13,6 +13,9 @@ classDiagram
     +UUID id
     +Decimal totalAmount
     +String currencyCode
+    +String documentReference
+    +String description
+    +Date purchasedOn
     +Date dueDate
     +String receiptUrl
     +PurchaseStatus status
@@ -30,6 +33,8 @@ classDiagram
     +Decimal principal
     +String currencyCode
     +Decimal annualRate
+    +String paymentFrequency MONTHLY
+    +Date firstDueDate
     +Integer installmentCount
     +schedule() LoanInstallment
   }
@@ -58,6 +63,6 @@ classDiagram
   Business "1" --> "0..*" Loan : owns
   Supplier "1" --> "0..*" Purchase : supplies
   Purchase "1" --> "0..*" Payment : receives
-  Loan "1" --> "1..*" LoanInstallment : schedules
+  Loan "1" --> "0..*" LoanInstallment : schedules
   Purchase --> PurchaseStatus : has
   LoanInstallment --> InstallmentStatus : has
