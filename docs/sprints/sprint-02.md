@@ -52,7 +52,7 @@ Total estimado propuesto: 43 horas. Los estados To-do/In-Process/To-Review/Done 
 
 ## 5.2.2.4 Development Evidence for Sprint Review
 
-La tabla completa de commits se guarda en [evidencia local](../tb1/evidencia-local.md). Se genera desde Git con repositorio, feature, hash, mensaje, cuerpo, fecha y autor. Los hashes de nuevos commits permanecen locales y pueden revisarse con git show.
+La tabla completa de commits se guarda en [commits locales](../tb1/commits-locales.md). Se genera desde Git con repositorio, feature, hash, mensaje, cuerpo, fecha y autor. Los hashes de nuevos commits permanecen locales y pueden revisarse con git show.
 
 ## 5.2.2.5 Execution Evidence for Sprint Review
 
