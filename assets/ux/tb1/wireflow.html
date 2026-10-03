@@ -1,1 +1,76 @@
-<!doctype html><html lang="es-419"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CREDITOR wireflow TB1</title><style>body{font:17px Arial;margin:30px;color:#20242b}h1{font-size:30px}.flow{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}.screen{width:340px}img{width:100%;border:1px solid #aaa}a{color:#174ca4}.branch{border-left:4px solid #666;padding:12px;margin:20px 0;max-width:1000px}@media(max-width:600px){body{margin:16px}.screen{width:100%}}</style><h1>Wireflow local TB1 de CREDITOR</h1><p>Actor: administrador de finanzas. Historias US-005/006/007. Propuesta editable local, 03/10/2026. Pendiente de trasladar a FigJam, LucidChart u Overflow.</p><h2>Registro de compra</h2><div class="flow"><div class="screen"><h3>1. Compras · Nueva compra</h3><a href="wireframes.html#purchases"><img src="wireframe-list.png" alt="Pantalla Compras · Nueva compra"></a></div><div class="screen"><h3>2. Formulario · Revisar y confirmar</h3><a href="wireframes.html#new"><img src="wireframe-purchase.png" alt="Pantalla Formulario · Revisar y confirmar"></a></div><div class="screen"><h3>3. Detalle · Saldo inicial</h3><a href="wireframes.html#detail"><img src="wireframe-detail.png" alt="Pantalla Detalle · Saldo inicial"></a></div></div><p class="branch"><strong>Alternativa:</strong> importe, referencia, fecha, proveedor o archivo inválido mantiene formulario y datos. Corregir y revisar nuevamente. Fallo al guardar conserva revisión y explica el reintento. Cancelar vuelve a Compras.</p><h2>Registro de abono</h2><div class="flow"><div class="screen"><h3>1. Detalle · Registrar abono</h3><a href="wireframes.html#detail"><img src="wireframe-detail.png" alt="Pantalla Detalle · Registrar abono"></a></div><div class="screen"><h3>2. Abono · Revisar importe y fecha</h3><a href="wireframes.html#payment"><img src="wireframe-payment.png" alt="Pantalla Abono · Revisar importe y fecha"></a></div><div class="screen"><h3>3. Detalle · Movimiento y saldo</h3><a href="wireframes.html#detail"><img src="wireframe-detail.png" alt="Pantalla Detalle · Movimiento y saldo"></a></div></div><p class="branch"><strong>Alternativa:</strong> con saldo PEN 70, abono PEN 71 se rechaza y conserva entrada. No añade movimientos. Cancelar vuelve al detalle. Saldo cero muestra explicación de compra pagada.</p><h2>Consulta</h2><p>Propietario: Dashboard, filtrar/lista, detalle e historial (US-004/007). Sin coincidencias ofrece limpiar filtros. Compra no encontrada permite volver a lista. <a href="wireframes.html">Ver pantallas y estados</a>.</p></html>
+<!doctype html>
+<html lang="es-419">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CREDITOR wireflow TB1</title>
+  <style>
+    body { font: 17px/1.5 Arial, sans-serif; margin: 30px; color: #20242b; max-width: 1180px; }
+    h1 { font-size: 30px; } h2 { margin-top: 36px; } h3 { font-size: 19px; }
+    .flow { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
+    .screen { width: 340px; } img { width: 100%; border: 1px solid #aaa; }
+    a { color: #174ca4; } .branch { border-left: 4px solid #666; padding: 12px; margin: 20px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    th, td { border: 1px solid #b8bec7; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #edf2f8; } .scope { padding: 14px; background: #edf2f8; }
+    @media(max-width: 600px) { body { margin: 16px; } .screen { width: 100%; } table { font-size: 14px; } th, td { padding: 7px; } }
+  </style>
+</head>
+<body>
+  <h1>Wireflow local TB1 de CREDITOR</h1>
+  <p>Actor: responsable de finanzas de la MYPE. Historias US-004/005/006/007. Pantallas propuestas y rutas contrastadas con el frontend Vue de TB1. Las imágenes son referencias de composición: el texto de cada paso define el estado del recorrido, que puede diferir de los valores de ejemplo de la imagen.</p>
+  <p class="scope">Alcance: organización de demostración fija y almacenamiento local del navegador. No se representa autenticación, permisos ni llamadas a una API desplegada. Pendiente de trasladar este wireflow a la herramienta de diseño del equipo.</p>
+
+  <h2 id="consulta">Consulta de compras · US-004/007</h2>
+  <div class="flow">
+    <div class="screen"><h3>CON-01 · Dashboard</h3><a href="wireframes.html#dashboard"><img src="wireframe-dashboard.png" alt="Wireframe del Dashboard de cuentas por pagar"></a><p>Abrir Compras o un acceso filtrado por estado.</p></div>
+    <div class="screen"><h3>CON-01 · Compras y filtros</h3><a href="wireframes.html#purchases"><img src="wireframe-list.png" alt="Wireframe de lista y filtros de compras"></a><p>Filtrar por texto, proveedor, moneda, estado o rango de vencimiento; elegir una compra.</p></div>
+    <div class="screen"><h3>CON-01 · Detalle e historial</h3><a href="wireframes.html#detail"><img src="wireframe-detail.png" alt="Wireframe de detalle de compra e historial de abonos"></a><p>Consultar saldo, fecha, comprobante y movimientos. Volver a Compras.</p></div>
+  </div>
+  <table aria-label="Alternativas de consulta">
+    <thead><tr><th>Escenario</th><th>Estado visible</th><th>Retorno o recuperación</th></tr></thead>
+    <tbody>
+      <tr><td>CON-02</td><td>Los filtros no encuentran coincidencias.</td><td>Mostrar Sin resultados. Limpiar o cambiar filtros en Compras.</td></tr>
+      <tr><td>CON-03</td><td>No hay compras en el espacio local.</td><td>Mostrar lista vacía y acceso a Nueva compra.</td></tr>
+      <tr><td>CON-04</td><td>El enlace apunta a una compra inexistente.</td><td>Mostrar Compra no encontrada y enlace a Compras.</td></tr>
+      <tr><td>CON-05</td><td>Falla el acceso al almacenamiento o su contenido está corrupto.</td><td>Mostrar alerta global y ocultar listado/formulario. Reintentar carga o solicitar restablecimiento. El diálogo advierte que se reemplazan los datos por ejemplos; Cancelar mantiene el estado anterior. Si el restablecimiento falla, conservar diálogo con el error y permitir reintento.</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="compra">Registro de compra · US-005</h2>
+  <div class="flow">
+    <div class="screen"><h3>COMP-01 · Nueva compra</h3><a href="wireframes.html#purchases"><img src="wireframe-list.png" alt="Pantalla Compras con acceso a Nueva compra"></a><p>Desde Compras, elegir Nueva compra.</p></div>
+    <div class="screen"><h3>COMP-01 · Completar y revisar</h3><a href="wireframes.html#new"><img src="wireframe-purchase.png" alt="Formulario propuesto de registro de compra"></a><p>Completar datos. Revisar abre un diálogo; Confirmar revalida y guarda.</p></div>
+    <div class="screen"><h3>COMP-01 · Detalle</h3><a href="wireframes.html#detail"><img src="wireframe-detail.png" alt="Composición del detalle; la imagen ilustra un estado con abono"></a><p>Estado esperado de compra recién creada: total PEN 100, abonos PEN 0 y saldo PEN 100; historial vacío. La imagen referencia la composición del detalle en otro estado, con un abono.</p></div>
+  </div>
+  <table aria-label="Alternativas de registro de compra">
+    <thead><tr><th>Escenario</th><th>Disparador</th><th>Respuesta y retorno</th></tr></thead>
+    <tbody>
+      <tr><td>COMP-02</td><td>Proveedor ajeno o no seleccionado; importe inválido; moneda distinta de PEN/USD; referencia o descripción inválida; referencia duplicada para el mismo proveedor y organización; fechas inválidas; archivo inválido o ilegible.</td><td>Mantener formulario e información, mostrar error por campo y enfocar el primer error. Corregir y volver a Revisar. La duplicidad ignora mayúsculas/minúsculas; no bloquea una referencia de otro proveedor.</td></tr>
+      <tr><td>COMP-03</td><td>Cancelar desde el formulario o volver a Compras.</td><td>Volver al listado sin registrar ni conservar un borrador persistente.</td></tr>
+      <tr><td>COMP-04</td><td>Cancelar o cerrar el diálogo antes de confirmar.</td><td>Volver al mismo formulario conservando los campos y el archivo seleccionado. No registrar la compra.</td></tr>
+      <tr><td>COMP-05</td><td>Al confirmar, falla el almacenamiento, cambia la revisión local o la nueva validación rechaza los datos.</td><td>Mantener diálogo con explicación y conservar entrada. Reintentar Confirmar; para modificar datos, cerrar el diálogo y corregir el formulario. No presentar el registro como exitoso.</td></tr>
+    </tbody>
+  </table>
+  <p class="branch"><strong>Reglas de validación:</strong> referencia de 2 a 80 caracteres y descripción de 3 a 200; importe positivo con hasta dos decimales dentro del límite admitido; fecha de compra no futura y vencimiento no anterior a ella. Archivo opcional PDF, PNG o JPEG de hasta 2 MB.</p>
+
+  <h2 id="abono">Registro de abono · US-006/007</h2>
+  <div class="flow">
+    <div class="screen"><h3>ABO-01 · Detalle con saldo</h3><a href="wireframes.html#detail"><img src="wireframe-detail.png" alt="Detalle con saldo pendiente y acceso a Registrar abono"></a><p>Con saldo positivo, abrir Registrar abono.</p></div>
+    <div class="screen"><h3>ABO-01 · Revisar abono</h3><a href="wireframes.html#payment"><img src="wireframe-payment.png" alt="Composición del formulario; la imagen ilustra el error ABO-04"></a><p>La moneda se hereda de la compra. En ABO-01 se ingresa un importe válido, se revisa el saldo posterior y se confirma. La imagen de PEN 71 frente a saldo 70 representa ABO-04; se usa aquí solo como referencia de composición.</p></div>
+    <div class="screen"><h3>ABO-01 · Saldo e historial</h3><a href="wireframes.html#detail"><img src="wireframe-detail.png" alt="Detalle actualizado con historial de abonos"></a><p>Confirmar añade un movimiento y vuelve al detalle. Saldo y estado se recalculan.</p></div>
+  </div>
+  <table aria-label="Alternativas de registro de abono">
+    <thead><tr><th>Escenario</th><th>Disparador</th><th>Respuesta y retorno</th></tr></thead>
+    <tbody>
+      <tr><td>ABO-02</td><td>La compra de la ruta no existe.</td><td>Mostrar Compra no encontrada y ofrecer volver a Compras.</td></tr>
+      <tr><td>ABO-03</td><td>Compra pagada: saldo cero.</td><td>En el detalle se oculta Registrar abono y se muestra compra pagada. En una ruta directa al formulario se muestra la explicación y se deshabilita Revisar; es posible volver al detalle.</td></tr>
+      <tr><td>ABO-04</td><td>Importe no positivo, inválido o superior al saldo; fecha anterior a la compra o futura; nota mayor de 200 caracteres; archivo inválido o ilegible.</td><td>Mantener entrada, mostrar errores y enfocar primer campo. No añadir un movimiento. Corregir y volver a Revisar. Con saldo PEN 70, PEN 71 se rechaza.</td></tr>
+      <tr><td>ABO-05</td><td>Cancelar desde el formulario.</td><td>Volver al detalle sin registrar y sin conservar un borrador persistente.</td></tr>
+      <tr><td>ABO-06</td><td>Cancelar o cerrar el diálogo de revisión.</td><td>Volver al formulario con entrada y archivo conservados, sin añadir un movimiento.</td></tr>
+      <tr><td>ABO-07</td><td>Al confirmar falla la escritura, cambia la revisión local o la revalidación del saldo/compra rechaza el abono.</td><td>Mantener diálogo y entrada con explicación. Reintentar Confirmar o cerrar para corregir. La operación vuelve a leer los datos; no permite un saldo negativo ni presenta el abono como exitoso.</td></tr>
+    </tbody>
+  </table>
+  <p class="branch"><strong>Confirmación:</strong> durante el guardado se deshabilita la confirmación repetida y el cierre del diálogo. Los escenarios de error documentan estados disponibles; no constituyen nuevas ejecuciones de prueba. <a href="wireframes.html">Ver todas las pantallas propuestas</a>.</p>
+</body>
+</html>

@@ -1,0 +1,8 @@
+%%{init: {"themeVariables":{"fontSize":"16px","fontFamily":"Arial, sans-serif"},"flowchart":{"nodeSpacing":24,"rankSpacing":24,"wrappingWidth":240}}}%%
+flowchart TB
+  A["Revisión solicitada<br/>Desde parte 1"] --> B{"Importe positivo y no mayor al saldo;<br/>fecha, nota y archivo válidos"}
+  B -- "No: ABO-04" --> C["Mostrar errores y conservar entrada;<br/>no añadir movimiento"]
+  C -- Corregir --> D["Formulario de abono<br/>Volver a parte 1"]
+  B -- Sí --> E{"Lectura del archivo correcta"}
+  E -- "No: ABO-04" --> C
+  E -- Sí --> F["Diálogo con saldo posterior<br/>Continuar en parte 3"]

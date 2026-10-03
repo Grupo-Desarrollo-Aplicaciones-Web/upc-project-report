@@ -1,11 +1,19 @@
 flowchart TB
-  A[Administrador abre Compras] --> B[Nueva compra]
-  B --> C[Completa proveedor, importe, moneda y vencimiento]
-  C --> D{Datos y proveedor válidos}
-  D -- No --> E[Mostrar error y conservar datos]
-  E --> C
-  D -- Sí --> F[Confirmar registro]
-  F --> G{Registro completado}
-  G -- No --> H[Explicar fallo y permitir reintento]
-  H --> F
-  G -- Sí --> I[Detalle de compra con saldo inicial]
+  A["Compras disponibles en el espacio local"] --> B["COMP-01 Abrir Nueva compra"]
+  B --> C["Completar proveedor, referencia, descripción,<br/>moneda, importe, fechas y archivo opcional"]
+  C --> D{"Acción en formulario"}
+  D -- "Cancelar: COMP-03" --> E["Volver a Compras sin registrar"]
+  D -- Revisar --> F{"Datos y archivo válidos"}
+  F -- "No: COMP-02" --> G["Errores: proveedor, referencia duplicada,<br/>importe, moneda, descripción, fechas o archivo;<br/>conservar datos y enfocar primer campo"]
+  G --> C
+  F -- Sí --> H{"Archivo opcional se puede leer"}
+  H -- "No: COMP-02" --> G
+  H -- Sí --> I["Abrir diálogo de revisión"]
+  I --> J{"Acción en diálogo"}
+  J -- "Cancelar o cerrar: COMP-04" --> C
+  J -- Confirmar --> K["Revalidar y guardar en almacenamiento local"]
+  K --> L{"Registro completado"}
+  L -- "No: COMP-05" --> M["Mostrar fallo en diálogo: validación actualizada,<br/>almacenamiento o revisión desactualizada;<br/>conservar entrada"]
+  M -- "Reintentar confirmación" --> K
+  M -- "Cerrar para corregir" --> C
+  L -- "Sí: COMP-01" --> N["Abrir detalle con saldo inicial<br/>y confirmación de registro"]

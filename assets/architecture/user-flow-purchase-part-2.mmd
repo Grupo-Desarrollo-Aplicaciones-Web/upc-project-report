@@ -1,0 +1,10 @@
+%%{init: {"themeVariables":{"fontSize":"16px","fontFamily":"Arial, sans-serif"},"flowchart":{"nodeSpacing":24,"rankSpacing":24,"wrappingWidth":240}}}%%
+flowchart TB
+  A["Diálogo de revisión<br/>Desde parte 1"] --> B{"Acción"}
+  B -- "Cancelar o cerrar: COMP-04" --> C["Formulario conservado<br/>Volver a parte 1"]
+  B -- Confirmar --> D["Revalidar y guardar<br/>en almacenamiento local"]
+  D --> E{"Registro completado"}
+  E -- "No: COMP-05" --> F["Error de validación, escritura<br/>o revisión desactualizada;<br/>conservar diálogo y entrada"]
+  F -- Reintentar --> D
+  F -- Cerrar --> C
+  E -- "Sí: COMP-01" --> G["Detalle con saldo inicial<br/>y aviso de registro"]

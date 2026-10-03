@@ -1,0 +1,11 @@
+%%{init: {"themeVariables":{"fontSize":"16px","fontFamily":"Arial, sans-serif"},"flowchart":{"nodeSpacing":24,"rankSpacing":24,"wrappingWidth":240}}}%%
+flowchart TB
+  A["COMP-01 Nueva compra"] --> B["Completar formulario<br/>y archivo opcional"]
+  B --> C{"Acción"}
+  C -- "Cancelar: COMP-03" --> D["Volver a Compras<br/>sin registrar"]
+  C -- Revisar --> E{"Datos y archivo válidos"}
+  E -- "No: COMP-02" --> F["Mostrar errores;<br/>conservar datos y enfocar campo"]
+  F -- Corregir --> B
+  E -- Sí --> G{"Lectura del archivo correcta"}
+  G -- "No: COMP-02" --> F
+  G -- Sí --> H["Abrir revisión<br/>Continuar en parte 2"]
