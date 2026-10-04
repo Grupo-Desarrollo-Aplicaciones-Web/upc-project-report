@@ -113,6 +113,22 @@ Cada historia deberá especificar usuario, necesidad, alcance y evidencia espera
 
 La existencia de un componente no permite asignar automáticamente `Done` a la historia. A fecha de corte, no hay cierre ni velocidad medida.
 
+## 5.2.1.2 Aspect Leaders and Collaborators
+
+Los aspectos de esta entrega son documentación de producto, documentación técnica, interfaces de la landing, internacionalización e interacciones, validación y preparación de despliegue.
+
+**L:** responsable principal confirmado. **C:** colaborador confirmado. Una celda vacía indica que el equipo no ha proporcionado una asignación formal. Se mantienen vacías las tareas de Sebastián y Miguel según lo solicitado.
+
+| Team Member | GitHub Username | Capítulo I | Capítulo V | Implementación Vue/CSS | Idiomas e interacciones | Validación documental | Despliegue |
+|---|---|---|---|---|---|---|---|
+| Juan Manuel Santos Torres | @JuanManuel312 | L | L | | | L | |
+| Sebastián Gutarra Velapatiño | @SebastianGutarra | | | | | | |
+| Miguel Angel Egocheaga Suyo | @MiguelAngel0107 | | | | | | |
+
+La responsabilidad de validación documental comprende el protocolo de entrevistas y la inspección heurística; no significa que Juan haya realizado entrevistas o pruebas aún no registradas. Las asignaciones operativas se completarán por acuerdo del equipo.
+
+
+
 
 ### 5.2.2 Sprint 2
 
