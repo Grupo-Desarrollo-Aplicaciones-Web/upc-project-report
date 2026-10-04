@@ -260,7 +260,49 @@ Los tiempos son una estimación académica reconstruida, no una declaración de 
 
 Las pruebas y el registro de cierre determinarán qué historias se aceptan. La velocidad se calculará sumando únicamente los SP de historias aceptadas según la Definition of Done.
 
+## 5.2.1.4 Development Evidence for Sprint Review
 
+### Evidencias disponibles
+
+| ID | Evidencia | Qué permite afirmar | Límite |
+|---|---|---|---|
+| DEV-01 | ZIP de `develop` con comentario SHA `7597586799b350cbdeffec3b9fec4a42b1f55f3d`. | Contenido técnico del incremento inspeccionado. | No contiene el directorio `.git` ni ejecuciones de pruebas. |
+| DEV-02 | Captura de commits de la landing, 14/09/2026. | Historial visible de incorporación e integración de secciones. | No demuestra aprobación por PR ni la ejecución correcta. |
+| DEV-03 | Captura de ramas del informe. | Existencia y divergencia de las ramas mostradas. | Estado de la captura, no comprobación remota actual. |
+| DEV-04 | Captura de commits del informe, 08 y 09/09/2026. | Trabajo documental previo de los usuarios visibles. | No acredita que esos contenidos ya estén alineados a esta versión. |
+| DEV-05 | Captura de Pull Requests del informe. | Cero abiertos y cero cerrados mostrados. | No describe el repositorio de la landing. |
+
+![Historial de implementación de la landing](creditflow-documentacion/informe/assets/evidence/landing-commits.png)
+
+### Historial de la landing visible en la captura
+
+Todos los registros de esta tabla aparecen el 14/09/2026 asociados al usuario `MiguelAngel0107`. Se transcriben los mensajes visibles sin inventar PR ni tiempos de trabajo.
+
+| Orden lógico | Mensaje | Relación con el incremento |
+|---|---|---|
+| 1 | `chore: initialize landing page repository` | Base del repositorio. |
+| 2 | `feat: add Vue landing foundation` | Estructura inicial Vue. |
+| 3 | `merge: integrate landing foundation` | Integración declarada de la base. |
+| 4 | `feat: add navigation and hero section` | Encabezado e inicio. |
+| 5 | `merge: integrate navigation and hero section` | Integración declarada de navegación e inicio. |
+| 6 | `feat: add product overview sections` | Secciones informativas. |
+| 7 | `merge: integrate product overview sections` | Integración declarada de presentación. |
+| 8 | `feat: add loan installment simulator` | Simulador de cuotas. |
+| 9 | `merge: integrate loan installment simulator` | Integración declarada del simulador. |
+| 10 | `feat: add conversion and footer sections` | Conversión y pie de página. |
+| 11 | `merge: integrate conversion and footer sections` | Último registro visible, SHA abreviado `7597586`. |
+
+La asociación de usuario en una captura acredita ese registro de GitHub, no permite inferir que una sola persona elaboró todas las líneas del cambio ni reconstruir colaboraciones no registradas.
+
+### Evidencia documental previa
+
+![Historial del informe académico](creditflow-documentacion/informe/assets/evidence/report-commits.png)
+
+La captura muestra commits de `JuanManuel312` sobre startup, perfiles, problemática, Lean UX y segmentos el 8 de septiembre. El 9 de septiembre se observan commits de `SebastianGutarra` sobre diseño, branding e imágenes. Esta evidencia se conserva como antecedente. Los nuevos bloques documentales deben registrarse en la fecha real de su incorporación.
+
+### Evidencias que completarán la revisión
+
+Se deberán añadir enlaces al commit final de cada repositorio, PR si se utilizan, resultado de compilación y capturas de la landing ejecutándose. Cada imagen debe indicar versión, fecha y contexto; una captura del historial no reemplaza una captura funcional.
 
 
 
