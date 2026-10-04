@@ -451,6 +451,176 @@ Se conoce el alcance propuesto de 34 SP y 61 horas-persona estimadas. No existe 
 
 Las entrevistas de validación están **pendientes de realización**. Esta sección define un protocolo para evaluar la landing con potenciales usuarios. No incluye citas, participantes reales ni resultados inventados.
 
+### 5.3.1 Diseño de entrevistas
+
+#### Objetivo general
+
+Evaluar si los segmentos objetivo comprenden la propuesta de CreditFlow y pueden explorar la landing para identificar capacidades relevantes, comprender el simulador, comparar planes, consultar dudas y reconocer la interacción de solicitud demostrativa.
+
+#### Objetivos específicos
+
+| ID | Objetivo | Evidencia buscada |
+|---|---|---|
+| O01 | Evaluar la comprensión del propósito y destinatario. | Explicación libre tras observar el inicio. |
+| O02 | Identificar relación con necesidades del negocio. | Ejemplos concretos y capacidades consideradas útiles. |
+| O03 | Observar navegación y localización de información. | Tareas completadas, dudas y recorridos. |
+| O04 | Evaluar comprensión de entradas y resultados del simulador. | Manipulación de controles y explicación del resultado. |
+| O05 | Evaluar claridad de planes, moneda y período. | Comparación expresada por el participante. |
+| O06 | Explorar dudas de confianza y adopción. | Información faltante, barreras y requisitos. |
+| O07 | Verificar comprensión del formulario de demostración. | Interpretación de validaciones y confirmación. |
+
+#### Alcance y diseño metodológico
+
+Se propone una entrevista semiestructurada acompañada de tareas moderadas y verbalización del pensamiento. La landing se ejecutará en una versión identificada por commit. Mientras no exista publicación, puede utilizarse una sesión local en un equipo del evaluador; si solo se comparte pantalla, se debe registrar que no se midió interacción directa del participante.
+
+Duración propuesta: 35–40 minutos. Muestra inicial: seis participantes, tres por segmento. Selección intencional por experiencia relevante, sin pretensión estadística. Si hay necesidades o fallas importantes no cubiertas, se planificará una nueva ronda y se registrará su justificación.
+
+#### Segmentos y filtro de selección
+
+| Pregunta de filtro | Criterio |
+|---|---|
+| ¿Participas en decisiones o actividades de préstamos, ventas a crédito o cobros? | Debe existir participación real en el proceso. |
+| ¿Cuál es tu responsabilidad principal? | Clasificar como propietario/responsable o encargado operativo. |
+| ¿Cuándo realizaste por última vez una tarea relacionada? | Preferencia por experiencia en los últimos tres meses. |
+| ¿Qué herramientas utilizas habitualmente? | Registrar contexto, sin excluir por usar una solución competidora. |
+| ¿Puedes participar sin mostrar información confidencial de clientes? | Utilizar ejemplos anónimos o ficticios. |
+| ¿Formas parte del equipo que desarrolló esta landing? | Excluir del estudio de usuarios; puede participar en revisión interna separada. |
+
+#### Condiciones previas
+
+Antes de la sesión, registrar los defectos conocidos y corregir o advertir claramente los estados simulados. Mantener constantes la versión, instrucciones y datos de prueba entre participantes de una misma ronda. No modificar la interfaz silenciosamente a mitad de la muestra.
+
+Preparar hoja de observación, cronómetro, datos ficticios, versión de la landing y consentimiento. La grabación es opcional y requiere aceptación independiente. No solicitar DNI, credenciales, información bancaria, datos de deudores ni acceso a sistemas del negocio.
+
+#### Roles y materiales
+
+| Elemento | Responsabilidad o uso |
+|---|---|
+| Moderador | Presentar el estudio, leer consignas neutrales y pedir aclaraciones. |
+| Observador | Registrar tiempos, acciones, dudas y ayudas sin interrumpir. |
+| Participante | Explorar y explicar lo que piensa, sin obligación de completar tareas. |
+| Google Meet | Entrevista remota y, si se acuerda, compartir pantalla. |
+| Hoja de registro | Datos de contexto, resultados de tareas y observaciones. |
+| Landing identificada | Mismo commit para la ronda, salvo cambio documentado. |
+
+El responsable de preparación documental es Juan Manuel Santos Torres. La asignación de moderadores y observadores queda por confirmar, conservando vacías las tareas no proporcionadas de otros integrantes.
+
+#### Introducción y consentimiento sugeridos
+
+“Estamos evaluando una página de presentación de CreditFlow para un proyecto académico. Queremos conocer qué entiendes y cómo encuentras la información; no estamos evaluando tus conocimientos. La aplicación completa todavía no está disponible y el formulario de esta versión es una demostración que no envía solicitudes. Utilizaremos datos ficticios. Puedes omitir cualquier pregunta o terminar cuando lo desees. ¿Aceptas participar? Por separado, ¿autorizas que grabemos la sesión para analizarla dentro del equipo?”
+
+Registrar ambas respuestas. Si no acepta grabación, tomar notas con su permiso. Para incluir un fragmento identificable en el informe o compartirlo fuera del equipo, obtener autorización específica; un permiso para analizar internamente no equivale a permiso para publicar.
+
+#### Agenda de sesión
+
+| Tiempo aproximado | Actividad |
+|---|---|
+| 0–3 min | Presentación y consentimiento. |
+| 3–8 min | Contexto del participante y proceso actual. |
+| 8–12 min | Primera impresión y comprensión. |
+| 12–27 min | Tareas de navegación, simulador, planes y formulario. |
+| 27–35 min | Preguntas específicas del segmento. |
+| 35–40 min | Barreras, valoración y cierre. |
+
+#### Reglas de moderación
+
+No explicar el propósito de cada sección antes de observar su interpretación. No señalar botones ni anticipar respuestas. Si pide ayuda, primero preguntar qué esperaba encontrar. Cuando sea necesaria una indicación directa, registrarla como asistencia y distinguirla de una tarea completada sin ayuda. Evitar preguntas como “¿Te parece fácil nuestra página?”; preguntar “¿Qué parte te resultó clara o confusa?” y solicitar ejemplos.
+
+#### Guion común: contexto y primera impresión
+
+1. ¿Cuál es tu rol y qué relación tienes con préstamos, ventas a crédito o cobros?
+2. Cuéntame la última vez que necesitaste consultar cuánto debía un cliente. ¿Qué hiciste?
+3. ¿Dónde registras las condiciones, vencimientos y pagos de una operación?
+4. ¿Qué parte de ese proceso requiere más atención o consultas?
+5. Al observar el inicio de esta página, ¿qué crees que ofrece CreditFlow?
+6. ¿Para quién parece estar pensado? ¿Qué elementos te hacen pensar eso?
+7. ¿Qué esperarías poder hacer después de pulsar su llamada principal a la acción?
+8. ¿Qué información buscarías primero antes de continuar?
+
+No se presupone que el proceso actual sea deficiente. Si el participante no experimenta el problema planteado, esa respuesta constituye evidencia relevante para revisar las hipótesis.
+
+#### Segmento 1: propietarios y responsables de cartera
+
+1. ¿Cómo revisas actualmente el estado general de los créditos o cuentas por cobrar de tu negocio?
+2. ¿Qué información consideras prioritaria al decidir qué cobros atender?
+3. ¿En qué situaciones tu herramienta actual te resulta suficiente y en cuáles no?
+4. ¿Qué capacidades de las presentadas se relacionan con una tarea que realizas? Describe un caso.
+5. ¿Hay alguna característica que no necesites o cuyo significado no esté claro?
+6. ¿Qué diferencia encuentras entre este producto y una entidad que presta dinero?
+7. ¿Qué información necesitarías para evaluar el uso de CreditFlow en tu negocio?
+8. ¿Cómo interpretarías los precios y los períodos de los planes mostrados?
+9. ¿Qué factores considerarías antes de pagar por una herramienta de este tipo? No es necesario indicar información financiera privada.
+10. ¿Qué dudas te generan las afirmaciones sobre ahorro de tiempo, reducción de mora o disponibilidad?
+11. ¿Quién más participaría en la decisión de adoptar una herramienta y qué necesitaría evaluar?
+12. Después de explorar la página, ¿cuál sería tu siguiente paso y por qué?
+
+**Profundización neutral:** “¿Puedes darme un ejemplo?”, “¿Qué información te falta?”, “¿Cómo lo haces hoy?”, “¿Qué te haría cambiar de opinión?”. No interpretar disposición verbal como compra confirmada.
+
+#### Segmento 2: administradores de créditos y encargados de cobranzas
+
+1. Describe cómo revisas las cuotas que vencen durante una semana habitual.
+2. ¿Qué haces cuando recibes un pago parcial y cómo lo relacionas con la operación?
+3. ¿Qué información necesitas antes de contactar a una persona por un pago pendiente?
+4. ¿Cómo identificas una diferencia entre lo registrado y lo que comunica un cliente?
+5. ¿Qué entiendes por “cartera”, “mora” y “cronograma” en esta página?
+6. ¿Los cuatro pasos presentados se parecen al orden de tu trabajo? ¿Qué cambiarías?
+7. ¿Qué muestra del panel te resulta útil y qué dato necesitarías además?
+8. Al utilizar el simulador, ¿qué interpretas por monto, tasa y plazo?
+9. ¿Qué crees que representa la cuota mostrada y qué conceptos podría no incluir?
+10. ¿Qué información esperabas encontrar en las preguntas frecuentes y no encontraste?
+11. ¿En qué dispositivo revisarías esta información y en qué contexto?
+12. ¿Qué necesitarías probar en una versión funcional antes de recomendarla a tu equipo?
+
+Las preguntas sobre pagos y cartera exploran necesidades; no solicitan al participante ejecutar módulos inexistentes.
+
+#### Tareas de usabilidad
+
+| Tarea | Consigna neutral | Observar | Criterio propuesto |
+|---|---|---|---|
+| U01 | “Explora el inicio y explica con tus palabras qué ofrece esta página”. | Interpretación, destinatario y confusión con otorgamiento de préstamos. | Identifica gestión de crédito/cobranza. |
+| U02 | “Busca dos funciones que podrían relacionarse con tu trabajo”. | Recorrido y comprensión de características. | Localiza y explica dos capacidades. |
+| U03 | “Encuentra dónde se explica el proceso de uso”. | Acceso a los cuatro pasos. | Llega a la sección sin guía directa. |
+| U04 | “Prueba una estimación con monto 10000, tasa 24 y plazo 12; luego cambia el monto a 20000. ¿Qué observas?”. | Manejo de sliders y comprensión del cambio. | Modifica el valor y explica la variación, sin valorar todavía la semántica de TEA. |
+| U05 | “Compara el plan Negocio mensual con su opción anual. ¿Cómo entiendes el precio?”. | Moneda, importe por mes y facturación. | Explica la diferencia o identifica una duda concreta. |
+| U06 | “Busca una respuesta sobre el uso de información existente en el negocio”. | Localización de FAQ/importación. | Encuentra una pregunta relevante y comprende su respuesta como propuesta del producto. |
+| U07 | “Cambia el idioma y vuelve al que prefieras”. | Descubrimiento del selector y cambio de contenido. | Completa ambas acciones. |
+| U08 | “En esta demostración, prueba el formulario con Persona Demo y el correo correo-invalido; después corrígelo a demo@example.com”. | Error, corrección y comprensión de confirmación local. | Corrige sin guía y no cree que se enviaron accesos. |
+| U09 | “Desde la vista móvil, encuentra los planes”. | Menú, foco y anclas. | Completa sin bloqueo; solo se aplica a la submuestra móvil. |
+
+No se exige completar todas las tareas si la persona decide retirarse. Registrar tareas omitidas y su motivo, sin contarlas como éxitos.
+
+#### Valoración posterior y cierre
+
+Después de las tareas principales: “En una escala de 1 a 5, donde 1 significa muy difícil y 5 muy fácil, ¿cómo describirías esta tarea? ¿Por qué?”. La escala es un instrumento local de esta evaluación; no se presenta como un cuestionario estandarizado.
+
+Preguntas finales: ¿Qué fue lo más claro? ¿Qué generó más dudas? ¿Qué cambiarías primero? ¿Qué información necesitarías para decidir si quieres conocer una aplicación funcional? ¿Hay algo que no hayamos preguntado y consideres importante?
+
+Agradecer la participación, recordar el alcance académico y confirmar cómo se utilizarán las notas o grabación autorizada. No prometer acceso a una aplicación que aún no está disponible.
+
+#### Métricas, análisis y criterios de decisión
+
+| Métrica | Cálculo o registro | Interpretación |
+|---|---|---|
+| Comprensión de propuesta | Participantes que la describen adecuadamente / quienes respondieron U01. | Claridad del propósito en la muestra. |
+| Finalización sin ayuda | Tareas completadas sin indicaciones directas / tareas intentadas. | Facilidad observada. |
+| Finalización con ayuda | Tareas terminadas tras indicaciones / tareas intentadas. | Dependencia de asistencia. |
+| Tiempo por tarea | Segundos desde la consigna hasta completar o detener. | Dato descriptivo, no umbral universal. |
+| Errores y bloqueos | Registro de acciones fallidas y puntos de abandono. | Ubicación de barreras. |
+| Facilidad percibida | Respuesta de 1 a 5 y justificación. | Percepción complementaria a observación. |
+| Dudas recurrentes | Participantes que expresan un mismo tema, con ejemplos. | Prioridad cualitativa. |
+| Interés en siguiente paso | Intención declarada y razones. | Indicio de interés; no conversión real. |
+
+Se informarán numeradores y denominadores, por ejemplo “4 de 6”, evitando porcentajes aislados en una muestra pequeña. La comparación por segmento deberá conservar el contexto de solo tres participantes previstos por grupo. Se usarán medianas y rangos descriptivos para tiempos cuando existan suficientes registros comparables.
+
+**Codificación propuesta:** comprensión, pertinencia, navegación, lenguaje financiero, simulador, precios, confianza, formulario y móvil. Cada observación tendrá identificador, participante anonimizado, tarea, evidencia y posible implicación. Una cita literal solo se registrará si realmente fue pronunciada y puede localizarse en notas o grabación.
+
+**Regla de decisión:** contrastar H01–H07 con los criterios del capítulo I, describiendo casos que los contradigan. Si no se cumple un umbral, proponer un cambio concreto y su forma de comprobación. Si se cumple, registrar apoyo exploratorio, sin afirmar validación definitiva del mercado.
+
+**Prioridad de mejoras:** primero los problemas que inducen interpretaciones falsas o bloquean la tarea; después dificultades frecuentes; finalmente ajustes cosméticos. Frecuencia y gravedad se registrarán por separado.
+
+**Limitaciones previstas:** muestra pequeña, selección por conveniencia o acceso, contexto de demostración, ausencia de operaciones reales y posible influencia del moderador. Ninguna entrevista sobre la landing permite medir reducción de mora, disponibilidad del servicio o rentabilidad del producto.
+
+
 
 
 
