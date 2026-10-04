@@ -7,7 +7,9 @@
 3. La separación de moneda e idioma evita mezclar obligaciones PEN/USD. Las pruebas de dominio, navegador y build respaldan un incremento técnico de demostración, sin acreditar una API o seguridad de servidor.
 4. Los modelos C4, clases y ERD incorporan el adaptador local y conservan el diseño de servicios AV2. El SQL propuesto coincide con los campos de compra y frecuencia mensual de préstamos.
 5. La investigación conserva cuatro entrevistas registradas y requiere dos adicionales S2, análisis con citas y validación de Personas/maps. Las hipótesis y metas todavía no son resultados empíricos.
-6. Las features y commits personales permiten revisar el incremento completo en local. Los archivos de entrega no cierran los criterios de despliegue, herramientas externas, reuniones, aceptación, videos y desempeño que aún dependen del equipo.
+6. El Sprint 2 reúne 26 SP propuestos para US-004–007 y 43 horas estimadas para doce tareas, incluidos ajustes y documentación. El estado técnico To-Review no equivale a aceptación ni a velocidad completada.
+7. La revisión documental del 04/10/2026 comprobó en GitHub los 18 commits del informe incluidos en el inventario TB1. Los 8 commits de landing y los 15 de frontend permanecen documentados como evidencia local. Esta distinción permite revisar autoría y cambios sin atribuir publicaciones no comprobadas.
+8. Las pruebas y capturas del 03/10 constituyen evidencia técnica registrada. No acreditan validación con usuarios, reuniones de cierre ni aceptación formal del equipo. El Sprint 2 debe completar esos registros y la evidencia de publicación de las nuevas versiones para cerrar los criterios correspondientes.
 
 ## Recomendaciones
 
