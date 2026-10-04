@@ -355,6 +355,35 @@ TC-LP-06 y TC-LP-10 describen el comportamiento actual, no validan su semántica
 
 Demostrar la comprensión del inicio, cambiar idioma, recorrer características, modificar el simulador, comparar planes, abrir preguntas y probar validaciones. Aclarar antes del formulario que la solicitud es local. Cerrar con defectos conocidos, estado del despliegue y decisiones de aceptación. Duración de demostración propuesta: 10–15 minutos dentro de la reunión de revisión.
 
+## 5.2.1.6 Services Documentation Evidence for Sprint Review
+
+La denominación de esta sección se conserva por compatibilidad con la plantilla. En esta entrega no hay servicios HTTP propios implementados, por lo que la evidencia se centra en módulos y contratos locales de interfaz.
+
+| Unidad | Entradas | Salidas/efectos | Dependencias |
+|---|---|---|---|
+| `src/main.js` | Documento con `#app`. | Montaje de Vue y aplicación del idioma. | Vue, App, CSS e i18n. |
+| `setLocale(code)` | Código soportado `es` o `en`. | Actualiza estado, almacenamiento y metadatos básicos; ignora códigos no soportados. | DOM y `localStorage`. |
+| `t(path, params)` | Ruta de traducción y parámetros opcionales. | Texto, lista u objeto del diccionario, con fallback. | Diccionario y locale reactivo. |
+| `money(value)` | Número. | Moneda formateada; valores no finitos se muestran como cero. | `Intl.NumberFormat`. |
+| `LoanSimulator` | Monto, tasa anual, meses. | Cuota, total e interés calculados. | `ref`, `computed`, `money`. |
+| `PricingSection` | Estado mensual/anual. | Precio calculado, etiqueta del período y CTA. | Datos locales y traducciones. |
+| `FaqSection` | Índice de pregunta pulsada. | Actualización del índice abierto. | `ref` y diccionario. |
+| `CtaSection.submit` | Nombre, correo y empresa. | Error local o cambio al estado confirmado. | Estado reactivo y traducciones. |
+
+La persistencia del idioma es compartida por el módulo; los estados del menú, FAQ, precios, formulario y simulador son locales a sus componentes. No existe un contrato de API de solicitudes ni un endpoint que pueda probarse con Swagger o Postman.
+
+### Documentos y referencias técnicas
+
+- `README.md` de la landing: instrucciones de ejecución, estructura, idiomas y nota sobre formulario simulado.
+- `package.json` y `package-lock.json`: dependencias y scripts.
+- Capítulo V, sección 5.1: configuración y convenciones.
+- Sección 5.2: inventario de componentes y comportamiento.
+- Esta documentación de sprint: historias, tareas, casos de verificación y evidencia de historial.
+- Sección 5.3: protocolo de entrevistas y hallazgos heurísticos.
+
+La mención a una futura integración ASP.NET en el README y un comentario del formulario no acredita backend implementado. No se incorpora como parte de esta entrega ni se redactan endpoints ficticios.
+
+
 
 
 
