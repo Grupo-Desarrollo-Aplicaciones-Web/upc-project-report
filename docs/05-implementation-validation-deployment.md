@@ -620,7 +620,49 @@ Se informarán numeradores y denominadores, por ejemplo “4 de 6”, evitando p
 
 **Limitaciones previstas:** muestra pequeña, selección por conveniencia o acceso, contexto de demostración, ausencia de operaciones reales y posible influencia del moderador. Ninguna entrevista sobre la landing permite medir reducción de mora, disponibilidad del servicio o rentabilidad del producto.
 
+### 5.3.2 Registro de entrevistas
 
+**Estado: entrevistas no realizadas.** Se han reservado seis códigos para organizar la ronda. No corresponden a personas ya entrevistadas y no se les asignan nombres, edades, ocupaciones específicas ni respuestas.
+
+| Código reservado | Segmento previsto | Fecha | Modalidad | Consentimiento | Evidencia | Estado |
+|---|---|---|---|---|---|---|
+| VAL-S1-01 | Propietario/responsable de cartera | Por programar | Por confirmar | Pendiente | No disponible | No realizada. |
+| VAL-S1-02 | Propietario/responsable de cartera | Por programar | Por confirmar | Pendiente | No disponible | No realizada. |
+| VAL-S1-03 | Propietario/responsable de cartera | Por programar | Por confirmar | Pendiente | No disponible | No realizada. |
+| VAL-S2-01 | Administrador/encargado de cobranzas | Por programar | Por confirmar | Pendiente | No disponible | No realizada. |
+| VAL-S2-02 | Administrador/encargado de cobranzas | Por programar | Por confirmar | Pendiente | No disponible | No realizada. |
+| VAL-S2-03 | Administrador/encargado de cobranzas | Por programar | Por confirmar | Pendiente | No disponible | No realizada. |
+
+#### Ficha por participante
+
+| Campo | Contenido a registrar durante la sesión |
+|---|---|
+| Código y segmento | Identificador anónimo y rol principal. |
+| Contexto relevante | Tipo de operación, experiencia y herramienta actual, sin datos de clientes. |
+| Fecha, duración y modalidad | Datos reales de ejecución. |
+| Moderador/observador | Integrantes presentes. |
+| Consentimiento | Participación, grabación y difusión, diferenciados. |
+| Versión | SHA, URL o entorno local. |
+| Entorno del participante | Dispositivo, navegador, idioma y viewport si es posible. |
+| Resultados de tareas | U01–U09: completada sin ayuda, con ayuda, fallida u omitida. |
+| Observaciones | Acciones y dudas concretas. |
+| Citas | Texto exacto y minuto de referencia, cuando exista. |
+| Conclusión de sesión | Aprendizajes e incertidumbres. |
+| Evidencia autorizada | Enlace con acceso adecuado o notas anonimizadas. |
+
+#### Plantilla de registro por tarea
+
+| Participante | Tarea | Tiempo | Resultado | Ayuda dada | Observación/cita | Evidencia |
+|---|---|---|---|---|---|---|
+| Completar tras ejecutar | Uxx | | | | | |
+
+#### Matriz de hallazgos de entrevistas
+
+| ID | Evidencia observada | Participantes | Hipótesis relacionada | Interpretación | Cambio propuesto | Estado |
+|---|---|---|---|---|---|---|
+| Sin hallazgos todavía | Entrevistas pendientes. | No aplica. | H01–H07 pendientes. | No se emiten conclusiones. | Ejecutar protocolo. | Pendiente. |
+
+Para incorporar evidencia al repositorio, utilizar notas anonimizadas y solo material autorizado. Las grabaciones con información personal no deben añadirse automáticamente a un repositorio o enlace público. Antes de entregar, comprobar que el docente pueda abrir el material permitido sin exponer información adicional.
 
 
 
