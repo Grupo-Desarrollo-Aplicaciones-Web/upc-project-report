@@ -383,6 +383,36 @@ La persistencia del idioma es compartida por el módulo; los estados del menú, 
 
 La mención a una futura integración ASP.NET en el README y un comentario del formulario no acredita backend implementado. No se incorpora como parte de esta entrega ni se redactan endpoints ficticios.
 
+## 5.2.1.7 Software Deployment Evidence for Sprint Review
+
+**Estado actual: pendiente de publicación.** El equipo ha indicado GitHub Pages como alternativa prevista. No se dispone de URL activa verificada, ejecución exitosa de Actions ni evidencia de despliegue.
+
+| Evidencia | Estado al corte | Requisito para completarla |
+|---|---|---|
+| Configuración de Vite para Pages | Propuesta en 5.1.4. | Incorporar ruta base y revisar compilación. |
+| Workflow de publicación | Propuesta entregada. | Incorporar y ejecutar en el repositorio de la landing. |
+| Build del commit de entrega | Sin resultado registrado. | Adjuntar log con finalización correcta. |
+| URL pública | No disponible. | Registrar la URL devuelta por Pages. |
+| Recursos JS/CSS/favicon | No comprobados en hosting. | Verificar solicitudes y ausencia de errores 404. |
+| Prueba de humo | Pendiente. | Ejecutar navegación e interacciones. |
+| Versión publicada | No registrada. | Identificar SHA y, si se acuerda, etiqueta de entrega. |
+
+### Ficha de despliegue para completar
+
+| Campo | Registro |
+|---|---|
+| Fecha y hora | Pendiente. |
+| Responsable | Pendiente. |
+| Rama y SHA | Pendiente. |
+| Workflow / ejecución | Pendiente. |
+| Resultado de build | Pendiente. |
+| URL del sitio | Pendiente. |
+| Navegador y viewport de validación | Pendiente. |
+| Incidencias y decisión de entrega | Pendiente. |
+
+La dirección esperada por el nombre del repositorio no debe etiquetarse como “sitio publicado” hasta comprobarla. La ejecución local con Vite y la publicación en Pages son evidencias distintas.
+
+
 
 
 
