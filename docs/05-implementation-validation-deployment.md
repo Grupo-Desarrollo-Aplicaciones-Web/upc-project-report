@@ -664,9 +664,179 @@ Se informarán numeradores y denominadores, por ejemplo “4 de 6”, evitando p
 
 Para incorporar evidencia al repositorio, utilizar notas anonimizadas y solo material autorizado. Las grabaciones con información personal no deben añadirse automáticamente a un repositorio o enlace público. Antes de entregar, comprobar que el docente pueda abrir el material permitido sin exponer información adicional.
 
+### 5.3.3 Evaluaciones según heurísticas
 
+#### Método y alcance
 
+Se realizó una **inspección estática del código y los textos de la landing** proporcionada. No se efectuó una prueba de usabilidad con participantes ni una auditoría visual automatizada. Por ello, los resultados se describen como hallazgos de inspección y verificaciones pendientes, sin declarar que la interfaz “cumple” de manera general.
 
+La revisión se organiza mediante las diez heurísticas de Nielsen. Los hallazgos, prioridades y recomendaciones siguientes son específicos del código de CreditFlow; no son resultados publicados por la fuente metodológica. [Referencia de las heurísticas de Nielsen](https://www.nngroup.com/articles/ten-usability-heuristics/).
+
+**Escala operativa de prioridad para esta revisión:**
+
+| Valor | Interpretación |
+|---|---|
+| 0 | Sin problema identificado dentro del alcance inspeccionado; no demuestra ausencia de problemas. |
+| 1 | Ajuste menor de claridad o presentación. |
+| 2 | Dificultad que puede afectar una tarea pero permite continuar. |
+| 3 | Problema importante de comprensión, accesibilidad o correspondencia entre mensaje y acción. |
+| 4 | Bloqueo crítico de una tarea esencial o impacto grave demostrado. |
+
+Las severidades son preliminares y se revisarán con observación de usuarios. No se asigna un 4 sin evidencia suficiente de ese impacto.
+
+#### Resumen de inspección
+
+| Heurística | Estado de inspección | Hallazgos relacionados |
+|---|---|---|
+| 1. Visibilidad del estado del sistema | Retroalimentación local presente; confirmación engañosa. | HEU-01, HEU-06. |
+| 2. Correspondencia con el mundo real | Dominio reconocible; discrepancia de tasa y moneda. | HEU-02, HEU-03. |
+| 3. Control y libertad | Controles reversibles en varias secciones; salida del formulario insuficiente. | HEU-07, HEU-04. |
+| 4. Consistencia y estándares | Sistema visual común; destinos y precios por revisar. | HEU-03, HEU-04, HEU-05. |
+| 5. Prevención de errores | Rangos y validaciones básicas presentes; entradas y accesibilidad por mejorar. | HEU-02, HEU-06. |
+| 6. Reconocer en lugar de recordar | Secciones etiquetadas; campos dependen de placeholders. | HEU-06. |
+| 7. Flexibilidad y eficiencia | Idiomas y anclas presentes; precisión de sliders por comprobar. | HEU-08. |
+| 8. Estética y diseño minimalista | Estructura modular; legibilidad visual sin medir. | HEU-09, HEU-10. |
+| 9. Reconocer y recuperarse de errores | Mensajes básicos; ausencia de identificación accesible del error. | HEU-06, HEU-07. |
+| 10. Ayuda y documentación | FAQ presente; enlaces de soporte/documentación provisionales. | HEU-04, HEU-09. |
+
+#### 1. Visibilidad del estado del sistema
+
+**Evidencia favorable.** El simulador utiliza propiedades calculadas para actualizar resultados; el selector de planes cambia la clase activa; el FAQ comunica su apertura mediante `aria-expanded`; el formulario muestra mensajes de error.
+
+**Problema.** `CtaSection.vue` cambia `enviado` a verdadero sin realizar una solicitud, pero el diccionario promete enviar accesos por correo. El usuario puede interpretar que el equipo recibió sus datos. Los errores y el éxito tampoco tienen una región viva explícita para tecnologías de asistencia.
+
+**Mejora.** Cambiar la confirmación por “Demostración completada; los datos no se enviaron”, añadir anuncios accesibles y mantener la misma condición en ES/EN. No introducir un estado de envío ficticio.
+
+**Criterio de cierre.** La confirmación describe el efecto real y puede percibirse sin depender exclusivamente de la visión. Hallazgos HEU-01 y HEU-06.
+
+#### 2. Correspondencia entre el sistema y el mundo real
+
+**Evidencia favorable.** La landing utiliza términos de gestión crediticia y presenta un flujo desde registro hasta análisis. Los controles del simulador se acompañan de monto, tasa y plazo.
+
+**Problema.** La tasa se etiqueta TEA y el código aplica una división proporcional entre doce. Además, `money()` conserva el valor pero cambia PEN por USD según idioma. Eso puede interpretarse como una conversión económica que no ocurre. La landing no define con suficiente precisión si el precio `$` corresponde a una moneda concreta.
+
+**Mejora.** Alinear concepto de tasa y fórmula; separar idioma de moneda o identificar los valores como ejemplos independientes; definir la moneda de los planes.
+
+**Criterio de cierre.** Texto, cálculo y unidad monetaria son coherentes y el participante puede explicarlos sin atribuir una conversión inexistente. HEU-02 y HEU-03.
+
+#### 3. Control y libertad del usuario
+
+**Evidencia favorable.** El usuario puede cambiar idioma, alternar períodos, modificar sliders y cerrar preguntas. El menú se cierra al elegir enlaces internos.
+
+**Problema.** Tras confirmar el formulario, `v-if` retira sus campos y no ofrece una acción para volver a editar. Los enlaces de login y footer pueden generar recorridos sin destino útil.
+
+**Mejora.** Incorporar “Editar datos” o “Reiniciar demostración”, conservando o restableciendo el estado de forma explícita. Sustituir destinos provisionales por secciones existentes o indicar indisponibilidad de la función.
+
+**Criterio de cierre.** Puede volver al formulario sin recargar y comprender cualquier función aún no disponible. HEU-07 y HEU-04.
+
+#### 4. Consistencia y estándares
+
+**Evidencia favorable.** Los componentes comparten tokens, botones, tarjetas y jerarquías. La navegación principal utiliza etiquetas relacionadas con sus secciones.
+
+**Problema.** El panel y simulador usan el formateador monetario, mientras Planes utiliza `$` fijo. Se anuncia “−20%”, pero se redondea el importe anual equivalente a un entero. La marca CreditFlow convive con el nombre técnico Creditor del repositorio; debe explicarse documentalmente, aunque no impide la interacción.
+
+**Mejora.** Definir criterios consistentes para moneda y precisión. Mostrar importes con decimales o ajustar el texto comercial al descuento efectivo. Conservar la marca pública de forma uniforme.
+
+**Criterio de cierre.** Los precios expresan la misma unidad y la información de descuento coincide con el cálculo. HEU-03 y HEU-05.
+
+#### 5. Prevención de errores
+
+**Evidencia favorable.** Los sliders limitan valores; el plazo mínimo es tres meses; el cálculo tiene un caso para tasa cero. El formulario rechaza vacíos y un formato de correo básico incorrecto.
+
+**Problema.** Las comprobaciones de vacío usan `trim()`, pero el correo validado y mostrado no se normaliza. Un correo con espacios exteriores puede rechazarse. Los campos no ofrecen etiquetas persistentes y la semántica errónea de tasa puede conducir a una interpretación incorrecta aunque el valor esté dentro del rango.
+
+**Mejora.** Normalizar los datos de texto antes de validar, añadir etiquetas e instrucciones y resolver el significado de tasa antes de invitar a interpretar resultados.
+
+**Criterio de cierre.** Entradas ordinarias con espacios exteriores se manejan coherentemente y las restricciones son comprensibles. HEU-02 y HEU-06.
+
+#### 6. Reconocer en lugar de recordar
+
+**Evidencia favorable.** El menú nombra secciones, las tarjetas explican capacidades y el simulador muestra los valores seleccionados junto a los controles.
+
+**Problema.** Nombre, correo y empresa dependen de placeholders; al escribir, esa indicación deja de verse. No existe una etiqueta asociada que permita identificar permanentemente cada campo.
+
+**Mejora.** Añadir `label` vinculados por `for`/`id`, diferenciar el campo opcional y conservar instrucciones visibles cuando sean necesarias.
+
+**Criterio de cierre.** Cada campo conserva un nombre visible y accesible durante toda la interacción. HEU-06.
+
+#### 7. Flexibilidad y eficiencia de uso
+
+**Evidencia favorable.** Existen anclas, selección de idioma persistida y un menú adaptable. Las funciones demostrativas pueden explorarse sin registro.
+
+**Problema a comprobar.** Los controles de rango no tienen un campo numérico complementario. Seleccionar un valor exacto en móvil puede requerir varios intentos. Las reglas responsive no prueban por sí solas que las tareas sean rápidas o cómodas.
+
+**Mejora.** Evaluar primero con usuarios el ajuste preciso; si se confirma dificultad, añadir una entrada numérica sincronizada, conservando límites y validación.
+
+**Criterio de cierre.** El participante alcanza los valores de la tarea sin ayuda o intentos excesivos. No se exigen atajos complejos propios de una aplicación operativa a una landing. HEU-08.
+
+#### 8. Estética y diseño minimalista
+
+**Evidencia favorable.** La estructura separa inicio, características, proceso, simulación, planes, preguntas y solicitud. Los estilos utilizan una paleta y medidas compartidas.
+
+**Limitaciones y riesgo.** No se midieron contraste, legibilidad, tamaño táctil ni desbordamientos. La franja de métricas y varias promesas pueden competir con información necesaria para comprender el alcance real. El desplazamiento suave global no se condiciona a `prefers-reduced-motion` en el código analizado.
+
+**Mejora.** Verificar visualmente ambos idiomas y los viewports propuestos, mantener solo afirmaciones sustentadas o claramente ilustrativas, y respetar preferencias de movimiento reducido.
+
+**Criterio de cierre.** La revisión visual documenta legibilidad y ausencia de solapamientos; las cifras no se presentan como resultados demostrados. HEU-09 y HEU-10.
+
+#### 9. Ayuda para reconocer, diagnosticar y recuperarse de errores
+
+**Evidencia favorable.** El formulario informa si faltan datos y si el correo es inválido, manteniendo el estado mientras se corrige.
+
+**Problema.** El mensaje es general y no se vincula con `aria-describedby` ni se identifica el campo con `aria-invalid`. No existe manejo de error de envío porque no hay envío; documentarlo como tal sería incorrecto. Después de confirmar tampoco hay recuperación hacia edición.
+
+**Mejora.** Asociar cada error con su entrada, anunciar el aviso y ofrecer regreso a edición. La solución debe mantener el carácter local de la demostración.
+
+**Criterio de cierre.** Un participante puede identificar el campo incorrecto y corregirlo, también mediante teclado y tecnología de asistencia. HEU-06 y HEU-07.
+
+#### 10. Ayuda y documentación
+
+**Evidencia favorable.** El FAQ y los cuatro pasos ofrecen explicaciones visibles. El README documenta el desarrollo, aunque no es ayuda destinada al visitante final.
+
+**Problema.** Los enlaces de documentación, soporte, términos y privacidad apuntan a `#`. El formulario menciona aceptación de una política que no tiene un destino informativo real. Las respuestas del FAQ describen seguridad, portales e importación como capacidades disponibles, sin respaldo funcional en el incremento.
+
+**Mejora.** Presentar ayuda y condiciones reales del prototipo, retirar enlaces sin contenido útil o identificarlos claramente como futuros, y revisar la redacción de las funciones proyectadas.
+
+**Criterio de cierre.** Los enlaces de ayuda abren contenido pertinente y el FAQ diferencia con claridad prototipo y visión. HEU-04 y HEU-09.
+
+#### Registro consolidado de hallazgos
+
+| ID | Hallazgo | Archivo/evidencia | Severidad preliminar | Acción y criterio de comprobación |
+|---|---|---|---:|---|
+| HEU-01 | Confirmación promete accesos sin envío real. | `CtaSection.vue`, textos `cta.successText`. | 3 | Declarar demostración local y comprobar interpretación del mensaje. |
+| HEU-02 | Etiqueta TEA y transformación proporcional no coinciden. | `LoanSimulator.vue`, `simulator.rate`. | 3 | Alinear tasa y fórmula; verificar caso conocido y tasa cero. |
+| HEU-03 | Cambio de idioma cambia moneda sin conversión; planes usan símbolo fijo. | `src/i18n.js`, `PricingSection.vue`. | 2 | Separar moneda e idioma o aclarar muestras; nombrar moneda de planes. |
+| HEU-04 | Login y enlaces secundarios no tienen destino útil. | `TheHeader.vue`, `TheFooter.vue`. | 2 | Probar todos los enlaces y eliminar destinos ficticios. |
+| HEU-05 | Redondeo altera el descuento anunciado. | `Math.round(monthly * 0.8)`. | 2 | Consistencia entre importe mostrado, cálculo y texto. |
+| HEU-06 | Campos sin etiquetas persistentes y errores no asociados. | `CtaSection.vue`. | 3 | Etiquetas, relación de errores y anuncios accesibles; revisión de teclado y asistencia. |
+| HEU-07 | No se puede editar tras confirmar el formulario. | Estado `enviado` y render condicional. | 2 | Acción de regreso a edición sin recarga. |
+| HEU-08 | Selección exacta depende únicamente de sliders. | `LoanSimulator.vue`. | 1 | Observar dificultad antes de decidir incorporar entrada numérica. |
+| HEU-09 | Métricas y promesas pueden parecer resultados comprobados. | `StatsBand.vue`, diccionario y FAQ. | 3 | Identificar contenido ilustrativo y diferenciar producto futuro. |
+| HEU-10 | Responsive, contraste y movimiento requieren validación adicional. | CSS y ausencia de registros de navegador. | 1 | Ejecutar revisión visual y de movimiento; prioridad sujeta a resultados. |
+
+HEU-10 es una necesidad de verificación y mejora, no una afirmación de que el contraste o el responsive fallen. Los diez registros permanecen abiertos; no se documentan correcciones aplicadas al código.
+
+#### Priorización propuesta
+
+Atender primero HEU-01, HEU-02, HEU-06 y HEU-09 porque afectan la comprensión del efecto real, del cálculo o de la interacción. Después resolver enlaces, precios y regreso a edición. Evaluar HEU-08 y HEU-10 con pruebas de interacción y visuales antes de decidir su alcance final.
+
+#### Reevaluación
+
+Cada corrección debe incluir commit, descripción, caso de verificación y evidencia. Repetir las tareas afectadas y revisar ambos idiomas. Un hallazgo se cierra cuando se cumple su criterio y existe evidencia; agregarlo al backlog no lo resuelve.
+
+#### Estado de los videos de la entrega
+
+No se incorporan enlaces ni contenido ficticio para las secciones 5.4 Video About-the-Product y 5.5 Video About-the-Team. Ambos materiales quedan fuera de este documento hasta que el equipo disponga de videos reales. Si la plantilla del curso exige mantener los encabezados, conservar únicamente su estado pendiente.
+
+#### Referencias y evidencia utilizada
+
+- Código entregado: `creditor-landing-page-develop.zip`, referencia `7597586799b350cbdeffec3b9fec4a42b1f55f3d`.
+- Capturas proporcionadas: ramas, Pull Requests e historial del informe; historial de la landing.
+- [Repositorio de la landing](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/creditor-landing-page). Su contenido fue inspeccionado desde el ZIP; no se verificó acceso remoto autenticado.
+- [Repositorio del informe](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report). Historial y ramas documentados desde las capturas.
+- [Vite: despliegue estático](https://vite.dev/guide/static-deploy.html).
+- [GitHub: disponibilidad y funcionamiento de Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
+- [Nielsen Norman Group: diez heurísticas de usabilidad](https://www.nngroup.com/articles/ten-usability-heuristics/).
 
 
 ### 5.2.2 Sprint 2
