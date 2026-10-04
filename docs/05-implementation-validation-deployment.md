@@ -814,31 +814,6 @@ Las severidades son preliminares y se revisarán con observación de usuarios. N
 | HEU-09 | Métricas y promesas pueden parecer resultados comprobados. | `StatsBand.vue`, diccionario y FAQ. | 3 | Identificar contenido ilustrativo y diferenciar producto futuro. |
 | HEU-10 | Responsive, contraste y movimiento requieren validación adicional. | CSS y ausencia de registros de navegador. | 1 | Ejecutar revisión visual y de movimiento; prioridad sujeta a resultados. |
 
-HEU-10 es una necesidad de verificación y mejora, no una afirmación de que el contraste o el responsive fallen. Los diez registros permanecen abiertos; no se documentan correcciones aplicadas al código.
-
-#### Priorización propuesta
-
-Atender primero HEU-01, HEU-02, HEU-06 y HEU-09 porque afectan la comprensión del efecto real, del cálculo o de la interacción. Después resolver enlaces, precios y regreso a edición. Evaluar HEU-08 y HEU-10 con pruebas de interacción y visuales antes de decidir su alcance final.
-
-#### Reevaluación
-
-Cada corrección debe incluir commit, descripción, caso de verificación y evidencia. Repetir las tareas afectadas y revisar ambos idiomas. Un hallazgo se cierra cuando se cumple su criterio y existe evidencia; agregarlo al backlog no lo resuelve.
-
-#### Estado de los videos de la entrega
-
-No se incorporan enlaces ni contenido ficticio para las secciones 5.4 Video About-the-Product y 5.5 Video About-the-Team. Ambos materiales quedan fuera de este documento hasta que el equipo disponga de videos reales. Si la plantilla del curso exige mantener los encabezados, conservar únicamente su estado pendiente.
-
-#### Referencias y evidencia utilizada
-
-- Código entregado: `creditor-landing-page-develop.zip`, referencia `7597586799b350cbdeffec3b9fec4a42b1f55f3d`.
-- Capturas proporcionadas: ramas, Pull Requests e historial del informe; historial de la landing.
-- [Repositorio de la landing](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/creditor-landing-page). Su contenido fue inspeccionado desde el ZIP; no se verificó acceso remoto autenticado.
-- [Repositorio del informe](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report). Historial y ramas documentados desde las capturas.
-- [Vite: despliegue estático](https://vite.dev/guide/static-deploy.html).
-- [GitHub: disponibilidad y funcionamiento de Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages).
-- [Nielsen Norman Group: diez heurísticas de usabilidad](https://www.nngroup.com/articles/ten-usability-heuristics/).
-
-
 ### 5.2.2 Sprint 2
 
 El documento canónico de esta iteración es [Sprint 2](sprints/sprint-02.md). La preparación local cubre las ocho secciones del índice. Los acuerdos de reunión, tablero externo y evidencias humanas se registran como pendientes cuando no se han proporcionado.
