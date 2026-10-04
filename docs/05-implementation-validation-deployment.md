@@ -1,6 +1,6 @@
 # Capítulo V: Product Implementation, Validation & Deployment
 
-Este capítulo registra la preparación local de TB1 al **3 de octubre de 2026**. El incremento reúne una landing orientada a cuentas por pagar y la primera frontend para consultar obligaciones, registrar compras y abonos. La API propia y la persistencia centralizada se mantienen en el diseño de AV2. El trabajo solicitado no incluye publicación ni despliegue.
+Este capítulo registra la preparación técnica de TB1 al **3 de octubre de 2026**, ampliada mediante revisión documental remota el **4 de octubre de 2026**. El incremento reúne una landing orientada a cuentas por pagar y la primera frontend para consultar obligaciones, registrar compras y abonos. La API propia y la persistencia centralizada se mantienen en el diseño de AV2. La revisión actual actualiza el informe en `develop`; no incluye un nuevo despliegue de los productos.
 
 ## 5.1 Software Configuration Management
 
@@ -31,13 +31,13 @@ Para la revisión conjunta se reservan los puertos 5173 para landing y 5174 para
 
 | Repositorio | Alcance | Estado TB1 |
 |---|---|---|
-| [upc-project-report](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report) | Informe, fuentes de diagramas, pruebas y paquete documental. | Nuevos commits locales, sin push. |
+| [upc-project-report](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report) | Informe, fuentes de diagramas, pruebas y paquete documental. | Informe y evidencias publicados en develop; revisión documental del 04/10/2026. |
 | [creditor-landing-page](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/creditor-landing-page) | Presentación pública y acceso por segmento. | Nueva versión preparada localmente. |
 | `creditor-web-app` | Dashboard, proveedores, compras, detalle y abonos. | Repositorio local; no se ha creado un remoto. |
 
 GitFlow utiliza main para entregas estables, develop para integración y una feature por bloque. La preparación reintegra primero las correcciones de main a develop, conserva el historial anterior y hace merges locales con --no-ff. Las releases usan SemVer y los hotfix vuelven a main/develop. La guía completa está en [CONTRIBUTING](../CONTRIBUTING.md).
 
-Los cambios de TB1 se atribuyen a la identidad que los registra: `MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com>`. Los commits de integrantes anteriores se conservan. Las ramas de trabajo se mantienen para revisión antes de publicar.
+Los cambios de TB1 se atribuyen a la identidad que los registra: `MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com>`. Los commits de integrantes anteriores se conservan. La evidencia del 03/10 describe ramas de trabajo locales; la revisión del 04/10 comprueba los commits de preparación del informe disponibles en GitHub.
 
 ### 5.1.3 Source Code Style Guide & Conventions
 
