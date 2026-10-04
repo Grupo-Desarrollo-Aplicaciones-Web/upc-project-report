@@ -138,9 +138,9 @@ Fuentes: [compra](../assets/architecture/user-flow-purchase.mmd), [abono](../ass
 
 ## 4.5 Web Applications Prototyping
 
-El prototipo funcional local es la primera frontend CREDITOR. Con el servidor en 5174 permite recorrer dashboard, compra, detalle y abono en escritorio/móvil, cambiar idioma y corregir errores. Una compra PEN 100 y abono 30 debe mostrar saldo PEN 70; un abono posterior 71 debe rechazarse. Las comprobaciones y límites se documentan en [Evidencia local](tb1/evidencia-local.md).
+A continuación se presenta el prototyping de algunas de las vistas principales de la aplicación web mostradas anteriormente en la sección web mock-ups, las cuales son detalle de compra, purchase new y dashboard. Desde la pantalla de dashboard se puede acceder a cualquier vista y particularmente se puede navegar de la vista purchase new a detalle de compra. Como puede observar en la imagen, se han modelado las rutas.
 
-La conexión del prototipo Figma desktop/mobile, la revisión del equipo y el video de navegación en Stream quedan pendientes. La preparación local no acredita esas evidencias externas.
+![Prototipo](../assets/ux/tb1/prototypingCreditor.PNG)
 
 ## 4.6 Domain-Driven Software Architecture
 
