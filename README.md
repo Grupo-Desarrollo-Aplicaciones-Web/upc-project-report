@@ -45,6 +45,8 @@ Informe actualizado para revisión local al 03/10/2026. La nueva landing y prime
 
 Preparación de la exposición: [prompt detallado para crear el PPT](docs/tb1/prompt-crear-ppt.md) y [guion por diapositiva](docs/tb1/guion-ppt-detallado.md), con video de 27:30 y ruta de sustentación de 12:00. Estos documentos no sustituyen la presentación y grabación reales.
 
+[Presentación ampliada de 40 diapositivas](deliverables/tb1/keynote-expanded/README.md): PPTX editable con notas y recorridos personalizados, más PDF de lectura. Se conserva la presentación anterior.
+
 La preparación no incluye push ni deployment. Las entrevistas adicionales, revisión en herramientas externas, acuerdos del equipo, desempeño y video permanecen pendientes cuando no existe evidencia.
 
 ## Estructura del informe
