@@ -1,5 +1,7 @@
 # Guion de exposición TB1
 
+La [guía detallada por diapositiva](guion-ppt-detallado.md) amplía este resumen con un video de 27:30, una selección de 22 diapositivas para clase y respuestas de sustentación. El [prompt para crear el PPT](prompt-crear-ppt.md) define contenido, fuentes y recursos de 36 diapositivas de exposición y cuatro de consulta.
+
 ## Sustentación de 12 minutos
 
 | Tiempo | Integrante propuesto | Contenido y demostración |

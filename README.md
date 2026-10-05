@@ -43,6 +43,8 @@
 
 Informe actualizado para revisión local al 03/10/2026. La nueva landing y primera frontend se encuentran en repositorios locales independientes. [Evidencia técnica](docs/tb1/evidencia-local.md), [commits por feature](docs/tb1/commits-locales.md), [control de entrega](docs/09-tb1-delivery-checklist.md) y [archivos TB1](deliverables/tb1/README.md).
 
+Preparación de la exposición: [prompt detallado para crear el PPT](docs/tb1/prompt-crear-ppt.md) y [guion por diapositiva](docs/tb1/guion-ppt-detallado.md), con video de 27:30 y ruta de sustentación de 12:00. Estos documentos no sustituyen la presentación y grabación reales.
+
 La preparación no incluye push ni deployment. Las entrevistas adicionales, revisión en herramientas externas, acuerdos del equipo, desempeño y video permanecen pendientes cuando no existe evidencia.
 
 ## Estructura del informe
