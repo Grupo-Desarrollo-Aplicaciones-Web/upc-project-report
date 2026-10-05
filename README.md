@@ -47,6 +47,8 @@ Preparación de la exposición: [prompt detallado para crear el PPT](docs/tb1/pr
 
 [Presentación ampliada de 40 diapositivas](deliverables/tb1/keynote-expanded/README.md): PPTX editable con notas y recorridos personalizados, más PDF de lectura. Se conserva la presentación anterior.
 
+[Guiones individuales de Juan, Sebastián y Miguel](docs/tb1/expositores/README.md): parlamentos completos, tiempos y acciones por expositor, con versiones Word y PDF para ensayar en clase o grabar el video.
+
 La preparación no incluye push ni deployment. Las entrevistas adicionales, revisión en herramientas externas, acuerdos del equipo, desempeño y video permanecen pendientes cuando no existe evidencia.
 
 ## Estructura del informe

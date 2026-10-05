@@ -4,6 +4,8 @@ Preparado el 04/10/2026 a partir del informe local al corte del 03/10/2026. La n
 
 ## Cómo usarlo
 
+Para ensayar individualmente, usar los [guiones separados de Juan, Sebastián y Miguel](expositores/README.md), disponibles también en Word y PDF. Cada uno contiene solo sus turnos y las acciones que le corresponden.
+
 Hay dos versiones: video completo de **27:30** y sustentación de **12:00**. Para el video se usa la sección «Guion completo»; para clase se usa únicamente «Guion breve», que selecciona 22 diapositivas del mismo PPT. No se leen ambas versiones consecutivamente.
 
 Los intervalos son objetivos de ensayo, incluyen transiciones y acciones de pantalla y deben comprobarse con cronómetro. El video tiene 2:30 de margen frente al límite de 30 minutos; la sustentación se ensaya sin exceder los 12 minutos. Hablar con naturalidad y usar las notas como apoyo; no leer las tablas completas.
