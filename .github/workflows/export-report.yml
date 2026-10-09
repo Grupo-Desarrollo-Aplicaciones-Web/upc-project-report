@@ -3,7 +3,7 @@ name: Exportar Reporte a Word
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch: # Permite ejecutar la exportación manualmente con un botón
+  workflow_dispatch:
 
 jobs:
   generar-word:
@@ -20,23 +20,24 @@ jobs:
 
       - name: 3. Unir archivos Markdown y compilar a Word
         run: |
-          cd docs
           pandoc \
-            00-project-information.md \
-            00-student-outcome.md \
-            01-introduction.md \
-            02-requirements-elicitation-analysis.md \
-            03-requirements-specification.md \
-            04-product-design.md \
-            05-implementation-validation-deployment.md \
-            06-conclusions-recommendations.md \
-            07-bibliography-appendices.md \
-            08-av1-delivery-checklist.md \
+            README.md \
+            docs/00-project-information.md \
+            docs/00-student-outcome.md \
+            docs/01-introduction.md \
+            docs/02-requirements-elicitation-analysis.md \
+            docs/03-requirements-specification.md \
+            docs/04-product-design.md \
+            docs/05-implementation-validation-deployment.md \
+            docs/06-conclusions-recommendations.md \
+            docs/07-bibliography-appendices.md \
+            docs/08-av1-delivery-checklist.md \
+            --resource-path=.:docs \
             -o Reporte_Completo.docx
 
       - name: 4. Guardar archivo generado como artefacto descargable
         uses: actions/upload-artifact@v4
         with:
           name: Reporte-Word-UPC
-          path: docs/Reporte_Completo.docx
+          path: Reporte_Completo.docx
           retention-days: 7
