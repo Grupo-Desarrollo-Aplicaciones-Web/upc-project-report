@@ -7,6 +7,9 @@
 3. El valor de un historial de pagos, alertas de vencimiento y consulta de saldos depende de las prácticas reales de los segmentos. Las entrevistas y los artefactos de needfinding definirán qué historias deben priorizarse.
 4. La trazabilidad entre investigación, historias de usuario, Sprint Backlog y evidencia técnica permite evaluar el avance sin atribuir resultados que todavía no se han obtenido.
 
+## Video About-the-Team
+Video about the team: https://youtu.be/RItoiUdxaiA
+
 ## Recomendaciones
 
 1. Realizar y registrar de tres a cinco entrevistas autorizadas por cada segmento antes de afirmar hallazgos o porcentajes.
