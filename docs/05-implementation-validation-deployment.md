@@ -798,4 +798,7 @@ Durante la reunión de cierre, cada integrante identificará una práctica que c
 
 ### Métricas disponibles y pendientes
 
+## 5.4. Video About-the-Product.
+Video about the product: https://youtu.be/LGV7hN8I4No
+
 Se conoce el alcance propuesto de 34 SP y 61 horas-persona estimadas. No existe velocidad real, tiempo efectivo, tasa de defectos ni porcentaje de pruebas aprobadas medidos. Estas métricas se completarán con el cierre y sus registros.
