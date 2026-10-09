@@ -543,8 +543,8 @@ Este inventario cubre la preparación TB1 descrita por la fuente, no todo el his
 
 
 
-| SHA | Fecha | Autor y correo | Mensaje | Body |
-|---|---|---|---|---|
+| SHA | Fecha | Autor y correo | Mensaje | 
+|---|---|---|---|
 | [c2b7288](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/c2b72880dfea0d40c54031579d0a2ab8ae0d3d69) | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(gitflow): define local TB1 feature and release workflow |
 | [4bfa283](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/4bfa2839455010109b987127c54aced3c73a7a1a) | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | chore(gitflow): integrate local workflow conventions | 
 | [b9a2bb4](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/b9a2bb410d1927b09e2076edea40d5b5442b363f) | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(sprint): prepare sprint two and preserve AV1 evidence | 
@@ -574,12 +574,12 @@ Este inventario cubre la preparación TB1 descrita por la fuente, no todo el his
 | SHA | Fecha | Autor y correo | Mensaje | Body |
 |---|---|---|---|---|
 | 8fdd291 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | feat: present CREDITOR accounts payable content | Sin body |
-| 5bc3d41 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | merge: integrate CREDITOR landing content | Sin body |
+| 5bc3d41 | 2026-10-03 | SebastianGutarra | merge: integrate CREDITOR landing content | Sin body |
 | 099ed12 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | feat: connect segment calls to action to configurable frontend | Sin body |
-| 1ba613b | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | merge: integrate frontend navigation | Sin body |
-| ed3f923 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | feat: make local contact demo and legal pages accessible | Sin body |
+| 1ba613b | 2026-10-03 | JuanManuel312 | merge: integrate frontend navigation | Sin body |
+| ed3f923 | 2026-10-03 | SebastianGutarra | feat: make local contact demo and legal pages accessible | Sin body |
 | 410b973 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | merge: integrate accessible local contact and legal pages | Sin body |
-| 62eceff | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | fix: validate TB1 loan math and local quality workflow | Sin body |
+| 62eceff | 2026-10-03 | JuanManuel312 | fix: validate TB1 loan math and local quality workflow | Sin body |
 | cc1b4cf | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | merge: integrate verified local TB1 quality checks |
 
 
