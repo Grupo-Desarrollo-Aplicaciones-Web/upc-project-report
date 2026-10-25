@@ -417,7 +417,7 @@ No existen registro de clientes, CRUD de créditos, autenticación, exportación
 
 La revisión actual es estática. Se dispone de código y capturas de historial; permanecen pendientes la ejecución documentada de pruebas en navegador, la publicación y las entrevistas con usuarios.
 
-# 5.2.1 Sprint 1: Landing Page de CreditFlow
+# 5.2.1 Sprint 1: Landing Page de Creditor
 
 ## 5.2.1.1 Sprint Planning 1
 
@@ -434,7 +434,7 @@ La revisión actual es estática. Se dispone de código y capturas de historial;
 | Attendees previstos | Juan Manuel Santos Torres, Sebastián Gutarra Velapatiño y Miguel Angel Egocheaga Suyo. |
 | Sprint n−1 Review Summary | No se dispone de un sprint previo documentado para esta entrega. |
 | Sprint n−1 Retrospective Summary | No aplica como reunión previa; se propone iniciar con acuerdos sobre alcance y evidencia. |
-| Sprint Goal | Consolidar la landing bilingüe de CreditFlow, documentar sus componentes e interacciones, definir su validación y preparar una configuración de publicación estática. |
+| Sprint Goal | Consolidar la landing bilingüe de Creditor, documentar sus componentes e interacciones, definir su validación y preparar una configuración de publicación estática. |
 | Sprint 1 Velocity | No disponible: no existe una medición de historias aceptadas al cierre. |
 | Sum of Story Points propuestos | 34 SP. |
 | Esfuerzo de tareas estimado | 61 horas-persona; estimación reconstruida, no horas trabajadas acreditadas. |
@@ -489,7 +489,7 @@ Las historias e IDs se han elaborado para describir el incremento. Sus estimacio
 
 | ID | Historia de usuario | SP | Evidencia o situación actual |
 |---|---|---:|---|
-| US-LP-01 | Como visitante, quiero identificar el propósito de CreditFlow y navegar a las secciones para decidir qué información explorar. | 3 | Header y Hero presentes; enlace de login pendiente de corregir. |
+| US-LP-01 | Como visitante, quiero identificar el propósito de Creditor y navegar a las secciones para decidir qué información explorar. | 3 | Header y Hero presentes; enlace de login pendiente de corregir. |
 | US-LP-02 | Como responsable de cartera, quiero conocer las capacidades y el flujo previsto para evaluar su relación con mi negocio. | 3 | Features, HowItWorks y Stats presentes; afirmaciones por revisar. |
 | US-LP-03 | Como visitante, quiero modificar los parámetros de un préstamo para explorar una estimación de cuota. | 5 | Simulador presente; discrepancia entre etiqueta TEA y cálculo. |
 | US-LP-04 | Como potencial cliente, quiero comparar planes y períodos para comprender la propuesta comercial. | 3 | Selector y tarjetas presentes; moneda y redondeo por aclarar. |
