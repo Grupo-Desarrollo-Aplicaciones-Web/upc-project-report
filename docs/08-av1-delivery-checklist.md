@@ -5,12 +5,12 @@ Esta lista organiza los entregables de AV1. Un ítem solo se marca como listo al
 | Entregable | Evidencia esperada | Estado actual |
 |---|---|---|
 | Project Report | Informe completo, PDF exportado y repositorio Markdown actualizado. | Estructura y borradores avanzados; faltan evidencias de investigación, prototipos y datos académicos. |
-| Keynote | Archivo editable y PDF con producto, equipo, avance y fotos autorizadas. | Pendiente. |
-| Individual Member Performance Report | Documento del líder con aportes verificables de cada integrante. | Pendiente. |
+| Keynote | Archivo editable y PDF con producto, equipo, avance y fotos autorizadas. | Realizado. |
+| Individual Member Performance Report | Documento del líder con aportes verificables de cada integrante. | Realizado. |
 | Supporting files | ZIP con artefactos necesarios para la evaluación. | Pendiente de definir contenido final. |
 | Landing Page | URL HTTPS, commit desplegado, captura y verificación. | Pendiente de rebranding, correcciones y despliegue. |
-| Video About-the-Product | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Pendiente. |
-| Video About-the-Team | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Pendiente. |
+| Video About-the-Product | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Realizado. |
+| Video About-the-Team | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Realizado. |
 
 ## Revisión previa a publicación
 
