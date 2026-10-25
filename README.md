@@ -32,7 +32,7 @@
 | u20241a314 | Gutarra Velapatiño, Sebastián |
 
 <h3 align="center">Periodo 202620</h3>
-<h3 align="center">Agosto, 2026</h3>
+<h3 align="center">Noviembre, 2026</h3>
 
 
 
