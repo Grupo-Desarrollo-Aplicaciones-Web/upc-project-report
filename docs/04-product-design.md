@@ -161,11 +161,15 @@ El wireflow representa la navegación y los puntos de decisión de US-005 y US-0
 
 ### 4.4.3 Web Application Mock-ups
 
-La versión visual debe aplicar los tokens de 4.1 a las vistas de 4.4.1 en escritorio y móvil. En el dashboard, el saldo pendiente y el vencimiento tienen jerarquía mayor que las gráficas. En el detalle de compra, cada abono muestra importe, fecha y vínculo al voucher; el usuario debe poder reconstruir el saldo desde los movimientos. No se deben unir importes de PEN y USD en un único total sin tipo de cambio declarado.
+Las siguientes capturas muestran las vistas implementadas con datos ficticios y adaptador local. Permiten revisar composición y consistencia del flujo con las historias. No constituyen una validación con usuarios.
 
-El equipo aportó un mock-up de «Nueva operación» con campos de monto, tasa, plazo y frecuencia. Es evidencia visual de avance, pero esos campos describen un préstamo y no la compra a crédito con proveedor, moneda y vencimiento que prioriza US-005. Se conserva como borrador para revisar con el equipo. El mock-up final y su enlace revisable en Figma siguen **pendientes**.
+![Dashboard local](../assets/ux/tb1/frontend-dashboard-en.png)
 
-![Mock-up web de Nueva operación aportado por el equipo](../assets/branding/webmockup.png)
+![Registro local de compra](../assets/ux/tb1/frontend-purchase-new-en.png)
+
+![Detalle e historial local](../assets/ux/tb1/frontend-detail-es.png)
+
+![Formulario en móvil](../assets/ux/tb1/frontend-mobile-es.png)
 
 ### 4.4.4 Web Application User Flow Diagrams
 
