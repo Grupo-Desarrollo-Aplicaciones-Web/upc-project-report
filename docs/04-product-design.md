@@ -163,13 +163,13 @@ El wireflow representa la navegación y los puntos de decisión de US-005 y US-0
 
 Las siguientes capturas muestran las vistas implementadas con datos ficticios y adaptador local. Permiten revisar composición y consistencia del flujo con las historias. No constituyen una validación con usuarios.
 
-![Dashboard local](../assets/ux/tb1/frontend-dashboard-en.png)
+![Dashboard local](../assets/ux/frontend-dashboard-en.png)
 
-![Registro local de compra](../assets/ux/tb1/frontend-purchase-new-en.png)
+![Registro local de compra](../assets/ux/frontend-purchase-new-en.png)
 
-![Detalle e historial local](../assets/ux/tb1/frontend-detail-es.png)
+![Detalle e historial local](../assets/ux/frontend-detail-es.png)
 
-![Formulario en móvil](../assets/ux/tb1/frontend-mobile-es.png)
+![Formulario en móvil](../assets/ux/frontend-mobile-es.png)
 
 ### 4.4.4 Web Application User Flow Diagrams
 
