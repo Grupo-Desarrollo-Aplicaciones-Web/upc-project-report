@@ -102,9 +102,7 @@ El nombre técnico del repositorio `creditor-landing-page` se conserva, aunque l
 
 La captura del informe muestra `main` como rama predeterminada, `develop` y las ramas `feature/cap4` y `feature/capitulo-2-competidores-entrevistas`. En esa captura, `develop` aparece 16 commits detrás de `main`; `feature/cap4`, 16 detrás y 6 por delante; y `feature/capitulo-2-competidores-entrevistas`, 0 detrás y 5 por delante. Son valores de ese momento, no un estado actualizado consultado en línea.
 
-La captura del historial de la landing muestra la rama `develop` y commits del 14 de septiembre de 2026 con mensajes de incorporación e integración de funcionalidades. Los mensajes `merge:` evidencian la intención declarada de integrar cambios; sin inspeccionar los padres de cada commit no bastan para demostrar la topología de las fusiones.
-
-La captura de Pull Requests corresponde al **repositorio del informe** y muestra cero abiertos y cero cerrados. No se cuenta con evidencia de revisiones por PR realizadas en la landing. Por tanto, se documenta la estrategia siguiente como una práctica a formalizar, no como una revisión por pares ya completada.
+La captura del historial de la landing muestra la rama `develop` y commits del 14 de septiembre de 2026 con mensajes de incorporación e integración de funcionalidades; los mensajes `merge:` evidencian la intención declarada de integrar cambios.
 
 
 #### Estrategia de ramas propuesta
