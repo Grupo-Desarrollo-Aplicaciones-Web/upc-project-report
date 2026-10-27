@@ -66,7 +66,7 @@ CREDITOR propone centralizar compras a crédito, abonos, comprobantes, vencimien
 | Feature Assumption F-04 | Un módulo de préstamos con cuotas y fechas permitiría consultar obligaciones financieras adicionales cuando el segmento las utilice. |
 | Feature Assumption F-05 | Un reporte filtrable por fecha, proveedor y moneda facilitaría preparar una revisión o compartir información con contabilidad. |
 
-Estos supuestos se contrastarán en entrevistas y pruebas de usabilidad. Ninguno representa todavía una afirmación validada sobre comportamiento, intención de compra o impacto económico.
+
 
 #### 1.2.2.3 Lean UX Hypothesis Statements
 
