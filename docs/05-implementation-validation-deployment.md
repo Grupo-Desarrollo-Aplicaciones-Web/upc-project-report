@@ -348,8 +348,6 @@ No se incorpora un mecanismo de rutas SPA porque esta landing navega mediante an
 
 ## 5.2 Landing Page, Services & Applications Implementation
 
-La documentación detallada de la primera iteración se encuentra en [`docs/sprints`](creditor-documentacion/informe/docs/sprints/README.md), específicamente en [Sprint 1](creditor-documentacion/informe/docs/sprints/sprint-1.md). No se documentan iteraciones posteriores inexistentes.
-
 ### Alcance de implementación
 
 El incremento presenta CREDITOR y permite explorar interacciones de una landing. La página se monta desde `src/main.js` sobre `#app`, aplica el idioma inicial y renderiza los componentes importados por `App.vue`.
