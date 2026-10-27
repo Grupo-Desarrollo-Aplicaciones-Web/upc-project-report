@@ -770,20 +770,240 @@ La captura de ramas del informe muestra divergencia entre `main` y `develop`; po
 | Validación | Registrar cada prueba con versión, entrada y resultado. | Matriz completada. |
 | Publicación | Asociar URL, workflow y SHA. | Ficha de despliegue. |
 
-### Fortalezas observables
 
-La separación por componentes facilita localizar responsabilidades técnicas. Los diccionarios concentran contenido bilingüe. Los commits visibles contienen mensajes que permiten relacionar grupos de cambios con secciones de la landing.
 
-### Oportunidades de mejora
+## 5.2.2. Sprint 2
 
-Resolver enlaces provisionales, aclarar el estado de demostración, alinear la etiqueta de tasa con el cálculo y formalizar los criterios de aceptación. También se propone registrar versiones locales, completar asignaciones y evitar confundir afirmaciones promocionales con evidencia de resultados.
+**Corte de implementación:** 03/10/2026. **Revisión documental remota:** 04/10/2026. El incremento de CREDITOR incorpora consulta de obligaciones, registro de compras, abonos e historial con datos de demostración. Esta revisión utiliza los archivos de `develop`, el registro de ejecución y los commits consultables mediante GitHub.
 
-### Retrospectiva propuesta
+El informe y sus evidencias ya están disponibles en el repositorio remoto. La implementación nueva de landing y frontend continúa descrita por la evidencia del 03/10 como local: no se encontró un remoto de `creditor-web-app` entre los repositorios accesibles de la organización. Los resultados de pruebas se citan del registro existente; no se han vuelto a ejecutar en esta revisión documental.
 
-Durante la reunión de cierre, cada integrante identificará una práctica que convenga mantener, una dificultad concreta y una acción para el siguiente incremento. La acción deberá tener responsable y evidencia de cumplimiento. No se atribuyen comentarios, consensos o reuniones no realizadas.
+## 5.2.2.1 Sprint Planning 2
 
-### Métricas disponibles y pendientes
-Se conoce el alcance propuesto de 34 SP y 61 horas-persona estimadas. No existe velocidad real, tiempo efectivo, tasa de defectos ni porcentaje de pruebas aprobadas medidos. Estas métricas se completarán con el cierre y sus registros.
+| Campo | Registro |
+|---|---|
+| Fecha/hora/lugar de reunión | Sábado 03 de Octubre 3:30 p.m. reunión vía Google Meet |
+| Prepared by | Miguel Angel Egocheaga Suyo, preparación técnica local del informe. |
+| Attendees | Pendiente de confirmar por el equipo. |
+| Review Sprint 1 | Landing existente publicada el 18/09; informe y diseño requieren alineación al dominio de cuentas por pagar. |
+| Retrospective Sprint 1 | Historial combina features/merges y cargas directas; mantener revisión y commits por bloque en el incremento. La sesión de retrospectiva no está registrada. |
+| Sprint Goal propuesto | Propietario consulta saldo/vencimiento por moneda y administrador registra compra/abono conservando la composición del saldo. |
+| Comprobación técnica | Compra PEN 100 y abono 30 producen saldo PEN 70; abono 71 se rechaza; importes USD no se suman a PEN. |
+| Capacidad/Velocity | 26 story points |
+| Historias de frontend | US-004 (8 SP), US-005 (8 SP), US-006 (5 SP), US-007 (5 SP): 26 SP relativos de la planificación existente. |
+| Alcance adicional | Corrección de landing, i18n/a11y, términos, pruebas locales y evidencia del report. |
+
+### Alcance y criterios de revisión
+
+- Incluido: US-004–007, ajustes de US-001–003, ES/EN, accesibilidad, reglas de compra/abono, evidencia y documentación.
+- Próximo incremento: US-008/009, API propia, autenticación, autorización, transacciones y persistencia de servidor.
+- Fechas de inicio/fin, horario, lugar, participantes y capacidad del sprint: el equipo debe confirmarlos; el 03/10 es la fecha de evidencia técnica, no una duración inferida.
+
+### Definition of Done para aceptación del incremento
+
+1. La historia satisface sus criterios del [capítulo III](03-requirements-specification.md).
+2. El código y su commit de entrega pueden revisarse y reproducirse.
+3. Build y pruebas pertinentes tienen un resultado registrado para la versión evaluada.
+4. Monedas, validaciones, errores, navegación e idiomas conservan las reglas del dominio.
+5. La documentación diferencia datos de demostración de operaciones de servidor.
+6. El equipo registra revisión y aceptación. Si el criterio del hito exige publicación, se añade su URL y evidencia de deployment.
+
+La evidencia técnica disponible permite **To-Review**; no permite declarar velocidad aceptada ni todas las historias Done sin el cierre del equipo.
+
+## 5.2.2.2 Aspect Leaders and Collaborators
+
+La matriz siguiente propone la revisión del incremento a partir de los roles históricos. Los commits de preparación del informe consultados en GitHub están asociados a @MiguelAngel0107. 
+
+| Integrante | GitHub | Producto/investigación | Diseño/revisión visual | Implementación/integración | 
+|---|---|---|---|---|
+| Santos Torres, Juan Manuel | JuanManuel312 | L | C | C |
+| Gutarra Velapatiño, Sebastián | SebastianGutarra | C | L | C | 
+| Egocheaga Suyo, Miguel Angel | MiguelAngel0107 | C | C | L | 
+
+L = líder propuesto del aspecto. C = colaborador propuesto. Los aportes realizados se comprueban con el historial; el Performance Report los evalúa por separado.
+
+## 5.2.2.3 Sprint Backlog 2
+
+El tablero del curso en Trello/Jira/YouTrack queda pendiente de sincronización. Esta tabla local conserva los work-items textuales para revisión, con estimaciones propuestas en horas; no son horas trabajadas.
+
+| Story | Task | Descripción | Est. h | Assigned to | Estado de aceptación |
+|---|---|---|---:|---|---|
+| US-004 | T2-01 | Dashboard de saldos separados por moneda y vencimientos. | 4 | Miguel Egocheaga | Implementación local; ver evidencia de ejecución. |
+| US-004 | T2-02 | Filtros por proveedor/estado/moneda y rutas a detalle. | 3 | Sebastián Gutarra | Implementación local; ver evidencia de ejecución. |
+| US-005 | T2-03 | Formulario de compra con proveedor, moneda, importe, fecha y comprobante demo. | 5 | Juan Santos | Implementación local; ver evidencia de ejecución. |
+| US-005 | T2-04 | Validar campos, tenant de proveedor y manejo de errores. | 3 | Sebastián Gutarra | Implementación local; ver evidencia de ejecución. |
+| US-006 | T2-05 | Registrar abono y conservar historial/saldo en centavos. | 4 | Juan Santos | Implementación local; ver evidencia de ejecución. |
+| US-006 | T2-06 | Rechazar importe superior al saldo y conservar formulario. | 2 | Miguel Egocheaga | Implementación local; ver evidencia de ejecución. |
+| US-007 | T2-07 | Detalle con total, movimientos, fecha y referencia del voucher. | 3 | Miguel Egocheaga | Implementación local; ver evidencia de ejecución. |
+| US-001/003 | T2-08 | Landing CREDITOR, CTA por segmento y destinos legales. | 4 | Juan Santos | Implementación local; ver evidencia de ejecución. |
+| US-002 | T2-09 | Contacto de demostración honesto, sin prometer envío de email. | 2 | Sebastián Gutarra | Contrato ajustado al alcance local. |
+| Calidad | T2-10 | Inglés/es419, teclado, responsive y casos automatizados. | 4 | Miguel Egocheaga| Verificación técnica local. |
+| Report | T2-11 | Investigación, requisitos, modelos y evidencia de Sprint 2. | 5 | Sebastián Gutarra  | Preparado; fuentes humanas pendientes identificadas. |
+| Entrega | T2-12 | Capturas, PDF, Keynote, formato performance y guion. | 4 | Juan Santos | Artefactos locales; revisión del equipo pendiente. |
+
+Total estimado propuesto: 43 horas. Los estados To-do/In-Process/To-Review/Done del tablero académico se confirmarán con el equipo; la entrega local técnica pasa a To-Review con sus resultados de prueba.
+
+### Trazabilidad entre historias y cambios
+
+| Historia / aspecto | Cambios registrados | Evidencia de aceptación disponible |
+|---|---|---|
+| US-004: obligaciones | `c545241`, dashboard, proveedores y filtros. | Captura dashboard y registro local de pruebas; revisión del equipo pendiente. |
+| US-005: compra | `65d32b9`, `c545241`, reglas y formulario. | Pruebas de dominio y escenario de compra de PEN 100. |
+| US-006: abono | `ee71505`, regla de saldo. | Abono de PEN 30 y rechazo de PEN 71 frente a saldo 70. |
+| US-007: historial | `8f50367`, `799dbe3`. | Detalle, historial y persistencia después de recargar. |
+| US-001–003: landing | `8fdd291`, `099ed12`, `ed3f923`. | CTA a aplicación local, contacto de demostración y páginas legales. |
+| Calidad | `62eceff`, `c907c5a`, `fa9155c`. | Pruebas registradas y capturas ES/EN, escritorio/móvil. |
+| Informe | `b9a2bb4`, `775efaf`, `967ff5f`. | Sprint, criterios y evidencia publicados en el repositorio del report. |
+
+Los SHA de landing/frontend proceden del inventario local y no se presentan como commits remotos comprobados. Los SP y las horas son estimaciones distintas: **26 SP** para cuatro historias de frontend y **43 horas propuestas** para las doce tareas, incluyendo trabajos adicionales.
+
+## 5.2.2.4 Development Evidence for Sprint Review
+
+El inventario de preparación contiene **41 commits: 18 de report, 8 de landing y 15 de frontend**, incluidos merges. Se conserva cada mensaje, autor y fecha del [registro de origen](tb1/commits-locales.md). El 04/10/2026 se comprobaron individualmente los 18 SHA del informe en GitHub y se añadieron sus enlaces. La consulta de los ocho SHA de landing no devolvió commits accesibles; se mantienen como evidencia local registrada. El frontend no dispone de un remoto identificado en la organización consultada.
+
+Este inventario cubre la preparación TB1 descrita por la fuente, no todo el historial de vida del proyecto. Los merges documentan integración y no se cuentan como funcionalidades adicionales. Las evidencias de otros integrantes se conservan en [información del proyecto](00-project-information.md).
+
+### Commits del informe
+
+
+
+| SHA | Fecha | Autor y correo | Mensaje | 
+|---|---|---|---|
+| [c2b7288](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/c2b72880dfea0d40c54031579d0a2ab8ae0d3d69) | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(gitflow): define local TB1 feature and release workflow |
+| [4bfa283](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/4bfa2839455010109b987127c54aced3c73a7a1a) | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | chore(gitflow): integrate local workflow conventions | 
+| [b9a2bb4](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/b9a2bb410d1927b09e2076edea40d5b5442b363f) | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(sprint): prepare sprint two and preserve AV1 evidence | 
+| [6eafa16](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/creditor-web-app/commit/0c07656795b65c607dff8a0c9f3984c979aad436) | 2026-10-03 | SebastiánGutarra | chore(gitflow): integrate payment history layout |
+| [084ad9a](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/084ad9a599cbcdd588c3477105d3c82108f59062) | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | docs(research): reconcile Lean UX competitors and interview evidence | 
+| [0c07656](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/775efaf733ddb1e25a51897dd92df2a4d2adbe5e) | 2026-10-03 | SebastiánGutarra | chore(gitflow): integrate shared planning credit record |
+| [3b5fb45](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/3b5fb452ad1d7970f64ae45882e80ca87950ed4d) | 2026-10-03 | JuanManuel312 | fix(payments): connect history records and translated heading | 
+| [a3afc51](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report/commit/a3afc5151398248704cfc70aa535b90da19d26ef) | 2026-10-03 | JuanManual312 | chore(gitflow): integrate accounts payable feature
+ | 
+
+
+
+
+
+- `feature/tb1-auditoria-prompt 3f8f34d`
+- `feature/tb1-delivery ca3ee09`
+- `feature/tb1-requirements-design 3b5fb45`
+- `feature/tb1-research 084ad9a`
+- `feature/tb1-sprint-evidence f16e8bd`
+- `feature/tb1-ux-alignment a3afc51`
+- `feature/tb1-workflow c2b7288`
+
+### Commits de landing
+
+
+
+| SHA | Fecha | Autor y correo | Mensaje |
+|---|---|---|---|
+| 8fdd291 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | feat: present CREDITOR accounts payable content | 
+| 5bc3d41 | 2026-10-03 | SebastianGutarra | merge: integrate CREDITOR landing content | 
+| 099ed12 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | feat: connect segment calls to action to configurable frontend |
+| 1ba613b | 2026-10-03 | JuanManuel312 | merge: integrate frontend navigation | 
+| ed3f923 | 2026-10-03 | SebastianGutarra | feat: make local contact demo and legal pages accessible | 
+| 410b973 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | merge: integrate accessible local contact and legal pages | 
+| 62eceff | 2026-10-03 | JuanManuel312 | fix: validate TB1 loan math and local quality workflow | 
+| cc1b4cf | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | merge: integrate verified local TB1 quality checks |
+
+
+
+- `feature/contact-accessibility ed3f923`
+- `feature/creditor-content 8fdd291`
+- `feature/frontend-navigation 099ed12`
+- `feature/tb1-quality-local 62eceff`
+
+### Commits de frontend
+
+
+
+| SHA | Fecha | Autor y correo | Mensaje | 
+|---|---|---|---|
+| e292287 | 2026-10-03 | JuanManuel312 | feat(app): add Vue PrimeVue Material and bilingual application shell | 
+| beeff2a | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | chore(gitflow): integrate application foundation | 
+| 65d32b9 | 2026-10-03 | SebastianGutarra | feat(purchases): enforce tenant scoped credit purchase rules and local persistence | 
+| c545241 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | feat(purchases): add dashboard supplier list filters and purchase registration |
+| b64c67d | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | chore(gitflow): integrate accounts payable feature | 
+| ee71505 | 2026-10-03 | JuanManuel312 | feat(payments): add payment history and enforce remaining balance | 
+| 9625af0 | 2026-10-03 | SebastiánGutarra | chore(gitflow): integrate purchase payments | 
+| 8f50367 | 2026-10-03 | MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com> | fix(payments): connect history records and translated heading | 
+
+
+
+
+- `feature/accounts-payable c545241`
+- `feature/app-foundation e292287`
+- `feature/payment-history-layout 799dbe3`
+- `feature/purchase-payments ee71505`
+- `feature/tb1-copy-encoding fa9155c`
+- `feature/tb1-quality-local f9cda20`
+
+
+## 5.2.2.5 Execution Evidence for Sprint Review
+
+La [evidencia de ejecución](tb1/evidencia-local.md) registra comandos y resultados de build/test y las capturas de escenarios desktop/mobile. Se prueba la regla de saldo, moneda, tenant y validación de formularios. El video de navegación del equipo queda pendiente; las capturas locales no sustituyen ese video.
+
+### Resultados de ejecución registrados el 03/10/2026
+
+| Producto | Versión evaluada | Comando | Resultado consignado |
+|---|---|---|---|
+| Landing | `cc1b4cf` | `npm test`; `npm run build`; `npm audit --omit=dev` | 12 pruebas aprobadas, build aprobado y 0 vulnerabilidades de producción. |
+| Frontend: dominio | `1cf715d` | `npm ci`; `npm test` | Instalación reproducible y 14 pruebas de dominio aprobadas. |
+| Frontend: navegador y build final | `f4d367fa18fab41408a37bda873325078618a2d4` | `npm run test:e2e`; `npm run build` | 2 pruebas de navegador y build aprobados después del ajuste del historial. |
+
+Fuente: [evidencia técnica](tb1/evidencia-local.md). Entorno registrado: Windows, Node.js 24.21.0, npm 11.19.0 y Microsoft Edge para Playwright. Estas versiones corresponden al registro recibido, sin comprobación de instalación en esta revisión.
+
+| Escenario | Resultado registrado | Evidencia |
+|---|---|---|
+| Compra PEN 100 + abono PEN 30 | Saldo PEN 70 y un movimiento; persiste al recargar. | [Saldo](../assets/ux/tb1/frontend-balance-es.png), [historial](../assets/ux/tb1/frontend-history-es.png). |
+| Intento de abono PEN 71 con saldo 70 | Rechazo, entrada conservada y sin cambio del saldo/historial. | [Error de abono](../assets/ux/tb1/frontend-payment-error-form.png). |
+| Navegación landing → frontend | CTA a dashboard y registro de compra locales. | [Registro JSON](../assets/ux/tb1/execution.json). |
+| Formulario de contacto | Errores visibles; confirmación informa que nada fue enviado ni guardado. | [Validación](../assets/ux/tb1/landing-contact-errors.png), [confirmación](../assets/ux/tb1/landing-contact-demo.png). |
+| Escritorio/móvil | 1440 × 1000 y 390 × 844; sin desbordamiento en las vistas registradas. | [Dashboard](../assets/ux/tb1/frontend-dashboard-en.png), [móvil](../assets/ux/tb1/frontend-mobile-es.png). |
+
+El JSON registra `2026-10-03T19:37:15.375Z`, saldo PEN 70.00, rechazo de sobreabono, ausencia de desbordamiento en ambas páginas y lista vacía de errores de página. No demuestra por sí solo cobertura de todas las rutas ni una auditoría completa de accesibilidad.
+
+![Dashboard de obligaciones en inglés](../assets/ux/tb1/frontend-dashboard-en.png)
+
+![Detalle de compra y saldo en español](../assets/ux/tb1/frontend-detail-es.png)
+
+![Rechazo de un abono superior al saldo](../assets/ux/tb1/frontend-payment-error-form.png)
+
+## 5.2.2.6 Services Documentation Evidence for Sprint Review
+
+La frontend utiliza un repositorio de datos local de demostración. La separación del adaptador permite integrar la API propia en AV2. Contratos previstos: GET/POST /api/v1/purchases, POST /api/v1/purchases/{purchaseId}/payments y consulta de proveedores. No se anuncia OpenAPI disponible ni respuestas de red ejecutadas de esos servicios. La persistencia local no ofrece autenticación real, almacenamiento privado de comprobantes ni concurrencia multiusuario.
+
+### Contratos previstos para el siguiente incremento
+
+| Operación prevista | Finalidad | Respuestas propuestas | Estado Sprint 2 |
+|---|---|---|---|
+| GET `/api/v1/purchases` | Consultar obligaciones con filtros y paginación por organización. | 200; 401/403 sin autorización. | Diseño, TS-001 pendiente. |
+| POST `/api/v1/purchases` | Registrar compra según R-01–06. | 201; 400/422 para datos inválidos; 401/403. | Diseño, TS-001 pendiente. |
+| POST `/api/v1/purchases/{purchaseId}/payments` | Registrar abono y actualizar saldo de forma atómica. | 201; 404 compra inaccesible; 422 sobreabono. | Diseño, TS-002 pendiente. |
+| OpenAPI | Describir autenticación, parámetros, schemas y respuestas reales. | Contrato concordante con servicio ejecutado. | TS-003 pendiente. |
+
+Fuente: [Technical Stories](03-requirements-specification.md#331-technical-stories). El proveedor debe pertenecer a la organización; la compra conserva moneda PEN/USD, referencia, descripción, importe y fechas. El abono hereda la moneda y no supera el saldo. Los errores HTTP son objetivos del diseño; las validaciones del navegador no equivalen a respuestas ejecutadas del backend.
+
+## 5.2.2.7 Software Deployment Evidence for Sprint Review
+
+| Producto | Versión observada | Resultado |
+|---|---|---|
+| Landing AV1 | cf734ff, 18/09/2026 | Publicación histórica en Pages, documentada en capítulo V. |
+| Landing TB1 | Nuevos commits locales | Build y previsualización local; sin deployment nuevo. |
+| Frontend TB1 | Repositorio local creditor-web-app | Build y previsualización local; sin remoto ni deployment. |
+
+El usuario debe publicar las dos versiones para cumplir el criterio de TB1 del curso. Esa acción fue excluida de la preparación actual y no se presenta como pendiente técnico resuelto.
+
+## 5.2.2.8 Team Collaboration Insights during Sprint
+
++ La preparación corrige el dominio de cartera de créditos a cuentas por pagar, reintegra la release anterior y separa implementación, datos locales, pruebas y despliegue.
++ Se mantuvo Google Meet como canal principal de comunicación para reuniones de seguimiento.
++ Se compartieron fragmentos de código y capturas en canales técnicos para revisión cruzada.
++ Se reforzó el uso de convenciones de commits en inglés (feat:, fix:, style:) para mantener trazabilidad.
++ Se promovió la revisión entre pares antes de integrar vistas al repositorio principal.
++ Se identificó como fortaleza la autonomía técnica de cada miembro en su aspecto asignado.
+
+
 
 ## 5.4. Video About-the-Product.
 Video about the product: https://youtu.be/LGV7hN8I4No
