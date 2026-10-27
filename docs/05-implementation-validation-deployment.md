@@ -733,7 +733,7 @@ La mención a una futura integración ASP.NET en el README y un comentario del f
 
 ## 5.2.1.7 Software Deployment Evidence for Sprint Review
 
-**Estado actual: pendiente de publicación.** El equipo ha indicado GitHub Pages como alternativa prevista. No se dispone de URL activa verificada, ejecución exitosa de Actions ni evidencia de despliegue.
+El equipo ha indicado GitHub Pages como alternativa prevista. No se dispone de URL activa verificada, ejecución exitosa de Actions ni evidencia de despliegue.
 
 | Evidencia | Estado al corte | Requisito para completarla |
 |---|---|---|
