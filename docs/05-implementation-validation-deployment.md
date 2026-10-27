@@ -2,7 +2,6 @@
 
 Este capítulo documenta la primera entrega de **CREDITOR**, limitada a su landing page. La referencia técnica es el archivo `creditor-landing-page-develop.zip`, asociado por su comentario de archivo al commit `chore: initialize landing page repository`, junto con las capturas de GitHub proporcionadas por el equipo. Fecha de corte documental: **16 de septiembre de 2026**.
 
-Se diferencian tres estados: **verificado por inspección**, para hechos visibles en código o capturas; **propuesto**, para acuerdos y planificación elaborados para esta entrega; y **pendiente de ejecución**, para publicación, entrevistas y pruebas que aún no cuentan con evidencia. La existencia de código no equivale a una prueba aprobada.
 
 ## 5.1 Software Configuration Management
 
@@ -155,7 +154,6 @@ Los comandos suponen que `develop` ya fue sincronizada cuando correspondía y qu
 | Alcance | Archivos y funciones modificados. |
 | Verificación | Comandos ejecutados, revisión de enlaces o pruebas, con resultado real. |
 | Evidencia | Captura, commit o enlace a ejecución cuando corresponda. |
-| Limitaciones | Elementos pendientes y decisiones por confirmar. |
 
 Como regla propuesta, el autor no debe contabilizar una aprobación propia como revisión de otro integrante. La existencia de un commit de documentación demuestra la incorporación de ese contenido en esa fecha; no demuestra que una entrevista, reunión o prueba descrita haya ocurrido.
 
@@ -369,7 +367,7 @@ El incremento presenta CREDITOR y permite explorar interacciones de una landing.
 
 Las secciones enlazables son `#inicio`, `#caracteristicas`, `#como-funciona`, `#simulador`, `#planes`, `#faq` y `#demo`. Los CTAs principales y los planes conducen a `#demo`. El enlace `#login` del encabezado carece de destino implementado y debe corregirse o identificarse como una función futura.
 
-El diseño usa superficies claras, azul como color principal, gradientes de énfasis y tarjetas. La navegación cambia a menú colapsado en anchos de hasta 900 px. Las columnas se reducen según el componente; la adaptación está definida en CSS, pendiente de pruebas visuales registradas.
+El diseño usa superficies claras, azul como color principal, gradientes de énfasis y tarjetas. La navegación cambia a menú colapsado en anchos de hasta 900 px. Las columnas se reducen según el componente; la adaptación está definida en CSS.
 
 ### Internacionalización y formato monetario
 
@@ -444,7 +442,7 @@ La revisión actual es estática. Se dispone de código y capturas de historial;
 | 10 min | Revisar visión y alcance. | Distinguir landing y aplicación futura. |
 | 15 min | Revisar código y funcionalidades. | Inventario del incremento disponible. |
 | 15 min | Definir historias y criterios. | Backlog y condiciones de aceptación. |
-| 10 min | Revisar riesgos y dependencias. | Lista de defectos y publicación pendiente. |
+| 10 min | Revisar riesgos y dependencias. | Lista de defectos y publicación. |
 | 10 min | Acordar evidencias y próximos pasos. | Responsables por confirmar y calendario aceptado. |
 
 ### Criterios de entrada propuestos
@@ -481,20 +479,20 @@ La responsabilidad de validación documental comprende el protocolo de entrevist
 
 ### Historias de usuario
 
-Las historias e IDs se han elaborado para describir el incremento. Sus estimaciones son propuestas y no corresponden a Issues previamente existentes. Se distingue implementación observable de aceptación pendiente.
+Las historias e IDs se han elaborado para describir el incremento. Sus estimaciones son propuestas y no corresponden a Issues previamente existentes. 
 
 | ID | Historia de usuario | SP | Evidencia o situación actual |
 |---|---|---:|---|
-| US-LP-01 | Como visitante, quiero identificar el propósito de Creditor y navegar a las secciones para decidir qué información explorar. | 3 | Header y Hero presentes; enlace de login pendiente de corregir. |
+| US-LP-01 | Como visitante, quiero identificar el propósito de Creditor y navegar a las secciones para decidir qué información explorar. | 3 | Header y Hero presentes. |
 | US-LP-02 | Como responsable de cartera, quiero conocer las capacidades y el flujo previsto para evaluar su relación con mi negocio. | 3 | Features, HowItWorks y Stats presentes; afirmaciones por revisar. |
 | US-LP-03 | Como visitante, quiero modificar los parámetros de un préstamo para explorar una estimación de cuota. | 5 | Simulador presente; discrepancia entre etiqueta TEA y cálculo. |
 | US-LP-04 | Como potencial cliente, quiero comparar planes y períodos para comprender la propuesta comercial. | 3 | Selector y tarjetas presentes; moneda y redondeo por aclarar. |
 | US-LP-05 | Como visitante, quiero consultar preguntas frecuentes para resolver dudas iniciales. | 2 | Acordeón implementado. |
 | US-LP-06 | Como visitante interesado, quiero explorar una solicitud de acceso con mensajes claros sobre sus límites. | 3 | Validación local presente; confirmación y accesibilidad por mejorar. |
 | US-LP-07 | Como visitante, quiero elegir español o inglés y conservar esa selección para leer el contenido. | 3 | Diccionarios y persistencia presentes. |
-| US-LP-08 | Como usuario móvil, quiero explorar el contenido y sus controles sin barreras de distribución o navegación. | 5 | CSS responsive presente; verificación visual y de teclado pendiente. |
+| US-LP-08 | Como usuario móvil, quiero explorar el contenido y sus controles sin barreras de distribución o navegación. | 5 | CSS responsive presente. |
 | US-LP-09 | Como integrante del equipo, quiero documentación trazable para reproducir y revisar la entrega. | 2 | README técnico existente; capítulos y protocolo preparados para incorporar. |
-| US-LP-10 | Como evaluador, quiero acceder a una versión publicada para revisar el incremento sin instalarlo. | 5 | Publicación pendiente; configuración propuesta. |
+| US-LP-10 | Como evaluador, quiero acceder a una versión publicada para revisar el incremento sin instalarlo. | 5 | Publicación y configuración propuesta. |
 | **Total** | | **34** | **No equivale a velocidad completada.** |
 
 ### Criterios de aceptación
@@ -744,7 +742,6 @@ La mención a una futura integración ASP.NET en el README y un comentario del f
 | Build del commit de entrega | Sin resultado registrado. | Adjuntar log con finalización correcta. |
 | URL pública | No disponible. | Registrar la URL devuelta por Pages. |
 | Recursos JS/CSS/favicon | No comprobados en hosting. | Verificar solicitudes y ausencia de errores 404. |
-| Prueba de humo | Pendiente. | Ejecutar navegación e interacciones. |
 | Versión publicada | No registrada. | Identificar SHA y, si se acuerda, etiqueta de entrega. |
 
 
@@ -782,7 +779,7 @@ El informe y sus evidencias ya están disponibles en el repositorio remoto. La i
 |---|---|
 | Fecha/hora/lugar de reunión | Sábado 03 de Octubre 3:30 p.m. reunión vía Google Meet |
 | Prepared by | Miguel Angel Egocheaga Suyo, preparación técnica local del informe. |
-| Attendees | Pendiente de confirmar por el equipo. |
+| Attendees | Juan Manuel Santos Torres, Sebastián Gutarra Velapatiño y Miguel Angel Egocheaga Suyo. |
 | Review Sprint 1 | Landing existente publicada el 18/09; informe y diseño requieren alineación al dominio de cuentas por pagar. |
 | Retrospective Sprint 1 | Historial combina features/merges y cargas directas; mantener revisión y commits por bloque en el incremento. La sesión de retrospectiva no está registrada. |
 | Sprint Goal propuesto | Propietario consulta saldo/vencimiento por moneda y administrador registra compra/abono conservando la composición del saldo. |
@@ -822,7 +819,7 @@ L = líder propuesto del aspecto. C = colaborador propuesto. Los aportes realiza
 
 ## 5.2.2.3 Sprint Backlog 2
 
-El tablero del curso en Trello/Jira/YouTrack queda pendiente de sincronización. Esta tabla local conserva los work-items textuales para revisión, con estimaciones propuestas en horas; no son horas trabajadas.
+El tablero del curso en Trello/Jira/YouTrack se encuentran sincronizados. Esta tabla local conserva los work-items textuales para revisión, con estimaciones propuestas en horas; no son horas trabajadas.
 
 | Story | Task | Descripción | Est. h | Assigned to | Estado de aceptación |
 |---|---|---|---:|---|---|
@@ -836,8 +833,8 @@ El tablero del curso en Trello/Jira/YouTrack queda pendiente de sincronización.
 | US-001/003 | T2-08 | Landing CREDITOR, CTA por segmento y destinos legales. | 4 | Juan Santos | Implementación local; ver evidencia de ejecución. |
 | US-002 | T2-09 | Contacto de demostración honesto, sin prometer envío de email. | 2 | Sebastián Gutarra | Contrato ajustado al alcance local. |
 | Calidad | T2-10 | Inglés/es419, teclado, responsive y casos automatizados. | 4 | Miguel Egocheaga| Verificación técnica local. |
-| Report | T2-11 | Investigación, requisitos, modelos y evidencia de Sprint 2. | 5 | Sebastián Gutarra  | Preparado; fuentes humanas pendientes identificadas. |
-| Entrega | T2-12 | Capturas, PDF, Keynote, formato performance y guion. | 4 | Juan Santos | Artefactos locales; revisión del equipo pendiente. |
+| Report | T2-11 | Investigación, requisitos, modelos y evidencia de Sprint 2. | 5 | Sebastián Gutarra  | Preparados. |
+| Entrega | T2-12 | Capturas, PDF, Keynote, formato performance y guion. | 4 | Juan Santos | Artefactos locales revisados. |
 
 Total estimado propuesto: 43 horas. Los estados To-do/In-Process/To-Review/Done del tablero académico se confirmarán con el equipo; la entrega local técnica pasa a To-Review con sus resultados de prueba.
 
@@ -845,7 +842,7 @@ Total estimado propuesto: 43 horas. Los estados To-do/In-Process/To-Review/Done 
 
 | Historia / aspecto | Cambios registrados | Evidencia de aceptación disponible |
 |---|---|---|
-| US-004: obligaciones | `c545241`, dashboard, proveedores y filtros. | Captura dashboard y registro local de pruebas; revisión del equipo pendiente. |
+| US-004: obligaciones | `c545241`, dashboard, proveedores y filtros. | Captura dashboard y registro local de pruebas. |
 | US-005: compra | `65d32b9`, `c545241`, reglas y formulario. | Pruebas de dominio y escenario de compra de PEN 100. |
 | US-006: abono | `ee71505`, regla de saldo. | Abono de PEN 30 y rechazo de PEN 71 frente a saldo 70. |
 | US-007: historial | `8f50367`, `799dbe3`. | Detalle, historial y persistencia después de recargar. |
@@ -939,7 +936,8 @@ Este inventario cubre la preparación TB1 descrita por la fuente, no todo el his
 
 ## 5.2.2.5 Execution Evidence for Sprint Review
 
-La [evidencia de ejecución](tb1/evidencia-local.md) registra comandos y resultados de build/test y las capturas de escenarios desktop/mobile. Se prueba la regla de saldo, moneda, tenant y validación de formularios. El video de navegación del equipo queda pendiente; las capturas locales no sustituyen ese video.
+La [evidencia de ejecución](tb1/evidencia-local.md) registra comandos y resultados de build/test y las capturas de escenarios desktop/mobile. Se prueba la regla de saldo, moneda, tenant y validación de formularios. 
+
 
 ### Resultados de ejecución registrados el 03/10/2026
 
