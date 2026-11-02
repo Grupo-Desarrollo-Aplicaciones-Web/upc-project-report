@@ -55,6 +55,29 @@
       "snapshot": "backend-treasury-api.txt",
       "bytes": 10280,
       "sha256": "18d443639e40cb6e05ee1532eac7ec195ffab6a0dc7993b3ec7ae7c98ba40d7e"
+    },
+    {
+      "source": "C:/Users/migue/Documents/Codex/2026-11-02/task-2/US005-supplier-and-amount.png",
+      "snapshot": "US005-supplier-and-amount.png",
+      "bytes": 114396,
+      "sha256": "457a9cb77dc6f4100c5af292155d925e8a253a14e2ba3cc0e599221cf541b3d7"
+    },
+    {
+      "source": "C:/Users/migue/Documents/Codex/2026-11-02/task-2/US005-currency-and-due-date.png",
+      "snapshot": "US005-currency-and-due-date.png",
+      "bytes": 117055,
+      "sha256": "854c12bf7976158d6cff9c0b731d5b3e5a0fd9e681b128bbffbeec9ec8f3849e"
+    },
+    {
+      "source": "C:/Users/migue/Documents/Codex/2026-11-02/task-2/US005-credit-purchase-review.png",
+      "snapshot": "US005-credit-purchase-review.png",
+      "bytes": 115803,
+      "sha256": "e152015c29a49fbdda6bf1351c643c06c1d2c50bfcfc20fca51f78a0126d04e6"
     }
-  ]
+  ],
+  "us005_supplement": {
+    "received_on": "2026-11-02",
+    "scope": "Three supplied screenshots visually inspected. A local functional check was reported to register a payable without a cash movement; this documentation review did not rerun that flow. Screenshots show the form and review before saving.",
+    "limits": "Does not establish final Figma, RUC, attachment, product line details, user validation, API integration or deployment."
+  }
 }

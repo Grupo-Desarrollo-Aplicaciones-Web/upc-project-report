@@ -4,14 +4,14 @@
   "stored_remote_ref": "origin/develop@fda83aded36794b0e459d1d36d29facadad2c5c8",
   "branch": "feature/report-unified-allpatek",
   "approach": "Selective documentary reconciliation; no global merge, fetch, push or deployment. Original checkout retained.",
-  "readme_sha256": "b4a387cb87292862f4beb43317565daf97b60085a61112b68ca48f2268fea9c1",
+  "readme_sha256": "59d7c0f4efcd308875e0964f1e080a1e9d665735f3968bcf100f9b7364130c7a",
   "document_validation": {
     "ok": true,
     "root": "C:\\Users\\migue\\Documents\\Codex\\2026-11-02\\task-6\\report-unified",
     "scope": "README.md and evidence manifests; external URLs are not fetched",
-    "headings": 182,
-    "local_links": 303,
-    "evidence_files": 21,
+    "headings": 183,
+    "local_links": 307,
+    "evidence_files": 24,
     "errors": [],
     "warnings": []
   },
@@ -68,5 +68,21 @@
   ],
   "product_tests_rerun": false,
   "unverified": "External URLs, current repository visibility, Figma interaction, peer approval, deployment, user interviews and videos were not verified or invented.",
-  "snapshot_git_attributes": "Raw evidence paths use -text -whitespace to preserve exact source bytes across checkout; historical whitespace is retained."
+  "snapshot_git_attributes": "Raw evidence paths use -text -whitespace to preserve exact source bytes across checkout; historical whitespace is retained.",
+  "supplemental_us005_review": {
+    "reviewed_on": "2026-11-02",
+    "screenshots": [
+      "US005-supplier-and-amount.png",
+      "US005-currency-and-due-date.png",
+      "US005-credit-purchase-review.png"
+    ],
+    "status": "partial",
+    "functional_check": "Local check reported without cash movement; not rerun by report review.",
+    "open_criteria": [
+      "Final Figma",
+      "RUC",
+      "Attachment",
+      "Product line details in direct registration"
+    ]
+  }
 }

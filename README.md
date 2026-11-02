@@ -248,6 +248,7 @@ El cotejo de las referencias Git añade aportes posteriores al corte original: *
   - [B. Evidencia local posterior al corte TB1: 02/11/2026](#b-evidencia-local-posterior-al-corte-tb1-02112026)
     - [B.1 Consulta y descarga de información financiera](#b1-consulta-y-descarga-de-información-financiera)
     - [B.2 Autorías y cortes de evidencia](#b2-autorías-y-cortes-de-evidencia)
+    - [B.3 Evidencia posterior de US-005: compra a crédito](#b3-evidencia-posterior-de-us-005-compra-a-crédito)
   - [C. Control de integridad y correspondencia con el enunciado](#c-control-de-integridad-y-correspondencia-con-el-enunciado)
     - [C.1 Matriz de observaciones del profesor](#c1-matriz-de-observaciones-del-profesor)
   - [Evidencia de publicación futura](#evidencia-de-publicación-futura)
@@ -923,6 +924,8 @@ Los requisitos expresan el alcance propuesto de CREDITOR. US-004–007 están im
 
 ### 3.1.3 Reglas observables del incremento TB1
 
+**Actualización posterior de US-005, 02/11/2026:** en la demo financiera vigente, **Cobros y pagos → Anotar una deuda → Por pagar** registra una compra a crédito como cuenta por pagar con proveedor, importe, moneda y vencimiento. El [anexo B.3](#b3-evidencia-posterior-de-us-005-compra-a-crédito) conserva las capturas y el resultado de la prueba local comunicado, sin generación de movimiento de efectivo. Esta evidencia no cierra Figma final ni acredita RUC, adjunto o detalle de productos en el registro directo. Las reglas siguientes conservan el corte TB1 original.
+
 | ID | Regla | Comportamiento y límite |
 |---|---|---|
 | R-01 | Contexto de proveedor | Debe pertenecer a la organización de la compra. La demo fija `demo-market-sol`; no es autenticación. |
@@ -1181,6 +1184,8 @@ Las siguientes cinco exportaciones muestran explícitamente la composición móv
 ### 4.4.3 Web Application Mock-ups
 
 Las siguientes capturas muestran las vistas implementadas con datos ficticios y adaptador local. Permiten revisar composición y consistencia del flujo con las historias. No constituyen una validación con usuarios.
+
+**Evidencia posterior de noviembre:** el flujo actual de compra a crédito se recorre mediante **Cobros y pagos → Anotar una deuda**. Sus tres pasos —proveedor/importe, moneda/vencimiento y revisión— se muestran en el [anexo B.3](#b3-evidencia-posterior-de-us-005-compra-a-crédito). Las imágenes TB1 siguientes se conservan como históricas; las nuevas capturas no son un prototipo final de Figma ni una prueba de usabilidad.
 
 ![Dashboard local](assets/ux/tb1/frontend-dashboard-en.png)
 
@@ -2395,6 +2400,26 @@ No se acreditó un estado de cuenta bancario completo ni PDF operativo integrado
 
 Se conserva el [registro original de crédito y autoría del frontend](assets/evidence/2026-11-02/frontend-authorship-allocation.txt). Distingue planificación compartida, `Author`, `Committer` y programación/validación realizadas por Miguel. Los seis commits por autor del corte histórico no acreditan seis aportes equivalentes de programación ni horas reales. No se reasignaron contribuciones en esta reorganización. Los hashes y artefactos históricos del informe se mantienen con su corte original.
 
+### B.3 Evidencia posterior de US-005: compra a crédito
+
+Evidencia local suministrada después de la reorganización del informe, con corte del **02/11/2026**. La revisión documental inspeccionó las tres capturas y conservó sus bytes originales en el repositorio. El recorrido vigente es **Cobros y pagos → Anotar una deuda → Por pagar**: proveedor, importe y concepto; moneda, vencimiento y dueño económico; revisión y guardado de la cuenta por pagar.
+
+El ejemplo de las capturas utiliza **Paper House · DEMO**, **USD 123.45**, concepto «Compra a crédito de mercadería — US-005» y vencimiento **2026-11-09**. La revisión muestra que anotar la deuda no cambia el dinero y que el pago se registra cuando ocurre. El resultado de la prueba local comunicado para este recorrido fue el registro de una cuenta por pagar **sin generar movimiento de efectivo**. Esta revisión del informe no repitió esa prueba; las capturas conservadas muestran el formulario y la revisión previa al guardado.
+
+**Paso 1 — Proveedor e importe de la compra a crédito.**
+
+![US-005: proveedor, importe y concepto en Anotar una deuda](assets/evidence/2026-11-02/US005-supplier-and-amount.png)
+
+**Paso 2 — Moneda y fecha de vencimiento.**
+
+![US-005: moneda USD y vencimiento de la cuenta por pagar](assets/evidence/2026-11-02/US005-currency-and-due-date.png)
+
+**Paso 3 — Revisión de la obligación antes de guardar.**
+
+![US-005: revisión de proveedor, importe, moneda y vencimiento sin movimiento de efectivo](assets/evidence/2026-11-02/US005-credit-purchase-review.png)
+
+**Estado de la observación: parcial.** Existe evidencia del flujo funcional local de compra a crédito como cuenta por pagar; no acredita el enlace final de Figma, RUC, adjunto ni detalle de productos en este registro directo. Tampoco acredita aceptación por pares, validación con usuarios, integración con la API ni despliegue. Las fuentes y SHA-256 de las tres imágenes figuran en el [manifiesto de evidencia](assets/evidence/2026-11-02/manifest.json).
+
 ## C. Control de integridad y correspondencia con el enunciado
 
 El informe se lee completo en **README.md**, con la jerarquía visual y navegación de Allpatek: carátula → versiones → colaboración → contenido → Student Outcome → capítulos → conclusiones/video de equipo → bibliografía → anexos. Las fuentes anteriores en `docs/`, diagramas, entregables y autorías se conservan como respaldo histórico. El README es ahora la versión documental principal; los PDF/PPTX/ZIP existentes conservan su fecha y no se anuncian regenerados por este cambio.
@@ -2420,7 +2445,7 @@ Las observaciones se contrastaron con el contenido actual y el registro históri
 |---|---|---|---|
 | Omisión de frontend y Sprint 2 / 5.2.2 | **Parcial** | El informe incorpora la frontend local, Planning, LACX, siete tareas 4–8 h/43 h propuestas, desarrollo, capturas, servicios, deployment e Insights. Se rescata la ampliación documental remota de Juan y se conserva el inventario original de commits. | Acta/asignaciones aceptadas, tablero, revisión del equipo, video y despliegue real de nueva landing/frontend. |
 | Marca CreditFlow mezclada con CREDITOR | **Corregido en el alcance documental actual; antecedente histórico identificado** | Portada, capítulos actuales y demo financiera se identifican como CREDITOR. El Sprint 1 archivado conserva CreditFlow con una advertencia explícita de versión previa; sus fuentes no se reescriben. | Revisar cualquier exportación histórica antes de utilizarla como una nueva entrega; los PDF/PPTX existentes no se regeneraron aquí. |
-| Mockup de préstamo no corresponde a US-005 compra a crédito | **Parcial** | 3.1 y 4.4 describen compra a proveedor, moneda, importe y vencimiento; las capturas locales y rutas corresponden a compra/detalle/abono. Se conserva el aporte de captura de prototipado de Sebastián. | Enlace final Figma desktop/mobile con el flujo de compra y criterios completos, revisión del equipo y evidencia navegable. La captura no acredita ese cierre. |
+| Mockup de préstamo no corresponde a US-005 compra a crédito | **Parcial: flujo local de compra a crédito evidenciado** | [Anexo B.3](#b3-evidencia-posterior-de-us-005-compra-a-crédito): Cobros y pagos → Anotar una deuda → Por pagar, con proveedor, importe, moneda y vencimiento. Tres capturas inspeccionadas y resultado de prueba local comunicado: registro de cuenta por pagar sin movimiento de efectivo. Se conserva el prototipado histórico de Sebastián. | Enlace final Figma desktop/mobile, revisión del equipo y criterios completos. La evidencia nueva no acredita RUC, adjunto ni detalle de productos en el registro directo, ni validación con usuarios. |
 | Falta PR y revisión por pares | **Pendiente para este incremento** | Se conserva la referencia histórica a PR #1 y los commits/merges existentes. El README no presenta una rama o merge local como revisión de otro integrante. | PR real, revisión identificable de otro integrante, observaciones resueltas y aprobación; no se fabricaron comentarios ni PR. |
 | Fecha incorrecta y encabezados AV1 | **Corregido documentalmente** | Carátula de revisión local de noviembre de 2026, curso/periodo/equipo conservados; fechas AV1/TB1 se mantienen únicamente como cortes históricos. Se distinguen portada actual y evidencia anterior. | Confirmar fecha/horario de presentación y el hito de entrega real con el equipo. |
 | Entrevistas incompletas | **Pendiente** | 2.2 conserva tres registros S1 y uno S2, con guion y controles de evidencia; no se declara completado el mínimo por segmento. | Al menos dos S2 adicionales y revisión de los cuatro registros, consentimiento, resúmenes, capturas, metadatos, Stream y análisis con citas/minutos. |
