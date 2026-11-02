@@ -27,7 +27,7 @@ const decodeAnchor=anchor=>{try{return decodeURIComponent(anchor)}catch{return a
   });
   body+=`<section class="chapter" id="${sourceId(source)}"><p class="source">CREDITOR · ${source}</p>${html}</section>`;
  }
- const html=`<!doctype html><html lang="es-419"><meta charset="utf-8"><title>CREDITOR TB1 Report</title><style>
+ const html=`<!doctype html><html lang="es-419"><meta charset="utf-8"><title>CREDITOR Informe unificado</title><style>
  @page{size:A4;margin:17mm 14mm 19mm}*{box-sizing:border-box}body{font-family:Arial,sans-serif;color:#17243b;font-size:10.5pt;line-height:1.45}h1{font-size:23pt;color:#163b77;margin:0 0 18px}h2{font-size:17pt;margin-top:26px}h3{font-size:13pt}h4{font-size:11pt}h1,h2,h3,h4{break-after:avoid}p,li{orphans:3;widows:3}a{color:#154eab;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font-size:8.6pt;line-height:1.35;margin:15px 0 22px;table-layout:fixed}th,td{border:1px solid #bdc8d9;padding:7px;vertical-align:top;overflow-wrap:anywhere}th{background:#eaf0f8;font-weight:700}thead{display:table-header-group}tr{break-inside:avoid}img{display:block;max-width:100%;max-height:205mm;object-fit:contain;margin:16px auto;break-inside:avoid}.remote-logo{display:none}code{font:8.3pt Consolas,monospace;overflow-wrap:anywhere}pre{white-space:pre-wrap;border:1px solid #cbd5e1;background:#f8fafc;padding:14px;font:9pt Consolas;line-height:1.4}.chapter{break-before:page}.chapter:first-child{break-before:auto}.source{font-size:8pt;color:#69758b;margin-bottom:20px}blockquote{border-left:3px solid #bfccdc;padding-left:15px;margin-left:0}
  img[src*="creditorlogo"]{max-width:90mm;max-height:55mm}
  .section-page-start{break-before:page;page-break-before:always}
@@ -79,7 +79,7 @@ const decodeAnchor=anchor=>{try{return decodeURIComponent(anchor)}catch{return a
   if(checks.unresolvedLinks.length)throw new Error('Unresolved internal report links: '+checks.unresolvedLinks.join(', '));
   if(checks.horizontalOverflow.length)throw new Error('Horizontal report overflow: '+JSON.stringify(checks.horizontalOverflow));
   const out=path.join(root,'deliverables/tb1',name+'.pdf');
-  await p.pdf({path:out,format:'A4',printBackground:true,displayHeaderFooter:true,headerTemplate:'<span></span>',footerTemplate:'<div style="font:8px Arial;width:100%;text-align:center;color:#64748b">CREDITOR · TB1 · Preparación local · <span class="pageNumber"></span> / <span class="totalPages"></span></div>'});
+  await p.pdf({path:out,format:'A4',printBackground:true,displayHeaderFooter:true,headerTemplate:'<span></span>',footerTemplate:'<div style="font:8px Arial;width:100%;text-align:center;color:#64748b">CREDITOR · Revisión documental local · <span class="pageNumber"></span> / <span class="totalPages"></span></div>'});
   console.log(JSON.stringify({out,sections:checks.sections.length,forcedSectionBreaks:checks.forcedSectionBreaks,unresolvedLinks:0,horizontalOverflow:0}));
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exit(1)});
