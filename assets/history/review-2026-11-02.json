@@ -1,0 +1,71 @@
+{
+  "reviewed_on": "2026-11-02",
+  "base_ref": "develop@1da2d2553a5ba4351fe8fdc0d816647885c7b7cb",
+  "stored_remote_ref": "origin/develop@fda83aded36794b0e459d1d36d29facadad2c5c8",
+  "branch": "feature/report-unified-allpatek",
+  "approach": "Selective documentary reconciliation; no global merge, fetch, push or deployment. Original checkout retained.",
+  "readme_sha256": "72c4652097d2852f1d02f516acf333c46908a1c4bae3eee720ac468504127611",
+  "document_validation": {
+    "ok": true,
+    "root": "C:\\Users\\migue\\Documents\\Codex\\2026-11-02\\task-6\\report-unified",
+    "scope": "README.md and evidence manifests; external URLs are not fetched",
+    "headings": 182,
+    "local_links": 303,
+    "evidence_files": 21,
+    "errors": [],
+    "warnings": []
+  },
+  "original_docs_sha256": {
+    "docs/00-project-information.md": "101434d950c5e3a97ef6219e61a6aa3e156117252edaceea6c63c516040f1bcd",
+    "docs/00-student-outcome.md": "b11c16188e50126e64778062afda70ed91d5dd6e1c594a686212e726b7eb2390",
+    "docs/01-introduction.md": "e16026a0956e80b7bca6e74c4550a18a3bc2821ca84cfd4a456d4e50b47cb512",
+    "docs/02-requirements-elicitation-analysis.md": "30c998e602fe8ee385a16281f7baff0c72b6fc0073ea4932507fa254f51bc4f1",
+    "docs/03-requirements-specification.md": "6e5b05d270dbbd3ebe501561ff99d40c90cfb8db88a0f6af533f6f1078aa0e63",
+    "docs/04-product-design.md": "c4c7336358fe83622bb248294cb164601bf844b5a6371c1b83c3bea870af7f32",
+    "docs/05-implementation-validation-deployment.md": "6e55b5bd2a69657a128868f35b0a56c5a19b9dc33679c0dbedafc399bc1a286f",
+    "docs/06-conclusions-recommendations.md": "dc984974939073361aaf48566ce2bd75f3fc00fa804451569f6aa5c8d1250eba",
+    "docs/07-bibliography-appendices.md": "a0592109bf47b50b89530a41da933bea1b60e21295834017e386a2db6b8e28a8",
+    "docs/08-av1-delivery-checklist.md": "729a8b443f2f767e8c284f3eb18550512aa84aee46a394d74ab3415c3d16fddb",
+    "docs/09-tb1-delivery-checklist.md": "741f331b7a493ad02cebd78ff670814c8f8be058b0bd0cfdbd83e2a9c92c8398",
+    "docs/sprints/README.md": "1f03aac0f4bd7b412b77e0337f7954f7bab3a581e8d6c61d7c10da495a67ac66",
+    "docs/sprints/sprint-01.md": "924d48e1ae7058a1d649cf27b89e341c4ae68e7c5b5ea27b6af99e8440f3261e",
+    "docs/sprints/sprint-02.md": "5e47917bc470af1d026729eb466c5f28e4fcb48ed9cc2f8debcf543324ea9cec",
+    "docs/sprints/sprint-03.md": "2ccffa9aaf94e2c78cf770412eccbb7bdf3c907907f10afc58d3094343da74c7",
+    "docs/sprints/sprint-04.md": "d555092265a0ef09a167a2427ae6842de85a3a43da40d0ad315ee15eebb7d998",
+    "docs/tb1/analisis-main.md": "49b28ff2d2713be5b209d8e30262f226a3d3e616153ab0495c3dd01c1556a4f9",
+    "docs/tb1/commits-locales.md": "e41dc36ef1d1bbfae6e60b04b817a01b6677805a5d9b6040903dd2a603d7676f",
+    "docs/tb1/evidencia-local.md": "00dc74c11b1ca18020420b9a2b1298f2fa6912b0b7804854989a70becdb095e7",
+    "docs/tb1/feedback-resolution.md": "731d43fc5cfcfe1db4218af2bfb49a88f76b3eab9ce55798ca29627c4664f594",
+    "docs/tb1/guion-exposicion.md": "8eec4c4a6753549d019a8e22600e5a4fbb54748f208f7848b556ed77110dc886",
+    "docs/tb1/guion-ppt-detallado.md": "9dfdb71b2cde0e3713a1d4891bb452e36dbb45931aef1707107baf421dc12380",
+    "docs/tb1/prompt-completar-tb1.md": "3e8d3f48125af2f79e3abda8e901643ee171cbf17c5049f2eb0c00e5dad85911",
+    "docs/tb1/prompt-crear-ppt.md": "2e65be7d97cb5bddae93344c023d56f605d9d8f8aa4ea4851de7c1ccd10b3228",
+    "docs/sprints/archive/chapter-05-av1.txt": "6d7900a38228af712e3807c75993479e3548408965bb6962572673e4c4d3d9d9",
+    "docs/tb1/expositores/juan-manuel.md": "c375c49083d7d49764d03678c65b5f59691a5e8c8fef78afc809706c9c8cc905",
+    "docs/tb1/expositores/miguel-angel.md": "73d7badd6932d86daecbbdfc72eea25485b2594c6dd3ba912b6404cc6c5bc2c2",
+    "docs/tb1/expositores/README.md": "5f17f5c5a6a67211ac33d96e3660f79d057c08b75028a658301b03fa7887b31c",
+    "docs/tb1/expositores/sebastian.md": "c5ede780241ecf59d4fc1dfd44c7517098d40591f30c95ec2be8819783402855"
+  },
+  "original_docs_unchanged": true,
+  "rendered_tables": 97,
+  "versions_table": {
+    "headers": 5,
+    "rows": 13
+  },
+  "backend_existing_trx_inspection": [
+    {
+      "snapshot": "backend-domain.trx",
+      "total": 33,
+      "passed": 33,
+      "failed": 0
+    },
+    {
+      "snapshot": "backend-integration.trx",
+      "total": 106,
+      "passed": 106,
+      "failed": 0
+    }
+  ],
+  "product_tests_rerun": false,
+  "unverified": "External URLs, current repository visibility, Figma interaction, peer approval, deployment, user interviews and videos were not verified or invented."
+}

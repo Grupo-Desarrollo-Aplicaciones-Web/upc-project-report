@@ -1,0 +1,29 @@
+# Financial demo validation
+
+Validation performed locally on 2 November 2026 (UTC), using Node, the committed dependency lockfile, Vitest and Edge headless. All records used by tests are fictional; browser tests have isolated storage contexts.
+
+- **39 unit tests passed** across three suites: 25 new financial domain/API tests and 14 retained TB1 rule tests.
+- **8 browser scenarios passed**: economic ownership, partial settlement and persistence, invoices, movement allocations, CSV reconciliation/reimport, credit schedules, currency-safe transfers, simulated roles, Spanish navigation across all modules and invalid-route recovery.
+- Browser checks include **390 × 844** mobile layout. Movements and obligations use mobile cards with amounts/actions visible. Desktop screenshots use 1280 × 720 viewport and full-page capture.
+- Production compilation passed; no new dependencies were added.
+- `git diff --check` passed.
+
+One mobile overflow was found and corrected: an absolutely positioned accessibility label inside a wide table escaped its scroll container. The container now establishes positioning, and core mobile workflows use cards. Screenshots were visually inspected after the correction.
+
+## Evidence
+
+- [Overview, desktop](overview.png)
+- [Third-party funds, desktop](funds.png)
+- [Movement cards, mobile](mobile.png)
+
+## Financial cases covered
+
+The USD case reconciles account cash 750 to Andes 350 + Marina 400, with zero belonging to account holder Alex. Tests cover atomic rejection of over-allocation, insufficient account/owner funds, cross-currency payment and overpayment. Partial payment updates both the obligation and its promise; creating/renegotiating promises never changes cash or debt. Paying on behalf of another owner creates a reimbursement receivable.
+
+Invoice line totals and manual taxes create one obligation without a cash entry. Installment principal sums exactly to the original principal, including month-end dates and the last rounding adjustment. Transfers preserve combined cash and ownership. Statement import and reconciliation do not duplicate an existing movement. A request replay returns the original result; conflicting reuse and competing overpayments are rejected. Failed storage writes preserve the previous snapshot, and altered storage is not silently replaced.
+
+## Deliberate limits
+
+This is a browser-only demonstration, not bank reconciliation certification, accounting compliance or real permissions. Budgets are informative spending targets; project tags do not reserve/lock a separate bank balance. Owner/account balance checks control available demo funds. Credit repayments are classified as credit flows and their principal/interest are shown in the schedule; project expense cards summarize operational expense movements. No currency conversion, automatic bank import, uploads of real document content, tax issuance, backend changes, push or deployment were performed.
+
+The API uses queued writes and Web Locks when available; the fallback revision check is a client demo guard rather than a replacement for server transactions. A real deployment still needs backend authorization, persistence, verification and integration.

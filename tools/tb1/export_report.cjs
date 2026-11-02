@@ -3,9 +3,9 @@ const root=path.resolve(__dirname,'../..');
 const modules=process.env.CODEX_NODE_MODULES||path.join(os.homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules');
 const {chromium}=require(path.join(modules,'playwright'));
 const {pathToFileURL}=require('node:url');
-const sources=['README.md','docs/00-project-information.md','docs/00-student-outcome.md','docs/01-introduction.md','docs/02-requirements-elicitation-analysis.md','docs/03-requirements-specification.md','docs/04-product-design.md','docs/05-implementation-validation-deployment.md','docs/06-conclusions-recommendations.md','docs/07-bibliography-appendices.md','docs/09-tb1-delivery-checklist.md','docs/sprints/sprint-01.md','docs/tb1/evidencia-local.md','docs/tb1/commits-locales.md','docs/tb1/guion-exposicion.md','docs/tb1/feedback-resolution.md'];
+const sources=['README.md']; // Canonical complete report; chapter files are historical sources.
 const aliases={'docs/sprints/sprint-02.md':{target:'docs/05-implementation-validation-deployment.md',anchor:'522-sprint-2'}};
-const name='upc-pre-202620-1asi0730-16127-creditor-report-tb1';
+const name=process.env.CREDITOR_REPORT_NAME||'upc-pre-202620-1asi0730-16127-creditor-report-unified-20261102';
 const sourceId=source=>source.replaceAll('/','-').replace(/\.md$/,'');
 const decodeAnchor=anchor=>{try{return decodeURIComponent(anchor)}catch{return anchor}};
 (async()=>{
@@ -23,7 +23,7 @@ const decodeAnchor=anchor=>{try{return decodeURIComponent(anchor)}catch{return a
    const linked=path.relative(root,path.resolve(root,path.dirname(source),href)).replaceAll('\\','/');
    const alias=aliases[linked],target=alias?.target||linked;
    const fragment=anchor?decodeAnchor(anchor.slice(1)):alias?.anchor;
-   return sources.includes(target)?`href="#${sourceId(target)}${fragment?'--'+fragment:''}"`:m;
+   return sources.includes(target)?`href="#${sourceId(target)}${fragment?'--'+fragment:''}"`:`href="${pathToFileURL(path.resolve(root,path.dirname(source),href)).href}${anchor||''}"`;
   });
   body+=`<section class="chapter" id="${sourceId(source)}"><p class="source">CREDITOR · ${source}</p>${html}</section>`;
  }

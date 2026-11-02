@@ -1,0 +1,79 @@
+{
+  "source_ref": "fda83aded36794b0e459d1d36d29facadad2c5c8",
+  "captured_on": "2026-11-02",
+  "scope": "Byte-identical snapshots of the stored remote-tracking report. Historical claims and authorship tables are archived, not endorsed. No network verification or fetch was performed.",
+  "files": [
+    {
+      "source": "README.md",
+      "snapshot": "README.md.txt",
+      "bytes": 16077,
+      "sha256": "2cc06bb825c0bc6dbda29fdd5bf17bfc3463be4bfc908479138546190052e019"
+    },
+    {
+      "source": "docs/00-project-information.md",
+      "snapshot": "docs/00-project-information.md.txt",
+      "bytes": 13732,
+      "sha256": "de50aa6ad0371e5411eb0f09ca5969d0a5d9f4b7359811776b4ef37e7f328b89"
+    },
+    {
+      "source": "docs/00-student-outcome.md",
+      "snapshot": "docs/00-student-outcome.md.txt",
+      "bytes": 10720,
+      "sha256": "b11c16188e50126e64778062afda70ed91d5dd6e1c594a686212e726b7eb2390"
+    },
+    {
+      "source": "docs/01-introduction.md",
+      "snapshot": "docs/01-introduction.md.txt",
+      "bytes": 14112,
+      "sha256": "e16026a0956e80b7bca6e74c4550a18a3bc2821ca84cfd4a456d4e50b47cb512"
+    },
+    {
+      "source": "docs/02-requirements-elicitation-analysis.md",
+      "snapshot": "docs/02-requirements-elicitation-analysis.md.txt",
+      "bytes": 40063,
+      "sha256": "783bb6ebecc81c9d890c2deb1642044bef8938d2866aa99b1c2bc1e9499c697e"
+    },
+    {
+      "source": "docs/03-requirements-specification.md",
+      "snapshot": "docs/03-requirements-specification.md.txt",
+      "bytes": 11217,
+      "sha256": "6e5b05d270dbbd3ebe501561ff99d40c90cfb8db88a0f6af533f6f1078aa0e63"
+    },
+    {
+      "source": "docs/04-product-design.md",
+      "snapshot": "docs/04-product-design.md.txt",
+      "bytes": 20221,
+      "sha256": "40342a4b17fdabf6b000df0f03ae0560e557b52a6a518caa19ef7865183379ac"
+    },
+    {
+      "source": "docs/05-implementation-validation-deployment.md",
+      "snapshot": "docs/05-implementation-validation-deployment.md.txt",
+      "bytes": 53823,
+      "sha256": "2d90254615e1c7505511fb714a86e3c415118e314b9398d572046a8fa2b330ae"
+    },
+    {
+      "source": "docs/06-conclusions-recommendations.md",
+      "snapshot": "docs/06-conclusions-recommendations.md.txt",
+      "bytes": 2736,
+      "sha256": "3b8ab841c4d55a591e045408e57212a279fe84d7db86b8a22b51afa8e6d82836"
+    },
+    {
+      "source": "docs/07-bibliography-appendices.md",
+      "snapshot": "docs/07-bibliography-appendices.md.txt",
+      "bytes": 5591,
+      "sha256": "88e747c2ef3296ac9c3534066631a48cb9820dca308fe8fc7557493da239507e"
+    },
+    {
+      "source": "docs/sprints/sprint-02.md",
+      "snapshot": "docs/sprints/sprint-02.md.txt",
+      "bytes": 25973,
+      "sha256": "5a3d866b2ae8d96630240da8434fe3cbe2a02baf91913954bc9f10761571eb69"
+    },
+    {
+      "source": "assets/ux/tb1/prototypingCreditor.PNG",
+      "snapshot": "../../ux/tb1/prototypingCreditor.PNG",
+      "bytes": 76931,
+      "sha256": "4ef324de48fca7c89a4ef241c7681404a69df548eb2b6d90f1d929d6a8613779"
+    }
+  ]
+}
