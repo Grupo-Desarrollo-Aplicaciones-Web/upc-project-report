@@ -56,7 +56,6 @@ El documento principal integra el estado del código al **13/11/2026**. Los spri
 | Revisión de retroalimentación TB1 | 03/10/2026 | Miguel Angel Egocheaga Suyo | Control de entrevistas y evidencia de Personas, wireframes móviles, alternativas de flujos, tareas de 4–8 h y paginación del informe. | [Respuesta por observación](docs/tb1/feedback-resolution.md), fuentes y capturas locales. Corrección documental; sin nueva release ni calificación. |
 | Revisión documental TB1 en referencia remota | 03–04/10/2026 | Sebastián Gutarra Velapatiño y Juan Manuel Santos Torres, según objetos Git. | Sebastián incorporó la captura de prototipado (`d1e6ddc`) y su explicación (`4e2fa6e`); Juan amplió la documentación de Sprint 2 (`957dd47`). Estos aportes documentales no acreditan implementación ni revisión por pares. | [Cotejo de referencias](#e-reconciliación-de-las-versiones-local-y-remota). |
 | Reorganización documental local | 02/11/2026 | Preparación asistida solicitada por Miguel Angel Egocheaga Suyo; revisión del equipo pendiente. | Informe unificado con el esquema de Allpatek, índice interno de cuatro niveles y contraste con el enunciado de Aplicaciones Web; conserva los cortes históricos y añade evidencia local de noviembre. Sin nueva release ni publicación. | [Control documental](#c-control-de-integridad-y-correspondencia-con-el-enunciado). |
-
 | Revisión técnica y documental AV2 | 13/11/2026 | Miguel Angel Egocheaga Suyo, identidad Git configurada. | Abonos sucesivos, filtros compartidos de lista/resumen/CSV, préstamos con cuotas pactadas, transición a MySQL, documentación Scalar y auditoría de correspondencia. | [Matriz de implementación y evidencia](docs/av2/estado-implementacion.md). Preparación local: no equivale a release, despliegue o aceptación académica. |
 
 ## Project Report Collaboration Insights
@@ -1280,7 +1279,7 @@ La conexión del prototipo Figma desktop/mobile, la revisión del equipo y el vi
 
 ## 4.6 Domain-Driven Software Architecture
 
-La implementación es un monolito modular ASP.NET Core. `Creditor.Domain` no depende de infraestructura; `Creditor.Application` referencia Domain y define puertos; Infrastructure implementa persistencia/integraciones; API compone dependencias y publica contratos. La separación de procesos corresponde a frontend, backend y base de datos, no a un microservicio por contexto.
+La implementación es un monolito modular ASP.NET Core. `Creditor.Domain` no depende de infraestructura; `Creditor.Application` referencia Domain y define puertos; Infrastructure implementa persistencia/integraciones; API compone dependencias y publica contratos. La separación de procesos corresponde a frontend, backend y base de datos, no a un microservicio por contexto. `Creditor.Migrations.MySql` es un quinto proyecto técnico de migraciones; no añade una quinta capa de dominio. Los instantes DateTimeOffset se convierten a UTC para su almacenamiento MySQL datetime(6).
 
 | Límite | Responsabilidad ejecutable |
 |---|---|
@@ -1362,7 +1361,7 @@ La definición reproducible se explica en [database/README.md](database/README.m
 
 [Fuente editable](assets/architecture/av2/database-treasury-av2.mmd).
 
-Los tipos del ERD representan el modelo CLR y las relaciones principales; el DDL generado precisa tipos físicos, nulabilidad, claves compuestas, tablas auxiliares Identity e índices. `NormalizedReference` es único junto con SupplierId, no globalmente. El modelo no contiene `receipt_url`, `voucher_url`, ni columnas de estado o saldo en Purchase: el estado se deriva de saldo y fecha. Una cuota no contiene estado de pago. `PaymentId`, ProjectId y tasa anual pueden ser nulos según el caso.
+Los tipos del ERD representan el modelo CLR y las relaciones principales; el DDL generado precisa tipos físicos, nulabilidad, claves compuestas, tablas auxiliares Identity e índices. `NormalizedReference` de compra es único junto con SupplierId, no globalmente; en tesorería se combina con AccountId. RequestId de `treasury_operations` es único junto con BusinessId, aunque cada operación conserva su Id como PK. La marca UK del diagrama señala participación en esas claves; el DDL define la combinación completa. El modelo no contiene `receipt_url`, `voucher_url`, ni columnas de estado o saldo en Purchase: el estado se deriva de saldo y fecha. Una cuota no contiene estado de pago. `PaymentId`, ProjectId y tasa anual pueden ser nulos según el caso.
 
 | Invariante | Mecanismo actual |
 |---|---|
@@ -1374,7 +1373,7 @@ Los tipos del ERD representan el modelo CLR y las relaciones principales; el DDL
 | Tesorería | Version de CashAccount y requestId/huella del payload evitan repetir comandos reconocidos. |
 | Estado y saldo | Proyecciones calculadas; no se almacena un saldo mutable paralelo. |
 
-Las restricciones de esquema y los casos de migración se contrastan contra MySQL real. La evidencia distingue crear un esquema, reaplicar migraciones, preservar datos ficticios y reiniciar la API. No se afirma que una batería de pruebas garantice todas las migraciones futuras ni que se haya migrado información productiva.
+Las restricciones de esquema y los casos de migración se contrastan contra MySQL real; el [DDL generado idempotente](database/schema.sql) procede de la migración `20261113220305_InitialMySqlWorkspace`. El DDL MySQL no garantiza rollback atómico ante una ejecución inicial interrumpida; se verificó reaplicación de cadenas completadas. La evidencia distingue crear un esquema, reaplicar migraciones, preservar datos ficticios y reiniciar la API. No se afirma que una batería de pruebas garantice todas las migraciones futuras ni que se haya migrado información productiva.
 
 # Capítulo V: Product Implementation, Validation & Deployment
 
@@ -2139,11 +2138,11 @@ Los commits por repositorio, rama y usuario se registran en [evidencia AV2](docs
 
 La matriz AV2 distingue pruebas de dominio/API, migraciones PostgreSQL previas al cambio, migraciones MySQL y escenarios de navegador contra backend real. El escenario conectado usa datos ficticios, comprueba respuesta HTTP y persistencia; el test de demo usa almacenamiento independiente. Los archivos TRX/JUnit y registros que se adjunten son evidencia del comando ejecutado, no garantía de ausencia total de defectos.
 
-Se revisan saldo tras dos abonos, rechazo de exceso/concurrencia, archivos privados, selección CSV, cronograma, roles, negocio ajeno, tesorería y persistencia tras reinicio. Las suites y cantidades finales se consignan únicamente después de observar su resultado. La validación de uso con personas permanece en 5.3.
+Se revisan saldo tras dos abonos, rechazo de exceso/concurrencia, archivos privados, selección CSV, cronograma, roles, negocio ajeno, tesorería y persistencia tras reinicio. Resultados observados: dominio 33, API SQLite 113, migraciones PostgreSQL 17, suite general con configuración MySQL 113 (109 MySQL y 4 de compatibilidad SQLite), migraciones MySQL 15, Vue unitarias 71, demo navegador 22 y 4 recorridos conectados por cada motor. Todos esos casos finalizaron aprobados. El [manifiesto AV2](assets/evidence/2026-11-13/manifest.json) conserva TRX/JUnit y capturas con hash; no suma suites repetidas como cobertura distinta. La validación de uso con personas permanece en 5.3.
 
 #### 5.2.3.6 Services Documentation Evidence for Sprint Review
 
-La API publica un contrato OpenAPI generado, presentado mediante Scalar. Sus direcciones de ejecución se registran en la matriz AV2; no se afirma una URL de producción. Rutas relevantes:
+La API publica OpenAPI en `/swagger/v1/swagger.json` y Scalar en `/scalar/v1`. El navegador real comprobó sus recursos HTTP 200, 31 paths y navegación a las operaciones de préstamos sin errores; la matriz AV2 conserva el registro y las capturas. El arranque cotidiano usa `http://127.0.0.1:5188/scalar/v1`; no se afirma una URL de producción. Rutas relevantes:
 
 | Ruta | Operación |
 |---|---|

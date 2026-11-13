@@ -1,0 +1,96 @@
+{
+  "reviewDate": "2026-11-13",
+  "scope": "Local synthetic-data verification; not deployment or user validation",
+  "files": [
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-backend\\artifacts\\verification\\postgres-baseline.trx",
+      "snapshot": "postgres-baseline.trx",
+      "bytes": 31927,
+      "sha256": "b8c9aa247abaae09a7f97e6c4fe0b5ac99d80a3b7a7c08a276adfa20f805b0e8"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-backend\\artifacts\\verification\\sqlite-baseline.trx",
+      "snapshot": "sqlite-baseline.trx",
+      "bytes": 186703,
+      "sha256": "6db098940e8f638f69c6e8a60afbff1280eede084b3388d9619d48c3aa6c76fd"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-backend\\artifacts\\verification\\mysql-general_net8.0_20261113170940.trx",
+      "snapshot": "mysql-general.trx",
+      "bytes": 196796,
+      "sha256": "0506d27ba7b50a2e9ecfbf1085c040147cdc6b8d642f2ba55ab1c6c2397e9aa2"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-backend\\artifacts\\verification\\mysql-migrations-final.trx",
+      "snapshot": "mysql-migrations.trx",
+      "bytes": 39099,
+      "sha256": "8c7e1add62a60e6e17d16ca7e735f1b96d7611a77d7dbf616ed48bf57a758237"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-web-app\\artifacts\\connected-e2e-postgres.xml",
+      "snapshot": "frontend-postgres.xml",
+      "bytes": 873,
+      "sha256": "5ea000c763b8dcbb4e4d4c4253f1065b8ecc17d6ebe12e1a5f63ff6b7f265976"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-web-app\\artifacts\\connected-e2e-mysql.xml",
+      "snapshot": "frontend-mysql.xml",
+      "bytes": 873,
+      "sha256": "e6be1fa1dbcc2b340e21a7b485dcba0bef4b90806bab003760ceb2b9b7d6e650"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-web-app\\docs\\INTEGRATION_REVIEW.md",
+      "snapshot": "frontend-review.md",
+      "bytes": 3858,
+      "sha256": "d277fd4ebcc287c01d6d5e3eb532c6e92201fef90f8d94806118c6bf92c8339a"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-backend\\artifacts\\mysql\\schema.sql",
+      "snapshot": "schema-mysql.sql",
+      "bytes": 44847,
+      "sha256": "4b0e26c3dc087ebdfee127d2cfca3a83ea002cf39550a4ca2bc5617621e3f7a9"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-backend\\artifacts\\verification\\scalar-docs.trx",
+      "snapshot": "scalar-docs.trx",
+      "bytes": 6663,
+      "sha256": "9c1e750303dee9d3546cc523f47d8c44e301816b628baccbba07e2e330680667"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-backend\\artifacts\\verification\\scalar-browser.json",
+      "snapshot": "scalar-browser.json",
+      "bytes": 1878,
+      "sha256": "9c70cfc5390a5aefe59bacdfae6e369ad5625ba36aa30de85ea47fe3287e4171"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-backend\\artifacts\\verification\\scalar.png",
+      "snapshot": "scalar.png",
+      "bytes": 140162,
+      "sha256": "aeb626b80d6fe59d2b02f30854c483b9c605499238636dc6046883b3707fc21c"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-backend\\artifacts\\verification\\scalar-loans.png",
+      "snapshot": "scalar-loans.png",
+      "bytes": 169075,
+      "sha256": "dfaf98cae963a0e9f013ac17e56b9e5083dbdc9f8d021b5d65bda158d9d6ecc8"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-backend\\artifacts\\verification\\external-provider-probe.json",
+      "snapshot": "external-provider-probe.json",
+      "bytes": 627,
+      "sha256": "3c526337f6de4f3a9a23cb5b6d1853e4ce1bc2fc0c46ebe1f1eeea888f5460b6"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-web-app\\test-results\\connected\\workspace-Vue-saves-an-agr-19124-s-it-after-signing-in-again\\loans-desktop.png",
+      "snapshot": "loans-desktop.png",
+      "bytes": 106482,
+      "sha256": "40f6ba113599638c506b2e25e9eb9c56a21a19f4c46c4472eada9a2ae675c18b"
+    },
+    {
+      "source": "C:\\Users\\migue\\Documents\\GitHub\\Grupo-Desarrollo-Aplicaciones-Web\\creditor-web-app\\test-results\\connected\\workspace-Vue-saves-an-agr-19124-s-it-after-signing-in-again\\loans-mobile.png",
+      "snapshot": "loans-mobile.png",
+      "bytes": 75299,
+      "sha256": "2562d25c99ae5781857cca64b3b58eb3f23b7fb02b047ded85faee14e7623685"
+    }
+  ]
+}

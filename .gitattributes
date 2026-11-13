@@ -22,3 +22,7 @@ assets/history/origin-develop-fda83ad/** -text -whitespace
 # Immutable snapshots and verification outputs from the AV2 audit.
 assets/history/origin-main-42e2d96/** -text -whitespace
 assets/evidence/2026-11-13/** -text -whitespace
+
+# Keep the generated DDL identical to its verified source.
+database/schema.sql -text
+database/schema.sql -whitespace

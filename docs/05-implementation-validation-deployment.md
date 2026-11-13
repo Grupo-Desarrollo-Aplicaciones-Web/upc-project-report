@@ -763,11 +763,11 @@ Los commits por repositorio, rama y usuario se registran en [evidencia AV2](../d
 
 La matriz AV2 distingue pruebas de dominio/API, migraciones PostgreSQL previas al cambio, migraciones MySQL y escenarios de navegador contra backend real. El escenario conectado usa datos ficticios, comprueba respuesta HTTP y persistencia; el test de demo usa almacenamiento independiente. Los archivos TRX/JUnit y registros que se adjunten son evidencia del comando ejecutado, no garantía de ausencia total de defectos.
 
-Se revisan saldo tras dos abonos, rechazo de exceso/concurrencia, archivos privados, selección CSV, cronograma, roles, negocio ajeno, tesorería y persistencia tras reinicio. Las suites y cantidades finales se consignan únicamente después de observar su resultado. La validación de uso con personas permanece en 5.3.
+Se revisan saldo tras dos abonos, rechazo de exceso/concurrencia, archivos privados, selección CSV, cronograma, roles, negocio ajeno, tesorería y persistencia tras reinicio. Resultados observados: dominio 33, API SQLite 113, migraciones PostgreSQL 17, suite general con configuración MySQL 113 (109 MySQL y 4 de compatibilidad SQLite), migraciones MySQL 15, Vue unitarias 71, demo navegador 22 y 4 recorridos conectados por cada motor. Todos esos casos finalizaron aprobados. El [manifiesto AV2](../assets/evidence/2026-11-13/manifest.json) conserva TRX/JUnit y capturas con hash; no suma suites repetidas como cobertura distinta. La validación de uso con personas permanece en 5.3.
 
 #### 5.2.3.6 Services Documentation Evidence for Sprint Review
 
-La API publica un contrato OpenAPI generado, presentado mediante Scalar. Sus direcciones de ejecución se registran en la matriz AV2; no se afirma una URL de producción. Rutas relevantes:
+La API publica OpenAPI en `/swagger/v1/swagger.json` y Scalar en `/scalar/v1`. El navegador real comprobó sus recursos HTTP 200, 31 paths y navegación a las operaciones de préstamos sin errores; la matriz AV2 conserva el registro y las capturas. El arranque cotidiano usa `http://127.0.0.1:5188/scalar/v1`; no se afirma una URL de producción. Rutas relevantes:
 
 | Ruta | Operación |
 |---|---|

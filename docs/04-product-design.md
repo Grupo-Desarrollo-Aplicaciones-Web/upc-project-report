@@ -234,7 +234,7 @@ La conexión del prototipo Figma desktop/mobile, la revisión del equipo y el vi
 
 ## 4.6 Domain-Driven Software Architecture
 
-La implementación es un monolito modular ASP.NET Core. `Creditor.Domain` no depende de infraestructura; `Creditor.Application` referencia Domain y define puertos; Infrastructure implementa persistencia/integraciones; API compone dependencias y publica contratos. La separación de procesos corresponde a frontend, backend y base de datos, no a un microservicio por contexto.
+La implementación es un monolito modular ASP.NET Core. `Creditor.Domain` no depende de infraestructura; `Creditor.Application` referencia Domain y define puertos; Infrastructure implementa persistencia/integraciones; API compone dependencias y publica contratos. La separación de procesos corresponde a frontend, backend y base de datos, no a un microservicio por contexto. `Creditor.Migrations.MySql` es un quinto proyecto técnico de migraciones; no añade una quinta capa de dominio. Los instantes DateTimeOffset se convierten a UTC para su almacenamiento MySQL datetime(6).
 
 | Límite | Responsabilidad ejecutable |
 |---|---|
@@ -316,7 +316,7 @@ La definición reproducible se explica en [database/README.md](../database/READM
 
 [Fuente editable](../assets/architecture/av2/database-treasury-av2.mmd).
 
-Los tipos del ERD representan el modelo CLR y las relaciones principales; el DDL generado precisa tipos físicos, nulabilidad, claves compuestas, tablas auxiliares Identity e índices. `NormalizedReference` es único junto con SupplierId, no globalmente. El modelo no contiene `receipt_url`, `voucher_url`, ni columnas de estado o saldo en Purchase: el estado se deriva de saldo y fecha. Una cuota no contiene estado de pago. `PaymentId`, ProjectId y tasa anual pueden ser nulos según el caso.
+Los tipos del ERD representan el modelo CLR y las relaciones principales; el DDL generado precisa tipos físicos, nulabilidad, claves compuestas, tablas auxiliares Identity e índices. `NormalizedReference` de compra es único junto con SupplierId, no globalmente; en tesorería se combina con AccountId. RequestId de `treasury_operations` es único junto con BusinessId, aunque cada operación conserva su Id como PK. La marca UK del diagrama señala participación en esas claves; el DDL define la combinación completa. El modelo no contiene `receipt_url`, `voucher_url`, ni columnas de estado o saldo en Purchase: el estado se deriva de saldo y fecha. Una cuota no contiene estado de pago. `PaymentId`, ProjectId y tasa anual pueden ser nulos según el caso.
 
 | Invariante | Mecanismo actual |
 |---|---|
@@ -328,4 +328,4 @@ Los tipos del ERD representan el modelo CLR y las relaciones principales; el DDL
 | Tesorería | Version de CashAccount y requestId/huella del payload evitan repetir comandos reconocidos. |
 | Estado y saldo | Proyecciones calculadas; no se almacena un saldo mutable paralelo. |
 
-Las restricciones de esquema y los casos de migración se contrastan contra MySQL real. La evidencia distingue crear un esquema, reaplicar migraciones, preservar datos ficticios y reiniciar la API. No se afirma que una batería de pruebas garantice todas las migraciones futuras ni que se haya migrado información productiva.
+Las restricciones de esquema y los casos de migración se contrastan contra MySQL real; el [DDL generado idempotente](../database/schema.sql) procede de la migración `20261113220305_InitialMySqlWorkspace`. El DDL MySQL no garantiza rollback atómico ante una ejecución inicial interrumpida; se verificó reaplicación de cadenas completadas. La evidencia distingue crear un esquema, reaplicar migraciones, preservar datos ficticios y reiniciar la API. No se afirma que una batería de pruebas garantice todas las migraciones futuras ni que se haya migrado información productiva.
