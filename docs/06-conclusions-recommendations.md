@@ -9,6 +9,9 @@
 5. La investigación conserva cuatro entrevistas registradas y requiere dos adicionales S2, análisis con citas y validación de Personas/maps. Las hipótesis y metas todavía no son resultados empíricos.
 6. Las features y commits personales permiten revisar el incremento completo en local. Los archivos de entrega no cierran los criterios de despliegue, herramientas externas, reuniones, aceptación, videos y desempeño que aún dependen del equipo.
 
+## Video About-the-Team
+Video about the team: https://youtu.be/RItoiUdxaiA
+
 ## Recomendaciones
 
 1. Completar y analizar las entrevistas del segmento S2 antes de modificar prioridades por supuestos.
