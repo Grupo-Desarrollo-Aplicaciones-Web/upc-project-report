@@ -3,7 +3,7 @@ const root=path.resolve(__dirname,'../..');
 const modules=process.env.CODEX_NODE_MODULES||path.join(os.homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules');
 const {chromium}=require(path.join(modules,'playwright'));
 const {pathToFileURL}=require('node:url');
-const sources=['README.md']; // Canonical complete report; chapter files are historical sources.
+const sources=['README.md']; // Canonical complete report; chapter files are synchronized views of the same source.
 const aliases={'docs/sprints/sprint-02.md':{target:'docs/05-implementation-validation-deployment.md',anchor:'522-sprint-2'}};
 const name=process.env.CREDITOR_REPORT_NAME||'upc-pre-202620-1asi0730-16127-creditor-report-unified-20261102';
 const sourceId=source=>source.replaceAll('/','-').replace(/\.md$/,'');

@@ -12,7 +12,7 @@
 
 Las correcciones del próximo incremento pueden vivir en `feature/<tema>`. Los nombres históricos `docs/*` y `fix/*` se conservan. Una feature dependiente identifica su base y se integra después de ella.
 
-## Preparación local de TB1
+## Preparación local de TB1 y AV2
 
 El trabajo actual permanece en local y no ejecuta publicación ni despliegue. No se hace push ni se crean PR remotos.
 
@@ -47,3 +47,16 @@ Guardar recursos en assets con nombres descriptivos y texto alternativo. Conserv
 
 Planificación, implementación, prueba y publicación son estados distintos. Un formulario o plantilla no acredita una actividad realizada. Los datos de demostración se identifican como tales. El líder valida el Performance Report y sus calificaciones.
 
+
+## Fuente canónica y revisión documental AV2
+
+Editar el informe completo en README.md. Los nueve archivos de capítulos en docs son vistas sincronizadas, no fuentes independientes. Después de un cambio:
+
+```powershell
+python tools/tb1/update_index.py
+python tools/report/sync_chapters.py
+python tools/report/validate_report.py
+python tools/report/validate_av2.py
+```
+
+El último validador comprueba cobertura del barrido de apartados, enlaces locales, fuentes/SVG y coincidencia del SQL con su snapshot. Las URLs externas y evidencia humana requieren revisión aparte. Mantener los hashes y bytes de assets/evidence y assets/history; no actualizar una evidencia antigua para hacerla pasar por un nuevo resultado. El workflow Word compila únicamente README para evitar duplicar capítulos.
