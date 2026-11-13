@@ -1,0 +1,111 @@
+# Backend architecture and domain decisions
+
+This is a modular monolith in .NET 8. It remains a separate application from the Vue frontend. The November increment strengthens the existing backend instead of replacing its authentication, documents or exchange-rate adapter.
+
+## Layers and dependencies
+
+```mermaid
+flowchart LR
+    HTTP[ASP.NET Core controllers] --> UC[Application use cases]
+    UC --> D[Domain aggregates and Money]
+    UC --> P[Repository and query ports]
+    EF[EF Core adapters] -. implement .-> P
+    EF --> D
+    EF --> DB[(PostgreSQL)]
+    HTTP -. composition root .-> EF
+```
+
+`Creditor.Domain` has no project or package dependencies. `Creditor.Application` references only Domain. Infrastructure implements Application ports using EF Core. API references Infrastructure to compose the application and uses Application contracts in its controllers. No `DbContext`, `IQueryable`, ASP.NET type or provider exception crosses into the domain or its use cases.
+
+The design follows [Microsoft's guidance on domain, application and infrastructure responsibilities](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice). A separate deployable microservice per context is not necessary for this increment.
+
+## Boundaries and language
+
+| Boundary | Responsibility and implemented model |
+| --- | --- |
+| Accounts Payable | `Supplier` and `Purchase` aggregate roots; `Payment` is a child of Purchase. The business pays suppliers. This is not a customer collection portfolio. |
+| Treasury | Party, Project and CashAccount roots. CashAccount owns movements, allocations and command receipts. Holder, economic owner, responsible party and recording actor are distinct. See [Treasury contract](treasury-api.md). |
+| Identity | Business membership, access tokens and roles through the existing Identity adapter. Business identity always comes from the authenticated principal. |
+| Reporting | Read projections over Accounts Payable. Filtered CSV and currency summaries do not own a second balance. |
+| Attachments | Private receipt/voucher metadata and storage adapter; authorization checks the referenced obligation. |
+| Exchange Rates | Anti-corruption adapter mapping BCRPData into a reference quote. It never rewrites historical purchase/payment amounts. |
+| Loans | Proposed in US-009, not implemented. Monthly frequency and TEA alone do not define a complete amortization policy. |
+
+The report's tentative design separates Payments logically. In the executable model, payment registration belongs to the Purchase aggregate because its invariant must be atomic: the sum of payments cannot exceed the purchase amount. Splitting those writes across independently committed contexts would weaken that rule. This decision should be reflected in the report's next architecture update; the report repository was not edited in this task.
+
+## Core model
+
+```mermaid
+classDiagram
+    class Purchase {
+        +Guid Id
+        +Guid BusinessId
+        +decimal Amount
+        +decimal Balance
+        +Guid Version
+        -List~Payment~ _payments
+        +RecordPayment(amount, paidOn, note, currency, createdAt, today) Payment
+        +StatusOn(today) string
+    }
+    class Payment {
+        +Guid PurchaseId
+        +Guid BusinessId
+        +decimal Amount
+        +string Currency
+        +DateOnly PaidOn
+    }
+    class Money {
+        +decimal Amount
+        +string Currency
+        +decimal MaximumAmount
+    }
+    class Supplier {
+        +Guid Id
+        +Guid BusinessId
+        +string Name
+    }
+    Supplier "1" <-- "0..*" Purchase : supplier in same business
+    Purchase "1" *-- "0..*" Payment : immutable history
+    Purchase ..> Money : validates monetary inputs
+```
+
+`Money` is an immutable value object with normalized PEN/USD and the R-02 positive amount/scale/maximum rules. The existing relational representation retains scalar amount/currency columns, avoiding an unnecessary schema rewrite. Zero balances are derived decimal values, not positive transaction inputs.
+
+The Purchase constructor enforces reference, description and date rules. `RecordPayment` inherits ownership/currency, checks dates, amount, balance and note, then changes history and the aggregate version. A rejected command leaves both unchanged. External callers receive a read-only payment collection and cannot construct a Payment publicly.
+
+The business date is supplied by the application through `IClock`; the domain never reads the system clock. `America/Lima` remains the default calendar, and timestamps remain UTC. The existing seven-day `dueSoon` convention is retained and documented in the API contract; it is a product convention, not a tax or financial regulation.
+
+## Commands, queries and event terminology
+
+| Command/query | Aggregate or projection | Business outcome |
+| --- | --- | --- |
+| Register supplier | Supplier | Supplier registered. |
+| Register credit purchase | Purchase | Purchase registered with initial balance equal to amount. |
+| Record payment | Purchase + Payment | Payment recorded and derived balance changed atomically. |
+| List obligations/history | Read projection | Scoped, filtered and paginated resources. |
+| Summarize obligations | Read projection | Separate PEN/USD balances, overdue amounts and due-soon amounts. |
+| Export obligations | Read projection | Filtered CSV with the original currency of each row. |
+
+The outcome names support the report's EventStorming discussion. This increment does not claim a collaborative EventStorming session, a message broker, persisted domain events or an outbox. These are not needed by the implemented synchronous use cases.
+
+## Persistence and concurrency
+
+`IAccountsPayableRepository` is the aggregate persistence port. EF loads the Purchase together with its complete payment history. Updating the aggregate adds only new children. One `SaveChangesAsync` commits the new payment and version update in a transaction. The original version is a concurrency predicate: a losing writer rolls back and receives 409. The unique supplier/reference index also arbitrates competing registration requests.
+
+Composite foreign keys preserve business consistency. Every read query is business-scoped before applying user filters. The application checks supplier membership before registering a purchase. No client-supplied organization identifier authorizes access.
+
+Summary, status filtering and status-filtered export currently materialize scoped aggregates to retain exact decimal semantics consistently across PostgreSQL and SQLite. This is an explicit scaling limit; larger datasets need a PostgreSQL projection/aggregate query, not conversion to floating-point money.
+
+## Migration and existing data
+
+`EnforceReportedFinancialBounds` adds the report's maximum transaction amount and static date bounds. It preserves column precision and contains no data deletion, truncation or automatic rewriting. Before applying it to an existing PostgreSQL database, inspect records outside the rules:
+
+```sql
+SELECT "Id", "Amount", "PurchasedOn", "DueOn"
+FROM purchases
+WHERE "Amount" > 9999999.99 OR "PurchasedOn" < DATE '2000-01-01'
+   OR "DueOn" > DATE '2100-12-31';
+SELECT "Id", "Amount" FROM payments WHERE "Amount" > 9999999.99;
+```
+
+If such records exist, the new check constraint refuses the migration. Resolve the business decision with the owner; do not erase or round existing records to force migration success. No existing database was migrated as part of this task. SQLite still uses `EnsureCreated` for a fresh development/test file and cannot upgrade an older SQLite schema.

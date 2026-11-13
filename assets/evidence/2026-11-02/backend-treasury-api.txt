@@ -1,0 +1,97 @@
+# Treasury: accounts, cash and economic ownership
+
+This vertical implements the user's expanded CREDITOR workflow in the separate .NET backend. It records manual entries; it does not connect to a bank, execute payments or integrate Vue. Product behavior sources are the sibling frontend's `docs/FINANCIAL_DEMO.md`, `src/finance/domain.js`, `src/finance/seed.js` and `tests/unit/finance.test.js`, inspected on 2 November 2026. These are product sources, not an academic scoring rubric.
+
+## Concepts and rules
+
+The authenticated business is the tenant. A **party** is a person/company; it can be a holder, economic owner, counterparty or responsible person without having a login. A **cash account** has one immutable currency (PEN/USD), a holder and optional zero-to-four identifying digits. Creating it starts at zero; an opening balance must be a separate first movement. The holder does not automatically own the money.
+
+A **movement** is a manual inflow/outflow. Its immutable **allocations** attribute amounts to economic owners and responsible parties, optionally for a **project**. A project's owner and its funding economic owner need not be the same. The recording actor comes separately from validated claims. A project budget is an optional planning amount in its stated currency, not cash, a spending restriction or an automatic reimbursement debt.
+
+JSON amounts are decimal major currency units. Treasury stores integer cents (`long`). Positive amounts must be 0.01-9,999,999.99 with at most two decimals. Account cash is bounded to the same maximum. No floating-point money or automatic conversion is used. All relationship references must belong to the same authenticated business; composite database foreign keys reinforce this.
+
+`CashAccount` owns its movements, allocations and command receipts as one consistency boundary:
+
+```text
+cash = sum of economic-owner balances + unassigned cash
+cash >= 0; each owner balance >= 0; unassigned cash >= 0
+```
+
+Allocations cannot exceed a movement's unclassified remainder. Spending assigned funds requires an outflow allocation to the funding owner; unclassified spending consumes only unassigned cash. This conservation check strengthens the demo: an unclassified expense cannot leave owner positions overstating cash. Appending allocations changes ownership, never account cash, and cannot replace earlier classifications.
+
+The movement's `unassignedAmount` is its historical classification remainder; the account's `unassignedBalance` is **cash currently available without an owner**. After unclassified spending these can differ. Classifying an old receipt is rejected if it would claim cash already spent.
+
+Business dates are 2000-01-01 through today, no later than 2100-12-31; default calendar is America/Lima. Backdated recording checks current balances, not historical daily overdraft sequences or bank statements. Actor UUIDs and UTC timestamps are server-assigned. No edit/delete route discards ledger history.
+
+## HTTP contract
+
+Base: `/api/v1/treasury`, authenticated by the existing bearer token. Owner/FinanceAdmin write; Viewer reads. Creating a party does not create a user or grant permissions.
+
+| Method | Relative route | Result |
+| --- | --- | --- |
+| GET / POST | `/parties` | Paginated list / register person or company. |
+| GET | `/parties/{id}` | Party in the authenticated business. |
+| GET / POST | `/projects` | Paginated list / register project and optional budget. |
+| GET | `/projects/{id}` | Project metadata. |
+| GET | `/projects/{id}/summary` | Allocated inflows, outflows and net in separate PEN/USD groups; budget stays separate. |
+| GET / POST | `/accounts` | Paginated list / register zero-balance manual bank/cash record. |
+| GET | `/accounts/{id}` | Holder, currency, cash, unassigned cash and aggregate version. |
+| GET / POST | `/accounts/{accountId}/movements` | Filter/paginate history / post movement and allocations atomically. |
+| GET | `/accounts/{accountId}/movements/{movementId}` | Movement and current allocations. |
+| POST | `/accounts/{accountId}/movements/{movementId}/allocations` | Append classifications to its unassigned remainder. |
+| GET | `/funds` | Cash, unassigned cash and economic-owner positions per account; no mixed-currency grand total. |
+
+List pagination is 1-based: `page=1`, `pageSize=20` by default, maximum page size 100. Movement filters: `direction=in|out`, `ownerId`, `projectId`, `from`, `to`. Combined owner/project filters must match the **same allocation**. Filtering selects full movement records, not prorated monetary totals. Unknown/foreign records return 404; foreign filter IDs reveal no matching records.
+
+Business-rule errors return 422; malformed requests/pagination 400; missing authentication 401; forbidden writes 403; duplicate reference, idempotency conflict or concurrent update 409. Existing Problem Details supports English by default and `Accept-Language: es-419` for Spanish field/details. Property names and machine codes stay stable. Swagger documents the schemas, limits, success/replay and error responses.
+
+Create a party with `{ "name": "Alex", "type": "person" }` (`type` can also be `company`). Create a project with `name`, `ownerId`, `responsibleId`, `currency` and optional `budgetAmount`. Create an account with `name`, `holderId`, `currency`, `kind` (`bank`/`cash`) and optional `ending`. Do not submit a full bank account number or banking credentials.
+
+For a movement POST, replace the example UUIDs below with actual IDs returned by this business's API and use a non-future date:
+
+```json
+{
+  "requestId": "00000000-0000-0000-0000-000000000100",
+  "direction": "in", "kind": "thirdParty", "amount": 1000.00,
+  "bookedOn": "2026-11-02", "reference": "USD-RECEIPT-001",
+  "description": "Shared funds received",
+  "counterpartyId": "00000000-0000-0000-0000-000000000001",
+  "allocations": [
+    { "ownerId": "00000000-0000-0000-0000-000000000002",
+      "responsibleId": "00000000-0000-0000-0000-000000000001",
+      "projectId": "00000000-0000-0000-0000-000000000004", "amount": 600.00 },
+    { "ownerId": "00000000-0000-0000-0000-000000000003",
+      "responsibleId": "00000000-0000-0000-0000-000000000001", "amount": 400.00 }
+  ]
+}
+```
+
+In a USD account held by Alex, allocate 600 to Andes and 400 to Marina. An `out` / `expense` of 250 attributed to Andes leaves cash 750, Andes 350, Marina 400 and Alex-owned funds zero. A project reports USD 600 in / 250 out separately from a PEN planning budget. The budget never added cash.
+
+`allocations` can initially be omitted or partial. To classify a remainder, POST `{ "requestId": "<new UUID>", "allocations": [...] }` to the allocation route. It appends immutable classifications without another cash entry.
+
+Supported manual kinds: `income`, `expense`, `thirdParty`, `reimbursement`, `loan`, `opening`, `unclassified`, `collection`. Income/thirdParty/opening/collection must be inflows; expense must be outflow. Loan and reimbursement are labels, not loan calculation/debt-generation workflows. Transfer/reversal labels are rejected until their linked-leg/correction workflows exist.
+
+## Idempotency and persistence
+
+Movement reference is unique per account after trimming/case normalization. A nonempty `requestId` UUID is unique across Treasury monetary/classification commands in the business. Its SHA-256 fingerprint includes command kind, target and deserialized fields (including array order and decimal representation). Reuse an identity only for an identical retry. Identical retries return the existing movement with `replayed: true`, without another write; changed fields/targets return 409 `idempotency_conflict`.
+
+Movement POST returns 201 initially and 200 on replay. Allocation POST returns 200 for both. Replay returns the movement's **current resource**, including later appended allocations, not a frozen original response. Simultaneous identical requests may first conflict; a later identical retry can replay the winner. Failed/rolled-back requests do not reserve the identity.
+
+One EF transaction saves the account version update, movement/allocation children and command receipt. A stale writer rolls back all of them. Client-created entity UUIDs use `ValueGeneratedNever`, so EF inserts new children instead of mistaking them for stale updates. No provider or HTTP dependency enters the domain. Pure domain tests have their own project referencing only Domain.
+
+`AddTreasuryLedger` adds six tables: `treasury_parties`, `treasury_projects`, `treasury_accounts`, `treasury_movements`, `treasury_allocations`, `treasury_operations`. It does not rewrite existing payable/identity records. PostgreSQL is the target; live migration/execution remains pending because Docker is stopped. The preceding financial-bounds migration still requires its documented preflight for old records outside those bounds.
+
+## Local start and limits
+
+An older SQLite schema is refused with an explicit preservation message. Run the new model using a separate development database:
+
+```powershell
+.\scripts\Start-IsolatedTreasury.ps1
+```
+
+It uses ignored `artifacts/local/treasury-v1.db`, preserves existing configuration/credentials and development databases, and restores process environment overrides when stopped. Register a new test business through `http://localhost:5188/swagger`; no users or financial records are seeded. It does not copy/migrate old SQLite records. Readiness checks include Treasury tables.
+
+The repository loads full account histories to enforce cash/owner conservation, using one SQL query per aggregate snapshot. Lists, funds and project summaries currently materialize scoped records; join expansion and high-volume performance need a deliberate read/balance projection strategy before production use. No performance guarantee is claimed.
+
+Frontend integration, bank feeds, actual transfers/payments, reconciliation/import, compensating reversals, replacing classifications, and invoice/loan/promise workflows are outside this vertical. Existing `/purchases/{id}/payments` are **not automatically posted to Treasury**. A future explicit settlement/linking use case must prevent double recording; no simulated link was added. The other expanded frontend workflows remain demonstrations until corresponding backend verticals exist.
