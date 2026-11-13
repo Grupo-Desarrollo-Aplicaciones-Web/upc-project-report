@@ -18,3 +18,7 @@
 # Preserve source evidence byte-for-byte, including historical whitespace.
 assets/evidence/2026-11-02/** -text -whitespace
 assets/history/origin-develop-fda83ad/** -text -whitespace
+
+# Immutable snapshots and verification outputs from the AV2 audit.
+assets/history/origin-main-42e2d96/** -text -whitespace
+assets/evidence/2026-11-13/** -text -whitespace
