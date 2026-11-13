@@ -1,3 +1,5 @@
+> Vista sincronizada del [informe canónico](../README.md), corte AV2 13/11/2026. Para editar contenido, modificar README y ejecutar `python tools/report/sync_chapters.py`.
+
 # Capítulo I: Introducción
 
 ## 1.1 Startup Profile
@@ -6,7 +8,7 @@
 
 CREDITOR es una propuesta de plataforma web para mypes que necesitan organizar sus compras a crédito, cuentas por pagar, abonos parciales, comprobantes y préstamos. Busca reunir en un mismo espacio la información que normalmente se distribuye entre cuadernos, hojas de cálculo, mensajes y archivos, para facilitar la consulta de saldos y vencimientos.
 
-La propuesta contempla un panel de deuda consolidada, registro de compras con proveedor, moneda, fecha límite y comprobante; registro de abonos con voucher; seguimiento de préstamos; y reportes filtrables. Estas capacidades son hipótesis de producto y no deben confundirse con funciones ya validadas o implementadas.
+La propuesta contempla un panel de deuda consolidada, registro de compras con proveedor, moneda, fecha límite y comprobante; registro de abonos con voucher; seguimiento de préstamos; y reportes filtrables. El incremento conectado implementa registro y consulta de esas operaciones; la matriz AV2 distingue implementación técnica de validación con usuarios. La utilidad, adopción y disposición de pago siguen siendo hipótesis de producto.
 
 **Misión.** Desarrollar una herramienta clara y accesible que ayude a las mypes a mantener un control transparente de sus obligaciones financieras.
 
@@ -42,9 +44,9 @@ La información fragmentada entre cuadernos, hojas de cálculo, mensajes y docum
 | **How** | Se investigarán los medios realmente usados; no se presupone que todos trabajen manualmente. |
 | **How much** | No existe medición del costo del problema. Se recogerán pasos, tiempos relatados y consecuencias, indicando muestra y fuente. |
 
-**Objetivo de la propuesta:** permitir que el negocio conserve la relación proveedor–compra–abono y revise obligaciones por moneda. **Alcance local TB1:** dashboard, registro de compras, registro de abonos e historial (US-004 a US-007), mediante una aplicación Vue/PrimeVue y un adaptador local de demostración. Los datos de ejemplo no son datos de entrevistas ni registros operativos. **Iteraciones posteriores:** préstamos y reportes (US-008/009), API propia ASP.NET Core/EF Core, integración externa y persistencia PostgreSQL. La primera Web Services desplegada corresponde a AV2; TB1 requiere la primera Frontend Web Application. En esta ejecución se preparan y comprueban artefactos localmente; no se declara despliegue nuevo.
+**Objetivo:** conservar la relación proveedor–compra–abono y revisar obligaciones por moneda. **Antecedente TB1:** Vue/PrimeVue con datos de demostración locales para US-004–007. **Incremento AV2:** interfaz autenticada, API ASP.NET Core/EF Core, MySQL, comprobantes privados, exportación filtrada US-008 y consulta/registro de préstamos con cronograma US-009. Tesorería añade cuentas, movimientos y asignaciones de fondos. La API integra una cotización referencial BCRPData/SBS; no convierte operaciones históricas automáticamente. Los datos de prueba son ficticios. La verificación local no cierra el criterio de servicios desplegados de AV2.
 
-La solución no suma PEN y USD como si fueran una moneda, no procesa transferencias bancarias y no sustituye contabilidad o asesoría financiera. La aplicación local trabaja con una organización ficticia fija; no implementa inicio de sesión, permisos por rol ni aislamiento de seguridad en el servidor.
+La solución no suma PEN y USD como si fueran una moneda, no procesa transferencias bancarias y no sustituye contabilidad o asesoría financiera. La ruta de práctica conserva datos ficticios en el navegador. Las rutas `/workspace` usan JWT, roles y aislamiento de negocio en el servidor; iniciar sesión no importa ni mezcla automáticamente los datos de práctica.
 
 ### 1.2.2 Lean UX Process
 
@@ -87,8 +89,8 @@ Los IDs permiten rastrear las creencias hasta hipótesis, preguntas e historias.
 | **H-01** | Creemos que lograremos una revisión recurrente de obligaciones si Rosa (S1) y Diego (S2) obtienen visibilidad de saldos y vencimientos mediante un dashboard por moneda. | BO-01, UB-01, F-01; US-004; TB1 local. |
 | **H-02** | Creemos que lograremos registros más completos si Diego (S2) obtiene trazabilidad de la compra mediante un formulario estructurado y un comprobante asociado. | BO-02, UB-02, F-02; US-005; TB1 local. |
 | **H-03** | Creemos que lograremos una verificación más sencilla del saldo si Rosa (S1) y Diego (S2) obtienen una secuencia de movimientos mediante un historial de abonos y vouchers asociados. | BO-02, UB-03, F-03; US-006/007; TB1 local. |
-| **H-04** | Creemos que lograremos continuidad de uso cuando haya préstamos si Rosa (S1) obtiene claridad de próximos compromisos mediante frecuencia y cronograma de cuotas. | BO-03, UB-04, F-04; US-009; futura iteración. |
-| **H-05** | Creemos que lograremos continuidad de uso en revisiones financieras si Diego (S2) obtiene información seleccionada mediante reportes filtrados y exportables. | BO-03, UB-05, F-05; US-008; futura iteración. |
+| **H-04** | Creemos que lograremos continuidad de uso cuando haya préstamos si Rosa (S1) obtiene claridad de próximos compromisos mediante frecuencia y cronograma de cuotas. | BO-03, UB-04, F-04; US-009; implementación AV2, validación de utilidad pendiente. |
+| **H-05** | Creemos que lograremos continuidad de uso en revisiones financieras si Diego (S2) obtiene información seleccionada mediante reportes filtrados y exportables. | BO-03, UB-05, F-05; US-008; implementación AV2, validación de utilidad pendiente. |
 
 Existe una hipótesis por cada Feature Assumption. La investigación cualitativa inicial contrasta pertinencia, tareas y lenguaje; los resultados de uso requieren una evaluación posterior. Rosa y Diego son Personas provisionales, sin demografía ni conducta atribuida a entrevistados.
 
@@ -115,7 +117,7 @@ El informe oficial **Las Mipyme en cifras 2024** de PRODUCE/OGEIEE, Cuadro A1, r
 
 | Segmento | Tarea a investigar | Funcionalidad propuesta | Riesgo abierto |
 |---|---|---|---|
-| S1 | Revisar obligaciones y decidir prioridades. | Dashboard e historial TB1; cronograma futuro. | Que la tarea se delegue o no sea recurrente. |
-| S2 | Registrar y verificar operaciones. | Compra y abono TB1; reportes futuros. | Que otra herramienta sea obligatoria y la solución duplique trabajo. |
+| S1 | Revisar obligaciones y decidir prioridades. | Dashboard, historial y consulta de cronograma AV2. | Que la tarea se delegue o no sea recurrente. |
+| S2 | Registrar y verificar operaciones. | Compra, abono y reportes filtrados AV2. | Que otra herramienta sea obligatoria y la solución duplique trabajo. |
 
 Pendiente de evidencia: caracterización demográfica de los participantes y análisis de su experiencia. No se publican porcentajes poblacionales de S1/S2 ni cifras de demanda a partir de una muestra cualitativa.

@@ -1,0 +1,9 @@
+flowchart TD
+  Router[Vue Router y guard de sesión] --> Views[Presentation: Payables / Loans / Treasury / Reports]
+  Views --> UseCases[Application: composables y sesión]
+  UseCases --> HTTP[Infrastructure: adaptadores API]
+  HTTP --> Client[Shared HTTP client: token / idioma / errores]
+  Client --> Server[ASP.NET Core]
+  UseCases --> Domain[Domain: dinero / fechas / reglas de entrada]
+  Demo[FinanceWorkspace de práctica] --> Fake[Fake API independiente]
+  Fake --> Browser[(localStorage demo)]

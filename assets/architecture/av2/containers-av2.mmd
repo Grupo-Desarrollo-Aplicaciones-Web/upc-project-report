@@ -1,0 +1,11 @@
+flowchart LR
+  User[Usuario] --> Web[Vue 3 / PrimeVue / Vite]
+  Visitor[Visitante] --> Landing[Landing Vue / Vite]
+  Landing --> Web
+  Web -->|HTTP JSON y JWT| API[ASP.NET Core / C#]
+  API -->|EF Core| DB[(MySQL 8.4)]
+  API --> Files[Archivos privados PDF / PNG / JPEG]
+  API -->|HTTPS| BCRP[BCRPData / SBS]
+  Scalar[Scalar: documentación API] --> OpenAPI[Contrato OpenAPI]
+  API --> OpenAPI
+  Web -. rutas de práctica .-> Browser[(Datos ficticios del navegador)]

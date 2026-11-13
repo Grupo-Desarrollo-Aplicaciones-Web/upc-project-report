@@ -32,11 +32,13 @@
 | u20241a314 | Gutarra Velapatiño, Sebastián |
 
 <h3 align="center">Periodo 202620</h3>
-<h3 align="center">Noviembre, 2026 — Revisión documental local</h3>
+<h3 align="center">13 de noviembre de 2026 · Preparación local de AV2</h3>
 
 
 
 <div style="page-break-after: always;"></div>
+
+El documento principal integra el estado del código al **13/11/2026**. Los sprints AV1/TB1 y el anexo del 02/11 conservan sus fechas como antecedentes. La arquitectura, los contratos y el estado AV2 están actualizados en los capítulos III–V y en el [barrido por sección](docs/av2/auditoria-por-seccion.md). Las funciones que solo existen en la demostración del navegador se identifican por separado de las rutas conectadas al servidor.
 
 ## Registro de Versiones del Informe
 
@@ -54,6 +56,8 @@
 | Revisión de retroalimentación TB1 | 03/10/2026 | Miguel Angel Egocheaga Suyo | Control de entrevistas y evidencia de Personas, wireframes móviles, alternativas de flujos, tareas de 4–8 h y paginación del informe. | [Respuesta por observación](docs/tb1/feedback-resolution.md), fuentes y capturas locales. Corrección documental; sin nueva release ni calificación. |
 | Revisión documental TB1 en referencia remota | 03–04/10/2026 | Sebastián Gutarra Velapatiño y Juan Manuel Santos Torres, según objetos Git. | Sebastián incorporó la captura de prototipado (`d1e6ddc`) y su explicación (`4e2fa6e`); Juan amplió la documentación de Sprint 2 (`957dd47`). Estos aportes documentales no acreditan implementación ni revisión por pares. | [Cotejo de referencias](#e-reconciliación-de-las-versiones-local-y-remota). |
 | Reorganización documental local | 02/11/2026 | Preparación asistida solicitada por Miguel Angel Egocheaga Suyo; revisión del equipo pendiente. | Informe unificado con el esquema de Allpatek, índice interno de cuatro niveles y contraste con el enunciado de Aplicaciones Web; conserva los cortes históricos y añade evidencia local de noviembre. Sin nueva release ni publicación. | [Control documental](#c-control-de-integridad-y-correspondencia-con-el-enunciado). |
+
+| Revisión técnica y documental AV2 | 13/11/2026 | Miguel Angel Egocheaga Suyo, identidad Git configurada. | Abonos sucesivos, filtros compartidos de lista/resumen/CSV, préstamos con cuotas pactadas, transición a MySQL, documentación Scalar y auditoría de correspondencia. | [Matriz de implementación y evidencia](docs/av2/estado-implementacion.md). Preparación local: no equivale a release, despliegue o aceptación académica. |
 
 ## Project Report Collaboration Insights
 
@@ -92,6 +96,7 @@ El cotejo de las referencias Git añade aportes posteriores al corte original: *
   - [00.13 ABET EAC Student Outcome 5 en TB1](#0013-abet-eac-student-outcome-5-en-tb1)
     - [00.13.1 Liderazgo conjunto](#00131-liderazgo-conjunto)
     - [00.13.2 Colaboración inclusiva, metas, planificación y cumplimiento](#00132-colaboración-inclusiva-metas-planificación-y-cumplimiento)
+  - [00.14 Student Outcome en la preparación AV2](#0014-student-outcome-en-la-preparación-av2)
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1 Startup Profile](#11-startup-profile)
     - [1.1.1 Descripción de la startup](#111-descripción-de-la-startup)
@@ -145,7 +150,7 @@ El cotejo de las referencias Git añade aportes posteriores al corte original: *
   - [3.1 User Stories](#31-user-stories)
     - [3.1.1 Epics y To-Be Scenario Mapping](#311-epics-y-to-be-scenario-mapping)
     - [3.1.2 Functional User Stories](#312-functional-user-stories)
-    - [3.1.3 Reglas observables del incremento TB1](#313-reglas-observables-del-incremento-tb1)
+    - [3.1.3 Reglas observables del incremento AV2](#313-reglas-observables-del-incremento-av2)
     - [3.1.4 Acceptance Criteria](#314-acceptance-criteria)
   - [3.2 Impact Mapping](#32-impact-mapping)
     - [3.2.1 Objetivos SMART propuestos](#321-objetivos-smart-propuestos)
@@ -259,6 +264,8 @@ El cotejo de las referencias Git añade aportes posteriores al corte original: *
   - [Control de entrega TB1 histórico](#control-de-entrega-tb1-histórico)
     - [Comprobaciones finales](#comprobaciones-finales)
   - [E. Reconciliación de las versiones local y remota](#e-reconciliación-de-las-versiones-local-y-remota)
+    - [E.1 Aportes posteriores disponibles en origin/main](#e1-aportes-posteriores-disponibles-en-originmain)
+  - [F. Auditoría de coherencia AV2: 13/11/2026](#f-auditoría-de-coherencia-av2-13112026)
 
 <!-- REPORT_TOC_END -->
 
@@ -362,6 +369,14 @@ Se aplica el formato del Anexo A del enunciado: acciones y conclusiones por inte
 
 El equipo debe añadir su reflexión individual, acuerdos y evidencia auténtica antes de declarar alcanzado todo el criterio del hito.
 
+## 00.14 Student Outcome en la preparación AV2
+
+| Criterio específico | Acciones realizadas y fuente | Conclusión y límite |
+|---|---|---|
+| Planificación y objetivos | La solicitud delimita abonos, filtros, préstamos, cambio de motor, docs y auditoría. Las features separan esos bloques. | Existe alcance técnico trazable; no se acredita una reunión de planificación ni acuerdo LACX nuevo. |
+| Colaboración y liderazgo | Se conservan aportes históricos de los tres integrantes y los cambios nuevos usan la identidad de Miguel. Las ramas previas del informe se incorporan sin reescribir autores. | El historial preserva contribuciones; la revisión por otro integrante aún requiere evidencia. |
+| Cumplimiento y revisión | Matriz de funciones/código, resultados reales por motor y corrección de documentación divergente. | Se puede revisar el incremento técnico; aceptación, desempeño individual y validación con usuarios permanecen separados. |
+
 # Capítulo I: Introducción
 
 ## 1.1 Startup Profile
@@ -370,7 +385,7 @@ El equipo debe añadir su reflexión individual, acuerdos y evidencia auténtica
 
 CREDITOR es una propuesta de plataforma web para mypes que necesitan organizar sus compras a crédito, cuentas por pagar, abonos parciales, comprobantes y préstamos. Busca reunir en un mismo espacio la información que normalmente se distribuye entre cuadernos, hojas de cálculo, mensajes y archivos, para facilitar la consulta de saldos y vencimientos.
 
-La propuesta contempla un panel de deuda consolidada, registro de compras con proveedor, moneda, fecha límite y comprobante; registro de abonos con voucher; seguimiento de préstamos; y reportes filtrables. Estas capacidades son hipótesis de producto y no deben confundirse con funciones ya validadas o implementadas.
+La propuesta contempla un panel de deuda consolidada, registro de compras con proveedor, moneda, fecha límite y comprobante; registro de abonos con voucher; seguimiento de préstamos; y reportes filtrables. El incremento conectado implementa registro y consulta de esas operaciones; la matriz AV2 distingue implementación técnica de validación con usuarios. La utilidad, adopción y disposición de pago siguen siendo hipótesis de producto.
 
 **Misión.** Desarrollar una herramienta clara y accesible que ayude a las mypes a mantener un control transparente de sus obligaciones financieras.
 
@@ -406,9 +421,9 @@ La información fragmentada entre cuadernos, hojas de cálculo, mensajes y docum
 | **How** | Se investigarán los medios realmente usados; no se presupone que todos trabajen manualmente. |
 | **How much** | No existe medición del costo del problema. Se recogerán pasos, tiempos relatados y consecuencias, indicando muestra y fuente. |
 
-**Objetivo de la propuesta:** permitir que el negocio conserve la relación proveedor–compra–abono y revise obligaciones por moneda. **Alcance local TB1:** dashboard, registro de compras, registro de abonos e historial (US-004 a US-007), mediante una aplicación Vue/PrimeVue y un adaptador local de demostración. Los datos de ejemplo no son datos de entrevistas ni registros operativos. **Iteraciones posteriores:** préstamos y reportes (US-008/009), API propia ASP.NET Core/EF Core, integración externa y persistencia PostgreSQL. La primera Web Services desplegada corresponde a AV2; TB1 requiere la primera Frontend Web Application. En esta ejecución se preparan y comprueban artefactos localmente; no se declara despliegue nuevo.
+**Objetivo:** conservar la relación proveedor–compra–abono y revisar obligaciones por moneda. **Antecedente TB1:** Vue/PrimeVue con datos de demostración locales para US-004–007. **Incremento AV2:** interfaz autenticada, API ASP.NET Core/EF Core, MySQL, comprobantes privados, exportación filtrada US-008 y consulta/registro de préstamos con cronograma US-009. Tesorería añade cuentas, movimientos y asignaciones de fondos. La API integra una cotización referencial BCRPData/SBS; no convierte operaciones históricas automáticamente. Los datos de prueba son ficticios. La verificación local no cierra el criterio de servicios desplegados de AV2.
 
-La solución no suma PEN y USD como si fueran una moneda, no procesa transferencias bancarias y no sustituye contabilidad o asesoría financiera. La aplicación local trabaja con una organización ficticia fija; no implementa inicio de sesión, permisos por rol ni aislamiento de seguridad en el servidor.
+La solución no suma PEN y USD como si fueran una moneda, no procesa transferencias bancarias y no sustituye contabilidad o asesoría financiera. La ruta de práctica conserva datos ficticios en el navegador. Las rutas `/workspace` usan JWT, roles y aislamiento de negocio en el servidor; iniciar sesión no importa ni mezcla automáticamente los datos de práctica.
 
 ### 1.2.2 Lean UX Process
 
@@ -451,8 +466,8 @@ Los IDs permiten rastrear las creencias hasta hipótesis, preguntas e historias.
 | **H-01** | Creemos que lograremos una revisión recurrente de obligaciones si Rosa (S1) y Diego (S2) obtienen visibilidad de saldos y vencimientos mediante un dashboard por moneda. | BO-01, UB-01, F-01; US-004; TB1 local. |
 | **H-02** | Creemos que lograremos registros más completos si Diego (S2) obtiene trazabilidad de la compra mediante un formulario estructurado y un comprobante asociado. | BO-02, UB-02, F-02; US-005; TB1 local. |
 | **H-03** | Creemos que lograremos una verificación más sencilla del saldo si Rosa (S1) y Diego (S2) obtienen una secuencia de movimientos mediante un historial de abonos y vouchers asociados. | BO-02, UB-03, F-03; US-006/007; TB1 local. |
-| **H-04** | Creemos que lograremos continuidad de uso cuando haya préstamos si Rosa (S1) obtiene claridad de próximos compromisos mediante frecuencia y cronograma de cuotas. | BO-03, UB-04, F-04; US-009; futura iteración. |
-| **H-05** | Creemos que lograremos continuidad de uso en revisiones financieras si Diego (S2) obtiene información seleccionada mediante reportes filtrados y exportables. | BO-03, UB-05, F-05; US-008; futura iteración. |
+| **H-04** | Creemos que lograremos continuidad de uso cuando haya préstamos si Rosa (S1) obtiene claridad de próximos compromisos mediante frecuencia y cronograma de cuotas. | BO-03, UB-04, F-04; US-009; implementación AV2, validación de utilidad pendiente. |
+| **H-05** | Creemos que lograremos continuidad de uso en revisiones financieras si Diego (S2) obtiene información seleccionada mediante reportes filtrados y exportables. | BO-03, UB-05, F-05; US-008; implementación AV2, validación de utilidad pendiente. |
 
 Existe una hipótesis por cada Feature Assumption. La investigación cualitativa inicial contrasta pertinencia, tareas y lenguaje; los resultados de uso requieren una evaluación posterior. Rosa y Diego son Personas provisionales, sin demografía ni conducta atribuida a entrevistados.
 
@@ -479,12 +494,14 @@ El informe oficial **Las Mipyme en cifras 2024** de PRODUCE/OGEIEE, Cuadro A1, r
 
 | Segmento | Tarea a investigar | Funcionalidad propuesta | Riesgo abierto |
 |---|---|---|---|
-| S1 | Revisar obligaciones y decidir prioridades. | Dashboard e historial TB1; cronograma futuro. | Que la tarea se delegue o no sea recurrente. |
-| S2 | Registrar y verificar operaciones. | Compra y abono TB1; reportes futuros. | Que otra herramienta sea obligatoria y la solución duplique trabajo. |
+| S1 | Revisar obligaciones y decidir prioridades. | Dashboard, historial y consulta de cronograma AV2. | Que la tarea se delegue o no sea recurrente. |
+| S2 | Registrar y verificar operaciones. | Compra, abono y reportes filtrados AV2. | Que otra herramienta sea obligatoria y la solución duplique trabajo. |
 
 Pendiente de evidencia: caracterización demográfica de los participantes y análisis de su experiencia. No se publican porcentajes poblacionales de S1/S2 ni cifras de demanda a partir de una muestra cualitativa.
 
 # Capítulo II: Requirements Elicitation & Analysis
+
+La implementación AV2 se contrasta con esta investigación, pero no modifica sus fechas ni convierte las hipótesis en entrevistas realizadas. Precios y prestaciones de competidores corresponden al registro de fuentes de octubre; no son cotizaciones actualizadas al 13/11. La auditoría técnica revisa coherencia de alcance, no revalida el mercado.
 
 ## 2.1 Competidores
 
@@ -504,19 +521,19 @@ También se consideran alternativas sustitutas los cuadernos, las hojas de cálc
 
 **Pregunta guía:** ¿qué valor podría aportar CREDITOR a un dueño o administrador que necesita conocer cuánto debe, cuándo debe pagar y qué abonos ya realizó, frente a las alternativas disponibles?
 
-**Método y alcance:** revisión documental de fuentes oficiales consultadas el 10 de septiembre de 2026. Se analiza Alegra con su oferta peruana y una guía internacional, Odoo con su documentación de la versión 19.0 y Zoho Books con su documentación de la edición estadounidense. Las funciones pueden depender de la edición, configuración o plan; la revisión de Zoho no acredita adecuación tributaria al Perú. No se realizaron pruebas comparativas de uso ni se contrataron planes. En el corte TB1, CREDITOR implementa localmente compras, abonos, historial y consulta de saldos por moneda; préstamos y exportación de reportes continúan como alcance futuro. Las pruebas técnicas locales no acreditan adopción ni una ventaja frente a los competidores.
+**Método y alcance:** revisión documental de fuentes oficiales consultadas el 10 de septiembre de 2026. Se analiza Alegra con su oferta peruana y una guía internacional, Odoo con su documentación de la versión 19.0 y Zoho Books con su documentación de la edición estadounidense. Las funciones pueden depender de la edición, configuración o plan; la revisión de Zoho no acredita adecuación tributaria al Perú. No se realizaron pruebas comparativas de uso ni se contrataron planes. La comparación de competidores conserva su fecha de fuente. La columna CREDITOR se actualiza al corte AV2: compras, abonos, historial, consulta por moneda, exportación CSV y préstamos de cuotas pactadas. Las pruebas técnicas locales no acreditan adopción ni una ventaja frente a los competidores.
 
 #### Competitive Analysis Landscape
 
-| Dimensión | CREDITOR — incremento local y alcance futuro | Alegra Contabilidad | Odoo 19.0 | Zoho Books |
+| Dimensión | CREDITOR — incremento local AV2 | Alegra Contabilidad | Odoo 19.0 | Zoho Books |
 |---|---|---|---|---|
 | Enfoque del producto | Control operativo de compras, abonos y préstamos de mypes. | Gestión contable y facturación para pymes. [Fuente][alegra-peru] | Gestión de facturas y préstamos dentro del módulo contable. [Fuentes][odoo-facturas] y [préstamos][odoo-prestamos] | Gestión de compras y pagos integrada al registro contable. [Fuente][zoho-facturas] |
-| Registro de compras y vencimientos | Local TB1: proveedor, referencia, descripción, importe, moneda y fechas de compra/vencimiento. | Consulta de facturas de compra, montos adeudados y vencimientos. [Fuente][alegra-cxp] | Facturas con proveedor, fecha y condiciones de pago. [Fuente][odoo-facturas] | Facturas con proveedor, fecha límite y condiciones de pago. [Fuente][zoho-facturas] |
-| Abonos e historial | Local TB1: asociar cada abono con la compra y mostrar el saldo restante. | La guía contempla abonos que afectan los saldos reportados. [Fuente][alegra-cxp] | Pagos parciales y saldo pendiente de la factura. [Fuente][odoo-facturas] | Pagos parciales y consulta de pagos registrados por factura. [Fuente][zoho-facturas] |
-| Evidencias digitales | Local TB1: adjuntos opcionales PDF, PNG o JPEG de hasta 2 MB en el navegador; almacenamiento centralizado futuro. | El vínculo de un archivo con cada abono no se verificó en las fuentes consultadas. | Carga de facturas en PDF; no se verificó aquí el adjunto por abono. [Fuente][odoo-facturas] | Adjuntos y notas en el registro del pago. [Fuente][zoho-facturas] |
-| Consulta de deuda | Local TB1: dashboard con saldos separados en soles y dólares y estado de vencimientos. | Reporte de cuentas por pagar con filtros de consulta. [Fuente][alegra-cxp] | Reporte de antigüedad de deuda con detalle por proveedor. [Fuente][odoo-facturas] | Reporte por proveedor con importes facturados, pagados y saldo. [Fuente][zoho-reportes] |
-| Préstamos y cuotas | Futuro: registro de préstamos y visualización de cronogramas. | No verificado en las fuentes consultadas. | Cronogramas importados, calculados o registrados manualmente, con capital e intereses. [Fuente][odoo-prestamos] | No verificado en las fuentes consultadas. |
-| Salida de información | Futuro: reportes filtrados exportables a PDF y Excel. | Descarga de reportes y exportación de facturas de proveedor. [Fuente][alegra-cxp] | Exportación del reporte de deuda a PDF y XLSX. [Fuente][odoo-facturas] | Reporte de saldos con rango de fechas y filtros; formatos de exportación no verificados aquí. [Fuente][zoho-reportes] |
+| Registro de compras y vencimientos | AV2: proveedor, referencia, descripción, importe, moneda y fechas, persistidos por negocio. | Consulta de facturas de compra, montos adeudados y vencimientos. [Fuente][alegra-cxp] | Facturas con proveedor, fecha y condiciones de pago. [Fuente][odoo-facturas] | Facturas con proveedor, fecha límite y condiciones de pago. [Fuente][zoho-facturas] |
+| Abonos e historial | AV2: abonos sucesivos e historial persistidos, saldo derivado y control de concurrencia. | La guía contempla abonos que afectan los saldos reportados. [Fuente][alegra-cxp] | Pagos parciales y saldo pendiente de la factura. [Fuente][odoo-facturas] | Pagos parciales y consulta de pagos registrados por factura. [Fuente][zoho-facturas] |
+| Evidencias digitales | AV2: PDF, PNG o JPEG opcional hasta 2 MiB, metadatos en BD y descarga autorizada desde almacenamiento privado. | El vínculo de un archivo con cada abono no se verificó en las fuentes consultadas. | Carga de facturas en PDF; no se verificó aquí el adjunto por abono. [Fuente][odoo-facturas] | Adjuntos y notas en el registro del pago. [Fuente][zoho-facturas] |
+| Consulta de deuda | AV2: listado y resumen por negocio con filtros y saldos separados PEN/USD. | Reporte de cuentas por pagar con filtros de consulta. [Fuente][alegra-cxp] | Reporte de antigüedad de deuda con detalle por proveedor. [Fuente][odoo-facturas] | Reporte por proveedor con importes facturados, pagados y saldo. [Fuente][zoho-reportes] |
+| Préstamos y cuotas | AV2: registro/consulta de importes mensuales pactados; sin cálculo de amortización ni pago de cuotas. | No verificado en las fuentes consultadas. | Cronogramas importados, calculados o registrados manualmente, con capital e intereses. [Fuente][odoo-prestamos] | No verificado en las fuentes consultadas. |
+| Salida de información | AV2: CSV de obligaciones filtradas; estado de cuenta de tesorería exportable/imprimible en navegador. No exporta XLSX ni PDF desde servidor. | Descarga de reportes y exportación de facturas de proveedor. [Fuente][alegra-cxp] | Exportación del reporte de deuda a PDF y XLSX. [Fuente][odoo-facturas] | Reporte de saldos con rango de fechas y filtros; formatos de exportación no verificados aquí. [Fuente][zoho-reportes] |
 
 **Criterio de lectura:** “no verificado” identifica una limitación de esta revisión; no significa que el competidor carezca de esa función. Tampoco se atribuye exclusividad a CREDITOR por proponer abonos, adjuntos o cronogramas, ya que existen capacidades equivalentes documentadas.
 
@@ -531,7 +548,7 @@ La revisión funcional de septiembre se conserva. La siguiente ampliación consu
 | Overview / mercado objetivo | Mypes comerciales, roles de revisión y registro; alcance a validar. | Gestión contable y facturación para pymes peruanas. | Suite empresarial modular, con contabilidad y compras. | Contabilidad para pequeños negocios; se revisa edición US. |
 | Valor y ventaja por explorar | Flujo compra–abono–saldo por moneda. No se acredita exclusividad ni superioridad. | Conjunto integrado de tareas contables y comerciales. | Aplicaciones de gestión bajo una misma suscripción. | Compras, pagos, documentos y reportes conectados. |
 | Marketing observado/propuesto | Propuesto: demostraciones de compra/abono y piloto acotado; sin campañas ejecutadas. | Prueba de 15 días, planes por crecimiento y contenido de ayuda. | Oferta de una aplicación gratis, planes y demostraciones/consultoría. | Prueba, comparación de planes, documentación y recursos de aprendizaje. |
-| Productos y servicios | Landing y frontend local TB1; API propia prevista AV2; loans/reporting futuros. | Contabilidad, facturación y POS, con alcance variable por plan. | Todas las aplicaciones en planes Standard/Custom; opciones de hosting por plan. | Books y ecosistema de aplicaciones; Professional incluye multimoneda y órdenes de compra. |
+| Productos y servicios | Landing, frontend conectado, API ASP.NET Core y MySQL locales; préstamos y reportes con alcance descrito. | Contabilidad, facturación y POS, con alcance variable por plan. | Todas las aplicaciones en planes Standard/Custom; opciones de hosting por plan. | Books y ecosistema de aplicaciones; Professional incluye multimoneda y órdenes de compra. |
 | Precios y costos observados | Sin precio; soporte, infraestructura y almacenamiento deben estimarse antes de monetizar. | Perú, PEN, mensual: Emprendedor **S/105**, Pyme **S/152**, IGV incluido. Límite y usuarios dependen del plan. [Fuente oficial](https://www.alegra.com/peru/contabilidad/precios/). | URL pública en USD: Standard **USD24.90/usuario/mes** cobrado anualmente, promoción inicial de 12 meses; regular mostrado **USD31.10**, más impuestos. Región de contratación debe confirmarse. [Planes](https://www.odoo.com/es/pricing), [configurador oficial](https://www.odoo.com/pricing-configurator?plan=standard). | Edición US, USD/organización: Professional **USD50/mes** mensual o **USD40/mes** con cobro anual, 5 usuarios. No acredita adecuación tributaria peruana. [Fuente oficial](https://www.zoho.com/us/books/pricing/). |
 | Canales | Landing y frontend responsive implementados localmente; publicación TB1 pendiente. | Web y acceso a aplicaciones; ver oferta Perú y ayuda. | Odoo Online y canales/partners; Custom contempla otras opciones. | Web y aplicaciones móviles publicitadas en la oferta oficial. |
 
@@ -691,8 +708,8 @@ La reacción a esta descripción se registrará como opinión sobre el concepto.
 | H-01 / F-01, dashboard | G-03, G-04, D-01, D-03 | Pasos actuales de consulta y criterios de prioridad. | US-004 |
 | H-02 / F-02, registro de compra | G-02, A-01, A-02, A-03 | Datos mínimos, responsable y manejo de datos faltantes. | US-005 |
 | H-03 / F-03, abonos e historial | G-05, G-06, A-02, A-03, A-04 | Relación pago–compra, comprobantes y resolución de diferencias. | US-006/007 |
-| H-04 / F-04, préstamos | G-08, D-01 | Tipo de préstamo y condiciones/cronograma usados. | US-009, futura iteración |
-| H-05 / F-05, reportes | G-09, A-05 | Destinatario, filtros, formato y esfuerzo de preparación. | US-008, futura iteración |
+| H-04 / F-04, préstamos | G-08, D-01 | Tipo de préstamo y condiciones/cronograma usados. | US-009, implementación AV2; utilidad por validar |
+| H-05 / F-05, reportes | G-09, A-05 | Destinatario, filtros, formato y esfuerzo de preparación. | US-008, implementación AV2; utilidad por validar |
 
 La matriz no contiene hallazgos. Cada respuesta debe vincularse a código de participante, pregunta y minuto antes de derivar una necesidad. Se distinguirán hechos relatados, opiniones e interpretaciones, incluyendo casos que contradigan las hipótesis.
 
@@ -817,7 +834,7 @@ La matriz existente se conserva como **base reutilizable** de hipótesis. Los va
 | Revisar cuotas de un préstamo | 2 | 3 | 2 | 3 | G-08, existencia y condiciones. |
 | Preparar información para una revisión contable | 2 | 4 | 3 | 4 | G-09/A-05, destinatario/formato. |
 
-Según esta valoración inicial, ambos roles comparten alta importancia de saldos, vencimientos y pagos. Diego tendría mayor participación en conservación de compras y abonos; Rosa en revisión y decisión. Son diferencias **por comprobar**, no resultados del estudio. Por ello TB1 prioriza compras/abonos/historial; préstamos y reportes conservan prioridad futura que puede cambiar con evidencia.
+Según esta valoración inicial, ambos roles comparten alta importancia de saldos, vencimientos y pagos. Diego tendría mayor participación en conservación de compras y abonos; Rosa en revisión y decisión. Son diferencias **por comprobar**, no resultados del estudio. Ese criterio priorizó compras/abonos/historial en TB1. Préstamos y reportes se implementan en AV2; su prioridad de negocio todavía puede cambiar con evidencia.
 
 ### 2.3.3 User Journey Mapping
 
@@ -863,24 +880,26 @@ El mapa de dominio es una propuesta local que permite discutir compra, abono y r
 | Payment Recorded | Administrador / Record Payment | Abono positivo, no mayor al saldo; moneda heredada. |
 | Purchase Settled | Consecuencia de saldo cero | Saldo = total menos suma de abonos válidos. |
 | Obligations Reviewed | Dueño o administrador / Query Obligations | Es observación de consulta propuesta; no crea una deuda por transcurso de fecha. |
-| Loan Registered / Schedule Configured | Actor por validar / futuros comandos | Préstamos y reportes se refinan en futuras iteraciones. |
+| Loan Registered / Schedule Configured | Owner o FinanceAdmin / registrar acuerdo | Cuotas explícitas mensuales; importe total al menos igual al principal. |
 
 Se debe contrastar si los pasos y excepciones corresponden a la operación real del segmento; no se atribuyen estos eventos a los videos aún no codificados.
 
+**Correspondencia AV2.** El mapa conserva la discusión de negocio histórica. `Payment` pertenece al agregado `Purchase` en el código: un abono guarda el nuevo movimiento y la versión de compra en una transacción. Loans registra importes de cuotas acordados, y Reporting consulta sin mantener un saldo paralelo. Treasury es un contexto adicional para efectivo; el abono a proveedor no genera por sí mismo un movimiento de caja. Los nombres de eventos describen resultados de comandos; no se implementó un broker ni un almacén de eventos.
+
 ## 2.5 Ubiquitous Language
 
-Los términos de dominio se nombran en inglés para mantener consistencia futura entre interfaz, API y modelo de datos. La definición se revisará con el equipo y con hallazgos de investigación.
+Los términos de dominio se nombran en inglés para mantener consistencia entre interfaz, API y modelo de datos. La definición se revisará con el equipo y con hallazgos de investigación.
 
 | Término | Definición | Contexto |
 |---|---|---|
 | **Supplier** | Persona o empresa a la que la mype compra bienes o servicios y a la que puede deber un saldo. | Accounts Payable |
 | **Credit Purchase** | Compra cuya obligación no se cancela por completo en el momento del registro. | Accounts Payable |
 | **Due Date** | Fecha límite acordada para cumplir con una obligación. | Accounts Payable |
-| **Partial Payment** | Abono que reduce el saldo de una compra, pudiendo liquidarlo; el pago de préstamos requiere un modelo futuro separado. | Payments |
-| **Payment Voucher** | Evidencia digital asociada a un pago registrado. | Payments |
+| **Partial Payment** | Abono que reduce el saldo de una compra, pudiendo liquidarlo; el pago de préstamos requiere un modelo futuro separado. | Accounts Payable |
+| **Payment Voucher** | Evidencia digital asociada a un pago registrado. | Accounts Payable |
 | **Outstanding Balance** | Importe pendiente luego de considerar los pagos aplicados. | Accounts Payable |
-| **Loan** | Obligación financiera registrada con principal, tasa, frecuencia y cronograma cuando aplique. | Loans |
-| **Installment** | Cuota programada de un préstamo. | Loans |
+| **Loan** | Acuerdo de préstamo con principal, moneda, tasa anual opcional informativa y 1–60 cuotas mensuales de importe explícito. | Loans |
+| **Installment** | Importe y vencimiento pactados, numerados dentro de un préstamo; no tiene estado de pago en la API actual. | Loans |
 | **Debt Report** | Consulta filtrada de obligaciones para revisión, seguimiento o exportación. | Reporting |
 
 
@@ -888,168 +907,150 @@ Los términos de dominio se nombran en inglés para mantener consistencia futura
 |---|---|---|
 | **Business** | Organización a la que pertenecen proveedores, compras y obligaciones. | Transversal |
 | **Currency** | Moneda de la obligación; PEN y USD se consultan por separado. | Accounts Payable |
-| **Payment** | Registro de un abono de una compra; no representa ejecución de una transferencia bancaria. | Payments |
+| **Payment** | Registro de un abono de compra; hijo del agregado Purchase. No ejecuta transferencia ni salida automática de caja. | Accounts Payable |
+| **CashAccount / CashMovement** | Cuenta y movimiento de efectivo registrados manualmente; saldo en centavos y moneda propia. | Treasury |
+| **Holder / Economic Owner** | Titular de la cuenta y dueño económico de una asignación; pueden ser distintos. El rol Owner de acceso no equivale al dueño del dinero. | Treasury / Identity |
+| **BusinessId** | Identificador obtenido del usuario autenticado para limitar consultas y relaciones; no lo elige el cuerpo de una compra. | Identity y todos los contextos |
+| **Reference exchange rate** | Cotización atribuida a BCRPData/SBS con fecha de observación; no ejecuta conversión ni liquidación. | Exchange Rates |
 | **Purchase Settled** | Compra cuyo saldo restante es cero tras aplicar abonos válidos. | Accounts Payable |
 
 # Capítulo III: Requirements Specification
 
-Los requisitos expresan el alcance propuesto de CREDITOR. US-004–007 están implementadas como demostración local TB1 y requieren aceptación del equipo. La investigación todavía no valida sus prioridades. Owner/Administrator son segmentos y objetivos de uso, no roles de autorización implementados.
+Los requisitos conservan las historias US-001–009. El alcance técnico se contrasta con los repositorios de frontend y backend; la aceptación del equipo y la validación de valor se registran por separado. Los segmentos S1/S2 no son permisos: los roles de API son `Owner`, `FinanceAdmin` y `Viewer`.
 
 ## 3.1 User Stories
 
 ### 3.1.1 Epics y To-Be Scenario Mapping
 
-| Epic | Descripción de negocio | Actor | Historias |
-|---|---|---|---|
-| E-01 Landing | Explicar cuentas por pagar, alcance, contacto y condiciones. | Visitor | US-001–003 |
-| E-02 Accounts Payable | Centralizar obligaciones con proveedores y vencimientos por moneda. | Business Owner, Finance Administrator | US-004–005 |
-| E-03 Payments | Conservar movimientos para reconstruir el saldo de una compra. | Ambos segmentos | US-006–007 |
-| E-04 Reporting | Preparar revisión contable con filtros y exportación. | Finance Administrator | US-008 |
-| E-05 Loans | Consultar préstamos tomados por la mype y sus cuotas. | Business Owner | US-009 |
-| E-06 Service Integration | Conectar la interfaz con autorización, persistencia y contratos HTTP. | Developer | TS-001–003 |
+| Epic | Objetivo | Historias y contexto ejecutable |
+|---|---|---|
+| E-01 Landing | Comprender propuesta, condiciones y contacto demo. | US-001–003; repositorio landing independiente. |
+| E-02 Accounts Payable | Registrar proveedores/compras y consultar obligaciones. | US-004–005; Supplier y Purchase. |
+| E-03 Payments | Registrar abonos y reconstruir saldo. | US-006–007; Payment dentro del agregado Purchase. |
+| E-04 Reporting | Exportar la misma selección revisada en pantalla. | US-008; consultas de Accounts Payable y adaptador HTTP. |
+| E-05 Loans | Conservar principal y compromisos mensuales pactados. | US-009; Loan y LoanInstallment. |
+| E-06 Service Integration | Autenticación, persistencia, contratos y servicio externo. | TS-001–003; Identity, EF Core, Scalar y BCRPData. |
+| Treasury, extensión AV2 | Distinguir saldo de caja y propiedad económica. | Cuentas, movimientos, proyectos y asignaciones. No redefine US-006 como transferencia. |
 
 ### 3.1.2 Functional User Stories
 
-| ID | Título | Descripción | Epic | Criterio asociado |
-|---|---|---|---|---|
-| US-001 | Conocer CREDITOR | Como Visitor quiero comprender la propuesta para decidir si explorar el producto. | E-01 | Propuesta sobre obligaciones con proveedores, navegación y CTA por segmento. |
-| US-002 | Revisar contacto de demostración | Como Visitor quiero revisar el formulario y su alcance para comprender qué datos ingresaría. | E-01 | Validación accesible y confirmación explícita local, sin email o solicitud enviada. Contacto real queda como evolución. |
-| US-003 | Consultar condiciones | Como Visitor quiero leer términos y privacidad para comprender uso y límites de los datos. | E-01 | Ambas vistas accesibles desde formulario y footer. |
-| US-004 | Consultar obligaciones | Como Business Owner quiero visualizar saldos y vencimientos para priorizar pagos. | E-02 | Totales PEN/USD separados y consulta por proveedor, fechas y estado. |
-| US-005 | Registrar compra a crédito | Como Finance Administrator quiero registrar una compra para conservar una obligación. | E-02 | Proveedor, referencia, descripción, moneda, importe y fechas con reglas R-01–06. |
-| US-006 | Registrar abono | Como Finance Administrator quiero registrar un abono para reducir el saldo con trazabilidad. | E-03 | Movimiento y saldo consistente, reglas R-07–10. |
-| US-007 | Revisar historial | Como Business Owner quiero revisar los movimientos para reconstruir cuánto falta pagar. | E-03 | Total, suma de abonos y saldo, fecha e importe de cada movimiento. |
-| US-008 | Exportar deuda | Como Finance Administrator quiero filtrar y exportar obligaciones para revisión contable. | E-04 | Propuesto: exportación CSV con moneda, proveedor, fechas y filtros identificados. |
-| US-009 | Consultar préstamo | Como Business Owner quiero revisar cuotas de un préstamo para conocer compromisos futuros. | E-05 | Propuesto: principal, TEA, frecuencia MONTHLY y cronograma. |
-
-### 3.1.3 Reglas observables del incremento TB1
-
-**Actualización posterior de US-005, 02/11/2026:** en la demo financiera vigente, **Cobros y pagos → Anotar una deuda → Por pagar** registra una compra a crédito como cuenta por pagar con proveedor, importe, moneda y vencimiento. El [anexo B.3](#b3-evidencia-posterior-de-us-005-compra-a-crédito) conserva las capturas y el resultado de la prueba local comunicado, sin generación de movimiento de efectivo. Esta evidencia no cierra Figma final ni acredita RUC, adjunto o detalle de productos en el registro directo. Las reglas siguientes conservan el corte TB1 original.
-
-| ID | Regla | Comportamiento y límite |
+| ID | Historia | Comportamiento actual y límite |
 |---|---|---|
-| R-01 | Contexto de proveedor | Debe pertenecer a la organización de la compra. La demo fija `demo-market-sol`; no es autenticación. |
-| R-02 | Importe | 0.01–9,999,999.99, hasta dos decimales, calculado en centavos enteros. Rechazar cero, negativos, exceso y texto inválido. |
-| R-03 | Moneda | Solo PEN o USD; no convertir ni sumar monedas distintas. |
-| R-04 | Datos de compra | Referencia de 2–80 caracteres, única por proveedor sin distinguir mayúsculas. Descripción de 3–200 caracteres. |
-| R-05 | Fechas | Compra válida entre 2000-01-01 y hoy. Vencimiento no anterior a compra, máximo 2100-12-31. |
-| R-06 | Comprobante | Opcional PDF/PNG/JPEG hasta 2 MB. La demo conserva contenido dataURL en navegador; no acredita almacenamiento privado. |
-| R-07 | Abono | Positivo y hasta saldo pendiente. Hereda moneda de compra, misma organización. |
-| R-08 | Fecha de abono | Válida, no anterior a compra ni futura. Nota opcional hasta 200 caracteres. Voucher según R-06. |
-| R-09 | Saldo | Importe de compra menos suma de abonos. Compra 100, abono 30, saldo 70. Rechazo 71 no cambia historial ni saldo. |
-| R-10 | Fallo/vacío | Guardado fallido no se anuncia exitoso. Conservar entradas, foco en error y opción de recuperación. Vacío distinto de fallo. |
+| US-001 | Como visitante quiero conocer CREDITOR. | Landing con propuesta y CTA; su despliegue actual no se revalida en esta auditoría. |
+| US-002 | Como visitante quiero revisar el contacto. | Formulario demo; no hay envío de email/solicitud real ni cobro de suscripción. |
+| US-003 | Como visitante quiero consultar condiciones. | Vistas de términos/privacidad; el texto no acredita cumplimiento legal certificado. |
+| US-004 | Como dueño quiero consultar obligaciones. | API, listado y resumen por negocio; totales PEN/USD separados, estados derivados del saldo/fecha. |
+| US-005 | Como administrador quiero registrar compra a crédito. | Proveedor, referencia, descripción, moneda, importe, fechas y comprobante opcional por API protegida. |
+| US-006 | Como administrador quiero registrar abonos. | Abonos sucesivos válidos guardan filas distintas; importe máximo igual al saldo. Sin movimiento automático de tesorería. |
+| US-007 | Como dueño quiero revisar historial. | Consulta de compra y abonos persistidos con saldo derivado; voucher privado si se adjuntó. |
+| US-008 | Como administrador quiero exportar obligaciones filtradas. | Mismos criterios aplicados para listado, resumen y CSV: proveedor, moneda, estado, texto y vencimiento. Cambiar el formulario exige aplicar antes de descargar. |
+| US-009 | Como dueño quiero consultar préstamos y cuotas. | Registro por Owner/FinanceAdmin; lectura por cualquier miembro del negocio. Principal, moneda, tasa informativa opcional y cuotas mensuales explícitas. No calcula amortización ni registra pagos de cuotas. |
+
+### 3.1.3 Reglas observables del incremento AV2
+
+| ID | Regla | Implementación y límite |
+|---|---|---|
+| R-01 | Pertenencia | BusinessId sale del principal JWT; FK compuestas y consultas por negocio. Referencias ajenas devuelven 404 o validación sin acceso al dato. |
+| R-02 | Importe | 0.01–9,999,999.99, hasta dos decimales. Purchase/Payment usan decimal; Treasury/Loans persisten centavos enteros. |
+| R-03 | Moneda | PEN/USD; cada transacción conserva moneda y los resúmenes no las suman entre sí. |
+| R-04 | Compra | Referencia 2–80, descripción 3–200, unicidad de referencia normalizada por proveedor. |
+| R-05 | Fechas | Compra desde 2000-01-01 hasta hoy de negocio; vencimiento no anterior, hasta 2100-12-31. Calendario America/Lima. |
+| R-06 | Archivos | PDF/PNG/JPEG hasta 2 MiB; metadatos en BD y contenido en almacenamiento privado. La descarga exige acceso a la compra/abono. |
+| R-07 | Abono | Positivo, moneda de compra y no mayor al saldo; cada abono nuevo se inserta explícitamente. |
+| R-08 | Fecha de abono | No anterior a compra ni futura; nota opcional hasta 200 caracteres. |
+| R-09 | Saldo/concurrencia | Amount − suma Payments.Amount. Guardar nuevo Payment y versión Purchase en una transacción; conflicto concurrente no deja abonos parciales. |
+| R-10 | Fallos | Error HTTP no se presenta como guardado; consulta fallida se distingue de lista vacía. |
+| R-11 | Reporte | Lista, summary y export usan filtros iguales. Exportar no altera saldos; CSV conserva moneda y protege texto interpretable como fórmula. |
+| R-12 | Préstamo | Nombre 2–120, principal positivo, 1–60 importes de cuota positivos, suma al menos igual al principal; tasa anual opcional 0–100 con hasta dos decimales. |
+| R-13 | Cronograma | Cada vencimiento es firstDueOn.AddMonths(n), anclado a la primera fecha. Próximo vencimiento = primera fecha desde hoy; no significa cuota impaga ni pagada. |
+| R-14 | Permisos | Owner administra usuarios. Owner/FinanceAdmin registran operaciones. Viewer consulta; ocultar botones complementa la autorización del servidor. |
 
 ### 3.1.4 Acceptance Criteria
 
 ```gherkin
-Feature: Credit purchase registration (US-005)
-  Scenario: Register a valid PEN purchase
-    Given a supplier belongs to demo-market-sol
-    And a new reference, description, purchase date and due date satisfy R-04 and R-05
-    When the administrator reviews and confirms a purchase of PEN 100.00
-    Then the detail shows total PEN 100.00 and balance PEN 100.00
-    And the payment history is empty
+Feature: Sequential purchase payments (US-006 and US-007)
+  Scenario: Record two valid partial payments
+    Given a purchase of PEN 800 belongs to the authenticated business
+    When the administrator records PEN 300 and then PEN 50
+    Then two distinct payment records are persisted
+    And paid amount is PEN 350 and balance is PEN 450
+    And another session can read the same history
 
-  Scenario Outline: Correct invalid purchase data
-    Given the purchase form contains <invalid>
-    When the user reviews the purchase
-    Then no purchase is stored
-    And the corresponding field has a linked error and receives focus
-    And the remaining entered values are preserved
-    Examples:
-      | invalid |
-      | missing supplier |
-      | supplier from another organization |
-      | zero, negative or more than two decimal places |
-      | repeated reference for the same supplier |
-      | due date before purchase date |
-      | unsupported or oversized attachment |
+  Scenario: Concurrent payments cannot exceed the obligation
+    Given the purchase balance is PEN 100
+    When two requests attempt PEN 70 concurrently
+    Then at most one request succeeds
+    And the balance and persisted history remain consistent
 
-Feature: Purchase payments (US-006 and US-007)
-  Scenario: Compose the remaining balance
-    Given a PEN purchase of 100.00 with no payments
-    When the user confirms a payment of 30.00 with a valid date
-    Then the history contains exactly one payment of PEN 30.00
-    And the remaining balance is PEN 70.00
-    And reloading the local detail preserves that result
+Feature: Filtered obligation export (US-008)
+  Scenario: Same criteria for list, totals and CSV
+    Given PEN and USD purchases exist in the authenticated business
+    When the user applies supplier, PEN, status and inclusive due-date filters
+    Then the list and summary refer to the same selection
+    And the downloaded CSV contains only that selection
+    And changed but unapplied criteria disable download
 
-  Scenario: Reject an overpayment
-    Given the purchase balance is PEN 70.00
-    When the user reviews a payment of PEN 71.00
-    Then the form explains that the payment exceeds the balance
-    And it keeps the entered amount 71.00
-    And no payment or balance change is stored
+Feature: Agreed loan schedule (US-009)
+  Scenario: Keep the original monthly anchor and persisted amounts
+    Given the owner records a loan with the first due date on January 31
+    And explicit monthly amounts cover the principal
+    When the agreement is saved and read in a new session
+    Then February uses its last valid day and March uses March 31
+    And the exact agreed amounts are returned without interest recalculation
 
-  Scenario: Purchase currency is preserved
-    Given the purchase is denominated in PEN
-    When the user changes the interface to English or Spanish
-    Then its currency remains PEN
-    And dashboard USD obligations have a separate total
-
-Feature: Obligation review (US-004)
-  Scenario: No matching obligations
-    Given filters exclude every registered purchase
-    When the user views the list
-    Then the interface explains there are no matches and offers clearing filters
-    And it preserves the selected filters
-
-  Scenario: Browser storage is unavailable
-    Given the local adapter cannot read or write browser storage
-    When the user attempts an operation
-    Then the interface displays a recoverable error
-    And it does not announce a successful save or a known zero balance
+  Scenario: Protect access and validate the whole schedule
+    Given a Viewer or a user of another business
+    When they try to create or access an unauthorized loan
+    Then the API rejects the operation
+    And invalid amounts, count or dates create no partial loan
 ```
 
-US-001–003 se comprueban con contenido/navegación de landing y sus pruebas de validación, URLs, idioma y TEA. La historia US-002 se acota a demostración durante TB1; enviar una consulta real requiere proveedor, contrato y consentimiento definidos. Los escenarios propuestos se distinguen de los resultados efectivamente ejecutados en [Evidencia local](docs/tb1/evidencia-local.md).
+Los escenarios son criterios; los comandos ejecutados y resultados se registran en [evidencia AV2](docs/av2/estado-implementacion.md). Las pruebas automáticas no sustituyen aceptación del equipo ni entrevistas de validación. Los casos históricos de navegador TB1 conservan su adaptador y fecha.
 
 ## 3.2 Impact Mapping
 
 ### 3.2.1 Objetivos SMART propuestos
 
-Antes de cerrar Sprint 3, realizar una prueba moderada con cinco participantes y comprobar que cuatro localicen saldo y vencimiento de una compra sin ayuda en dos minutos. Línea base y protocolo pendientes. Para registro, medir completitud de compra/abono y tasa de errores con los mismos escenarios, sin declarar una mejora porcentual antes de medir.
+Se mantiene la propuesta de prueba moderada con cinco participantes: cuatro deberían localizar saldo y vencimiento sin ayuda en dos minutos. No se dispone de línea base ni resultado medido. Para compra, abono, exportación y cronograma se medirá completitud, errores y recuperación con tareas acordadas antes de la sesión.
 
-| Actor/Persona provisional | Impacto esperado | Entregable | Historias | Medición futura |
-|---|---|---|---|---|
-| Propietaria Rosa | Localiza compromisos por moneda/proveedor. | Dashboard y detalle. | US-004/007 | Éxito sin ayuda, tiempo y explicación del saldo. |
-| Administrador Diego | Registra obligación y abono con datos completos. | Formularios, confirmación e historial. | US-005/006 | Tarea completa, errores y recuperación. |
-| Ambos segmentos | Preparan revisión de deuda y cuotas. | Reportes y préstamos futuros. | US-008/009 | Protocolo se definirá antes de implementación. |
-| Visitor | Comprende el alcance y llega al objetivo adecuado. | Landing y CTA diferenciados. | US-001–003 | Destino correcto y comprensión del modo demo. |
+| Actor | Impacto propuesto | Entregable actual | Validación pendiente |
+|---|---|---|---|
+| S1 / Rosa provisional | Entender compromisos sin reconstruir registros. | Resumen, historial y cronograma. | Comprensión de saldo vs efectivo y cuota vs pago. |
+| S2 / Diego provisional | Registrar y preparar revisión contable. | Compra, abonos, adjuntos y CSV filtrado. | Completar tarea, encontrar errores y comprender filtros. |
+| Ambos | Distinguir efectivo propio y de terceros. | Tesorería y asignaciones por propietario. | Verificar vocabulario con usuarios del segmento. |
+| Visitante | Identificar alcance y llegar a la aplicación. | Landing y CTA. | Comprensión y accesibilidad de recorrido. |
 
-[Impact Map local editable](assets/research/tb1/impact-map-local.mmd). Su sincronización en UXPressia y validación de actores permanece pendiente. No se presenta como hallazgo de entrevistas.
+[Impact Map histórico editable](assets/research/tb1/impact-map-local.mmd). La sincronización en UXPressia y el acuerdo sobre la extensión Treasury permanecen pendientes; la implementación no prueba demanda.
 
 ## 3.3 Product Backlog
 
-Prioridad como hipótesis de valor. Story points relativos Fibonacci, sin equivalencia a horas. Sprint 2 suma **26 SP** (8+8+5+5); estimación y asignación necesitan confirmación del equipo. To-Review indica implementación local revisable, no aceptación ni despliegue.
+Story points son estimaciones relativas históricas, no horas trabajadas. To-Review describe código local que requiere aceptación académica y no equivale a deployment.
 
-| Orden | ID | Título | Prioridad | SP | Sprint | Estado al corte |
-|---:|---|---|---|---:|---|---|
-| 1 | US-001 | Conocer CREDITOR | Must | 3 | 1, corrección 2 | To-Review, landing local. |
-| 2 | US-002 | Contacto de demostración | Must | 5 | 1, corrección 2 | To-Review demo; canal real pendiente. |
-| 3 | US-003 | Condiciones | Must | 2 | 1, corrección 2 | To-Review, legales locales. |
-| 4 | US-004 | Obligaciones | Must | 8 | 2 | To-Review, adaptador local. |
-| 5 | US-005 | Compra a crédito | Must | 8 | 2 | To-Review, adaptador local. |
-| 6 | US-006 | Abono | Must | 5 | 2 | To-Review, adaptador local. |
-| 7 | US-007 | Historial | Should | 5 | 2 | To-Review, adaptador local. |
-| 8 | US-008 | Reporte de deuda | Should | 5 | 3 | To-do. |
-| 9 | US-009 | Préstamo | Could | 8 | 3 | To-do. |
+| ID | Prioridad / SP históricos | Estado técnico AV2 | Aceptación pendiente |
+|---|---|---|---|
+| US-001–003 | Must / 3,5,2 | Landing existente; contacto demo. | Revisión/publicación del corte que se entregue. |
+| US-004–005 | Must / 8,8 | UI conectada y API para consulta/registro. | Validación con usuarios y revisión de equipo. |
+| US-006–007 | Must/Should / 5,5 | Historial y abonos sucesivos persistidos. | Aceptación del flujo y límites de tesorería. |
+| US-008 | Should / 5 | Filtros y CSV conectado. | Revisión de archivo por el usuario objetivo. |
+| US-009 | Could / 8 | Acuerdos y cuotas explícitas persistidos. | Aceptar alcance sin amortización/pago de cuotas. |
 
-El [Sprint Backlog 2 textual](#522-sprint-2) es la fuente local de tareas. La URL y captura de Trello/Jira/YouTrack necesitan creación y acuerdo del equipo; no se afirma que esta tabla sustituya ese criterio.
+El [Sprint 3](docs/sprints/sprint-03.md) organiza los incrementos locales AV2. El equipo debe vincularlos al tablero real y confirmar responsabilidades; no se reconstruyen reuniones ni horas consumidas.
 
 ### 3.3.1 Technical Stories
 
-| ID/Epic | Descripción | Criterios de aceptación previstos AV2 | Prioridad/SP | Estado |
-|---|---|---|---|---|
-| TS-001 / E-06 | Como Developer quiero exponer proveedores/compras para integrar el frontend. | GET `/api/v1/purchases` 200 paginado y filtrado por tenant; POST 201 o 400/422 con errores R-01–06; 401/403 sin autorización. | Must/8 | To-do, Sprint 3. |
-| TS-002 / E-06 | Como Developer quiero registrar abonos para actualizar obligaciones de forma atómica. | POST `/api/v1/purchases/{id}/payments` 201 con movimiento/saldo; 404 compra inaccesible, 422 sobreabono; transacción/concurrencia sin saldo negativo. | Must/8 | To-do, Sprint 3. |
-| TS-003 / E-06 | Como Developer quiero un contrato OpenAPI para revisar solicitudes/respuestas. | Documento describe auth, parámetros, paginación, schemas, ejemplos y respuestas reales del servicio; coincide con endpoint ejecutado. | Should/3 | To-do, Sprint 3. |
-
-Los endpoints son diseños. El adaptador del navegador no responde HTTP y no acredita cumplimiento de estas historias técnicas.
+| ID | Contrato implementado | Alcance verificable |
+|---|---|---|
+| TS-001 | GET/POST `/api/v1/suppliers` y `/api/v1/purchases`; detalle y resumen. | Autenticación, paginación, filtros, validaciones y negocio aislado. |
+| TS-002 | GET/POST `/api/v1/purchases/{id}/payments`. | Historial, abonos sucesivos y concurrencia de agregado. |
+| TS-003 | OpenAPI y Scalar; rutas documentadas y modelos. | La UI de docs consume el contrato generado del backend. Evidencia final en capítulo V. |
+| Extensión persistencia | MySQL 8.4, migraciones EF, pruebas con datos ficticios. | Cambio de proveedor y cadena propia; no es conversión automática de archivos SQLite o base PostgreSQL existente. |
+| Extensión externa | GET `/api/v1/exchange-rates/reference`. | Cotización referencial BCRPData/SBS; timeout/caché/errores sin tasas inventadas. La UI no consume hoy esta ruta. |
 
 # Capítulo IV: Product Design
 
-El diseño TB1 conecta las historias US-004–007 con la frontend local. Los wireframes son fuentes editables y las capturas muestran la implementación de demostración. La arquitectura de API y base de datos continúa como diseño de AV2. Los artefactos locales no acreditan una sesión de investigación ni una entrega creada en Figma, UXPressia o FigJam.
+El capítulo conserva wireframes/mock-ups de AV1/TB1 y actualiza navegación, arquitectura, clases y base de datos al código AV2. Los diagramas actuales representan la API implementada y el workspace conectado. Los artefactos locales no acreditan una sesión de investigación ni una entrega creada en Figma, UXPressia o FigJam.
 
-> **Corte de diseño:** este capítulo conserva los artefactos AV1/TB1. La demo financiera de noviembre conserva la paleta índigo original de su aplicación y amplía la navegación; su contrato y límites están en el [anexo B](#b-evidencia-local-posterior-al-corte-tb1-02112026). No se declara sustituido ni validado el prototipo Figma pendiente.
+> **Corte de diseño:** 4.1–4.2 y 4.6–4.8 describen código vigente AV2; 4.3–4.5 preservan recursos históricos identificados. Se mantiene la paleta índigo y la composición del frontend. No se declara sustituido ni validado el prototipo Figma pendiente.
 
 ## 4.1 Style Guidelines
 
@@ -1061,63 +1062,56 @@ CREDITOR comunica claridad sobre obligaciones de la mype con sus proveedores. No
 
 | Elemento | Dirección visual y aplicación |
 |---|---|
-| Marca | Azul como acción principal, fondos claros, jerarquía centrada en saldo y vencimiento. |
+| Marca | Índigo de la interfaz establecida, fondos claros y jerarquía centrada en saldo/vencimiento. |
 | Tipografía de referencia | Montserrat para títulos e Inter para texto en el diseño histórico. La implementación usa la pila de fuentes declarada en cada CSS, con alternativa de sistema. |
-| Acción principal | `#2563EB`; hover `#1D4ED8`; fondo suave `#E8EFFF`. |
-| Texto y superficies | Texto `#111827`, superficies blancas y bordes legibles. |
+| Acción principal | Índigo `#4338CA`; se conserva el preset y los tokens de `src/styles.css`/`src/finance`. |
+| Texto y superficies | Texto `#172033`, fondo `#F5F6FA`, superficies blancas, bordes `#E5E8F0`, secundario `#5D687C`. |
 | Estados | Éxito, advertencia y error acompañados de texto. El color no sustituye su significado. |
 | Iconografía | Proveedor, documento, fecha y pago con nombre accesible cuando el icono ejecuta una acción. |
 | Tono | Acciones concretas, datos de demostración identificados, mensajes sin promesas comerciales. |
 
 ### 4.1.2 Web Style Guidelines
 
-La frontend usa Vue y componentes PrimeVue con tema Material. Landing y aplicación ofrecen inglés por defecto (`en-US`) y español latinoamericano (`es-419`). El idioma controla el texto y formato; cada compra conserva su moneda PEN o USD. Se mantienen foco visible, etiquetas persistentes, errores asociados y navegación por teclado.
+La frontend usa Vue y componentes PrimeVue con tema Material. La aplicación ofrece inglés y español latinoamericano; la preferencia se conserva en el navegador. Sin API configurada, la primera visita adopta español; con API configurada, inglés. La preferencia guardada prevalece en ambos casos. La landing conserva su propia configuración. El idioma controla el texto y formato; cada compra conserva su moneda PEN o USD. Se mantienen foco visible, etiquetas persistentes, errores asociados y navegación por teclado.
 
 Los layouts locales permiten revisar escritorio y móvil. Los formularios preservan sus campos ante un error. Una ausencia de datos se distingue de un fallo al leer o guardar, sin presentar un saldo desconocido como cero.
 
 ## 4.2 Information Architecture
 
-![Mapa de arquitectura de información](assets/architecture/information-architecture.svg)
-
-[Fuente editable](assets/architecture/information-architecture.mmd). El mapa expresa el producto completo; no implica que Loans, Reports o Identity estén implementados en TB1.
+El diseño vigente conserva el menú del proyecto y añade las capacidades conectadas dentro de sus tareas. Las capturas históricas de TB1 siguen siendo referencias del corte de octubre.
 
 ### 4.2.1 Organization Systems
 
-| Área | Información | Estado local TB1 |
+| Área | Ruta conectada | Responsabilidad |
 |---|---|---|
-| Landing | Propuesta, recorrido, alcance de demostración, contacto y legales. | Nueva versión local. |
-| Dashboard | Saldo por moneda, vencimientos y enlace al detalle. | US-004, demostración. |
-| Purchases | Lista, filtros, registro y detalle de compra a crédito. | US-005/007, demostración. |
-| Suppliers | Catálogo de la organización usado por las compras. | Soporte del flujo local. |
-| Payments | Abonos en detalle, historial y saldo derivado. | US-006, demostración. |
-| Loans y Reports | Préstamos, cuotas y exportaciones. | Roadmap Sprint 3, US-008/009. |
-| Identity y API | Autorización y persistencia centralizada. | Diseño AV2. |
+| Inicio | `/#/workspace` | Resumen del negocio autenticado. |
+| Mi dinero | `/#/workspace/treasury` | Cuentas, movimientos y asignaciones. |
+| Cobros y pagos | `/#/workspace/payables` | Proveedores, compras, abonos, documentos y CSV de obligaciones. El alcance conectado es por pagar. |
+| Préstamos y cuotas | `/#/workspace/loans` | Acuerdos mensuales dentro de Cobros y pagos. |
+| Mi negocio | `/#/workspace/business` | Personas/empresas y proyectos. |
+| Informes | `/#/workspace/reports` | Estado de cuenta derivado de movimientos/asignaciones de tesorería. |
+| Acceso | `/#/workspace/sign-in` | Registro de negocio e inicio de sesión. |
+| Práctica | `/#/finance/overview` | Demostración local independiente; no se importa al servidor al autenticar. |
 
 ### 4.2.2 Labeling Systems
 
-Se conserva la equivalencia estable con el Ubiquitous Language: Purchases/Compras, Suppliers/Proveedores, Payments/Abonos, Outstanding Balance/Saldo pendiente y Due Date/Fecha de vencimiento. La mype paga sus obligaciones. Los textos no describen cobrar a una cartera de clientes.
+Compras/Purchases, Proveedores/Suppliers, Abonos/Payments, Saldo pendiente/Outstanding balance y Vencimiento/Due date mantienen su significado de negocio. El grupo «Cobros y pagos» pertenece al diseño general; en la vista conectada se aclara que se gestionan obligaciones con proveedores. «Titular de cuenta» y «dueño económico» son conceptos distintos, y ninguno equivale al rol de autorización Owner.
 
 ### 4.2.3 SEO Tags and Meta Tags
 
-Landing y frontend incluyen título, descripción, viewport e idioma. La landing se identifica como CREDITOR y cuentas por pagar; los metadatos no publican métricas comerciales sin fuente. El `index.html` y la actualización de idioma en ejecución son la fuente de los valores efectivos. Los enlaces de producción y canonical se revisarán cuando se autorice la publicación.
+Los metadatos efectivos están en `index.html` y en la actualización de idioma del frontend/landing. El área autenticada no publica información de negocio en metadatos. Las URLs canonical, la indexación y el HTTPS de producción deberán validarse cuando exista un despliegue autorizado del corte actual.
 
 ### 4.2.4 Searching Systems
 
-La lista permite localizar obligaciones por proveedor, moneda, vencimiento y estado dentro del contexto de demostración. La búsqueda conserva filtros ante ausencia de coincidencias y permite limpiarlos. Un saldo agrupado siempre indica su moneda.
+En cuentas por pagar, el usuario aplica texto, proveedor, moneda, estado y límites inclusivos de vencimiento. El mismo conjunto viaja al listado, resumen y exportación. Un cambio sin aplicar invalida la descarga, y limpiar filtros vuelve a la selección completa del negocio. La API paginada conserva la moneda de cada fila y separa totales PEN/USD. Los préstamos ofrecen lista y detalle; no se les atribuyen los filtros de compras.
 
 ### 4.2.5 Navigation Systems
 
-| Actor/origen | Acción | Destino local |
-|---|---|---|
-| Propietario en landing | Review my obligations | `http://localhost:5174/#/dashboard` |
-| Administrador en landing | Record a purchase | `http://localhost:5174/#/purchases/new` |
-| Dashboard/lista | Seleccionar compra | `#/purchases/{id}` |
-| Detalle | Registrar abono | Formulario de abono y retorno al historial. |
-| Landing/aplicación | Privacidad y términos | Vistas legales de demostración. |
-
-Los CTA son configurables mediante `VITE_APP_URL`; requieren el servidor local del frontend. Hash routing permite refrescar las rutas de la aplicación. El contexto de demostración no equivale a iniciar sesión.
+La navegación usa Vue Router con hash. Las rutas heredadas `/dashboard` y `/purchases/new` redirigen a la práctica; no equivalen a autenticación. Con `VITE_API_BASE_URL` configurada aparece el acceso al negocio. Las rutas `/workspace` requieren sesión salvo acceso/legales; cerrar sesión o recargar por completo elimina el token en memoria. Los menús y acciones conservan el diseño, colores y estructura establecidos; las funciones nuevas se integran en esos componentes.
 
 ## 4.3 Landing Page UI Design
+
+Las subsecciones 4.3–4.5 conservan wireframes, mock-ups y evidencia de prototipo del corte TB1. La implementación conectada actual se describe en 4.2 y 5.2.3; estas imágenes no se presentan como capturas de MySQL ni de la nueva pantalla de préstamos. No se modificó el diseño del frontend en esta actualización documental.
 
 ### 4.3.1 Landing Page Wireframes
 
@@ -1194,6 +1188,16 @@ Las siguientes capturas muestran las vistas implementadas con datos ficticios y 
 ![Detalle e historial local](assets/ux/tb1/frontend-detail-es.png)
 
 ![Formulario en móvil](assets/ux/tb1/frontend-mobile-es.png)
+
+Las cuatro capturas adicionales incorporadas por Sebastián en la referencia local `origin/main` se conservan como evidencia del prototipo TB1, sin presentarlas como pantallas AV2 actuales:
+
+![Dashboard histórico aportado](assets/ux/frontend-dashboard-en.png)
+
+![Compra histórica aportada](assets/ux/frontend-purchase-new-en.png)
+
+![Detalle histórico aportado](assets/ux/frontend-detail-es.png)
+
+![Vista móvil histórica aportada](assets/ux/frontend-mobile-es.png)
 
 ### 4.4.4 Web Application User Flow Diagrams
 
@@ -1276,187 +1280,157 @@ La conexión del prototipo Figma desktop/mobile, la revisión del equipo y el vi
 
 ## 4.6 Domain-Driven Software Architecture
 
-Se propone un monolito modular con una API REST propia y una base relacional. Los límites de dominio separan **Accounts Payable** (proveedores y compras), **Payments** (abonos), **Loans** (préstamos y cuotas), **Reporting** (consultas) e **Identity** (acceso a la organización). La separación es lógica; no se presentan microservicios implementados. El diseño se basa en US-004 a US-009 y deberá revisarse con el EventStorming del equipo.
+La implementación es un monolito modular ASP.NET Core. `Creditor.Domain` no depende de infraestructura; `Creditor.Application` referencia Domain y define puertos; Infrastructure implementa persistencia/integraciones; API compone dependencias y publica contratos. La separación de procesos corresponde a frontend, backend y base de datos, no a un microservicio por contexto.
+
+| Límite | Responsabilidad ejecutable |
+|---|---|
+| Accounts Payable | Supplier y Purchase; Payment es hijo de Purchase para proteger la invariancia del saldo. |
+| Loans | Loan con colección inmutable de LoanInstallment; registro/consulta del acuerdo. |
+| Treasury | Party, Project y CashAccount; movimientos, asignaciones y recibos de idempotencia. |
+| Identity | Business, usuarios, contraseña hash, roles y JWT. |
+| Reporting | Proyecciones de lectura; no mantiene otro saldo ni ejecuta pagos. |
+| Attachments | Metadatos privados y acceso al contenido ligado a compras/abonos. |
+| Exchange Rates | Adaptador BCRPData con contrato propio y atribución de origen. |
 
 ### 4.6.1 Design-Level Event Storming
 
-El siguiente recorrido es una **propuesta de modelado**, no el acta de una sesión colaborativa. Cada evento está escrito en pasado y cada comando expresa una intención del usuario o una política del sistema.
+El EventStorming histórico es una propuesta para discusión. Su correspondencia actual es:
 
-| Contexto / agregado | Comando | Evento | Regla que debe comprobarse |
-|---|---|---|---|
-| Accounts Payable / Supplier | Registrar proveedor | Proveedor registrado | El proveedor pertenece a una organización. |
-| Accounts Payable / Purchase | Registrar compra a crédito | Compra a crédito registrada | Importe positivo, moneda admitida, proveedor de la misma organización y vencimiento informado. |
-| Payments / Purchase | Registrar abono | Abono registrado; saldo actualizado | Importe positivo y no mayor que el saldo pendiente; la moneda se hereda de la compra. |
-| Payments / Payment | Asociar voucher | Voucher asociado al abono | Tipo, tamaño y acceso del archivo deben validarse. |
-| Loans / Loan | Registrar préstamo | Préstamo registrado; cuotas programadas | Principal, tasa, número de cuotas y fecha inicial válidos. |
-| Reporting / proyección de lectura | Consultar obligaciones | Reporte consultado | Filtrar solo datos de la organización y conservar moneda de cada obligación. |
+| Intención | Agregado/servicio | Resultado y regla |
+|---|---|---|
+| Registrar compra | Purchase | Compra persistida; proveedor del mismo negocio y referencia única. |
+| Registrar abono | Purchase + Payment | Nueva fila y nueva versión atómicas; saldo no negativo. |
+| Adjuntar comprobante | AttachmentService | Metadatos y archivo accesibles solo al negocio autorizado. |
+| Registrar préstamo | Loan | Se guarda el cronograma completo con importes pactados. |
+| Registrar movimiento | CashAccount | Movimiento manual; referencia única y requestId para reintentos. |
+| Asignar fondos | CashAccount | Dueño/responsable/proyecto válidos; no se altera el total de efectivo. |
+| Consultar/exportar | Queries | Respuestas por negocio/filtros; sin mutación. |
 
-![EventStorming de compra y abono](assets/architecture/design-event-storming.svg)
-
-[Fuente Mermaid editable](assets/architecture/design-event-storming.mmd).
-
-La consulta de deuda toma el saldo como `total de compra - suma de abonos válidos`. El vencimiento se clasifica con la fecha y el saldo restante; no se genera una deuda nueva por el simple paso del tiempo. La evidencia de la sesión de EventStorming (participantes, fecha, decisiones y captura) sigue pendiente en `assets/architecture/eventstorming/`.
+Los resultados no son eventos publicados en una cola. No hay outbox/event sourcing. El pago de una compra y el movimiento de efectivo son casos separados; la integración automática permanece fuera del incremento. La evidencia de una sesión colaborativa sigue pendiente.
 
 ### 4.6.2 Software Architecture Context Diagram
 
-![Diagrama de contexto de CREDITOR](assets/architecture/c4-context.svg)
+![Diagrama AV2: context av2](assets/architecture/av2/context-av2.svg)
 
-[Fuente Mermaid editable](assets/architecture/c4-context.mmd).
+[Fuente editable](assets/architecture/av2/context-av2.mmd).
 
-En el nivel de contexto, CREDITOR es un solo sistema. El propietario consulta obligaciones y préstamos; el administrador registra compras, abonos y reportes; el visitante conoce la propuesta y solicita contacto. El servicio externo es una dependencia **prevista** para cumplir el requisito de integración con terceros, sin proveedor ni contrato confirmados. No se atribuye envío real al formulario de AV1.
+El proveedor externo implementado es BCRPData/SBS para cotización referencial, no una pasarela bancaria ni un servicio de envío de contacto. Los visitantes no acceden a datos privados por la landing.
 
 ### 4.6.3 Software Architecture Container Diagrams
 
-![Diagrama de contenedores de CREDITOR](assets/architecture/c4-containers.svg)
+![Diagrama AV2: containers av2](assets/architecture/av2/containers-av2.svg)
 
-[Fuente Mermaid editable](assets/architecture/c4-containers.mmd).
+[Fuente editable](assets/architecture/av2/containers-av2.mmd).
 
-| Contenedor | Tecnología objetivo | Responsabilidad |
-|---|---|---|
-| Landing | HTML5, CSS3, JavaScript | Comunicar la propuesta, dirigir al frontend local y ofrecer contacto de demostración. |
-| Web Application | Vue, HTML, CSS, JavaScript, PrimeVue | Presentar flujos de cuentas por pagar en escritorio/móvil. TB1 usa contexto fijo de demostración; autenticación prevista AV2. |
-| REST API | ASP.NET Core, C#, Entity Framework Core, OpenAPI | Validar reglas de dominio, aislamiento por organización y contratos HTTP. |
-| Database | PostgreSQL como objetivo de diseño | Persistir organizaciones, proveedores, compras, abonos, préstamos y cuotas. |
-| Servicio externo | Proveedor aún no elegido | Procesar solicitudes de contacto cuando exista integración y consentimiento. |
-
-Las flechas discontinuas son dependencias pendientes. El adaptador local TB1 persiste en navegador; no se comunica con la API prevista. Los comprobantes se representan en el esquema como referencias URL; antes de implementarlos se definirá un almacenamiento privado, política de acceso y retención. La landing inspeccionada utiliza Vue/Vite según el capítulo V; la fila HTML/CSS/JavaScript expresa las tecnologías requeridas, no un cambio de implementación ya efectuado.
+MySQL es el proveedor elegido para el entorno local vigente. PostgreSQL conserva su cadena de migraciones para regresión y compatibilidad histórica; SQLite se limita a pruebas/desarrollo auxiliar. Los adjuntos no se publican como URL estática: la API verifica el acceso y transmite el contenido. La demostración local usa otro adaptador y otro almacenamiento.
 
 ### 4.6.4 Software Architecture Component Diagrams
 
-La frontend implementada se descompone en vistas, componentes de formulario/historial, store, validadores de dominio y adaptador local. No simula permisos de Owner/Administrator.
+![Diagrama AV2: components api av2](assets/architecture/av2/components-api-av2.svg)
 
-![Componentes del frontend local](assets/architecture/c4-web-components.svg)
+[Fuente editable](assets/architecture/av2/components-api-av2.mmd).
 
-[Fuente editable de componentes web](assets/architecture/c4-web-components.mmd).
+![Diagrama AV2: components web av2](assets/architecture/av2/components-web-av2.svg)
 
-El diagrama siguiente descompone la **API propuesta**, no un repositorio de backend ya existente. Los controladores llaman a servicios de aplicación; estos aplican reglas de dominio y acceden a repositorios. Reporting consulta datos del mismo tenant y no altera saldos.
+[Fuente editable](assets/architecture/av2/components-web-av2.mmd).
 
-![Diagrama de componentes de la API propuesta](assets/architecture/c4-components.svg)
-
-[Fuente Mermaid editable](assets/architecture/c4-components.mmd).
-
-| Componente | Responsabilidad | Contrato inicial relacionado |
-|---|---|---|
-| Accounts Payable | Registrar y consultar proveedores y compras; calcular saldos a partir de abonos. | `GET/POST /api/v1/purchases` (TS-001). |
-| Payments | Validar y registrar abonos, asociar vouchers, devolver saldo resultante. | `POST /api/v1/purchases/{purchaseId}/payments` (TS-002). |
-| Loans | Gestionar préstamos y cronogramas de cuotas. | US-009; ruta por definir. |
-| Reporting | Filtrar obligaciones por proveedor, fecha, moneda y estado. | US-008; formato de exportación por definir. |
-| Identity | Identificar al usuario y restringir los datos a su organización. | Contrato y proveedor de identidad por definir. |
-
-La actualización del saldo y el registro del abono deben ocurrir en una misma transacción. El diseño exige autorización en la API, aun cuando la interfaz oculte una acción. Los endpoints pendientes no se anuncian como implementados.
+Los contextos conectados del frontend separan presentación, coordinación de casos de uso e infraestructura HTTP. Las reglas de dominio de entrada usan valores compartidos; la autoridad final es el dominio y los servicios del backend. La API recibe moneda/importes en unidades monetarias; la representación interna de centavos no exige que el cliente multiplique el payload. El guard de ruta y los botones por rol son complementarios a `[Authorize]` y al BusinessId del token.
 
 ## 4.7 Software Object-Oriented Design
 
 ### 4.7.1 Class Diagrams
 
-![Diagrama de clases del dominio](assets/architecture/class-diagram.svg)
+![Diagrama AV2: classes av2](assets/architecture/av2/classes-av2.svg)
 
-[Fuente Mermaid editable](assets/architecture/class-diagram.mmd).
+[Fuente editable](assets/architecture/av2/classes-av2.mmd).
 
-`Purchase` es el agregado que protege la regla de abono máximo y calcula el saldo; `Payment` conserva cada movimiento. `Loan` controla la secuencia de cuotas, inicialmente de frecuencia `MONTHLY`. La multiplicidad `0..*` permite un préstamo antes de generar cronograma; publicar el cronograma exige cuotas válidas. Los métodos del diagrama describen responsabilidades de dominio previstas, no clases C# existentes. El catálogo `Supplier` está acotado a `Business`, y una compra solo puede referenciar un proveedor de la misma organización. El modelo de usuarios/roles se detallará cuando exista un contrato de Identity; no se inventa una implementación de autenticación.
+El diagrama refleja clases reales, mostrando solo sus miembros relevantes. `PaidAmount` y `Balance` de Purchase son valores derivados e ignorados por EF. `RecordPayment` valida saldo/fecha/moneda y cambia Version; el repositorio agrega explícitamente la nueva entidad Payment. `Loan` se crea con 1–60 cuotas; no existe préstamo vacío esperando generación posterior. La tasa puede ser null y no genera intereses. `CashAccount` protege efectivo y asignaciones; no se confunde con la deuda de proveedores. Las asociaciones por negocio y las claves compuestas están detalladas en el modelo EF.
 
 ## 4.8 Database Design
 
-Se adopta **PostgreSQL como objetivo de diseño** para concretar el modelo inicial. La definición editable está en [`database/schema.sql`](database/schema.sql). El saldo de una compra no se almacena como columna independiente: se obtiene de `purchases.total_amount - SUM(payments.amount)`. Así se evita que un abono y el saldo queden desincronizados. Las tablas de Identity y los archivos físicos requieren decisiones posteriores de implementación.
+El modelo vigente procede de `CreditorDbContext` y sus configuraciones EF, con migraciones específicas por proveedor. **MySQL 8.4** es el motor del entorno actual; conservar las migraciones PostgreSQL permite comprobar el incremento previo sin alterar esa base. Cambiar el proveedor no transporta automáticamente usuarios, operaciones ni archivos existentes entre motores.
+
+La definición reproducible se explica en [database/README.md](database/README.md). El SQL del diseño inicial se conserva separado como antecedente; no se usa para inicializar el backend actual. El esquema ejecutable debe generarse desde las migraciones del backend, que incluyen Identity, cuentas por pagar, adjuntos, tesorería y préstamos.
 
 ### 4.8.1 Database Diagrams
 
-![Diagrama entidad relación de CREDITOR](assets/architecture/database-er-diagram.svg)
+![Diagrama AV2: database core av2](assets/architecture/av2/database-core-av2.svg)
 
-[Fuente Mermaid editable](assets/architecture/database-er-diagram.mmd).
+[Fuente editable](assets/architecture/av2/database-core-av2.mmd).
 
-[Versión PNG para la exposición](assets/architecture/database-er-diagram.png).
+![Diagrama AV2: database treasury av2](assets/architecture/av2/database-treasury-av2.svg)
 
-Para revisar cada límite de persistencia sin perder legibilidad, el modelo se presenta también por contexto. **Accounts Payable y Payments** comparten la compra como referencia del abono; **Loans** conserva un cronograma separado. `BUSINESSES` aparece en ambos dibujos porque delimita los datos de una misma organización, no porque se duplique la tabla.
+[Fuente editable](assets/architecture/av2/database-treasury-av2.mmd).
 
-![Diagrama de base de datos para compras y abonos](assets/architecture/database-accounts-payable.svg)
+Los tipos del ERD representan el modelo CLR y las relaciones principales; el DDL generado precisa tipos físicos, nulabilidad, claves compuestas, tablas auxiliares Identity e índices. `NormalizedReference` es único junto con SupplierId, no globalmente. El modelo no contiene `receipt_url`, `voucher_url`, ni columnas de estado o saldo en Purchase: el estado se deriva de saldo y fecha. Una cuota no contiene estado de pago. `PaymentId`, ProjectId y tasa anual pueden ser nulos según el caso.
 
-[Fuente Mermaid editable de compras y abonos](assets/architecture/database-accounts-payable.mmd).
-
-![Diagrama de base de datos para préstamos y cuotas](assets/architecture/database-loans.svg)
-
-[Fuente Mermaid editable de préstamos y cuotas](assets/architecture/database-loans.mmd).
-
-**Lectura del diagrama.** Una organización puede tener proveedores, compras y préstamos. Cada compra pertenece a un proveedor y admite cero o más abonos. Un préstamo puede existir antes de que se configure su cronograma; el flujo publicado deberá exigir al menos una cuota. `receipt_url` y `voucher_url` son referencias a comprobantes, no el contenido binario ni prueba de que exista almacenamiento de archivos. La relación `purchases(business_id, supplier_id)` debe impedir que una compra de una organización use un proveedor de otra; el esquema SQL incluye una clave externa compuesta para ello.
-
-| Regla de integridad | Implementación en el diseño |
+| Invariante | Mecanismo actual |
 |---|---|
-| Identidad de fila | Clave primaria UUID en cada tabla. |
-| Pertenencia y relaciones | Claves externas hacia organización, proveedor, compra o préstamo; proveedor y compra comparten organización. |
-| Valores financieros | `CHECK` para importes positivos y tasa no negativa; monedas iniciales `PEN` y `USD`. |
-| Cronograma | `UNIQUE(loan_id, installment_number)` impide repetir un número de cuota en un préstamo. |
-| Consulta operativa | Índices por organización, vencimiento y estado; por compra/fecha de abono; por préstamo/vencimiento. |
-| Regla transaccional | La API debe impedir abonos superiores al saldo y registrar el abono de manera atómica. Un `CHECK` aislado no puede sumar otras filas. |
+| Negocio aislado | BusinessId desde JWT, consultas acotadas y FK compuestas por negocio. |
+| Importe exacto | decimal(14,2) en compras/abonos; enteros de centavos en tesorería/préstamos, más validación de dominio. |
+| Abonos concurrentes | Version de Purchase como token de concurrencia y commit transaccional con la fila nueva. |
+| Cuotas | PK LoanId + Number; FK con BusinessId; entre 1 y 60 cuotas mensuales completas al registrar. |
+| Archivos | Metadata de Attachment separada del contenido privado; vínculo de voucher a compra/abono del mismo negocio. |
+| Tesorería | Version de CashAccount y requestId/huella del payload evitan repetir comandos reconocidos. |
+| Estado y saldo | Proyecciones calculadas; no se almacena un saldo mutable paralelo. |
 
-`status` de compras y cuotas requiere una política de actualización o cálculo al consultar, porque el paso de la fecha puede cambiar «pendiente» a «vencido». Antes de implementar, se definirán migraciones, autorización por organización, almacenamiento privado de comprobantes y tratamiento de pagos de cuotas. El esquema incorpora referencia, descripción y fecha de compra, referencia única por proveedor sin distinguir mayúsculas y frecuencia de préstamo `MONTHLY`. La fecha del abono respecto a compra y la validación de archivos requieren la capa de aplicación. El diagrama es un **diseño inicial trazable al SQL**, no evidencia de una base desplegada.
+Las restricciones de esquema y los casos de migración se contrastan contra MySQL real. La evidencia distingue crear un esquema, reaplicar migraciones, preservar datos ficticios y reiniciar la API. No se afirma que una batería de pruebas garantice todas las migraciones futuras ni que se haya migrado información productiva.
 
 # Capítulo V: Product Implementation, Validation & Deployment
 
-Este capítulo registra la preparación local de TB1 al **3 de octubre de 2026**. El incremento reúne una landing orientada a cuentas por pagar y la primera frontend para consultar obligaciones, registrar compras y abonos. La API propia y la persistencia centralizada se mantienen en el diseño de AV2. El trabajo solicitado no incluye publicación ni despliegue.
+Este capítulo registra el incremento técnico local AV2 al **13 de noviembre de 2026** y conserva Sprint 1/2 como antecedentes fechados. La interfaz Vue se comunica con ASP.NET Core y el motor vigente es MySQL. La evidencia de ejecución y sus límites se reúne en 5.2.3. No se realizó push, release ni despliegue del corte actual.
 
 
-> **Lectura por fecha:** este capítulo conserva el corte TB1 del 03/10/2026. Las menciones a API futura, idioma inicial o frontend inicial describen ese corte. El backend local y la demo financiera posteriores están documentados en el [anexo de noviembre](#b-evidencia-local-posterior-al-corte-tb1-02112026). No están integrados entre sí ni desplegados por esta revisión.
+> **Lectura por fecha:** Sprint 1 y Sprint 2 conservan su corte AV1/TB1. Las expresiones «API futura» dentro de esos sprints son históricas. El anexo B conserva el 02/11; la implementación vigente y la comunicación frontend/API se documentan en Sprint 3 y la matriz AV2. No se reescriben evidencias antiguas para hacerlas parecer pruebas actuales.
 
 ## 5.1 Software Configuration Management
 
 ### 5.1.1 Software Development Environment Configuration
 
-| Producto o herramienta | Uso | Referencia |
-|---|---|---|
-| Vue y Vite | Componentes reactivos, desarrollo y compilación de ambos productos web. | Manifests y lockfiles de landing/frontend. |
-| PrimeVue | Controles de la frontend con etiquetas y estados accesibles. | Dependencias y componentes de la frontend. |
-| Node.js y npm | Instalación reproducible, pruebas y build local. | Versiones registradas en la evidencia de ejecución. |
-| Git | Features, integración local y trazabilidad. | Historial de cada repositorio y CONTRIBUTING. |
-| GitHub | Historial remoto de AV1, conservado como referencia. | Organización Grupo-Desarrollo-Aplicaciones-Web. |
-| Figma y UXPressia | Herramientas requeridas para diseño e investigación del curso. | La sincronización de los artefactos locales a estas herramientas queda pendiente. |
-| Trello/Jira/YouTrack | Tablero de sprint del curso. | Se prepara una tabla local; su tablero externo queda pendiente. |
-| ASP.NET Core, EF Core y PostgreSQL | Arquitectura de servicios y persistencia del producto completo. | Diseño del capítulo IV; implementación prevista para AV2. |
+| Componente | Configuración del código |
+|---|---|
+| Frontend | Vue 3, PrimeVue, Vite; dependencias exactas en package-lock.json y Node según engines. |
+| Backend | C# / ASP.NET Core, EF Core, solución Creditor.sln por capas. |
+| Base de datos | MySQL 8.4 local; PostgreSQL como proveedor de regresión, SQLite auxiliar. |
+| Contrato | OpenAPI generado y Scalar como interfaz de consulta. |
+| Pruebas | Vitest y Playwright; xUnit de dominio/API y pruebas de migración con motor real. |
+| Investigación/diseño | Artefactos locales conservados; sincronización y sesiones reales Figma/UXPressia pendientes. |
 
-Las instalaciones se realizan desde el lockfile. Las pruebas locales usan datos de demostración y no requieren credenciales de producción.
-
-```bash
-npm ci
-npm test
-npm run build
-```
-
-Para la revisión conjunta se reservan los puertos 5173 para landing y 5174 para frontend. La URL de la frontend se configura en el entorno de la landing; no se incorpora como una dirección de producción.
+Los scripts del backend y su README son la fuente de arranque. Ejecutarlos desde la raíz del repo o mediante su ruta absoluta evita el error de buscar `./creditor-backend` desde la carpeta personal. La variable `VITE_API_BASE_URL` debe apuntar a `/api/v1` del backend y CORS debe admitir el origen exacto de Vite. Los puertos de pruebas son distintos del entorno cotidiano.
 
 ### 5.1.2 Source Code Management
 
-| Repositorio | Alcance | Estado TB1 |
+| Repositorio | Alcance | Estado de este incremento |
 |---|---|---|
-| [upc-project-report](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/upc-project-report) | Informe, fuentes de diagramas, pruebas y paquete documental. | Nuevos commits locales, sin push. |
-| [creditor-landing-page](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/creditor-landing-page) | Presentación pública y acceso por segmento. | Nueva versión preparada localmente. |
-| `creditor-web-app` | Dashboard, proveedores, compras, detalle y abonos. | Repositorio local; no se ha creado un remoto. |
+| upc-project-report | Informe, diagramas y evidencia auditada. | Feature documental integrada localmente en develop. |
+| creditor-web-app | Práctica y workspace conectado. | Features por CSV y préstamos; diseño conservado. |
+| creditor-backend | API, dominio, persistencia y pruebas. | Fix abonos, feature préstamos y feature MySQL/Scalar. |
+| creditor-landing-page | Presentación pública y CTA. | Sin cambios en esta auditoría. |
 
-GitFlow utiliza main para entregas estables, develop para integración y una feature por bloque. La preparación reintegra primero las correcciones de main a develop, conserva el historial anterior y hace merges locales con --no-ff. Las releases usan SemVer y los hotfix vuelven a main/develop. La guía completa está en [CONTRIBUTING](CONTRIBUTING.md).
-
-Los cambios de TB1 se atribuyen a la identidad que los registra: `MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com>`. Los commits de integrantes anteriores se conservan. Las ramas de trabajo se mantienen para revisión antes de publicar.
+GitFlow: partir de develop, trabajar en feature/fix, validar, realizar commits lógicos con `MIguelAngelES7 <95198651+MiguelAngel0107@users.noreply.github.com>` y fusionar con `--no-ff` a develop. No se modifica main ni se publica. Los merges locales no constituyen revisión por pares. Se conservan los autores y commits previos; no se reescribe su historia. El [registro AV2](docs/av2/estado-implementacion.md) identifica los cortes comprobados.
 
 ### 5.1.3 Source Code Style Guide & Conventions
 
-Se aplican módulos JavaScript, nombres de código en inglés, componentes Vue con responsabilidad delimitada y estilos responsive. Las reglas de compra y abono se separan de la presentación y del adaptador de almacenamiento para facilitar la futura integración HTTP.
-
-| Aspecto | Convención |
+| Aspecto | Convención verificable |
 |---|---|
-| Dinero | Cálculos de compras/abonos en centavos enteros; totales separados por moneda. |
-| Idiomas | Inglés por defecto y español latinoamericano alternativo; la moneda pertenece a la operación. |
-| Formularios | Etiquetas persistentes, errores asociados y datos conservados ante corrección. |
-| Navegación | Destinos explícitos, foco visible y operación por teclado. |
-| Datos locales | Se identifican como demostración; no equivalen a autenticación o persistencia de servidor. |
-| Commits | tipo(alcance): descripción, con cambios lógicos y autor personal. |
-| Evidencias | Producto, commit, fecha, comando o escenario y resultado observado. |
+| DDD | Domain sin dependencias de API/EF; Application define contratos; Infrastructure implementa puertos; API compone. |
+| Frontend | Contextos con presentation/application/infrastructure, componentes existentes y valores compartidos. |
+| Dinero | PEN/USD separados; decimales exactos o centavos enteros, sin float para saldos. |
+| Fechas | Fecha de negocio America/Lima; instantes UTC y calendario explícito de cuotas. |
+| Seguridad | JWT en memoria frontend, autorización servidor, BusinessId del principal y archivos privados. |
+| Errores | ProblemDetails HTTP y errores por campo; no se convierte un fallo en un éxito visual. |
+| Cambios | Conventional Commits por unidad lógica; sin secretos ni archivos de dependencias generados. |
+| Evidencia | SHA, comando, entorno, resultado y límite de lo comprobado. |
 
 ### 5.1.4 Software Deployment Configuration
 
-La compilación local produce dist. Las configuraciones de CI preparadas verifican build/tests y no publican durante esta etapa. La aplicación usa navegación compatible con acceso directo y refresco; landing recibe su destino mediante VITE_APP_URL.
+`npm run build` produce archivos estáticos de la SPA. ASP.NET Core necesita proceso servidor y MySQL necesita instancia de base de datos; GitHub Pages por sí solo no ejecuta ninguno de esos dos servicios. Scalar documenta la API, no sustituye su alojamiento. Los secretos se configuran fuera del repositorio y el contenido privado requiere almacenamiento persistente.
 
-Se conserva la publicación histórica de AV1 en [GitHub Pages](https://grupo-desarrollo-aplicaciones-web.github.io/creditor-landing-page/), asociada al commit cf734ff y al [run 35305597000](https://github.com/Grupo-Desarrollo-Aplicaciones-Web/creditor-landing-page/actions/runs/35305597000), exitoso el 18/09/2026. Esa publicación corresponde a la versión anterior. Las nuevas versiones de TB1 permanecen locales por indicación del usuario.
+El alcance solicitado permanece local. La publicación histórica de la landing AV1 corresponde al commit cf734ff y su registro previo; no se interpreta como despliegue de la aplicación/API actuales. Para una entrega con deployment deberán registrarse por separado URL HTTPS de frontend/API, commit, health, CORS, migraciones y pruebas posteriores al despliegue.
 
 ## 5.2 Landing Page, Services & Applications Implementation
 
-La nueva landing comunica obligaciones de la mype y dirige al propietario hacia el resumen de cuentas por pagar y al administrador hacia nueva compra. La frontend implementa US-004 a US-007 mediante un adaptador local intercambiable. US-008/US-009 y TS-001 a TS-003 permanecen en el roadmap de servicios y módulos posteriores.
+La landing se conserva como punto de entrada. El workspace conectado implementa US-004–009 y servicios TS-001–003 con los límites descritos en el capítulo III. Sprint 1 y Sprint 2 documentan la evolución histórica; Sprint 3 reúne la preparación técnica actual y sus pendientes de aceptación.
 
 ### 5.2.1 Sprint 1
 
@@ -2134,39 +2108,64 @@ Pendientes del equipo: validar LACX, registrar reuniones/tablero, completar inve
 
 ### 5.2.3 Sprint 3
 
-**Estado: pendiente de documentación y aceptación del sprint AV2.** El código local posterior no permite afirmar por sí solo que este sprint ocurrió o fue aceptado.
+**Estado: incremento técnico local preparado para revisión AV2.** Las pruebas de código no acreditan una reunión, aceptación del sprint ni despliegue. Se conserva esa separación en los ocho apartados.
 
 #### 5.2.3.1 Sprint Planning 3
 
-Pendiente: fecha, duración, asistentes, revisión/retrospectiva previa y Sprint Goal aprobados. No se reconstruyen actas ni velocidad.
+Objetivo técnico de esta preparación: cerrar abonos sucesivos, coherencia de filtros/CSV y préstamos; verificar frontend/API, adoptar MySQL y documentar con Scalar. Fecha de auditoría 13/11/2026. Fecha, asistentes, duración de reunión, capacidad y Sprint Goal académico aprobado siguen pendientes de registro real.
 
 #### 5.2.3.2 Aspect Leaders and Collaborators
 
-Pendiente: acordar líderes y colaboradores por aspecto con los tres integrantes. La autoría técnica existente se conserva; no se inventan asignaciones.
+Los nuevos commits utilizan la identidad Git de Miguel por instrucción del propietario. Juan y Sebastián conservan sus aportes históricos de producto/diseño/documentación. No se atribuye participación de esta implementación a terceros sin evidencia. La asignación de líderes/colaboradores y aprobación del equipo debe registrarse en la revisión real.
 
 #### 5.2.3.3 Sprint Backlog 3
 
-Pendiente: vincular historias y Engineering Tasks de 4–8 horas al tablero y registrar estado/aceptación. No son horas trabajadas.
+| Bloque | Historias | Trabajo técnico | Criterio de revisión |
+|---|---|---|---|
+| Abonos | US-006/007, TS-002 | Inserción explícita de cada Payment y pruebas secuenciales/concurrentes. | Dos abonos persistidos y saldo coherente tras recargar. |
+| Filtros | US-004/008 | Mismos parámetros para lista, summary y CSV; no exportar criterios sin aplicar. | CSV leído por el test, con inclusión/exclusión verificadas. |
+| Préstamos | US-009 | Loan/Installments, migraciones, contratos, adapter/use case/view Vue. | Crear/consultar tras iniciar nueva sesión, fechas/roles/negocio correctos. |
+| Persistencia | Extensión AV2 | MySQL, cadena propia, pruebas reales y script de arranque. | Esquema, reintento, datos ficticios y arranque comprobados. |
+| Contrato | TS-003 | Scalar con OpenAPI y rutas de salud. | Documento legible y endpoints comprobados. |
+| Informe | Todos | Revisar capítulo por capítulo y modelos contra código. | Matriz de correspondencia, enlaces y evidencia sin afirmaciones inventadas. |
+
+Este inventario registra bloques realizados; no inventa duración ni horas trabajadas. La descomposición en Engineering Tasks de 4–8 h, responsables acordados y estado del tablero académico debe confirmarse con el equipo. [Ficha Sprint 3](docs/sprints/sprint-03.md).
 
 #### 5.2.3.4 Development Evidence for Sprint Review
 
-Existe un incremento técnico local de noviembre, conservado en el anexo B. Pendiente: vincular su versión y commits aceptados al sprint real; no se crea un cierre retrospectivo.
+Los commits por repositorio, rama y usuario se registran en [evidencia AV2](docs/av2/estado-implementacion.md). La feature del informe conserva los commits de la rama unificada local y las aportaciones de main antes de corregir el contenido. Las referencias remotas ya guardadas se usan como antecedentes; no hubo push ni reescritura de autores.
 
 #### 5.2.3.5 Execution Evidence for Sprint Review
 
-Se conservan resultados técnicos locales existentes en el anexo B. Pendiente: recorrido grabado de Sprint Review, fecha, versión y aceptación del equipo.
+La matriz AV2 distingue pruebas de dominio/API, migraciones PostgreSQL previas al cambio, migraciones MySQL y escenarios de navegador contra backend real. El escenario conectado usa datos ficticios, comprueba respuesta HTTP y persistencia; el test de demo usa almacenamiento independiente. Los archivos TRX/JUnit y registros que se adjunten son evidencia del comando ejecutado, no garantía de ausencia total de defectos.
+
+Se revisan saldo tras dos abonos, rechazo de exceso/concurrencia, archivos privados, selección CSV, cronograma, roles, negocio ajeno, tesorería y persistencia tras reinicio. Las suites y cantidades finales se consignan únicamente después de observar su resultado. La validación de uso con personas permanece en 5.3.
 
 #### 5.2.3.6 Services Documentation Evidence for Sprint Review
 
-El backend local tiene contrato y pruebas separados del frontend. Pendiente: contrastar OpenAPI del commit de entrega e integrar consumidores reales; el anexo B delimita lo verificado.
+La API publica un contrato OpenAPI generado, presentado mediante Scalar. Sus direcciones de ejecución se registran en la matriz AV2; no se afirma una URL de producción. Rutas relevantes:
+
+| Ruta | Operación |
+|---|---|
+| `/api/v1/auth/register`, `/login`, `/me` | Crear negocio, autenticar y consultar identidad. |
+| `/api/v1/users` | Crear miembro, exclusivo Owner. No existe pantalla de administración de usuarios conectada. |
+| `/api/v1/suppliers` | Registro y consulta de proveedores del negocio. |
+| `/api/v1/purchases`, `/summary`, `/export` | Registro, listado, saldos por moneda y CSV filtrado. |
+| `/api/v1/purchases/{id}/payments` | Abonos e historial; voucher y receipt en subrutas protegidas. |
+| `/api/v1/loans` y `/{id}` | Registro, listado y cronograma del acuerdo. |
+| `/api/v1/treasury/*` | Partes, proyectos, cuentas, movimientos, asignaciones y fondos. |
+| `/api/v1/exchange-rates/reference` | Cotización referencial BCRPData/SBS, sin consumo desde la UI vigente. |
+| `/health/live`, `/health/ready` | Proceso disponible y disponibilidad de esquema/base. |
+
+Registro correcto devuelve 201; lectura 200; solicitud mal formada 400, sin sesión 401, rol no admitido 403, dato inaccesible 404, conflicto 409 y regla de dominio inválida 422. Los códigos concretos se comprueban por endpoint, sin asumir que todos devuelven todos los estados. No hay endpoints de facturación tributaria, conciliación bancaria, promesas, transferencias vinculadas ni pago de cuotas.
 
 #### 5.2.3.7 Software Deployment Evidence for Sprint Review
 
-Pendiente: URL HTTPS, proveedor, versión/SHA, ejecución de despliegue y prueba de humo. Ningún build local acredita este criterio.
+**Sin deployment nuevo.** La ejecución local con MySQL no cumple por sí sola el criterio de Web Services publicado. No se añadieron push, release ni URLs inventadas. Se deberán documentar hosting, HTTPS, conexión segura, almacenamiento de archivos, CORS y pruebas después de publicar por autorización del usuario.
 
 #### 5.2.3.8 Team Collaboration Insights during Sprint
 
-Pendiente: analíticos de todos los integrantes, reflexión y revisión del equipo. No se derivan desempeño ni reuniones de los conteos de commits.
+Se preservó la identidad de los commits, las ramas por alcance y el historial de main. El reporte reconoce las diferencias entre el diseño y el código, separa demo de backend y conserva pendientes humanos. Revisión por otro integrante, tablero, actas, analíticos y aceptación quedan por registrar con evidencia real; un merge local no acredita esas actividades.
 
 ### 5.2.4 Sprint 4
 
@@ -2222,30 +2221,31 @@ Pendiente: observación, heurística, severidad justificada, evidencia temporal,
 
 ## 5.4 Video About-the-Product
 
-**Estado: pendiente de grabación y publicación.** Para AV2 se requiere la primera versión y para TB2 la final. El Anexo C indica 1–3 minutos, demostración de uso y al menos una opinión por segmento objetivo. Completar resumen, pauta hh:mm:ss, captura y enlaces reales de Stream y YouTube; incorporar el video en la landing de la versión entregada. Los guiones y las pruebas locales existentes no constituyen este video.
+**Estado: enlace histórico aportado en main, pendiente de verificación y correspondencia con el incremento actual.** Se conserva [Video About-the-Product](https://youtu.be/LGV7hN8I4No), registrado por Juan; no se comprobó aquí su contenido, duración, disponibilidad ni autorización. Para AV2 se requiere la primera versión y para TB2 la final. El Anexo C indica 1–3 minutos, demostración de uso y al menos una opinión por segmento objetivo. Completar resumen, pauta hh:mm:ss, captura y enlaces reales de Stream y YouTube; incorporar el video en la landing de la versión entregada. Los guiones y las pruebas locales existentes no constituyen este video.
 
 # Conclusiones y recomendaciones
 
 ## Conclusiones
 
-1. CREDITOR mantiene el foco en compras a crédito y obligaciones de la mype con proveedores. La landing local ya comunica ese alcance y conecta los objetivos de propietario y administrador con la frontend.
-2. La primera frontend local implementa consulta, compra, detalle y abono de US-004–007 con Vue/PrimeVue. La prueba de navegador comprobó compra PEN 100, abono PEN 30, saldo PEN 70 y rechazo de PEN 71 sin alterar el historial.
-3. La separación de moneda e idioma evita mezclar obligaciones PEN/USD. Las pruebas de dominio, navegador y build respaldan un incremento técnico de demostración, sin acreditar una API o seguridad de servidor.
-4. Los modelos C4, clases y ERD incorporan el adaptador local y conservan el diseño de servicios AV2. El SQL propuesto coincide con los campos de compra y frecuencia mensual de préstamos.
-5. La investigación conserva cuatro entrevistas registradas y requiere dos adicionales S2, análisis con citas y validación de Personas/maps. Las hipótesis y metas todavía no son resultados empíricos.
-6. Las features y commits personales permiten revisar el incremento completo en local. Los archivos de entrega no cierran los criterios de despliegue, herramientas externas, reuniones, aceptación, videos y desempeño que aún dependen del equipo.
+1. El núcleo CREDITOR conserva el objetivo de cuentas por pagar: proveedores, compras, abonos, saldo, documentos y exportación por negocio/moneda. Las rutas conectadas usan la API ASP.NET Core y el diseño visual existente.
+2. Los abonos sucesivos se persisten como entidades nuevas. Los filtros de lista, resumen y CSV comparten criterios aplicados. Loans guarda cuotas mensuales acordadas; la tasa no activa una fórmula de amortización ni pago de cuotas.
+3. El proveedor actual es MySQL. PostgreSQL conserva regresión histórica y SQLite un uso auxiliar. Las pruebas documentadas permiten revisar migraciones y datos ficticios; no demuestran transferencia de datos de motores anteriores ni garantizan casos no ejecutados.
+4. DDD se refleja en capas, agregados y puertos. Payments pertenece a Purchase, Reporting es lectura y Treasury es otro contexto. Un abono no se convierte automáticamente en salida de efectivo.
+5. La demo del navegador tiene funciones más amplias que la API. Facturas, cobros, promesas, transferencias, reversos y conciliación no se anuncian como backend terminado. La administración de usuarios y cotización externa tienen API, pero no pantalla conectada específica.
+6. Investigación, pruebas de usabilidad, evidencia de colaboración y deployment tienen pendientes explícitos. La preparación técnica local y el informe coherente no sustituyen esas evidencias de AV2.
 
 ## Recomendaciones
 
-1. Completar y analizar las entrevistas del segmento S2 antes de modificar prioridades por supuestos.
-2. Revisar pantallas y fuentes locales con el equipo, trasladar los artefactos a las herramientas exigidas y conservar URL/permisos y evidencia de esa revisión.
-3. Confirmar planning, LACX, tablero y aceptación de las historias. El Team Leader debe completar el Performance Report y su calificación.
-4. Ensayar la exposición de 12 minutos con al menos 40 % de demostración y 20 % de colaboración, y grabar la exposición real con los tres integrantes.
-5. Publicar los productos solo cuando el propietario lo autorice. Registrar entonces SHA, HTTPS, assets, rutas, CTA y evidencia del deployment nuevo. Mantener servicios ASP.NET Core, autorización y transacciones para AV2.
+1. Revisar los resultados y commits locales de develop, aceptar el alcance y probar la aplicación con el equipo antes de preparar una release.
+2. Confirmar con el curso el uso de MySQL en lugar del diseño PostgreSQL anterior. Si se requieren datos previos, planificar una importación explícita y respaldos; cambiar la conexión no migra registros.
+3. Completar las entrevistas y la validación por segmento, incluyendo comprensión de cuota/saldo/efectivo y filtros de exportación.
+4. Registrar reuniones, tablero, revisión por pares y aportes con evidencia real. Los formatos preparados no sustituyen un Performance Report evaluado por el líder.
+5. Decidir por backlog qué funciones de la demo pasarán al servidor; no sumar sus capacidades a las del workspace conectado en una exposición.
+6. Publicar únicamente con autorización, documentando SHA, HTTPS, migraciones, salud, CORS y archivos privados. Los binarios PDF/PPTX anteriores conservan contenido histórico y deben regenerarse tras la revisión final si se usarán para AV2.
 
 ## Video About-the-Team
 
-**Estado: pendiente de grabación y revisión del equipo.** Debe mostrar sesiones reales, colaboración y testimonio de cada integrante. El Anexo C sugiere cinco minutos de retrospectiva más un minuto por integrante. Completar resumen, pauta de secuencias hh:mm:ss, captura, enlaces Stream/YouTube e incorporación en landing. No hay evidencia de un video final; los guiones de exposición no lo reemplazan.
+**Estado: enlace histórico aportado en main, pendiente de verificación y correspondencia con AV2.** Se conserva [Video About-the-Team](https://youtu.be/RItoiUdxaiA), registrado por Juan; no se comprobó aquí su disponibilidad, duración ni contenido. Debe mostrar sesiones reales, colaboración y testimonio de cada integrante. El Anexo C sugiere cinco minutos de retrospectiva más un minuto por integrante. Completar resumen, pauta de secuencias hh:mm:ss, captura, enlaces Stream/YouTube e incorporación en landing. La mera existencia del enlace no acredita que sea la versión final requerida; los guiones de exposición no reemplazan su revisión.
 
 # Bibliografía
 
@@ -2450,7 +2450,7 @@ Las observaciones se contrastaron con el contenido actual y el registro históri
 | Fecha incorrecta y encabezados AV1 | **Corregido documentalmente** | Carátula de revisión local de noviembre de 2026, curso/periodo/equipo conservados; fechas AV1/TB1 se mantienen únicamente como cortes históricos. Se distinguen portada actual y evidencia anterior. | Confirmar fecha/horario de presentación y el hito de entrega real con el equipo. |
 | Entrevistas incompletas | **Pendiente** | 2.2 conserva tres registros S1 y uno S2, con guion y controles de evidencia; no se declara completado el mínimo por segmento. | Al menos dos S2 adicionales y revisión de los cuatro registros, consentimiento, resúmenes, capturas, metadatos, Stream y análisis con citas/minutos. |
 | Pruebas de usabilidad / validación | **Pendiente** | 5.3.1–5.3.3 organizan protocolo, registro y heurísticas. Se distinguen resultados automáticos existentes de sesiones con usuarios. | 3–5 entrevistas de validación por segmento, tareas observadas, hallazgos y evidencia audiovisual auténtica. |
-| Integración, publicación y videos | **Pendiente** | El anexo B reconoce backend local y frontend demo por separado; secciones Product/Team reservadas con requisitos del curso. | Integración frontend/API, PostgreSQL real, URLs HTTPS verificadas y grabaciones/enlaces reales. |
+| Integración, publicación y videos | **Actualizado técnicamente; pendientes externos** | El anexo B conserva el corte 02/11. La integración actual se documenta en Sprint 3; enlaces históricos de Product/Team se conservaron sin presumir validación. | El estado técnico actual sustituye este pendiente histórico en la matriz AV2: integración frontend/API y cambio a MySQL. Publicación HTTPS, grabaciones vigentes y aceptación continúan requiriendo evidencia. |
 
 Herramientas locales: `python tools/report/validate_report.py` valida estructura, enlaces/recursos locales y copias de evidencia; `python tools/tb1/update_index.py` actualiza únicamente el índice interno del documento. La exportación histórica usa ahora el README completo para evitar duplicar los capítulos.
 
@@ -2555,3 +2555,17 @@ Se incorporaron selectivamente la ampliación coherente de Sprint 2, sus fuentes
 Las versiones remotas de los capítulos y su README se conservan como [copias exactas con manifiesto SHA-256](assets/history/origin-develop-fda83ad/manifest.json). Son evidencia histórica de lo recibido, no una ratificación de todas sus afirmaciones. La tabla de commits del capítulo V remoto contiene etiquetas/enlaces/autores incompatibles con algunos objetos Git; para el contenido actual se utiliza el inventario canónico de Sprint 2 y la identidad del objeto, sin reproducir esas reasignaciones. Las propuestas de responsables no se convierten en aportes realizados. Los enlaces históricos a capturas inexistentes no se presentan como imágenes disponibles.
 
 La rama de revisión incorpora contenido de ambos conjuntos; la divergencia de `develop` frente al remoto no se resolvió mediante una fusión global ni publicación. El checkout original y sus ramas de entrega se conservan. Esta organización permite revisar el documento y decidir la integración posterior con todo el historial disponible.
+
+### E.1 Aportes posteriores disponibles en origin/main
+
+La referencia remota ya guardada `origin/main` termina en `42e2d96` (27/10/2026) y contiene 18 commits de Sebastián posteriores a main local `0e68b7a`. Se revisó sin fetch y se conserva su historia en la integración local. Aporta cuatro capturas, ampliaciones documentales de Sprint 2 y correcciones de marca. Las capturas se incorporan en 4.4.3; las ampliaciones de sprint se cotejan con las fuentes ya conservadas.
+
+Los archivos exactos de esa referencia se preservan con [manifiesto SHA-256](assets/history/origin-main-42e2d96/manifest.json). Algunas filas pasan a «Realizado» sin adjuntar una prueba nueva; ese estado se registra como declaración de la versión y no como resultado verificado del incremento AV2. La tabla de commits contiene etiquetas, repositorios, autores y hashes cruzados, por lo que el inventario vigente utiliza objetos Git y conserva la tabla original solo como antecedente.
+
+La referencia contiene un archivo de texto en `assets/ux/tb1`, mientras el documento integrado usa allí un directorio con capturas y recursos. Se conserva el archivo histórico dentro del snapshot y se mantiene el directorio de recursos operativo. No se borran esos artefactos para resolver el conflicto. Los cambios de fecha, marca y enlaces válidos se incorporan; las entrevistas, sesiones y revisiones no se dan por realizadas solamente por el cambio de una etiqueta.
+
+## F. Auditoría de coherencia AV2: 13/11/2026
+
+Se revisaron todas las secciones numeradas del documento contra el código y se mantuvo el corte histórico de las evidencias anteriores. El [barrido por sección](docs/av2/auditoria-por-seccion.md) especifica fuente, corrección y límite para cada apartado. La [matriz del incremento](docs/av2/estado-implementacion.md) distingue funciones conectadas, demo, API sin pantalla, resultados de prueba y pendientes. Los capítulos III–V y los diagramas AV2 son la especificación vigente; los PDF/PPTX históricos no fueron regenerados por esta revisión.
+
+La rama de actualización se crea desde develop y preserva `feature/report-unified-allpatek` y los aportes locales de main mediante merges. La incorporación no publica nada, no altera main y no transforma una contribución histórica en trabajo realizado por otro autor.
