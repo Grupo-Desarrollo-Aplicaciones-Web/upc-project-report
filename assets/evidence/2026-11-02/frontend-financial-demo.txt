@@ -1,0 +1,179 @@
+# CREDITOR financial frontend demonstration
+
+This increment belongs to **Aplicaciones Web / CREDITOR**. It expands the Vue/PrimeVue frontend with a browser-only asynchronous fake API. It does not change the ASP.NET Core backend, call banks, execute payments, issue tax invoices, push commits or publish a site.
+
+## Start and explore
+
+```powershell
+npm ci
+npm run dev
+```
+
+Open http://127.0.0.1:5174/#/finance/overview. Spanish is the default for first-time visits; saved language choices are respected. English remains available. Every module contains contextual guidance describing why it exists and how to use it. The Guide & activity page contains a full learning path.
+
+All names and starting records are fictional and marked DEMO. The account holder, counterparty, economic owner, project, responsible person and recording actor have separate meanings. An application's Owner permission is separate from economic ownership of money.
+
+## Original brand palette
+
+The financial workspace retains the initial CREDITOR colors from the application
+foundation (`51eecf9`), `src/styles.css`, `src/main.js`, and `public/favicon.svg`:
+indigo `#4338CA`, white surfaces, page background `#F5F6FA`, main text `#172033`,
+muted text `#5D687C`, and borders `#E5E8F0`. Navigation, links, the overview balance,
+chart, form guidance and the original SVG logo share that palette. Green, amber and
+red remain semantic indicators for success, warnings and overdue/error states.
+Finance CSS reuses the original shell variables; its tokens are global so dialogs
+teleported by PrimeVue receive the same palette. The PrimeVue indigo preset is
+unchanged. Keep this palette when adding screens.
+
+## Merchant task navigation
+
+The sidebar offers four everyday task groups and a direct Reports entry instead of twelve separate modules:
+
+| Task | Everyday views | Under More options |
+| --- | --- | --- |
+| Inicio / Home | Overview, money recorded, money owed and upcoming commitments | Balances by account, chart, forecast and ownership example are in an expandable detail section. |
+| Mi dinero / My money | Money in and out, My accounts | Move money between accounts; Check against my bank. |
+| Cobros y pagos / Payments and collections | Debts, Invoices | Loans and installments; Agreed payment dates. |
+| Mi negocio / My business | Other people's money, Jobs and events | No extra group is required. |
+| Informes / Reports | Account statements by account, currency, period and owner | CSV download and browser print / Save as PDF. |
+
+Help stays in the sidebar footer. Its everyday learning path is visible first;
+backup/reset controls and detailed activity are expandable. Existing route URLs,
+records, monetary rules, fake API commands and permission values are preserved.
+Current task and section links expose `aria-current`; advanced links automatically
+open for direct routes or refreshes. Native details controls support keyboard use.
+Buttons and navigation targets have larger touch areas on mobile. Only presentation
+labels are simplified; ownership and the distinction between debt and cash remain.
+
+## Readability and guided first use
+
+Everyday reading text uses 16px (rem units), secondary text has a 14px floor,
+headings and amounts have larger distinct sizes, and important controls target
+48px touch areas. Existing indigo/white/gray brand colors remain; positive and
+warning text use the darker existing semantic shades for contrast.
+
+Home starts with three ordinary events: money received, expense paid, or a debt.
+New movements and direct debts use three steps with field examples, explicit
+account/ownership choices, and a review before the existing command is submitted.
+Nothing is written while moving between steps. Optional job/manager/reference
+fields remain available. Other financial commands retain their original workflows
+with larger fields and short task explanations. Save feedback links to the record
+area. No existing browser data is reset or migrated.
+
+Mobile navigation traps keyboard focus while open, supports Escape, has an
+explicit close button, and makes background content inert. Horizontal data areas
+are labeled keyboard-focusable regions. Responsive layouts use a wider breakpoint
+for the larger reading size. Verification covers keyboard use, text sizes,
+contrast samples, mobile layouts and reflow equivalent to browser zoom.
+
+## Account statements and exports
++
++Open **Informes** in the sidebar (`/#/finance/reports`). Choose a currency,
++account (or all accounts in that currency), owner (or all/unallocated), and
++inclusive From/To dates. The initial period is the last 30 calendar days.
++Choose **Ver estado de cuenta** after changing filters. Stale results cannot be
++downloaded. Opening balance sums recorded amounts before From; credits, debits,
++running balances and closing balance use integer cents through To inclusive.
++Owner scope sums every allocation for that owner, rather than the full movement.
++
++**Descargar CSV** includes opening/closing rows and each movement’s whole amount,
++selected amount, credit, debit and running balance. CSV is UTF-8 with BOM, comma
++separated, and two-decimal numeric money cells. Formula-like text is escaped;
++negative money remains numeric. **Imprimir o guardar PDF** opens browser print;
++choose Save as PDF there. There is no direct XLSX export or PDF server service.
++
++Movements CSV now has `owner_scope`, `total_movement_amount`, `amount` (selected
++share) and `unallocated_in_movement`, in addition to date/account/currency/reference
++and description. The owner-filtered screen shows the same share and identifies
++the full movement separately. Existing records and the JSON copy are unchanged.
++
++These are statements of available demo cash records, not official bank statements
++or client debt statements. No missing opening balance or prior history is invented:
++zero is assumed before available records, and accounts without an opening entry
++are identified. Transfers and reversal pairs remain in the ledger. Different
++currencies are never combined. Ownership uses current allocations, not historical
++versions before an edit. Same-day ordering uses available recording time and
++stored order. Unpaid invoices, credit terms and promises do not become cash rows.
++
++## Modules and workflows
+
+| Module | Purpose and use |
+| --- | --- |
+| Overview | View recorded cash, funds belonging to Alex, receivables, payables, unclassified movements and a 14-day contractual cash scenario. Currencies remain separate. Promises are not added on top of obligations in that scenario. |
+| Accounts | Create fictional bank/cash accounts with one currency, a holder and optional last four digits. Record an opening movement separately, before other movements. |
+| Movements | Record inflows/outflows, their nature and counterparty. Allocate all or part to economic owners, projects and responsible people. Unassigned amounts remain visibly pending. A reference must be unique within an account. Export filtered CSV. |
+| Third-party funds | Inspect each economic owner's balance across accounts and trace the underlying allocations. The USD example receives 1,000: 600 for Andes and 400 for Marina. A 250 expense leaves 350 and 400, while account cash is 750 and Alex's own funds are zero. |
+| Projects | Create projects with owner, responsible person and a budget in a chosen currency. Show allocated inflows and expenses separately by currency. A budget is not a cash balance; transfers are excluded from expense totals. |
+| Receivables/payables | Record obligations directly or through invoices/credit installments. Pay/collect creates a movement and application atomically. Link existing applies an already recorded movement without another cash entry. Multiple applications support partial settlements. |
+| Expense advances | Paying another economic owner's obligation using your own funds creates a reimbursement receivable for the owner advancing the money. Collection through that receivable clears the claim. |
+| Invoices | Register received or issued fictional documents with 1–20 line items and manually entered taxes. Their total creates exactly one linked obligation. No tax document is transmitted or issued. |
+| Credit | Simulate borrowed/lent credit, principal, effective annual rate and 1–60 monthly installments. Show principal, interest, dates and final rounding adjustment. Creating terms generates installment obligations without inventing a disbursement. |
+| Payment promises | Keep one current promise per obligation. Creation does not change cash or debt. Subsequent applied payments update fulfillment. Renegotiation retains the prior promise and records the new explanation. |
+| Transfers | Create two linked, equal and opposite movements between different accounts of the same currency. Preserve the economic owner. Cross-currency transfers are rejected. |
+| Reconciliation | Preview a fictional CSV, import statement lines and then link each to an existing matching movement. Import alone does not change cash. Create a movement only when missing; it starts unclassified and is linked once. Repeat imports do not duplicate account/reference rows. Conflicting amounts for the same reference require review. |
+| Guide/activity | Learn the scenario, inspect actor/role/date history, export a JSON copy or explicitly reset this financial demo. |
+
+### A useful demonstration sequence
+
+1. In Third-party funds, switch to USD and inspect Andes, Marina and Alex.
+2. In Payables, pay PEN 100 on F-DEMO-0042 from the operating account using Andes funds. Outstanding changes from 500 to 400 and its promise becomes partial.
+3. In Reconciliation, preview/import the sample CSV. Link DEMO-PAY-01 to its existing movement; cash and payment count remain unchanged.
+4. Create an invoice with quantity 2, unit price 25 and manually entered tax 10. A single 60 obligation appears.
+5. Create a 100 principal, 0% annual rate, three-month credit. Principal installments are 33.33, 33.33 and 33.34; cash is unchanged.
+6. Switch the demo role to Viewer and verify that recording buttons are disabled while read/export remain available.
+
+## Fake API contract
+
+`src/finance/fake-api.js` exposes `createFakeApi({ storage, getRole, latency, lock, clock, id })`:
+
+- `getWorkspace()` -> Promise `{ status: 200, data, revision }`.
+- `command(name, payload, requestId)` -> Promise `{ status: 201, data, result, revision, replayed: false }`.
+- Retrying the same request ID and canonical payload returns the original result with `status: 200, replayed: true`, without another mutation. A different payload under that ID produces a 409 error.
+- `reset()` -> fresh fictional workspace; available only to simulated Owner.
+
+Commands: account, party, project, movement, allocate, obligation, settle, apply, invoice, credit, promise, transfer, reverse, import, reconcile, statementMovement.
+
+Errors are `FinanceError { code, field, status }`: validation 422, not found 404, simulated permission denial 403, duplicate/stale/replay conflict 409, storage unavailable 503 and storage size limit 507. The Vue store is the presentation adapter. This interface can be replaced with a future HTTP client; a real service would need its own authentication, authorization, validation and persistence.
+
+### Important rules
+
+- Money is integer cents, PEN/USD, two decimal places, at most 9,999,999.99 per amount/account. Payments and allocations cannot exceed available balances.
+- Account, owner and all relationship references must exist in the same demo workspace.
+- Account balance and each owner's account balance cannot be negative in this simulation. Overdrafts are not simulated.
+- Linking a movement checks currency, direction, counterparty and available application amount. A transfer or reversal cannot be used as payment.
+- New movement references are unique per account. Invoice numbers are unique per issuer. Documents and payment applications use distinct records.
+- A posted payment cannot be silently edited/reversed through the generic movement editor. Unapplied/unreconciled movements support a compensating reversal with a reason. The original remains in history. Transfers require their linked pair and are immutable through that editor.
+- Dates are ISO business dates; today follows America/Lima. Future-dated cash movements are rejected. Promises and first credit installments cannot begin in the past.
+- Loan values are educational estimates with no commissions, insurance, penalties or tax calculation. Taxes on invoice records are explicit manual amounts.
+
+## Persistence and boundaries
+
+The namespaced key is `creditor.finance.demo.v1`, with schema version, revision, validated data and request replay records. Existing TB1 storage remains untouched. There is no automatic migration of fictional TB1 records into this new model. Existing landing routes redirect to the new workspace/obligation form.
+
+Each command clones the current snapshot, validates and applies the whole change, then saves only after all invariants pass. Failed writes preserve the previous stored copy. Altered/incompatible storage is reported without automatically overwriting it. Owner may explicitly reset after exporting a copy. Storage is bounded to 1.5 million characters and 3,000 records per collection; reaching the limit asks for export/reset rather than silently discarding history.
+
+Writes within an API instance are queued. Web Locks coordinate supported same-origin browser tabs, with revision checks as an additional guard. Browser storage is readable and modifiable by the user; simulated roles and client-side validation are demonstration behavior, not security for real records. When browser storage is unavailable at startup, a clearly marked session-only memory adapter is used.
+
+No credentials, access tokens, full bank account numbers or uploaded document contents are requested/stored by this module. Exported files contain only the local demo data. JSON export is a review copy; a backup restore/import workflow is not implemented.
+
+## Source and validation
+
+- `seed.js`: fictional scenario and business-date helpers.
+- `domain.js`: money, relationships, schedules, commands and invariants.
+- `fake-api.js`: asynchronous adapter, idempotency, revisioned persistence and errors.
+- `store.js`: shared Vue state, refresh, role simulation and session fallback.
+- `FinanceWorkspace.vue` and `FinanceDialog.vue`: modules, forms and contextual guidance.
+- `tests/unit/finance.test.js`: financial integrity, replay, concurrent requests and failed writes.
+- `tests/e2e/finance-flow.spec.js`: browser workflows, language, permissions, navigation and responsive checks.
+
+Run `npm test`, `npm run build`, and `npm run test:e2e`. Browser tests use isolated contexts and fictional records. Screenshots are written under ignored `artifacts/`.
+
+## Authorship observed in local history
+
+| Contributor | GitHub username identified from existing history | Git author observed |
+| --- | --- | --- |
+| Miguel Angel Egocheaga Suyo | MiguelAngel0107 | MIguelAngelES7 / Miguel Angel |
+| Juan Manuel Santos Torres | JuanManuel312 | JuanManuel312 |
+| Sebastián Gutarra | SebastianGutarra | SebastianGutarra / Sebastián Gutarra |
+
+These are local commit-history identities, not a fresh account-ownership check. Existing authors are preserved. New work in this increment uses Miguel's configured Git identity at his request. No new commits impersonate Juan or Sebastián or imply contributions they did not make to this increment.

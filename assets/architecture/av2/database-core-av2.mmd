@@ -1,0 +1,78 @@
+erDiagram
+  businesses ||--o{ AspNetUsers : membership
+  businesses ||--o{ suppliers : owns
+  businesses ||--o{ purchases : owns
+  businesses ||--o{ loans : owns
+  suppliers ||--o{ purchases : supplies
+  purchases ||--o{ payments : receives
+  purchases ||--o{ attachments : protects
+  payments |o--o| attachments : voucher
+  loans ||--|{ loan_installments : schedules
+  businesses {
+    Guid Id PK
+    string Name
+    DateTimeOffset CreatedAt
+  }
+  suppliers {
+    Guid Id PK
+    Guid BusinessId FK
+    string Name
+    string Email
+    string TaxId
+    string Phone
+  }
+  purchases {
+    Guid Id PK
+    Guid BusinessId FK
+    Guid SupplierId FK
+    string Reference
+    string NormalizedReference UK
+    string Description
+    string Currency
+    decimal Amount
+    DateOnly PurchasedOn
+    DateOnly DueOn
+    Guid Version
+  }
+  payments {
+    Guid Id PK
+    Guid BusinessId FK
+    Guid PurchaseId FK
+    decimal Amount
+    string Currency
+    DateOnly PaidOn
+    string Note
+  }
+  attachments {
+    Guid Id PK
+    Guid BusinessId FK
+    Guid PurchaseId FK
+    Guid PaymentId FK
+    string StoredName UK
+    string FileName
+    string ContentType
+    long Length
+  }
+  loans {
+    Guid Id PK
+    Guid BusinessId FK
+    string Name
+    string Currency
+    long PrincipalCents
+    int AnnualRateBasisPoints
+    DateTimeOffset CreatedAt
+  }
+  loan_installments {
+    Guid LoanId PK,FK
+    int Number PK
+    Guid BusinessId FK
+    DateOnly DueOn
+    long AmountCents
+  }
+  AspNetUsers {
+    Guid Id PK
+    Guid BusinessId FK
+    string FullName
+    string Email
+    string PasswordHash
+  }

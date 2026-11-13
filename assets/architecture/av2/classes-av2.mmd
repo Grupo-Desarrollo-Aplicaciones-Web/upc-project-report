@@ -1,0 +1,56 @@
+classDiagram
+  class Purchase {
+    Guid Id
+    Guid BusinessId
+    decimal Amount
+    decimal PaidAmount
+    decimal Balance
+    Guid Version
+    RecordPayment() Payment
+    StatusOn(today) string
+  }
+  class Payment {
+    Guid Id
+    Guid PurchaseId
+    decimal Amount
+    DateOnly PaidOn
+  }
+  class Supplier {
+    Guid Id
+    Guid BusinessId
+    string Name
+  }
+  class Loan {
+    Guid Id
+    Guid BusinessId
+    long PrincipalCents
+    int AnnualRateBasisPoints
+  }
+  class LoanInstallment {
+    Guid LoanId
+    int Number
+    DateOnly DueOn
+    long AmountCents
+  }
+  class CashAccount {
+    Guid Id
+    Guid HolderId
+    long BalanceCents
+    Guid Version
+    PostMovement()
+    Allocate()
+  }
+  class CashMovement {
+    Guid Id
+    long SignedCents
+  }
+  class FundAllocation {
+    Guid OwnerId
+    Guid ResponsibleId
+    long Cents
+  }
+  Supplier "1" <-- "0..*" Purchase
+  Purchase "1" *-- "0..*" Payment
+  Loan "1" *-- "1..60" LoanInstallment
+  CashAccount "1" *-- "0..*" CashMovement
+  CashMovement "1" *-- "0..*" FundAllocation

@@ -1,0 +1,17 @@
+{
+  "response": {
+    "baseCurrency": "USD",
+    "targetCurrency": "PEN",
+    "rate": 3.407,
+    "asOfDate": "2026-11-12",
+    "retrievedAt": "2026-11-13T17:15:06.2147995-05:00",
+    "provider": "BCRPData / SBS",
+    "attribution": "Source: Banco Central de Reserva del Peru (BCRPData), SBS selling exchange rate PD04640PD. Reference only.",
+    "sourceUrl": "https://estadisticas.bcrp.gob.pe/estadisticas/series/diarias/resultados/PD04640PD/html",
+    "isReciprocal": false,
+    "updatedAt": "2026-11-12"
+  },
+  "checkedAt": "2026-11-13T17:15:06.2419786-05:00",
+  "status": 200,
+  "provider": "MySQL 8.4.9"
+}

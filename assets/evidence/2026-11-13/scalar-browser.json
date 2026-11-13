@@ -1,0 +1,67 @@
+{
+  "openapi": {
+    "url": "http://127.0.0.1:5196/swagger/v1/swagger.json",
+    "status": 200
+  },
+  "paths": [
+    "/api/v1/purchases/{purchaseId}/receipt",
+    "/api/v1/purchases/{purchaseId}/payments/{paymentId}/voucher",
+    "/api/v1/auth/register",
+    "/api/v1/auth/login",
+    "/api/v1/auth/me",
+    "/health/live",
+    "/health/ready",
+    "/api/v1/exchange-rates/reference",
+    "/api/v1/exchange-rates",
+    "/api/v1/loans",
+    "/api/v1/loans/{id}",
+    "/api/v1/purchases/{purchaseId}/payments",
+    "/api/v1/purchases/{purchaseId}/payments/{id}",
+    "/api/v1/purchases",
+    "/api/v1/purchases/summary",
+    "/api/v1/purchases/{id}",
+    "/api/v1/purchases/export",
+    "/api/v1/suppliers",
+    "/api/v1/suppliers/{id}",
+    "/api/v1/treasury/parties",
+    "/api/v1/treasury/parties/{id}",
+    "/api/v1/treasury/projects",
+    "/api/v1/treasury/projects/{id}",
+    "/api/v1/treasury/projects/{id}/summary",
+    "/api/v1/treasury/accounts",
+    "/api/v1/treasury/accounts/{id}",
+    "/api/v1/treasury/accounts/{accountId}/movements",
+    "/api/v1/treasury/accounts/{accountId}/movements/{movementId}",
+    "/api/v1/treasury/accounts/{accountId}/movements/{movementId}/allocations",
+    "/api/v1/treasury/funds",
+    "/api/v1/users"
+  ],
+  "hasLoans": true,
+  "responses": [
+    {
+      "url": "http://127.0.0.1:5196/scalar/v1",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5196/scalar/scalar.aspnetcore.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5196/scalar/scalar.js",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5196/swagger/v1/swagger.json",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:5196/scalar/favicon.svg",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "loansNavigationVerified": true,
+  "renderedLoanList": true,
+  "renderedLoanRegistration": true
+}

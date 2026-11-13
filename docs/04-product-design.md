@@ -1,6 +1,10 @@
+> Vista sincronizada del [informe canónico](../README.md), corte AV2 13/11/2026. Para editar contenido, modificar README y ejecutar `python tools/report/sync_chapters.py`.
+
 # Capítulo IV: Product Design
 
-El diseño TB1 conecta las historias US-004–007 con la frontend local. Los wireframes son fuentes editables y las capturas muestran la implementación de demostración. La arquitectura de API y base de datos continúa como diseño de AV2. Los artefactos locales no acreditan una sesión de investigación ni una entrega creada en Figma, UXPressia o FigJam.
+El capítulo conserva wireframes/mock-ups de AV1/TB1 y actualiza navegación, arquitectura, clases y base de datos al código AV2. Los diagramas actuales representan la API implementada y el workspace conectado. Los artefactos locales no acreditan una sesión de investigación ni una entrega creada en Figma, UXPressia o FigJam.
+
+> **Corte de diseño:** 4.1–4.2 y 4.6–4.8 describen código vigente AV2; 4.3–4.5 preservan recursos históricos identificados. Se mantiene la paleta índigo y la composición del frontend. No se declara sustituido ni validado el prototipo Figma pendiente.
 
 ## 4.1 Style Guidelines
 
@@ -12,63 +16,56 @@ CREDITOR comunica claridad sobre obligaciones de la mype con sus proveedores. No
 
 | Elemento | Dirección visual y aplicación |
 |---|---|
-| Marca | Azul como acción principal, fondos claros, jerarquía centrada en saldo y vencimiento. |
+| Marca | Índigo de la interfaz establecida, fondos claros y jerarquía centrada en saldo/vencimiento. |
 | Tipografía de referencia | Montserrat para títulos e Inter para texto en el diseño histórico. La implementación usa la pila de fuentes declarada en cada CSS, con alternativa de sistema. |
-| Acción principal | `#2563EB`; hover `#1D4ED8`; fondo suave `#E8EFFF`. |
-| Texto y superficies | Texto `#111827`, superficies blancas y bordes legibles. |
+| Acción principal | Índigo `#4338CA`; se conserva el preset y los tokens de `src/styles.css`/`src/finance`. |
+| Texto y superficies | Texto `#172033`, fondo `#F5F6FA`, superficies blancas, bordes `#E5E8F0`, secundario `#5D687C`. |
 | Estados | Éxito, advertencia y error acompañados de texto. El color no sustituye su significado. |
 | Iconografía | Proveedor, documento, fecha y pago con nombre accesible cuando el icono ejecuta una acción. |
 | Tono | Acciones concretas, datos de demostración identificados, mensajes sin promesas comerciales. |
 
 ### 4.1.2 Web Style Guidelines
 
-La frontend usa Vue y componentes PrimeVue con tema Material. Landing y aplicación ofrecen inglés por defecto (`en-US`) y español latinoamericano (`es-419`). El idioma controla el texto y formato; cada compra conserva su moneda PEN o USD. Se mantienen foco visible, etiquetas persistentes, errores asociados y navegación por teclado.
+La frontend usa Vue y componentes PrimeVue con tema Material. La aplicación ofrece inglés y español latinoamericano; la preferencia se conserva en el navegador. Sin API configurada, la primera visita adopta español; con API configurada, inglés. La preferencia guardada prevalece en ambos casos. La landing conserva su propia configuración. El idioma controla el texto y formato; cada compra conserva su moneda PEN o USD. Se mantienen foco visible, etiquetas persistentes, errores asociados y navegación por teclado.
 
 Los layouts locales permiten revisar escritorio y móvil. Los formularios preservan sus campos ante un error. Una ausencia de datos se distingue de un fallo al leer o guardar, sin presentar un saldo desconocido como cero.
 
 ## 4.2 Information Architecture
 
-![Mapa de arquitectura de información](../assets/architecture/information-architecture.svg)
-
-[Fuente editable](../assets/architecture/information-architecture.mmd). El mapa expresa el producto completo; no implica que Loans, Reports o Identity estén implementados en TB1.
+El diseño vigente conserva el menú del proyecto y añade las capacidades conectadas dentro de sus tareas. Las capturas históricas de TB1 siguen siendo referencias del corte de octubre.
 
 ### 4.2.1 Organization Systems
 
-| Área | Información | Estado local TB1 |
+| Área | Ruta conectada | Responsabilidad |
 |---|---|---|
-| Landing | Propuesta, recorrido, alcance de demostración, contacto y legales. | Nueva versión local. |
-| Dashboard | Saldo por moneda, vencimientos y enlace al detalle. | US-004, demostración. |
-| Purchases | Lista, filtros, registro y detalle de compra a crédito. | US-005/007, demostración. |
-| Suppliers | Catálogo de la organización usado por las compras. | Soporte del flujo local. |
-| Payments | Abonos en detalle, historial y saldo derivado. | US-006, demostración. |
-| Loans y Reports | Préstamos, cuotas y exportaciones. | Roadmap Sprint 3, US-008/009. |
-| Identity y API | Autorización y persistencia centralizada. | Diseño AV2. |
+| Inicio | `/#/workspace` | Resumen del negocio autenticado. |
+| Mi dinero | `/#/workspace/treasury` | Cuentas, movimientos y asignaciones. |
+| Cobros y pagos | `/#/workspace/payables` | Proveedores, compras, abonos, documentos y CSV de obligaciones. El alcance conectado es por pagar. |
+| Préstamos y cuotas | `/#/workspace/loans` | Acuerdos mensuales dentro de Cobros y pagos. |
+| Mi negocio | `/#/workspace/business` | Personas/empresas y proyectos. |
+| Informes | `/#/workspace/reports` | Estado de cuenta derivado de movimientos/asignaciones de tesorería. |
+| Acceso | `/#/workspace/sign-in` | Registro de negocio e inicio de sesión. |
+| Práctica | `/#/finance/overview` | Demostración local independiente; no se importa al servidor al autenticar. |
 
 ### 4.2.2 Labeling Systems
 
-Se conserva la equivalencia estable con el Ubiquitous Language: Purchases/Compras, Suppliers/Proveedores, Payments/Abonos, Outstanding Balance/Saldo pendiente y Due Date/Fecha de vencimiento. La mype paga sus obligaciones. Los textos no describen cobrar a una cartera de clientes.
+Compras/Purchases, Proveedores/Suppliers, Abonos/Payments, Saldo pendiente/Outstanding balance y Vencimiento/Due date mantienen su significado de negocio. El grupo «Cobros y pagos» pertenece al diseño general; en la vista conectada se aclara que se gestionan obligaciones con proveedores. «Titular de cuenta» y «dueño económico» son conceptos distintos, y ninguno equivale al rol de autorización Owner.
 
 ### 4.2.3 SEO Tags and Meta Tags
 
-Landing y frontend incluyen título, descripción, viewport e idioma. La landing se identifica como CREDITOR y cuentas por pagar; los metadatos no publican métricas comerciales sin fuente. El `index.html` y la actualización de idioma en ejecución son la fuente de los valores efectivos. Los enlaces de producción y canonical se revisarán cuando se autorice la publicación.
+Los metadatos efectivos están en `index.html` y en la actualización de idioma del frontend/landing. El área autenticada no publica información de negocio en metadatos. Las URLs canonical, la indexación y el HTTPS de producción deberán validarse cuando exista un despliegue autorizado del corte actual.
 
 ### 4.2.4 Searching Systems
 
-La lista permite localizar obligaciones por proveedor, moneda, vencimiento y estado dentro del contexto de demostración. La búsqueda conserva filtros ante ausencia de coincidencias y permite limpiarlos. Un saldo agrupado siempre indica su moneda.
+En cuentas por pagar, el usuario aplica texto, proveedor, moneda, estado y límites inclusivos de vencimiento. El mismo conjunto viaja al listado, resumen y exportación. Un cambio sin aplicar invalida la descarga, y limpiar filtros vuelve a la selección completa del negocio. La API paginada conserva la moneda de cada fila y separa totales PEN/USD. Los préstamos ofrecen lista y detalle; no se les atribuyen los filtros de compras.
 
 ### 4.2.5 Navigation Systems
 
-| Actor/origen | Acción | Destino local |
-|---|---|---|
-| Propietario en landing | Review my obligations | `http://localhost:5174/#/dashboard` |
-| Administrador en landing | Record a purchase | `http://localhost:5174/#/purchases/new` |
-| Dashboard/lista | Seleccionar compra | `#/purchases/{id}` |
-| Detalle | Registrar abono | Formulario de abono y retorno al historial. |
-| Landing/aplicación | Privacidad y términos | Vistas legales de demostración. |
-
-Los CTA son configurables mediante `VITE_APP_URL`; requieren el servidor local del frontend. Hash routing permite refrescar las rutas de la aplicación. El contexto de demostración no equivale a iniciar sesión.
+La navegación usa Vue Router con hash. Las rutas heredadas `/dashboard` y `/purchases/new` redirigen a la práctica; no equivalen a autenticación. Con `VITE_API_BASE_URL` configurada aparece el acceso al negocio. Las rutas `/workspace` requieren sesión salvo acceso/legales; cerrar sesión o recargar por completo elimina el token en memoria. Los menús y acciones conservan el diseño, colores y estructura establecidos; las funciones nuevas se integran en esos componentes.
 
 ## 4.3 Landing Page UI Design
+
+Las subsecciones 4.3–4.5 conservan wireframes, mock-ups y evidencia de prototipo del corte TB1. La implementación conectada actual se describe en 4.2 y 5.2.3; estas imágenes no se presentan como capturas de MySQL ni de la nueva pantalla de préstamos. No se modificó el diseño del frontend en esta actualización documental.
 
 ### 4.3.1 Landing Page Wireframes
 
@@ -136,6 +133,8 @@ Las siguientes cinco exportaciones muestran explícitamente la composición móv
 
 Las siguientes capturas muestran las vistas implementadas con datos ficticios y adaptador local. Permiten revisar composición y consistencia del flujo con las historias. No constituyen una validación con usuarios.
 
+**Evidencia posterior de noviembre:** el flujo actual de compra a crédito se recorre mediante **Cobros y pagos → Anotar una deuda**. Sus tres pasos —proveedor/importe, moneda/vencimiento y revisión— se muestran en el [anexo B.3](../README.md#b3-evidencia-posterior-de-us-005-compra-a-crédito). Las imágenes TB1 siguientes se conservan como históricas; las nuevas capturas no son un prototipo final de Figma ni una prueba de usabilidad.
+
 ![Dashboard local](../assets/ux/tb1/frontend-dashboard-en.png)
 
 ![Registro local de compra](../assets/ux/tb1/frontend-purchase-new-en.png)
@@ -143,6 +142,16 @@ Las siguientes capturas muestran las vistas implementadas con datos ficticios y 
 ![Detalle e historial local](../assets/ux/tb1/frontend-detail-es.png)
 
 ![Formulario en móvil](../assets/ux/tb1/frontend-mobile-es.png)
+
+Las cuatro capturas adicionales incorporadas por Sebastián en la referencia local `origin/main` se conservan como evidencia del prototipo TB1, sin presentarlas como pantallas AV2 actuales:
+
+![Dashboard histórico aportado](../assets/ux/frontend-dashboard-en.png)
+
+![Compra histórica aportada](../assets/ux/frontend-purchase-new-en.png)
+
+![Detalle histórico aportado](../assets/ux/frontend-detail-es.png)
+
+![Vista móvil histórica aportada](../assets/ux/frontend-mobile-es.png)
 
 ### 4.4.4 Web Application User Flow Diagrams
 
@@ -210,126 +219,113 @@ Cada identificador aparece en los diagramas y el wireflow. Esta matriz permite r
 | CON-04 | Compra inexistente; muestra estado específico, sin inventar saldo cero de una compra válida. | Lista de compras. |
 | CON-05 | Datos locales ilegibles o almacenamiento no disponible; informa el fallo en lugar de presentar un dashboard válido. | Reintentar lectura o confirmar restablecimiento de la demo; este último reemplaza los datos ficticios. |
 
-Los casos de importe, fecha, referencia, proveedor, archivo y fallas del adaptador cuentan con pruebas de dominio; la [evidencia de navegador](tb1/evidencia-local.md) registra el recorrido compra–abono–saldo, sobreabono y ruta inexistente. El resto de la matriz conserva su condición de contrato de diseño revisado contra el código, sin afirmar una ejecución no registrada. Préstamos/reportes y autenticación de servidor permanecen fuera de esta matriz TB1.
+Los casos de importe, fecha, referencia, proveedor, archivo y fallas del adaptador cuentan con pruebas de dominio; la [evidencia de navegador](../docs/tb1/evidencia-local.md) registra el recorrido compra–abono–saldo, sobreabono y ruta inexistente. El resto de la matriz conserva su condición de contrato de diseño revisado contra el código, sin afirmar una ejecución no registrada. Préstamos/reportes y autenticación de servidor permanecen fuera de esta matriz TB1.
 
 ## 4.5 Web Applications Prototyping
 
-El prototipo funcional local es la primera frontend CREDITOR. Con el servidor en 5174 permite recorrer dashboard, compra, detalle y abono en escritorio/móvil, cambiar idioma y corregir errores. Una compra PEN 100 y abono 30 debe mostrar saldo PEN 70; un abono posterior 71 debe rechazarse. Las comprobaciones y límites se documentan en [Evidencia local](tb1/evidencia-local.md).
+El prototipo funcional local es la primera frontend CREDITOR. Con el servidor en 5174 permite recorrer dashboard, compra, detalle y abono en escritorio/móvil, cambiar idioma y corregir errores. Una compra PEN 100 y abono 30 debe mostrar saldo PEN 70; un abono posterior 71 debe rechazarse. Las comprobaciones y límites se documentan en [Evidencia local](../docs/tb1/evidencia-local.md).
 
 La conexión del prototipo Figma desktop/mobile, la revisión del equipo y el video de navegación en Stream quedan pendientes. La preparación local no acredita esas evidencias externas.
 
+
+**Aporte documental posterior conservado:** Sebastián incorporó la siguiente captura al repositorio en `d1e6ddc` y la explicación de rutas en `4e2fa6e` (03/10/2026). Muestra dashboard, nueva compra y detalle. La captura complementa las vistas locales anteriores; no acredita por sí sola un enlace Figma final navegable, pruebas con usuarios ni video de navegación.
+
+![Captura histórica del prototipado de CREDITOR incorporada por Sebastián](../assets/ux/tb1/prototypingCreditor.PNG)
+
 ## 4.6 Domain-Driven Software Architecture
 
-Se propone un monolito modular con una API REST propia y una base relacional. Los límites de dominio separan **Accounts Payable** (proveedores y compras), **Payments** (abonos), **Loans** (préstamos y cuotas), **Reporting** (consultas) e **Identity** (acceso a la organización). La separación es lógica; no se presentan microservicios implementados. El diseño se basa en US-004 a US-009 y deberá revisarse con el EventStorming del equipo.
+La implementación es un monolito modular ASP.NET Core. `Creditor.Domain` no depende de infraestructura; `Creditor.Application` referencia Domain y define puertos; Infrastructure implementa persistencia/integraciones; API compone dependencias y publica contratos. La separación de procesos corresponde a frontend, backend y base de datos, no a un microservicio por contexto. `Creditor.Migrations.MySql` es un quinto proyecto técnico de migraciones; no añade una quinta capa de dominio. Los instantes DateTimeOffset se convierten a UTC para su almacenamiento MySQL datetime(6).
+
+| Límite | Responsabilidad ejecutable |
+|---|---|
+| Accounts Payable | Supplier y Purchase; Payment es hijo de Purchase para proteger la invariancia del saldo. |
+| Loans | Loan con colección inmutable de LoanInstallment; registro/consulta del acuerdo. |
+| Treasury | Party, Project y CashAccount; movimientos, asignaciones y recibos de idempotencia. |
+| Identity | Business, usuarios, contraseña hash, roles y JWT. |
+| Reporting | Proyecciones de lectura; no mantiene otro saldo ni ejecuta pagos. |
+| Attachments | Metadatos privados y acceso al contenido ligado a compras/abonos. |
+| Exchange Rates | Adaptador BCRPData con contrato propio y atribución de origen. |
 
 ### 4.6.1 Design-Level Event Storming
 
-El siguiente recorrido es una **propuesta de modelado**, no el acta de una sesión colaborativa. Cada evento está escrito en pasado y cada comando expresa una intención del usuario o una política del sistema.
+El EventStorming histórico es una propuesta para discusión. Su correspondencia actual es:
 
-| Contexto / agregado | Comando | Evento | Regla que debe comprobarse |
-|---|---|---|---|
-| Accounts Payable / Supplier | Registrar proveedor | Proveedor registrado | El proveedor pertenece a una organización. |
-| Accounts Payable / Purchase | Registrar compra a crédito | Compra a crédito registrada | Importe positivo, moneda admitida, proveedor de la misma organización y vencimiento informado. |
-| Payments / Purchase | Registrar abono | Abono registrado; saldo actualizado | Importe positivo y no mayor que el saldo pendiente; la moneda se hereda de la compra. |
-| Payments / Payment | Asociar voucher | Voucher asociado al abono | Tipo, tamaño y acceso del archivo deben validarse. |
-| Loans / Loan | Registrar préstamo | Préstamo registrado; cuotas programadas | Principal, tasa, número de cuotas y fecha inicial válidos. |
-| Reporting / proyección de lectura | Consultar obligaciones | Reporte consultado | Filtrar solo datos de la organización y conservar moneda de cada obligación. |
+| Intención | Agregado/servicio | Resultado y regla |
+|---|---|---|
+| Registrar compra | Purchase | Compra persistida; proveedor del mismo negocio y referencia única. |
+| Registrar abono | Purchase + Payment | Nueva fila y nueva versión atómicas; saldo no negativo. |
+| Adjuntar comprobante | AttachmentService | Metadatos y archivo accesibles solo al negocio autorizado. |
+| Registrar préstamo | Loan | Se guarda el cronograma completo con importes pactados. |
+| Registrar movimiento | CashAccount | Movimiento manual; referencia única y requestId para reintentos. |
+| Asignar fondos | CashAccount | Dueño/responsable/proyecto válidos; no se altera el total de efectivo. |
+| Consultar/exportar | Queries | Respuestas por negocio/filtros; sin mutación. |
 
-![EventStorming de compra y abono](../assets/architecture/design-event-storming.svg)
-
-[Fuente Mermaid editable](../assets/architecture/design-event-storming.mmd).
-
-La consulta de deuda toma el saldo como `total de compra - suma de abonos válidos`. El vencimiento se clasifica con la fecha y el saldo restante; no se genera una deuda nueva por el simple paso del tiempo. La evidencia de la sesión de EventStorming (participantes, fecha, decisiones y captura) sigue pendiente en `assets/architecture/eventstorming/`.
+Los resultados no son eventos publicados en una cola. No hay outbox/event sourcing. El pago de una compra y el movimiento de efectivo son casos separados; la integración automática permanece fuera del incremento. La evidencia de una sesión colaborativa sigue pendiente.
 
 ### 4.6.2 Software Architecture Context Diagram
 
-![Diagrama de contexto de CREDITOR](../assets/architecture/c4-context.svg)
+![Diagrama AV2: context av2](../assets/architecture/av2/context-av2.svg)
 
-[Fuente Mermaid editable](../assets/architecture/c4-context.mmd).
+[Fuente editable](../assets/architecture/av2/context-av2.mmd).
 
-En el nivel de contexto, CREDITOR es un solo sistema. El propietario consulta obligaciones y préstamos; el administrador registra compras, abonos y reportes; el visitante conoce la propuesta y solicita contacto. El servicio externo es una dependencia **prevista** para cumplir el requisito de integración con terceros, sin proveedor ni contrato confirmados. No se atribuye envío real al formulario de AV1.
+El proveedor externo implementado es BCRPData/SBS para cotización referencial, no una pasarela bancaria ni un servicio de envío de contacto. Los visitantes no acceden a datos privados por la landing.
 
 ### 4.6.3 Software Architecture Container Diagrams
 
-![Diagrama de contenedores de CREDITOR](../assets/architecture/c4-containers.svg)
+![Diagrama AV2: containers av2](../assets/architecture/av2/containers-av2.svg)
 
-[Fuente Mermaid editable](../assets/architecture/c4-containers.mmd).
+[Fuente editable](../assets/architecture/av2/containers-av2.mmd).
 
-| Contenedor | Tecnología objetivo | Responsabilidad |
-|---|---|---|
-| Landing | HTML5, CSS3, JavaScript | Comunicar la propuesta, dirigir al frontend local y ofrecer contacto de demostración. |
-| Web Application | Vue, HTML, CSS, JavaScript, PrimeVue | Presentar flujos de cuentas por pagar en escritorio/móvil. TB1 usa contexto fijo de demostración; autenticación prevista AV2. |
-| REST API | ASP.NET Core, C#, Entity Framework Core, OpenAPI | Validar reglas de dominio, aislamiento por organización y contratos HTTP. |
-| Database | PostgreSQL como objetivo de diseño | Persistir organizaciones, proveedores, compras, abonos, préstamos y cuotas. |
-| Servicio externo | Proveedor aún no elegido | Procesar solicitudes de contacto cuando exista integración y consentimiento. |
-
-Las flechas discontinuas son dependencias pendientes. El adaptador local TB1 persiste en navegador; no se comunica con la API prevista. Los comprobantes se representan en el esquema como referencias URL; antes de implementarlos se definirá un almacenamiento privado, política de acceso y retención. La landing inspeccionada utiliza Vue/Vite según el capítulo V; la fila HTML/CSS/JavaScript expresa las tecnologías requeridas, no un cambio de implementación ya efectuado.
+MySQL es el proveedor elegido para el entorno local vigente. PostgreSQL conserva su cadena de migraciones para regresión y compatibilidad histórica; SQLite se limita a pruebas/desarrollo auxiliar. Los adjuntos no se publican como URL estática: la API verifica el acceso y transmite el contenido. La demostración local usa otro adaptador y otro almacenamiento.
 
 ### 4.6.4 Software Architecture Component Diagrams
 
-La frontend implementada se descompone en vistas, componentes de formulario/historial, store, validadores de dominio y adaptador local. No simula permisos de Owner/Administrator.
+![Diagrama AV2: components api av2](../assets/architecture/av2/components-api-av2.svg)
 
-![Componentes del frontend local](../assets/architecture/c4-web-components.svg)
+[Fuente editable](../assets/architecture/av2/components-api-av2.mmd).
 
-[Fuente editable de componentes web](../assets/architecture/c4-web-components.mmd).
+![Diagrama AV2: components web av2](../assets/architecture/av2/components-web-av2.svg)
 
-El diagrama siguiente descompone la **API propuesta**, no un repositorio de backend ya existente. Los controladores llaman a servicios de aplicación; estos aplican reglas de dominio y acceden a repositorios. Reporting consulta datos del mismo tenant y no altera saldos.
+[Fuente editable](../assets/architecture/av2/components-web-av2.mmd).
 
-![Diagrama de componentes de la API propuesta](../assets/architecture/c4-components.svg)
-
-[Fuente Mermaid editable](../assets/architecture/c4-components.mmd).
-
-| Componente | Responsabilidad | Contrato inicial relacionado |
-|---|---|---|
-| Accounts Payable | Registrar y consultar proveedores y compras; calcular saldos a partir de abonos. | `GET/POST /api/v1/purchases` (TS-001). |
-| Payments | Validar y registrar abonos, asociar vouchers, devolver saldo resultante. | `POST /api/v1/purchases/{purchaseId}/payments` (TS-002). |
-| Loans | Gestionar préstamos y cronogramas de cuotas. | US-009; ruta por definir. |
-| Reporting | Filtrar obligaciones por proveedor, fecha, moneda y estado. | US-008; formato de exportación por definir. |
-| Identity | Identificar al usuario y restringir los datos a su organización. | Contrato y proveedor de identidad por definir. |
-
-La actualización del saldo y el registro del abono deben ocurrir en una misma transacción. El diseño exige autorización en la API, aun cuando la interfaz oculte una acción. Los endpoints pendientes no se anuncian como implementados.
+Los contextos conectados del frontend separan presentación, coordinación de casos de uso e infraestructura HTTP. Las reglas de dominio de entrada usan valores compartidos; la autoridad final es el dominio y los servicios del backend. La API recibe moneda/importes en unidades monetarias; la representación interna de centavos no exige que el cliente multiplique el payload. El guard de ruta y los botones por rol son complementarios a `[Authorize]` y al BusinessId del token.
 
 ## 4.7 Software Object-Oriented Design
 
 ### 4.7.1 Class Diagrams
 
-![Diagrama de clases del dominio](../assets/architecture/class-diagram.svg)
+![Diagrama AV2: classes av2](../assets/architecture/av2/classes-av2.svg)
 
-[Fuente Mermaid editable](../assets/architecture/class-diagram.mmd).
+[Fuente editable](../assets/architecture/av2/classes-av2.mmd).
 
-`Purchase` es el agregado que protege la regla de abono máximo y calcula el saldo; `Payment` conserva cada movimiento. `Loan` controla la secuencia de cuotas, inicialmente de frecuencia `MONTHLY`. La multiplicidad `0..*` permite un préstamo antes de generar cronograma; publicar el cronograma exige cuotas válidas. Los métodos del diagrama describen responsabilidades de dominio previstas, no clases C# existentes. El catálogo `Supplier` está acotado a `Business`, y una compra solo puede referenciar un proveedor de la misma organización. El modelo de usuarios/roles se detallará cuando exista un contrato de Identity; no se inventa una implementación de autenticación.
+El diagrama refleja clases reales, mostrando solo sus miembros relevantes. `PaidAmount` y `Balance` de Purchase son valores derivados e ignorados por EF. `RecordPayment` valida saldo/fecha/moneda y cambia Version; el repositorio agrega explícitamente la nueva entidad Payment. `Loan` se crea con 1–60 cuotas; no existe préstamo vacío esperando generación posterior. La tasa puede ser null y no genera intereses. `CashAccount` protege efectivo y asignaciones; no se confunde con la deuda de proveedores. Las asociaciones por negocio y las claves compuestas están detalladas en el modelo EF.
 
 ## 4.8 Database Design
 
-Se adopta **PostgreSQL como objetivo de diseño** para concretar el modelo inicial. La definición editable está en [`database/schema.sql`](../database/schema.sql). El saldo de una compra no se almacena como columna independiente: se obtiene de `purchases.total_amount - SUM(payments.amount)`. Así se evita que un abono y el saldo queden desincronizados. Las tablas de Identity y los archivos físicos requieren decisiones posteriores de implementación.
+El modelo vigente procede de `CreditorDbContext` y sus configuraciones EF, con migraciones específicas por proveedor. **MySQL 8.4** es el motor del entorno actual; conservar las migraciones PostgreSQL permite comprobar el incremento previo sin alterar esa base. Cambiar el proveedor no transporta automáticamente usuarios, operaciones ni archivos existentes entre motores.
+
+La definición reproducible se explica en [database/README.md](../database/README.md). El SQL del diseño inicial se conserva separado como antecedente; no se usa para inicializar el backend actual. El esquema ejecutable debe generarse desde las migraciones del backend, que incluyen Identity, cuentas por pagar, adjuntos, tesorería y préstamos.
 
 ### 4.8.1 Database Diagrams
 
-![Diagrama entidad relación de CREDITOR](../assets/architecture/database-er-diagram.svg)
+![Diagrama AV2: database core av2](../assets/architecture/av2/database-core-av2.svg)
 
-[Fuente Mermaid editable](../assets/architecture/database-er-diagram.mmd).
+[Fuente editable](../assets/architecture/av2/database-core-av2.mmd).
 
-[Versión PNG para la exposición](../assets/architecture/database-er-diagram.png).
+![Diagrama AV2: database treasury av2](../assets/architecture/av2/database-treasury-av2.svg)
 
-Para revisar cada límite de persistencia sin perder legibilidad, el modelo se presenta también por contexto. **Accounts Payable y Payments** comparten la compra como referencia del abono; **Loans** conserva un cronograma separado. `BUSINESSES` aparece en ambos dibujos porque delimita los datos de una misma organización, no porque se duplique la tabla.
+[Fuente editable](../assets/architecture/av2/database-treasury-av2.mmd).
 
-![Diagrama de base de datos para compras y abonos](../assets/architecture/database-accounts-payable.svg)
+Los tipos del ERD representan el modelo CLR y las relaciones principales; el DDL generado precisa tipos físicos, nulabilidad, claves compuestas, tablas auxiliares Identity e índices. `NormalizedReference` de compra es único junto con SupplierId, no globalmente; en tesorería se combina con AccountId. RequestId de `treasury_operations` es único junto con BusinessId, aunque cada operación conserva su Id como PK. La marca UK del diagrama señala participación en esas claves; el DDL define la combinación completa. El modelo no contiene `receipt_url`, `voucher_url`, ni columnas de estado o saldo en Purchase: el estado se deriva de saldo y fecha. Una cuota no contiene estado de pago. `PaymentId`, ProjectId y tasa anual pueden ser nulos según el caso.
 
-[Fuente Mermaid editable de compras y abonos](../assets/architecture/database-accounts-payable.mmd).
-
-![Diagrama de base de datos para préstamos y cuotas](../assets/architecture/database-loans.svg)
-
-[Fuente Mermaid editable de préstamos y cuotas](../assets/architecture/database-loans.mmd).
-
-**Lectura del diagrama.** Una organización puede tener proveedores, compras y préstamos. Cada compra pertenece a un proveedor y admite cero o más abonos. Un préstamo puede existir antes de que se configure su cronograma; el flujo publicado deberá exigir al menos una cuota. `receipt_url` y `voucher_url` son referencias a comprobantes, no el contenido binario ni prueba de que exista almacenamiento de archivos. La relación `purchases(business_id, supplier_id)` debe impedir que una compra de una organización use un proveedor de otra; el esquema SQL incluye una clave externa compuesta para ello.
-
-| Regla de integridad | Implementación en el diseño |
+| Invariante | Mecanismo actual |
 |---|---|
-| Identidad de fila | Clave primaria UUID en cada tabla. |
-| Pertenencia y relaciones | Claves externas hacia organización, proveedor, compra o préstamo; proveedor y compra comparten organización. |
-| Valores financieros | `CHECK` para importes positivos y tasa no negativa; monedas iniciales `PEN` y `USD`. |
-| Cronograma | `UNIQUE(loan_id, installment_number)` impide repetir un número de cuota en un préstamo. |
-| Consulta operativa | Índices por organización, vencimiento y estado; por compra/fecha de abono; por préstamo/vencimiento. |
-| Regla transaccional | La API debe impedir abonos superiores al saldo y registrar el abono de manera atómica. Un `CHECK` aislado no puede sumar otras filas. |
+| Negocio aislado | BusinessId desde JWT, consultas acotadas y FK compuestas por negocio. |
+| Importe exacto | decimal(14,2) en compras/abonos; enteros de centavos en tesorería/préstamos, más validación de dominio. |
+| Abonos concurrentes | Version de Purchase como token de concurrencia y commit transaccional con la fila nueva. |
+| Cuotas | PK LoanId + Number; FK con BusinessId; entre 1 y 60 cuotas mensuales completas al registrar. |
+| Archivos | Metadata de Attachment separada del contenido privado; vínculo de voucher a compra/abono del mismo negocio. |
+| Tesorería | Version de CashAccount y requestId/huella del payload evitan repetir comandos reconocidos. |
+| Estado y saldo | Proyecciones calculadas; no se almacena un saldo mutable paralelo. |
 
-`status` de compras y cuotas requiere una política de actualización o cálculo al consultar, porque el paso de la fecha puede cambiar «pendiente» a «vencido». Antes de implementar, se definirán migraciones, autorización por organización, almacenamiento privado de comprobantes y tratamiento de pagos de cuotas. El esquema incorpora referencia, descripción y fecha de compra, referencia única por proveedor sin distinguir mayúsculas y frecuencia de préstamo `MONTHLY`. La fecha del abono respecto a compra y la validación de archivos requieren la capa de aplicación. El diagrama es un **diseño inicial trazable al SQL**, no evidencia de una base desplegada.
+Las restricciones de esquema y los casos de migración se contrastan contra MySQL real; el [DDL generado idempotente](../database/schema.sql) procede de la migración `20261113220305_InitialMySqlWorkspace`. El DDL MySQL no garantiza rollback atómico ante una ejecución inicial interrumpida; se verificó reaplicación de cadenas completadas. La evidencia distingue crear un esquema, reaplicar migraciones, preservar datos ficticios y reiniciar la API. No se afirma que una batería de pruebas garantice todas las migraciones futuras ni que se haya migrado información productiva.

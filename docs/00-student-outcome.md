@@ -1,4 +1,22 @@
-# Capítulo 00: Student Outcome
+> Vista sincronizada del [informe canónico](../README.md), corte AV2 13/11/2026. Para editar contenido, modificar README y ejecutar `python tools/report/sync_chapters.py`.
+
+# Student Outcome 5
+
+El curso contribuye al cumplimiento del Student Outcome ABET:
+
+ABET – EAC - Student Outcome 5
+
+Criterio: La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
+
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
+
+| Criterio específico | Acciones realizadas | Conclusiones |
+|---|---|---|
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **AV1 — Juan Manuel Santos Torres:** problema, Lean UX, planificación y protocolo de validación. **AV1 — Sebastián Gutarra Velapatiño:** identidad visual, wireframes/mock-ups y recursos de investigación. **AV1 — Miguel Angel Egocheaga Suyo:** requisitos, arquitectura y coordinación documental. **TB1 — Miguel Angel Egocheaga Suyo:** preparación técnica local, correcciones y evidencia. Los nuevos acuerdos/liderazgo de Juan y Sebastián en TB1 y AV2 requieren confirmación; el detalle y sus fuentes se conservan debajo. | Los aportes históricos son complementarios y permiten trazar problema, diseño e implementación. No existe evidencia suficiente para declarar concluido el liderazgo conjunto de todos los hitos posteriores. La revisión cruzada y las reflexiones personales continúan pendientes. |
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos. | **AV1 — Juan Manuel Santos Torres:** Sprint Goal y protocolo de evaluación. **AV1 — Sebastián Gutarra Velapatiño:** insumos visuales e investigación. **AV1/TB1 — Miguel Angel Egocheaga Suyo:** backlog, tareas estimadas, integración local y comprobaciones técnicas. **TB1/AV2 — los tres integrantes:** reuniones, asignaciones y aceptación del equipo deben registrarse con evidencia real; no se infieren de un reparto de créditos Git. | Existen metas y artefactos revisables. Las estimaciones no prueban horas trabajadas; los commits no prueban reuniones ni inclusión. El cumplimiento grupal y la evaluación del líder deben completarse con acuerdos y evidencias auténticas. |
+
+El párrafo y las columnas siguen el Anexo A del enunciado (p. 37); la tabla delimita la evidencia disponible y no declara alcanzados criterios pendientes. Las secciones históricas siguientes conservan sus fechas y autorías. El [corte de noviembre](../README.md#b-evidencia-local-posterior-al-corte-tb1-02112026) documenta avances técnicos posteriores, sin atribuirles aceptación de sprint.
+
 
 ## 00.8 Criterio: liderazgo y trabajo en equipo
 
@@ -81,3 +99,11 @@ Se aplica el formato del Anexo A del enunciado: acciones y conclusiones por inte
 | Miguel Angel Egocheaga Suyo | Preparó backlog de 26 SP y tareas estimadas, integró features localmente y comprobó compra/abono/moneda. Distinguió estimaciones, ejecución técnica y evidencia humana faltante. | Se dispone de un incremento reproducible y revisable. La velocidad, horas reales y acuerdos de equipo no pueden derivarse de los commits. |
 
 El equipo debe añadir su reflexión individual, acuerdos y evidencia auténtica antes de declarar alcanzado todo el criterio del hito.
+
+## 00.14 Student Outcome en la preparación AV2
+
+| Criterio específico | Acciones realizadas y fuente | Conclusión y límite |
+|---|---|---|
+| Planificación y objetivos | La solicitud delimita abonos, filtros, préstamos, cambio de motor, docs y auditoría. Las features separan esos bloques. | Existe alcance técnico trazable; no se acredita una reunión de planificación ni acuerdo LACX nuevo. |
+| Colaboración y liderazgo | Se conservan aportes históricos de los tres integrantes y los cambios nuevos usan la identidad de Miguel. Las ramas previas del informe se incorporan sin reescribir autores. | El historial preserva contribuciones; la revisión por otro integrante aún requiere evidencia. |
+| Cumplimiento y revisión | Matriz de funciones/código, resultados reales por motor y corrección de documentación divergente. | Se puede revisar el incremento técnico; aceptación, desempeño individual y validación con usuarios permanecen separados. |

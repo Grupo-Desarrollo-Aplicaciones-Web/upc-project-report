@@ -1,0 +1,94 @@
+# Local backend verification
+
+## Treasury continuation, 2 November 2026
+
+Final verification was executed in the original backend repository on `feature/ddd-financial-core`; HEAD remains `97adac76fb84d689c538926ea8dad74ea1557e28`, with all new work uncommitted and local.
+
+- `scripts/Verify-Local.ps1`: dependency/tool restore passed; build passed with **zero warnings and zero errors**.
+- **33 pure domain unit tests + 106 integration tests = 139 passed**, zero failed/skipped. Domain tests now have a separate project referencing only Domain. The continuation adds 30 Treasury cases to the earlier 109-case increment.
+- New coverage includes owner/holder separation, exact current cash conservation, allocation of previously unclassified amounts, spent-unassigned-cash rejection, project budgets/currency separation, request replay/conflict, actor attribution, permissions/tenant boundaries, composite foreign keys, competing spending/allocation and deterministic stale-write rollback of all children and command receipts.
+- The older-SQLite-schema test confirms startup refuses that schema while preserving an existing sentinel record. Launcher PowerShell syntax was also checked.
+- PostgreSQL model/migration check passed with no pending model differences. Idempotent SQL was generated including `AddTreasuryLedger` (six new Treasury tables); no existing database was migrated.
+- Real Kestrel smoke run against the final repository passed **32 HTTP checks** at `2026-11-02T14:02:31.634196+00:00`. A manual USD 1,000 receipt split 600/400 and a USD 250 Andes expense left account cash 750, Andes 350, Marina 400 and holder-owned funds zero. A separate PEN 80 receipt was classified without another cash entry. Replayed movements/classifications did not duplicate writes; cash and command identities survived process restart.
+- Raw evidence: `artifacts/test-results/backend-domain.trx`, `artifacts/test-results/backend-integration.trx`, `artifacts/treasury-http-smoke.json`, `artifacts/openapi.json`, `artifacts/creditor-postgresql.sql`. The earlier 109-test log is retained as `artifacts/test-results/backend-before-treasury.trx`; the 86-test baseline remains `baseline.trx`.
+- Temporary synthetic databases/storage were removed and test servers stopped. Existing configuration/credentials/development databases, frontend and fake API were not changed. No commit, push or deployment was performed.
+- **Pending:** live PostgreSQL migration and financial/concurrency flows; Docker's `dockerDesktopLinuxEngine` was not running. SQLite tests and generated SQL do not substitute for that verification. Frontend integration, bank integration and the other deferred financial workflows remain outside this vertical; see [Treasury contract and limits](treasury-api.md).
+
+## Earlier Accounts Payable increment, 2 November 2026
+
+Verification was performed in an isolated source copy before incorporation into the backend repository. The original source was initially clean on `develop` at `97adac76fb84d689c538926ea8dad74ea1557e28`; no historical commit is attributed to this run.
+
+After incorporation, `scripts/Verify-Local.ps1` was rerun successfully in the original `creditor-backend` repository: restore/tools, build, 109 tests, migration/model consistency and idempotent SQL generation all passed. Current work is on local branch `feature/ddd-financial-core`, with no new commits.
+
+- Baseline rerun: **86 passed**, zero failed/skipped.
+- Final `dotnet build Creditor.sln --no-restore`: **zero warnings, zero errors**.
+- Final `dotnet test Creditor.sln --no-build`: **109 passed**, zero failed/skipped; includes 23 additional domain/summary/contract cases.
+- PostgreSQL `has-pending-model-changes`: **no model changes since the last migration**.
+- Idempotent PostgreSQL migration script generated successfully, including `EnforceReportedFinancialBounds`.
+- Real Kestrel HTTP smoke run: **14 checks passed** at `2026-11-02T13:22:06.789832+00:00`. The process used an isolated temporary SQLite file and private temporary storage, with generated credentials/signing material. The process was stopped and its temporary data removed.
+- Actual HTTP outcomes: live/ready/OpenAPI 200, unauthenticated summary 401, registration/supplier/purchase/payment 201, duplicate reference 409, amount above the report limit 400, overpayment 422, detail/summary 200. A purchase of PEN 100 with a PEN 30 payment retained a PEN 70 balance after process restart. PEN/USD summary groups stayed separate.
+- Raw local evidence: `artifacts/test-results/baseline.trx` (86-test baseline rerun), `artifacts/test-results/backend-before-treasury.trx` (109-test original-repository run), `artifacts/http-smoke.json` (earlier 14-check smoke). The SQL/OpenAPI and named integration log now represent the latest continuation. Credentials and bearer tokens are not included.
+- Docker engine probe failed because `dockerDesktopLinuxEngine` was not running. **No live PostgreSQL migration/payment/concurrency execution is claimed.** No existing business database or local signing configuration was modified.
+- Frontend, fake API and report repositories were not edited. No push, release, deployment or new commit was performed.
+
+See [architecture](architecture.md) for the exact DDD changes and safe handling of older database records, and [AV2 traceability](av2-traceability.md) for the course statement/syllabus and unresolved delivery criteria.
+
+## Historical 27 October 2026 verification
+
+Verification date: 27 October 2026 (America/Lima). This is evidence for the local backend increment, separate from AV2 publication.
+
+## Environment and automated verification
+
+- Windows x64, .NET SDK 8.0.400, .NET runtime 8.0.8.
+- Target framework: .NET 8. EF Core/Identity/JWT packages pinned to 8.0.33; PostgreSQL provider 8.0.11.
+- Command: `scripts/Verify-Local.ps1`.
+- Build: passed with zero warnings and zero errors.
+- Test result: **86 passed, 0 failed, 0 not executed**, out of 86 tests.
+- Raw result, retained locally: `artifacts/test-results/backend-integration.trx`.
+- Tests exercise the real HTTP pipeline with isolated relational SQLite databases, roles, tenants, balances, concurrent payments, persistence, private documents, language, filters, CSV and OpenAPI. BCRP edge cases use controlled HTTP responses.
+- PostgreSQL migration model check: no pending model changes.
+- Idempotent PostgreSQL script generated at `artifacts/creditor-postgresql.sql`.
+- `dotnet publish -c Release` passed. The output under `artifacts/publish` was checked to exclude `appsettings.Local.json`.
+- `docker compose config --quiet` passed without starting a container.
+
+## Kestrel HTTP verification
+
+A real process listened on `http://localhost:5188` using an isolated local smoke database and synthetic records. Final run: `2026-10-27T18:03:20.083586+00:00`. No account passwords or bearer tokens are retained in this report or the summary.
+
+| Check | Observed HTTP status |
+| --- | --- |
+| /health/live | 200 |
+| /health/ready | 200 |
+| /swagger/v1/swagger.json | 200 |
+| register | 201 |
+| authenticated account | 200 |
+| create supplier | 201 |
+| create purchase | 201 |
+| record payment | 201 |
+| reject overpayment | 422 |
+| read balance | 200 |
+| private receipt upload | 201 |
+| private receipt download | 200 |
+| reject anonymous document access | 401 |
+| filtered CSV export | 200 |
+| live BCRP reference | 200 |
+
+A PEN 100 purchase followed by a PEN 30 payment produced a remaining balance of PEN 70. A payment of PEN 71 was rejected. The private download matched the uploaded bytes and used attachment disposition. The CSV contained the filtered purchase and its remaining balance.
+
+Raw smoke summary, retained locally: `artifacts/smoke/summary.json`.
+
+## External provider result and corrections
+
+The authenticated BCRP endpoint returned HTTP 200. It reported an observation dated `2026-10-26` and preserved the provider attribution and retrieval timestamp. Its quote is a reference, not an executed currency conversion.
+
+The initial live check exposed BCRP returning diagnostic HTML after JSON for an unrecognized/missing User-Agent. The adapter now sends a compatible identified client and requests JSON. It continues to reject contaminated responses. Regression tests cover the real payload, client identification, missing observations, Spanish/English month names, invalid dates, cache behavior, cancellation, staleness and century boundaries.
+
+Other defects caught and corrected by verification: query-prefix binding in list/CSV search; global OpenAPI bearer security incorrectly inherited by public onboarding; and payload-too-large errors being converted to HTTP 400.
+
+## Boundaries and next verification
+
+- PostgreSQL migrations and SQL are prepared, but no real PostgreSQL server was exercised because the local Docker engine was stopped. Before AV2 deployment, run the migrations and the critical payment/tenant flows against PostgreSQL.
+- SQLite schema initialization is for new development/test files. It is not a production migration strategy.
+- Source configuration and private local credentials remain on this machine. No remote, push, deployment, release branch or tag was created.
+- The Vue application still needs its separate HTTP-adapter integration and authenticated workflows.
+- The owned HTTP verification server was stopped after checking the flow; port 5188 is available for the next local run.

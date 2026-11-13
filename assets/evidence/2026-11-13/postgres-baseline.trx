@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="d0cd3d07-9ebc-45a8-a68d-9cd551e13a11" name="migue@LAPTOP-65FFKRJG 2026-11-13 17:00:56" runUser="LAPTOP-65FFKRJG\migue" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-13T17:00:56.7609428-05:00" queuing="2026-11-13T17:00:56.7609442-05:00" start="2026-11-13T17:00:49.0613356-05:00" finish="2026-11-13T17:01:57.7260536-05:00" />
+  <TestSettings name="default" id="873e6a40-a7ee-4be0-9c29-79e9397d2a14">
+    <Deployment runDeploymentRoot="migue_LAPTOP-65FFKRJG_2026-11-13_17_00_56" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="3b49417a-1435-49dd-b477-9be91ac56475" testId="43979ae3-5435-6e4d-e1f1-177d42e14d17" testName="Creditor.IntegrationTests.PostgresMigrationTests.InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair(sql: &quot;UPDATE purchases SET \&quot;PurchasedOn\&quot; = '1999-12-31&quot;···, constraint: &quot;ck_purchases_date_bounds&quot;)" computerName="LAPTOP-65FFKRJG" duration="00:00:03.3441171" startTime="2026-11-13T17:01:03.6464022-05:00" endTime="2026-11-13T17:01:03.6464030-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3b49417a-1435-49dd-b477-9be91ac56475" />
+    <UnitTestResult executionId="389b8f4e-d8b1-4bc5-9963-7973c8ccd3e5" testId="045684a5-8321-5ebc-5aa9-290c77849fd1" testName="Creditor.IntegrationTests.PostgresMigrationTests.ApiStartupMigratesThenRestartPreservesUsersPaymentsAndLedger" computerName="LAPTOP-65FFKRJG" duration="00:00:06.2664741" startTime="2026-11-13T17:01:38.7506022-05:00" endTime="2026-11-13T17:01:38.7506029-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="389b8f4e-d8b1-4bc5-9963-7973c8ccd3e5" />
+    <UnitTestResult executionId="2e729e40-705a-4f71-ac06-7a31ad836e50" testId="faf5fe10-51aa-bfef-378b-21a528904acf" testName="Creditor.IntegrationTests.PostgresMigrationTests.UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments(start: &quot;20261027174945_AddPrivateReceiptsAndVouchers&quot;, hasDocuments: True)" computerName="LAPTOP-65FFKRJG" duration="00:00:02.7662285" startTime="2026-11-13T17:01:30.4747347-05:00" endTime="2026-11-13T17:01:30.4747353-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2e729e40-705a-4f71-ac06-7a31ad836e50" />
+    <UnitTestResult executionId="5f55f494-1195-4d3d-a81a-008b55e18d1d" testId="f74b1ac7-c200-5664-39ef-d9af4ea4cdf3" testName="Creditor.IntegrationTests.PostgresMigrationTests.InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair(sql: &quot;UPDATE payments SET \&quot;Amount\&quot; = 10000000&quot;, constraint: &quot;ck_payments_amount&quot;)" computerName="LAPTOP-65FFKRJG" duration="00:00:06.7986066" startTime="2026-11-13T17:00:56.6995247-05:00" endTime="2026-11-13T17:00:56.6995702-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f55f494-1195-4d3d-a81a-008b55e18d1d" />
+    <UnitTestResult executionId="7c0b2319-1a7f-4455-a89a-6bda09a6c644" testId="e1e2d07f-eac9-31f0-cfbb-3c478394a1aa" testName="Creditor.IntegrationTests.PostgresMigrationTests.UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments(start: &quot;20261102135106_AddTreasuryLedger&quot;, hasDocuments: True)" computerName="LAPTOP-65FFKRJG" duration="00:00:03.5569664" startTime="2026-11-13T17:01:27.7078358-05:00" endTime="2026-11-13T17:01:27.7078363-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7c0b2319-1a7f-4455-a89a-6bda09a6c644" />
+    <UnitTestResult executionId="e533a38b-70a5-4abd-bc3e-b562b2f32553" testId="9b32ff8c-ac24-a059-7872-6c14ac26ed52" testName="Creditor.IntegrationTests.PostgresMigrationTests.InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair(sql: &quot;UPDATE purchases SET \&quot;DueOn\&quot; = '2101-01-01'&quot;, constraint: &quot;ck_purchases_date_bounds&quot;)" computerName="LAPTOP-65FFKRJG" duration="00:00:04.3906093" startTime="2026-11-13T17:01:08.0385880-05:00" endTime="2026-11-13T17:01:08.0385888-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e533a38b-70a5-4abd-bc3e-b562b2f32553" />
+    <UnitTestResult executionId="2dae6982-7999-4108-99d5-bfa1abbbc911" testId="1c38bdac-8d27-0321-529b-f514b9082908" testName="Creditor.IntegrationTests.PostgresMigrationTests.UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments(start: &quot;20261027174437_InitialIdentityAndAccountsPayable&quot;, hasDocuments: False)" computerName="LAPTOP-65FFKRJG" duration="00:00:03.0389707" startTime="2026-11-13T17:01:24.1498502-05:00" endTime="2026-11-13T17:01:24.1498507-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2dae6982-7999-4108-99d5-bfa1abbbc911" />
+    <UnitTestResult executionId="8bd80f57-e267-4501-8309-042bdf9ec7fc" testId="31f8d10d-0188-191c-2bb0-4dfb0ef64fac" testName="Creditor.IntegrationTests.PostgresMigrationTests.PostMigrationSequentialPaymentsInsertTwoHistoryEntries" computerName="LAPTOP-65FFKRJG" duration="00:00:03.4093621" startTime="2026-11-13T17:01:42.1611258-05:00" endTime="2026-11-13T17:01:42.1611291-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8bd80f57-e267-4501-8309-042bdf9ec7fc" />
+    <UnitTestResult executionId="12e1b827-4543-4f6b-aa91-9763a154f948" testId="d0f39d01-ad83-fbeb-c71f-1b0b2b415ddf" testName="Creditor.IntegrationTests.PostgresMigrationTests.LoanScheduleSurvivesReapplyingMigrationsAndApiRestart" computerName="LAPTOP-65FFKRJG" duration="00:00:06.5567618" startTime="2026-11-13T17:01:14.5996787-05:00" endTime="2026-11-13T17:01:14.5996793-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="12e1b827-4543-4f6b-aa91-9763a154f948" />
+    <UnitTestResult executionId="2e5938f6-ee1d-4cfd-be9a-db60856a5135" testId="e51ed077-68c6-1856-4171-7e05a49e621c" testName="Creditor.IntegrationTests.PostgresMigrationTests.TreasuryDowngradeAndReupgradeKeepEarlierFixture" computerName="LAPTOP-65FFKRJG" duration="00:00:03.9538490" startTime="2026-11-13T17:01:57.5493582-05:00" endTime="2026-11-13T17:01:57.5493589-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2e5938f6-ee1d-4cfd-be9a-db60856a5135" />
+    <UnitTestResult executionId="ae229575-5066-484a-ba2b-21dd4112317f" testId="2beb3a8e-158a-5d14-3f5e-1ee75bc752aa" testName="Creditor.IntegrationTests.PostgresMigrationTests.EmptyDatabaseAppliesTheWholeChainAndReapplyingIsANoOp" computerName="LAPTOP-65FFKRJG" duration="00:00:03.3334381" startTime="2026-11-13T17:01:17.9350793-05:00" endTime="2026-11-13T17:01:17.9350800-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ae229575-5066-484a-ba2b-21dd4112317f" />
+    <UnitTestResult executionId="56002485-6582-4d9c-a950-68d49e119df9" testId="dc80a7c4-3ce5-73df-5ef7-35b918a5017e" testName="Creditor.IntegrationTests.PostgresMigrationTests.MigratedDatabasePersistsTheAndesAndMarinaSeedAndIgnoresAReplayedExpense" computerName="LAPTOP-65FFKRJG" duration="00:00:05.6697911" startTime="2026-11-13T17:01:53.5943601-05:00" endTime="2026-11-13T17:01:53.5943608-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="56002485-6582-4d9c-a950-68d49e119df9" />
+    <UnitTestResult executionId="1b4c28eb-fc6f-4541-84ed-049de6023cf5" testId="3df04975-d156-6cce-cc7c-32f9ecdb3b2b" testName="Creditor.IntegrationTests.PostgresMigrationTests.UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments(start: &quot;20261102131516_EnforceReportedFinancialBounds&quot;, hasDocuments: True)" computerName="LAPTOP-65FFKRJG" duration="00:00:03.1719062" startTime="2026-11-13T17:01:21.1082670-05:00" endTime="2026-11-13T17:01:21.1082677-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1b4c28eb-fc6f-4541-84ed-049de6023cf5" />
+    <UnitTestResult executionId="dd4d55ac-5fb7-4e33-98b4-8777093c63f1" testId="79d98553-853f-f1f8-aabc-075b7c8ec386" testName="Creditor.IntegrationTests.PostgresMigrationTests.DeploymentScriptUpgradesTheSeededPaperHousePurchase" computerName="LAPTOP-65FFKRJG" duration="00:00:02.4067949" startTime="2026-11-13T17:01:47.9235626-05:00" endTime="2026-11-13T17:01:47.9235632-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dd4d55ac-5fb7-4e33-98b4-8777093c63f1" />
+    <UnitTestResult executionId="9dcaabcc-570f-42c2-b35f-c4b36f61489a" testId="79409eb2-87e4-9956-5eeb-5435f78e890d" testName="Creditor.IntegrationTests.PostgresMigrationTests.GeneratedIdempotentScriptRunsTwiceOnAnEmptyDatabase" computerName="LAPTOP-65FFKRJG" duration="00:00:02.0060945" startTime="2026-11-13T17:01:32.4817864-05:00" endTime="2026-11-13T17:01:32.4817870-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9dcaabcc-570f-42c2-b35f-c4b36f61489a" />
+    <UnitTestResult executionId="3d40104c-05e2-4291-acc9-31405808da5f" testId="22cff33b-e3fb-a6e2-1dc5-7fd23afe6d88" testName="Creditor.IntegrationTests.PostgresMigrationTests.InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair(sql: &quot;UPDATE purchases SET \&quot;Amount\&quot; = 10000000&quot;, constraint: &quot;ck_purchases_amount&quot;)" computerName="LAPTOP-65FFKRJG" duration="00:00:03.6000499" startTime="2026-11-13T17:01:00.3013081-05:00" endTime="2026-11-13T17:01:00.3013089-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3d40104c-05e2-4291-acc9-31405808da5f" />
+    <UnitTestResult executionId="8d4a2f03-5c1e-461c-b2de-bddac7bf61f9" testId="7515a759-f026-ec3a-666e-fe152f3e8038" testName="Creditor.IntegrationTests.PostgresMigrationTests.PostMigrationConcurrentPaymentsPreserveTheBalanceAndHistory" computerName="LAPTOP-65FFKRJG" duration="00:00:03.3533474" startTime="2026-11-13T17:01:45.5156631-05:00" endTime="2026-11-13T17:01:45.5156638-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8d4a2f03-5c1e-461c-b2de-bddac7bf61f9" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.ApiStartupMigratesThenRestartPreservesUsersPaymentsAndLedger" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="045684a5-8321-5ebc-5aa9-290c77849fd1">
+      <Execution id="389b8f4e-d8b1-4bc5-9963-7973c8ccd3e5" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="ApiStartupMigratesThenRestartPreservesUsersPaymentsAndLedger" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments(start: &quot;20261027174945_AddPrivateReceiptsAndVouchers&quot;, hasDocuments: True)" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="faf5fe10-51aa-bfef-378b-21a528904acf">
+      <Execution id="2e729e40-705a-4f71-ac06-7a31ad836e50" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair(sql: &quot;UPDATE purchases SET \&quot;Amount\&quot; = 10000000&quot;, constraint: &quot;ck_purchases_amount&quot;)" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="22cff33b-e3fb-a6e2-1dc5-7fd23afe6d88">
+      <Execution id="3d40104c-05e2-4291-acc9-31405808da5f" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments(start: &quot;20261027174437_InitialIdentityAndAccountsPayable&quot;, hasDocuments: False)" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="1c38bdac-8d27-0321-529b-f514b9082908">
+      <Execution id="2dae6982-7999-4108-99d5-bfa1abbbc911" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.PostMigrationConcurrentPaymentsPreserveTheBalanceAndHistory" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="7515a759-f026-ec3a-666e-fe152f3e8038">
+      <Execution id="8d4a2f03-5c1e-461c-b2de-bddac7bf61f9" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="PostMigrationConcurrentPaymentsPreserveTheBalanceAndHistory" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.TreasuryDowngradeAndReupgradeKeepEarlierFixture" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="e51ed077-68c6-1856-4171-7e05a49e621c">
+      <Execution id="2e5938f6-ee1d-4cfd-be9a-db60856a5135" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="TreasuryDowngradeAndReupgradeKeepEarlierFixture" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments(start: &quot;20261102135106_AddTreasuryLedger&quot;, hasDocuments: True)" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="e1e2d07f-eac9-31f0-cfbb-3c478394a1aa">
+      <Execution id="7c0b2319-1a7f-4455-a89a-6bda09a6c644" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.EmptyDatabaseAppliesTheWholeChainAndReapplyingIsANoOp" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="2beb3a8e-158a-5d14-3f5e-1ee75bc752aa">
+      <Execution id="ae229575-5066-484a-ba2b-21dd4112317f" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="EmptyDatabaseAppliesTheWholeChainAndReapplyingIsANoOp" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.PostMigrationSequentialPaymentsInsertTwoHistoryEntries" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="31f8d10d-0188-191c-2bb0-4dfb0ef64fac">
+      <Execution id="8bd80f57-e267-4501-8309-042bdf9ec7fc" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="PostMigrationSequentialPaymentsInsertTwoHistoryEntries" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair(sql: &quot;UPDATE purchases SET \&quot;DueOn\&quot; = '2101-01-01'&quot;, constraint: &quot;ck_purchases_date_bounds&quot;)" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="9b32ff8c-ac24-a059-7872-6c14ac26ed52">
+      <Execution id="e533a38b-70a5-4abd-bc3e-b562b2f32553" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair(sql: &quot;UPDATE purchases SET \&quot;PurchasedOn\&quot; = '1999-12-31&quot;···, constraint: &quot;ck_purchases_date_bounds&quot;)" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="43979ae3-5435-6e4d-e1f1-177d42e14d17">
+      <Execution id="3b49417a-1435-49dd-b477-9be91ac56475" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair(sql: &quot;UPDATE payments SET \&quot;Amount\&quot; = 10000000&quot;, constraint: &quot;ck_payments_amount&quot;)" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="f74b1ac7-c200-5664-39ef-d9af4ea4cdf3">
+      <Execution id="5f55f494-1195-4d3d-a81a-008b55e18d1d" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="InvalidLegacyRowsAbortWithoutLosingDataAndUpgradeAfterExplicitRepair" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.GeneratedIdempotentScriptRunsTwiceOnAnEmptyDatabase" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="79409eb2-87e4-9956-5eeb-5435f78e890d">
+      <Execution id="9dcaabcc-570f-42c2-b35f-c4b36f61489a" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="GeneratedIdempotentScriptRunsTwiceOnAnEmptyDatabase" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.MigratedDatabasePersistsTheAndesAndMarinaSeedAndIgnoresAReplayedExpense" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="dc80a7c4-3ce5-73df-5ef7-35b918a5017e">
+      <Execution id="56002485-6582-4d9c-a950-68d49e119df9" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="MigratedDatabasePersistsTheAndesAndMarinaSeedAndIgnoresAReplayedExpense" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.DeploymentScriptUpgradesTheSeededPaperHousePurchase" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="79d98553-853f-f1f8-aabc-075b7c8ec386">
+      <Execution id="dd4d55ac-5fb7-4e33-98b4-8777093c63f1" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="DeploymentScriptUpgradesTheSeededPaperHousePurchase" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments(start: &quot;20261102131516_EnforceReportedFinancialBounds&quot;, hasDocuments: True)" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="3df04975-d156-6cce-cc7c-32f9ecdb3b2b">
+      <Execution id="1b4c28eb-fc6f-4541-84ed-049de6023cf5" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="UpgradesEveryHistoricalVersionWithSeededPurchasesAndPayments" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.PostgresMigrationTests.LoanScheduleSurvivesReapplyingMigrationsAndApiRestart" storage="c:\users\migue\appdata\local\temp\creditor-av2-final-build\bin\creditor.integrationtests\debug\creditor.integrationtests.dll" id="d0f39d01-ad83-fbeb-c71f-1b0b2b415ddf">
+      <Execution id="12e1b827-4543-4f6b-aa91-9763a154f948" />
+      <TestMethod codeBase="C:\Users\migue\AppData\Local\Temp\creditor-av2-final-build\bin\Creditor.IntegrationTests\debug\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.PostgresMigrationTests" name="LoanScheduleSurvivesReapplyingMigrationsAndApiRestart" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="43979ae3-5435-6e4d-e1f1-177d42e14d17" executionId="3b49417a-1435-49dd-b477-9be91ac56475" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="045684a5-8321-5ebc-5aa9-290c77849fd1" executionId="389b8f4e-d8b1-4bc5-9963-7973c8ccd3e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="faf5fe10-51aa-bfef-378b-21a528904acf" executionId="2e729e40-705a-4f71-ac06-7a31ad836e50" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f74b1ac7-c200-5664-39ef-d9af4ea4cdf3" executionId="5f55f494-1195-4d3d-a81a-008b55e18d1d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e1e2d07f-eac9-31f0-cfbb-3c478394a1aa" executionId="7c0b2319-1a7f-4455-a89a-6bda09a6c644" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9b32ff8c-ac24-a059-7872-6c14ac26ed52" executionId="e533a38b-70a5-4abd-bc3e-b562b2f32553" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c38bdac-8d27-0321-529b-f514b9082908" executionId="2dae6982-7999-4108-99d5-bfa1abbbc911" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="31f8d10d-0188-191c-2bb0-4dfb0ef64fac" executionId="8bd80f57-e267-4501-8309-042bdf9ec7fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d0f39d01-ad83-fbeb-c71f-1b0b2b415ddf" executionId="12e1b827-4543-4f6b-aa91-9763a154f948" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e51ed077-68c6-1856-4171-7e05a49e621c" executionId="2e5938f6-ee1d-4cfd-be9a-db60856a5135" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2beb3a8e-158a-5d14-3f5e-1ee75bc752aa" executionId="ae229575-5066-484a-ba2b-21dd4112317f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dc80a7c4-3ce5-73df-5ef7-35b918a5017e" executionId="56002485-6582-4d9c-a950-68d49e119df9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3df04975-d156-6cce-cc7c-32f9ecdb3b2b" executionId="1b4c28eb-fc6f-4541-84ed-049de6023cf5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="79d98553-853f-f1f8-aabc-075b7c8ec386" executionId="dd4d55ac-5fb7-4e33-98b4-8777093c63f1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="79409eb2-87e4-9956-5eeb-5435f78e890d" executionId="9dcaabcc-570f-42c2-b35f-c4b36f61489a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="22cff33b-e3fb-a6e2-1dc5-7fd23afe6d88" executionId="3d40104c-05e2-4291-acc9-31405808da5f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7515a759-f026-ec3a-666e-fe152f3e8038" executionId="8d4a2f03-5c1e-461c-b2de-bddac7bf61f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Resultados sin formato de lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="17" executed="17" passed="17" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 8.0.8)&#xD;
+[xUnit.net 00:00:00.11]   Discovering: Creditor.IntegrationTests&#xD;
+[xUnit.net 00:00:00.21]   Discovered:  Creditor.IntegrationTests&#xD;
+[xUnit.net 00:00:00.21]   Starting:    Creditor.IntegrationTests&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261027174437_InitialIdentityAndAccountsPayable'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261027174945_AddPrivateReceiptsAndVouchers'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261102131516_EnforceReportedFinancialBounds'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261102135106_AddTreasuryLedger'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261109194134_AddLoanSchedules'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20405]&#xD;
+      No migrations were applied. The database is already up to date.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261027174437_InitialIdentityAndAccountsPayable'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261027174945_AddPrivateReceiptsAndVouchers'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261102131516_EnforceReportedFinancialBounds'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261102135106_AddTreasuryLedger'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261109194134_AddLoanSchedules'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20405]&#xD;
+      No migrations were applied. The database is already up to date.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261027174437_InitialIdentityAndAccountsPayable'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261027174945_AddPrivateReceiptsAndVouchers'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261102131516_EnforceReportedFinancialBounds'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261102135106_AddTreasuryLedger'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261109194134_AddLoanSchedules'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261027174437_InitialIdentityAndAccountsPayable'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261027174945_AddPrivateReceiptsAndVouchers'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261102131516_EnforceReportedFinancialBounds'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261102135106_AddTreasuryLedger'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261109194134_AddLoanSchedules'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261027174437_InitialIdentityAndAccountsPayable'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261027174945_AddPrivateReceiptsAndVouchers'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261102131516_EnforceReportedFinancialBounds'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261102135106_AddTreasuryLedger'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261109194134_AddLoanSchedules'.&#xD;
+[xUnit.net 00:01:07.93]   Finished:    Creditor.IntegrationTests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

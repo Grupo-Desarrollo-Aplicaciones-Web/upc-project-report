@@ -1,3 +1,5 @@
+> Control histórico de su hito. El estado vigente AV2 está en [matriz de implementación](av2/estado-implementacion.md); esta ficha no convierte pruebas antiguas en evidencia actual.
+
 # Control de entrega TB1
 
 Corte: 3 de octubre de 2026. La preparación solicitada permanece local. Para cada criterio se distingue el artefacto técnico y la evidencia académica requerida.

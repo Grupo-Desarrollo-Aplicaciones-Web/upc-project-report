@@ -1,3 +1,5 @@
+> Control histórico de su hito. El estado vigente AV2 está en [matriz de implementación](av2/estado-implementacion.md); esta ficha no convierte pruebas antiguas en evidencia actual.
+
 # Control de entrega AV1
 
 Esta ficha conserva pendientes del corte histórico AV1, no describe el avance actual TB1. Consultar el [control TB1](09-tb1-delivery-checklist.md) y [ejecución local](tb1/evidencia-local.md).

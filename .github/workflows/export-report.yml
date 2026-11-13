@@ -1,0 +1,35 @@
+name: Exportar Reporte a Word
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  generar-word:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: 2. Instalar Pandoc en la máquina virtual
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc librsvg2-bin
+
+      - name: 3. Validar y compilar el informe canónico a Word
+        run: |
+          python tools/report/sync_chapters.py --check
+          python tools/report/validate_report.py
+          python tools/report/validate_av2.py
+          pandoc README.md \
+            --resource-path=.:docs \
+            -o Reporte_Completo.docx
+
+      - name: 4. Guardar archivo generado como artefacto descargable
+        uses: actions/upload-artifact@v4
+        with:
+          name: Reporte-Word-UPC
+          path: Reporte_Completo.docx
+          retention-days: 7
