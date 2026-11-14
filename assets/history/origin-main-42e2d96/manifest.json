@@ -1,0 +1,67 @@
+{
+  "reference": "origin/main already available locally; no fetch",
+  "commit": "42e2d96c55b2eddbaccecc756fd0c0ae19706582",
+  "reviewed": "2026-11-13",
+  "files": [
+    {
+      "source": "git:42e2d96c55b2eddbaccecc756fd0c0ae19706582:README.md",
+      "snapshot": "README.md.txt",
+      "bytes": 1805,
+      "sha256": "50827ae9488eb7d174f43a9928920a1c648c17d4ff1306cf2cd368eafe30164b"
+    },
+    {
+      "source": "git:42e2d96c55b2eddbaccecc756fd0c0ae19706582:assets/ux/frontend-dashboard-en.png",
+      "snapshot": "assets/ux/frontend-dashboard-en.png",
+      "bytes": 103259,
+      "sha256": "40d1a726aff5e1921b3464e67858f21e610fc069fc64e8fe10801eb5d4f80ccb"
+    },
+    {
+      "source": "git:42e2d96c55b2eddbaccecc756fd0c0ae19706582:assets/ux/frontend-detail-es.png",
+      "snapshot": "assets/ux/frontend-detail-es.png",
+      "bytes": 74101,
+      "sha256": "7d13f369759a64e8e16ffeace9a8af36ebf6aee478e5a3ce281cac47d4a5b543"
+    },
+    {
+      "source": "git:42e2d96c55b2eddbaccecc756fd0c0ae19706582:assets/ux/frontend-mobile-es.png",
+      "snapshot": "assets/ux/frontend-mobile-es.png",
+      "bytes": 29244,
+      "sha256": "0a8b88f96ba47a78aed8a775c82978aa0c7cdc42e43a38e475901d6e5a7b9554"
+    },
+    {
+      "source": "git:42e2d96c55b2eddbaccecc756fd0c0ae19706582:assets/ux/frontend-purchase-new-en.png",
+      "snapshot": "assets/ux/frontend-purchase-new-en.png",
+      "bytes": 79057,
+      "sha256": "08a75022067aa8ff2a138b89eeda985b9bb55dd191e814cb46d0ff5e77bb6c59"
+    },
+    {
+      "source": "git:42e2d96c55b2eddbaccecc756fd0c0ae19706582:assets/ux/tb1",
+      "snapshot": "assets/ux/tb1.txt",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "source": "git:42e2d96c55b2eddbaccecc756fd0c0ae19706582:docs/01-introduction.md",
+      "snapshot": "docs/01-introduction.md.txt",
+      "bytes": 10489,
+      "sha256": "6e766ad0148fa0fbcbdecd41991b1ccf942695986402b9de3d8285caaad1eaad"
+    },
+    {
+      "source": "git:42e2d96c55b2eddbaccecc756fd0c0ae19706582:docs/04-product-design.md",
+      "snapshot": "docs/04-product-design.md.txt",
+      "bytes": 23618,
+      "sha256": "fa4651392f2ef13af57ece24526f30a7b3dc91f6ce78664f293fb581c51b98dd"
+    },
+    {
+      "source": "git:42e2d96c55b2eddbaccecc756fd0c0ae19706582:docs/05-implementation-validation-deployment.md",
+      "snapshot": "docs/05-implementation-validation-deployment.md.txt",
+      "bytes": 73172,
+      "sha256": "d347326e1b2abe66c6696f6e9308ba8cab63420d0dcf1ff533f2aeb85d818f25"
+    },
+    {
+      "source": "git:42e2d96c55b2eddbaccecc756fd0c0ae19706582:docs/08-av1-delivery-checklist.md",
+      "snapshot": "docs/08-av1-delivery-checklist.md.txt",
+      "bytes": 4165,
+      "sha256": "80acea8690698f0f8612f87ccb69033e18356960f6aeaeb8e124a3c27d193e9b"
+    }
+  ]
+}

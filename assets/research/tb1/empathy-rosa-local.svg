@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="798" viewBox="0 0 1400 798" role="img" aria-labelledby="title desc">
+<title id="title">Guía de empatía · Rosa / S1</title>
+<desc id="desc">Mapa de preguntas para completar con respuestas reales. No contiene citas, pensamientos ni emociones atribuidas.. Propuesta local provisional; no contiene resultados de entrevistas.</desc>
+<rect width="1400" height="798" fill="#F3F6FB"/>
+<style>text{font-family:Arial,sans-serif;fill:#17233A}.title{font-size:32px;font-weight:700}.sub{font-size:19px}.cardtitle{font-size:21px;font-weight:700}.body{font-size:18px}.note{font-size:16px;fill:#475569}</style>
+<text x="36" y="54" class="title">Guía de empatía · Rosa / S1</text>
+<text x="36" y="87" class="sub">Mapa de preguntas para completar con respuestas reales. No contiene citas, pensamientos ni emociones</text>
+<text x="36" y="112" class="sub">atribuidas.</text>
+<rect x="36.0" y="154" width="653.0" height="265" rx="15" fill="white" stroke="#D4DFEF"/>
+<rect x="36.0" y="154" width="8" height="265" rx="4" fill="#2563EB"/>
+<text x="60.0" y="192" class="cardtitle">Dice y hace</text>
+<text x="60.0" y="222" class="body">¿Cómo describe una operación reciente?</text>
+<text x="60.0" y="246" class="body">Registrar respuesta literal/paráfrasis y minuto.</text>
+<rect x="711.0" y="154" width="653.0" height="265" rx="15" fill="white" stroke="#D4DFEF"/>
+<rect x="711.0" y="154" width="8" height="265" rx="4" fill="#2563EB"/>
+<text x="735.0" y="192" class="cardtitle">Ve y escucha</text>
+<text x="735.0" y="222" class="body">¿Qué documentos, herramientas e indicaciones intervienen?</text>
+<text x="735.0" y="246" class="body">Identificar actor, canal y fuente de la respuesta.</text>
+<rect x="36.0" y="441" width="653.0" height="265" rx="15" fill="white" stroke="#D4DFEF"/>
+<rect x="36.0" y="441" width="8" height="265" rx="4" fill="#2563EB"/>
+<text x="60.0" y="479" class="cardtitle">Piensa y siente</text>
+<text x="60.0" y="509" class="body">¿Qué preocupación o criterio expresa al revisar o registrar?</text>
+<text x="60.0" y="533" class="body">Pendiente: no inferir emociones por el rol.</text>
+<rect x="711.0" y="441" width="653.0" height="265" rx="15" fill="white" stroke="#D4DFEF"/>
+<rect x="711.0" y="441" width="8" height="265" rx="4" fill="#2563EB"/>
+<text x="735.0" y="479" class="cardtitle">Pains y gains</text>
+<text x="735.0" y="509" class="body">¿Qué obstáculo relata y qué resultado espera?</text>
+<text x="735.0" y="533" class="body">Distinguir hecho, opinión e interpretación del equipo.</text>
+<text x="36" y="774" class="note">CREDITOR · revisión local 2026-10-03 · evidencia de campo pendiente · sin publicación en UXPressia</text>
+</svg>

@@ -1,69 +1,133 @@
+> Vista sincronizada del [informe canónico](../README.md), corte AV2 13/11/2026. Para editar contenido, modificar README y ejecutar `python tools/report/sync_chapters.py`.
+
 # Capítulo III: Requirements Specification
+
+Los requisitos conservan las historias US-001–009. El alcance técnico se contrasta con los repositorios de frontend y backend; la aceptación del equipo y la validación de valor se registran por separado. Los segmentos S1/S2 no son permisos: los roles de API son `Owner`, `FinanceAdmin` y `Viewer`.
 
 ## 3.1 User Stories
 
-Las historias siguientes derivan de los supuestos y del análisis preliminar. Su prioridad y redacción se revisarán cuando se integren los hallazgos de entrevistas. Las historias de landing pertenecen al Sprint 1; las de la aplicación y API están planificadas para iteraciones posteriores.
+### 3.1.1 Epics y To-Be Scenario Mapping
 
-### 3.1.1 To-Be Scenario Mapping
-
-| Actor | Objetivo | Resultado esperado | Historias relacionadas |
-|---|---|---|---|
-| Visitor | Comprender la propuesta y solicitar una demostración. | Accede a contenido claro, legal y al canal de contacto. | US-001 a US-003 |
-| Business Owner | Revisar obligaciones y tomar decisiones de pago. | Consulta saldos, vencimientos y préstamos. | US-004, US-007 y US-009 |
-| Finance Administrator | Registrar operaciones y verificar pagos. | Conserva la trazabilidad entre compra, abono y voucher. | US-005, US-006 y US-008 |
-| Developer | Exponer operaciones del dominio de forma consistente. | La aplicación puede consumir una API documentada. | TS-001 a TS-003 |
+| Epic | Objetivo | Historias y contexto ejecutable |
+|---|---|---|
+| E-01 Landing | Comprender propuesta, condiciones y contacto demo. | US-001–003; repositorio landing independiente. |
+| E-02 Accounts Payable | Registrar proveedores/compras y consultar obligaciones. | US-004–005; Supplier y Purchase. |
+| E-03 Payments | Registrar abonos y reconstruir saldo. | US-006–007; Payment dentro del agregado Purchase. |
+| E-04 Reporting | Exportar la misma selección revisada en pantalla. | US-008; consultas de Accounts Payable y adaptador HTTP. |
+| E-05 Loans | Conservar principal y compromisos mensuales pactados. | US-009; Loan y LoanInstallment. |
+| E-06 Service Integration | Autenticación, persistencia, contratos y servicio externo. | TS-001–003; Identity, EF Core, Scalar y BCRPData. |
+| Treasury, extensión AV2 | Distinguir saldo de caja y propiedad económica. | Cuentas, movimientos, proyectos y asignaciones. No redefine US-006 como transferencia. |
 
 ### 3.1.2 Functional User Stories
 
-| ID | Título | Descripción | Criterios de aceptación | Epic |
-|---|---|---|---|---|
-| US-001 | Conocer CREDITOR | Como **Visitor**, quiero leer una propuesta clara de CREDITOR para decidir si deseo conocer el producto. | **Dado** que el visitante abre la landing, **cuando** revisa la sección principal, **entonces** visualiza un mensaje alineado a cuentas por pagar de mypes.<br>**Dado** que el visitante navega por beneficios, **cuando** selecciona una sección, **entonces** llega al contenido correspondiente. | E-01 Landing |
-| US-002 | Solicitar contacto | Como **Visitor**, quiero enviar una consulta para solicitar información de CREDITOR. | **Dado** que el visitante completa los datos obligatorios, **cuando** envía el formulario, **entonces** recibe una confirmación o un error comprensible.<br>**Dado** que falta un dato obligatorio, **cuando** intenta enviar, **entonces** el formulario identifica el campo a corregir. | E-01 Landing |
-| US-003 | Consultar condiciones | Como **Visitor**, quiero acceder a términos y privacidad para entender el uso de mis datos. | **Dado** que el visitante está en el pie de página, **cuando** selecciona términos o privacidad, **entonces** accede al contenido legal correspondiente. | E-01 Landing |
-| US-004 | Consultar obligaciones | Como **Business Owner**, quiero visualizar el saldo y vencimiento de mis obligaciones para priorizar una revisión de pagos. | **Dado** que el propietario tiene compras registradas, **cuando** abre el dashboard, **entonces** visualiza saldos y estados separados por moneda.<br>**Dado** que selecciona un proveedor, **cuando** consulta sus compras, **entonces** visualiza las obligaciones relacionadas. | E-02 Accounts Payable |
-| US-005 | Registrar compra a crédito | Como **Finance Administrator**, quiero registrar una compra a crédito para conservar la obligación pendiente. | **Dado** que cuenta con los datos mínimos, **cuando** registra la compra, **entonces** el sistema guarda proveedor, importe, moneda y fecha límite.<br>**Dado** que adjunta un comprobante permitido, **cuando** confirma el registro, **entonces** el comprobante queda asociado a la compra. | E-02 Accounts Payable |
-| US-006 | Registrar abono | Como **Finance Administrator**, quiero registrar un abono para actualizar el saldo de una compra. | **Dado** que la compra tiene un saldo pendiente, **cuando** registra un abono válido, **entonces** el sistema actualiza el saldo e incorpora el movimiento al historial.<br>**Dado** que adjunta un voucher permitido, **cuando** guarda el abono, **entonces** el voucher queda asociado al movimiento. | E-03 Payments |
-| US-007 | Revisar historial de pagos | Como **Business Owner**, quiero consultar los abonos de una compra para verificar cómo se compone su saldo. | **Dado** que la compra tiene abonos, **cuando** abre su detalle, **entonces** visualiza fecha, importe y voucher de cada movimiento. | E-03 Payments |
-| US-008 | Exportar reporte de deuda | Como **Finance Administrator**, quiero filtrar obligaciones y exportar un reporte para preparar una revisión contable. | **Dado** que existen obligaciones registradas, **cuando** filtra por fecha, proveedor o moneda, **entonces** visualiza solo los registros coincidentes.<br>**Dado** que el resultado es exportable, **cuando** selecciona un formato disponible, **entonces** recibe el reporte con los filtros aplicados. | E-04 Reporting |
-| US-009 | Consultar préstamo | Como **Business Owner**, quiero revisar las cuotas de un préstamo para conocer sus próximos compromisos. | **Dado** que existe un préstamo registrado, **cuando** consulta su detalle, **entonces** visualiza principal, frecuencia, cuotas y próximos vencimientos. | E-05 Loans |
+| ID | Historia | Comportamiento actual y límite |
+|---|---|---|
+| US-001 | Como visitante quiero conocer CREDITOR. | Landing con propuesta y CTA; su despliegue actual no se revalida en esta auditoría. |
+| US-002 | Como visitante quiero revisar el contacto. | Formulario demo; no hay envío de email/solicitud real ni cobro de suscripción. |
+| US-003 | Como visitante quiero consultar condiciones. | Vistas de términos/privacidad; el texto no acredita cumplimiento legal certificado. |
+| US-004 | Como dueño quiero consultar obligaciones. | API, listado y resumen por negocio; totales PEN/USD separados, estados derivados del saldo/fecha. |
+| US-005 | Como administrador quiero registrar compra a crédito. | Proveedor, referencia, descripción, moneda, importe, fechas y comprobante opcional por API protegida. |
+| US-006 | Como administrador quiero registrar abonos. | Abonos sucesivos válidos guardan filas distintas; importe máximo igual al saldo. Sin movimiento automático de tesorería. |
+| US-007 | Como dueño quiero revisar historial. | Consulta de compra y abonos persistidos con saldo derivado; voucher privado si se adjuntó. |
+| US-008 | Como administrador quiero exportar obligaciones filtradas. | Mismos criterios aplicados para listado, resumen y CSV: proveedor, moneda, estado, texto y vencimiento. Cambiar el formulario exige aplicar antes de descargar. |
+| US-009 | Como dueño quiero consultar préstamos y cuotas. | Registro por Owner/FinanceAdmin; lectura por cualquier miembro del negocio. Principal, moneda, tasa informativa opcional y cuotas mensuales explícitas. No calcula amortización ni registra pagos de cuotas. |
+
+### 3.1.3 Reglas observables del incremento AV2
+
+| ID | Regla | Implementación y límite |
+|---|---|---|
+| R-01 | Pertenencia | BusinessId sale del principal JWT; FK compuestas y consultas por negocio. Referencias ajenas devuelven 404 o validación sin acceso al dato. |
+| R-02 | Importe | 0.01–9,999,999.99, hasta dos decimales. Purchase/Payment usan decimal; Treasury/Loans persisten centavos enteros. |
+| R-03 | Moneda | PEN/USD; cada transacción conserva moneda y los resúmenes no las suman entre sí. |
+| R-04 | Compra | Referencia 2–80, descripción 3–200, unicidad de referencia normalizada por proveedor. |
+| R-05 | Fechas | Compra desde 2000-01-01 hasta hoy de negocio; vencimiento no anterior, hasta 2100-12-31. Calendario America/Lima. |
+| R-06 | Archivos | PDF/PNG/JPEG hasta 2 MiB; metadatos en BD y contenido en almacenamiento privado. La descarga exige acceso a la compra/abono. |
+| R-07 | Abono | Positivo, moneda de compra y no mayor al saldo; cada abono nuevo se inserta explícitamente. |
+| R-08 | Fecha de abono | No anterior a compra ni futura; nota opcional hasta 200 caracteres. |
+| R-09 | Saldo/concurrencia | Amount − suma Payments.Amount. Guardar nuevo Payment y versión Purchase en una transacción; conflicto concurrente no deja abonos parciales. |
+| R-10 | Fallos | Error HTTP no se presenta como guardado; consulta fallida se distingue de lista vacía. |
+| R-11 | Reporte | Lista, summary y export usan filtros iguales. Exportar no altera saldos; CSV conserva moneda y protege texto interpretable como fórmula. |
+| R-12 | Préstamo | Nombre 2–120, principal positivo, 1–60 importes de cuota positivos, suma al menos igual al principal; tasa anual opcional 0–100 con hasta dos decimales. |
+| R-13 | Cronograma | Cada vencimiento es firstDueOn.AddMonths(n), anclado a la primera fecha. Próximo vencimiento = primera fecha desde hoy; no significa cuota impaga ni pagada. |
+| R-14 | Permisos | Owner administra usuarios. Owner/FinanceAdmin registran operaciones. Viewer consulta; ocultar botones complementa la autorización del servidor. |
+
+### 3.1.4 Acceptance Criteria
+
+```gherkin
+Feature: Sequential purchase payments (US-006 and US-007)
+  Scenario: Record two valid partial payments
+    Given a purchase of PEN 800 belongs to the authenticated business
+    When the administrator records PEN 300 and then PEN 50
+    Then two distinct payment records are persisted
+    And paid amount is PEN 350 and balance is PEN 450
+    And another session can read the same history
+
+  Scenario: Concurrent payments cannot exceed the obligation
+    Given the purchase balance is PEN 100
+    When two requests attempt PEN 70 concurrently
+    Then at most one request succeeds
+    And the balance and persisted history remain consistent
+
+Feature: Filtered obligation export (US-008)
+  Scenario: Same criteria for list, totals and CSV
+    Given PEN and USD purchases exist in the authenticated business
+    When the user applies supplier, PEN, status and inclusive due-date filters
+    Then the list and summary refer to the same selection
+    And the downloaded CSV contains only that selection
+    And changed but unapplied criteria disable download
+
+Feature: Agreed loan schedule (US-009)
+  Scenario: Keep the original monthly anchor and persisted amounts
+    Given the owner records a loan with the first due date on January 31
+    And explicit monthly amounts cover the principal
+    When the agreement is saved and read in a new session
+    Then February uses its last valid day and March uses March 31
+    And the exact agreed amounts are returned without interest recalculation
+
+  Scenario: Protect access and validate the whole schedule
+    Given a Viewer or a user of another business
+    When they try to create or access an unauthorized loan
+    Then the API rejects the operation
+    And invalid amounts, count or dates create no partial loan
+```
+
+Los escenarios son criterios; los comandos ejecutados y resultados se registran en [evidencia AV2](../docs/av2/estado-implementacion.md). Las pruebas automáticas no sustituyen aceptación del equipo ni entrevistas de validación. Los casos históricos de navegador TB1 conservan su adaptador y fecha.
 
 ## 3.2 Impact Mapping
 
-### Objetivo medible propuesto
+### 3.2.1 Objetivos SMART propuestos
 
-Durante una prueba moderada posterior a la implementación del flujo de consulta de obligaciones, al menos 4 de 5 participantes representativos deberán poder localizar el saldo y la fecha de vencimiento de una compra predefinida sin ayuda. Este es un objetivo de validación, no un resultado alcanzado; se definirá la línea base y el protocolo antes de medirlo.
+Se mantiene la propuesta de prueba moderada con cinco participantes: cuatro deberían localizar saldo y vencimiento sin ayuda en dos minutos. No se dispone de línea base ni resultado medido. Para compra, abono, exportación y cronograma se medirá completitud, errores y recuperación con tareas acordadas antes de la sesión.
 
-| Actor | Impacto esperado | Entregable | Historias |
+| Actor | Impacto propuesto | Entregable actual | Validación pendiente |
 |---|---|---|---|
-| Visitor | Comprende qué problema atiende CREDITOR y cómo solicitar información. | Landing coherente, navegación, formulario y páginas legales. | US-001, US-002, US-003 |
-| Business Owner | Localiza una obligación y comprende su estado. | Dashboard de deuda, detalle por proveedor y consulta de préstamos. | US-004, US-007, US-009 |
-| Finance Administrator | Registra información suficiente para mantener trazabilidad. | Formulario de compras, historial de abonos, comprobantes y reporte. | US-005, US-006, US-008 |
-| Developer | Integra una interfaz con servicios documentados. | API REST, contratos y documentación OpenAPI. | TS-001, TS-002, TS-003 |
+| S1 / Rosa provisional | Entender compromisos sin reconstruir registros. | Resumen, historial y cronograma. | Comprensión de saldo vs efectivo y cuota vs pago. |
+| S2 / Diego provisional | Registrar y preparar revisión contable. | Compra, abonos, adjuntos y CSV filtrado. | Completar tarea, encontrar errores y comprender filtros. |
+| Ambos | Distinguir efectivo propio y de terceros. | Tesorería y asignaciones por propietario. | Verificar vocabulario con usuarios del segmento. |
+| Visitante | Identificar alcance y llegar a la aplicación. | Landing y CTA. | Comprensión y accesibilidad de recorrido. |
 
-La versión visual del Impact Map deberá elaborarse en UXPressia y enlazarse o exportarse a `assets/research/impact-map/` cuando cuente con los actores y prioridades validados.
+[Impact Map histórico editable](../assets/research/tb1/impact-map-local.mmd). La sincronización en UXPressia y el acuerdo sobre la extensión Treasury permanecen pendientes; la implementación no prueba demanda.
 
 ## 3.3 Product Backlog
 
-La prioridad expresa la hipótesis actual de valor y se revisará con la investigación. Los story points usan una escala relativa de Fibonacci: 1, 2, 3, 5 y 8.
+Story points son estimaciones relativas históricas, no horas trabajadas. To-Review describe código local que requiere aceptación académica y no equivale a deployment.
 
-| Orden | ID | Título | Prioridad | Story points | Sprint propuesto | Estado |
-|---:|---|---|---|---:|---|---|
-| 1 | US-001 | Conocer CREDITOR | Must | 3 | Sprint 1 | Pendiente de implementar/revisar en landing |
-| 2 | US-002 | Solicitar contacto | Must | 5 | Sprint 1 | Pendiente de integración con servicio aprobado |
-| 3 | US-003 | Consultar condiciones | Must | 2 | Sprint 1 | Pendiente de implementar en landing |
-| 4 | US-004 | Consultar obligaciones | Must | 8 | Sprint 2 | Planificada |
-| 5 | US-005 | Registrar compra a crédito | Must | 8 | Sprint 2 | Planificada |
-| 6 | US-006 | Registrar abono | Must | 5 | Sprint 2 | Planificada |
-| 7 | US-007 | Revisar historial de pagos | Should | 5 | Sprint 2 | Planificada |
-| 8 | US-008 | Exportar reporte de deuda | Should | 5 | Sprint 3 | Planificada |
-| 9 | US-009 | Consultar préstamo | Could | 8 | Sprint 3 | Planificada |
+| ID | Prioridad / SP históricos | Estado técnico AV2 | Aceptación pendiente |
+|---|---|---|---|
+| US-001–003 | Must / 3,5,2 | Landing existente; contacto demo. | Revisión/publicación del corte que se entregue. |
+| US-004–005 | Must / 8,8 | UI conectada y API para consulta/registro. | Validación con usuarios y revisión de equipo. |
+| US-006–007 | Must/Should / 5,5 | Historial y abonos sucesivos persistidos. | Aceptación del flujo y límites de tesorería. |
+| US-008 | Should / 5 | Filtros y CSV conectado. | Revisión de archivo por el usuario objetivo. |
+| US-009 | Could / 8 | Acuerdos y cuotas explícitas persistidos. | Aceptar alcance sin amortización/pago de cuotas. |
 
-La captura del backlog de la herramienta elegida y su URL pública o accesible al docente se incorporarán antes de la entrega.
+El [Sprint 3](../docs/sprints/sprint-03.md) organiza los incrementos locales AV2. El equipo debe vincularlos al tablero real y confirmar responsabilidades; no se reconstruyen reuniones ni horas consumidas.
 
 ### 3.3.1 Technical Stories
 
-| ID | Descripción | Criterios de aceptación | Prioridad |
-|---|---|---|---|
-| TS-001 | Como **Developer**, quiero exponer compras mediante una API REST para que la aplicación consulte y registre obligaciones. | **Dado** que la solicitud `GET /api/v1/purchases` es válida, **cuando** el servicio recibe la petición, **entonces** responde `200 OK` con una colección paginada.<br>**Dado** que la solicitud `POST /api/v1/purchases` contiene datos inválidos, **cuando** el servicio la valida, **entonces** responde `400 Bad Request` con errores de campo. | Must |
-| TS-002 | Como **Developer**, quiero exponer abonos asociados a una compra para que la aplicación actualice el saldo. | **Dado** que la compra existe y tiene saldo pendiente, **cuando** el servicio recibe `POST /api/v1/purchases/{purchaseId}/payments`, **entonces** responde `201 Created` con el abono y saldo resultante.<br>**Dado** que el importe excede el saldo permitido, **cuando** valida la solicitud, **entonces** responde `422 Unprocessable Entity` con el motivo. | Must |
-| TS-003 | Como **Developer**, quiero publicar contratos OpenAPI para que la integración tenga solicitudes y respuestas documentadas. | **Dado** que el servicio está disponible, **cuando** se accede al documento OpenAPI, **entonces** se describen rutas, esquemas y códigos de respuesta vigentes. | Should |
+| ID | Contrato implementado | Alcance verificable |
+|---|---|---|
+| TS-001 | GET/POST `/api/v1/suppliers` y `/api/v1/purchases`; detalle y resumen. | Autenticación, paginación, filtros, validaciones y negocio aislado. |
+| TS-002 | GET/POST `/api/v1/purchases/{id}/payments`. | Historial, abonos sucesivos y concurrencia de agregado. |
+| TS-003 | OpenAPI y Scalar; rutas documentadas y modelos. | La UI de docs consume el contrato generado del backend. Evidencia final en capítulo V. |
+| Extensión persistencia | MySQL 8.4, migraciones EF, pruebas con datos ficticios. | Cambio de proveedor y cadena propia; no es conversión automática de archivos SQLite o base PostgreSQL existente. |
+| Extensión externa | GET `/api/v1/exchange-rates/reference`. | Cotización referencial BCRPData/SBS; timeout/caché/errores sin tasas inventadas. La UI no consume hoy esta ruta. |

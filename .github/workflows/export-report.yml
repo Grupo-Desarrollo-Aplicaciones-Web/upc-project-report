@@ -16,22 +16,14 @@ jobs:
       - name: 2. Instalar Pandoc en la máquina virtual
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc
+          sudo apt-get install -y pandoc librsvg2-bin
 
-      - name: 3. Unir archivos Markdown y compilar a Word
+      - name: 3. Validar y compilar el informe canónico a Word
         run: |
-          pandoc \
-            README.md \
-            docs/00-project-information.md \
-            docs/00-student-outcome.md \
-            docs/01-introduction.md \
-            docs/02-requirements-elicitation-analysis.md \
-            docs/03-requirements-specification.md \
-            docs/04-product-design.md \
-            docs/05-implementation-validation-deployment.md \
-            docs/06-conclusions-recommendations.md \
-            docs/07-bibliography-appendices.md \
-            docs/08-av1-delivery-checklist.md \
+          python tools/report/sync_chapters.py --check
+          python tools/report/validate_report.py
+          python tools/report/validate_av2.py
+          pandoc README.md \
             --resource-path=.:docs \
             -o Reporte_Completo.docx
 

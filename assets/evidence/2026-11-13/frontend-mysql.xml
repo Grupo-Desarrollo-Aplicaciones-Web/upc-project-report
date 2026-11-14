@@ -1,0 +1,12 @@
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="24.766818999999998">
+<testsuite name="workspace.spec.js" timestamp="2026-11-13T22:07:58.616Z" hostname="" tests="4" failures="0" skipped="0" time="21.514" errors="0">
+<testcase name="Vue saves a credit purchase and payment through the API and retrieves the private receipt" classname="workspace.spec.js" time="7.906">
+</testcase>
+<testcase name="Vue saves an agreed loan schedule and retrieves it after signing in again" classname="workspace.spec.js" time="4.24">
+</testcase>
+<testcase name="Treasury keeps the holder separate from the assigned owner in the real ledger" classname="workspace.spec.js" time="4.709">
+</testcase>
+<testcase name="a Viewer can read only their business and receives no write controls" classname="workspace.spec.js" time="4.659">
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,4 +1,8 @@
+> Vista sincronizada del [informe canónico](../README.md), corte AV2 13/11/2026. Para editar contenido, modificar README y ejecutar `python tools/report/sync_chapters.py`.
+
 # Capítulo II: Requirements Elicitation & Analysis
+
+La implementación AV2 se contrasta con esta investigación, pero no modifica sus fechas ni convierte las hipótesis en entrevistas realizadas. Precios y prestaciones de competidores corresponden al registro de fuentes de octubre; no son cotizaciones actualizadas al 13/11. La auditoría técnica revisa coherencia de alcance, no revalida el mercado.
 
 ## 2.1 Competidores
 
@@ -18,45 +22,51 @@ También se consideran alternativas sustitutas los cuadernos, las hojas de cálc
 
 **Pregunta guía:** ¿qué valor podría aportar CREDITOR a un dueño o administrador que necesita conocer cuánto debe, cuándo debe pagar y qué abonos ya realizó, frente a las alternativas disponibles?
 
-**Método y alcance:** revisión documental de fuentes oficiales consultadas el 10 de septiembre de 2026. Se analiza Alegra con su oferta peruana y una guía internacional, Odoo con su documentación de la versión 19.0 y Zoho Books con su documentación de la edición estadounidense. Las funciones pueden depender de la edición, configuración o plan; la revisión de Zoho no acredita adecuación tributaria al Perú. No se realizaron pruebas comparativas de uso ni se contrataron planes. Las capacidades de CREDITOR son propuestas del proyecto, todavía no funcionalidades implementadas.
+**Método y alcance:** revisión documental de fuentes oficiales consultadas el 10 de septiembre de 2026. Se analiza Alegra con su oferta peruana y una guía internacional, Odoo con su documentación de la versión 19.0 y Zoho Books con su documentación de la edición estadounidense. Las funciones pueden depender de la edición, configuración o plan; la revisión de Zoho no acredita adecuación tributaria al Perú. No se realizaron pruebas comparativas de uso ni se contrataron planes. La comparación de competidores conserva su fecha de fuente. La columna CREDITOR se actualiza al corte AV2: compras, abonos, historial, consulta por moneda, exportación CSV y préstamos de cuotas pactadas. Las pruebas técnicas locales no acreditan adopción ni una ventaja frente a los competidores.
 
 #### Competitive Analysis Landscape
 
-| Dimensión | CREDITOR — propuesta | Alegra Contabilidad | Odoo 19.0 | Zoho Books |
+| Dimensión | CREDITOR — incremento local AV2 | Alegra Contabilidad | Odoo 19.0 | Zoho Books |
 |---|---|---|---|---|
 | Enfoque del producto | Control operativo de compras, abonos y préstamos de mypes. | Gestión contable y facturación para pymes. [Fuente][alegra-peru] | Gestión de facturas y préstamos dentro del módulo contable. [Fuentes][odoo-facturas] y [préstamos][odoo-prestamos] | Gestión de compras y pagos integrada al registro contable. [Fuente][zoho-facturas] |
-| Registro de compras y vencimientos | Proveedor, importe, moneda, comprobante y fecha límite. | Consulta de facturas de compra, montos adeudados y vencimientos. [Fuente][alegra-cxp] | Facturas con proveedor, fecha y condiciones de pago. [Fuente][odoo-facturas] | Facturas con proveedor, fecha límite y condiciones de pago. [Fuente][zoho-facturas] |
-| Abonos e historial | Asociar cada abono con la compra y mostrar el saldo restante. | La guía contempla abonos que afectan los saldos reportados. [Fuente][alegra-cxp] | Pagos parciales y saldo pendiente de la factura. [Fuente][odoo-facturas] | Pagos parciales y consulta de pagos registrados por factura. [Fuente][zoho-facturas] |
-| Evidencias digitales | Adjuntar comprobantes de compras y vouchers de abonos. | El vínculo de un archivo con cada abono no se verificó en las fuentes consultadas. | Carga de facturas en PDF; no se verificó aquí el adjunto por abono. [Fuente][odoo-facturas] | Adjuntos y notas en el registro del pago. [Fuente][zoho-facturas] |
-| Consulta de deuda | Dashboard con saldos separados en soles y dólares y estado de vencimientos. | Reporte de cuentas por pagar con filtros de consulta. [Fuente][alegra-cxp] | Reporte de antigüedad de deuda con detalle por proveedor. [Fuente][odoo-facturas] | Reporte por proveedor con importes facturados, pagados y saldo. [Fuente][zoho-reportes] |
-| Préstamos y cuotas | Registro de préstamos y visualización de cronogramas. | No verificado en las fuentes consultadas. | Cronogramas importados, calculados o registrados manualmente, con capital e intereses. [Fuente][odoo-prestamos] | No verificado en las fuentes consultadas. |
-| Salida de información | Reportes filtrados exportables a PDF y Excel. | Descarga de reportes y exportación de facturas de proveedor. [Fuente][alegra-cxp] | Exportación del reporte de deuda a PDF y XLSX. [Fuente][odoo-facturas] | Reporte de saldos con rango de fechas y filtros; formatos de exportación no verificados aquí. [Fuente][zoho-reportes] |
+| Registro de compras y vencimientos | AV2: proveedor, referencia, descripción, importe, moneda y fechas, persistidos por negocio. | Consulta de facturas de compra, montos adeudados y vencimientos. [Fuente][alegra-cxp] | Facturas con proveedor, fecha y condiciones de pago. [Fuente][odoo-facturas] | Facturas con proveedor, fecha límite y condiciones de pago. [Fuente][zoho-facturas] |
+| Abonos e historial | AV2: abonos sucesivos e historial persistidos, saldo derivado y control de concurrencia. | La guía contempla abonos que afectan los saldos reportados. [Fuente][alegra-cxp] | Pagos parciales y saldo pendiente de la factura. [Fuente][odoo-facturas] | Pagos parciales y consulta de pagos registrados por factura. [Fuente][zoho-facturas] |
+| Evidencias digitales | AV2: PDF, PNG o JPEG opcional hasta 2 MiB, metadatos en BD y descarga autorizada desde almacenamiento privado. | El vínculo de un archivo con cada abono no se verificó en las fuentes consultadas. | Carga de facturas en PDF; no se verificó aquí el adjunto por abono. [Fuente][odoo-facturas] | Adjuntos y notas en el registro del pago. [Fuente][zoho-facturas] |
+| Consulta de deuda | AV2: listado y resumen por negocio con filtros y saldos separados PEN/USD. | Reporte de cuentas por pagar con filtros de consulta. [Fuente][alegra-cxp] | Reporte de antigüedad de deuda con detalle por proveedor. [Fuente][odoo-facturas] | Reporte por proveedor con importes facturados, pagados y saldo. [Fuente][zoho-reportes] |
+| Préstamos y cuotas | AV2: registro/consulta de importes mensuales pactados; sin cálculo de amortización ni pago de cuotas. | No verificado en las fuentes consultadas. | Cronogramas importados, calculados o registrados manualmente, con capital e intereses. [Fuente][odoo-prestamos] | No verificado en las fuentes consultadas. |
+| Salida de información | AV2: CSV de obligaciones filtradas; estado de cuenta de tesorería exportable/imprimible en navegador. No exporta XLSX ni PDF desde servidor. | Descarga de reportes y exportación de facturas de proveedor. [Fuente][alegra-cxp] | Exportación del reporte de deuda a PDF y XLSX. [Fuente][odoo-facturas] | Reporte de saldos con rango de fechas y filtros; formatos de exportación no verificados aquí. [Fuente][zoho-reportes] |
 
 **Criterio de lectura:** “no verificado” identifica una limitación de esta revisión; no significa que el competidor carezca de esa función. Tampoco se atribuye exclusividad a CREDITOR por proponer abonos, adjuntos o cronogramas, ya que existen capacidades equivalentes documentadas.
 
 
-#### Posicionamiento, canales y condiciones de comparación
+#### Landscape comercial, identidad visual y condiciones
 
-| Solución | Segmento y estrategia visible | Servicios, precios y canales observados | Logo y evidencia pendiente |
-|---|---|---|---|
-| CREDITOR | Mypes que requieren concentrarse en obligaciones con proveedores, abonos y consulta de saldos. La propuesta de diferenciación se validará con los segmentos. | Landing, futura aplicación web y API REST. El precio no ha sido definido ni comunicado. | Usar el logotipo propio disponible en `assets/branding/creditorlogo.jpg`. |
-| Alegra Contabilidad | Pymes que requieren contabilidad, facturación y gestión empresarial. | Oferta web y planes mostrados en su sitio oficial; los precios, planes y condiciones deben citarse con fecha al preparar la entrega. | Incorporar logo desde la fuente oficial o un recurso con autorización de uso. |
-| Odoo | Organizaciones que requieren módulos configurables de gestión empresarial. | Aplicación web, módulos de contabilidad y documentación oficial de funcionalidades. | Incorporar logo desde la fuente oficial o un recurso con autorización de uso. |
-| Zoho Books | Pequeños negocios que buscan una herramienta de contabilidad y gestión de proveedores. | Plataforma web y documentación oficial de facturas, pagos y reportes. | Incorporar logo desde la fuente oficial o un recurso con autorización de uso. |
+La revisión funcional de septiembre se conserva. La siguiente ampliación consulta fuentes comerciales oficiales el **03/10/2026**. Los precios son referencias públicas de distintos mercados y unidades; no son una cotización para el mismo negocio ni permiten concluir que una alternativa sea más barata. El precio de CREDITOR permanece sin definir.
 
-El análisis no compara precios ni afirma una ventaja comercial mientras no se documenten planes equivalentes, país, moneda, fecha de consulta y condiciones de cada oferta. Los logos de terceros no se descargarán ni republicarán sin una fuente o licencia apropiada; la versión final debe mostrar la fuente junto a cada recurso.
-#### Fortalezas, limitaciones y oportunidades para CREDITOR
+| Dimensión | CREDITOR — propuesta | Alegra Contabilidad | Odoo | Zoho Books |
+|---|---|---|---|---|
+| Identidad visual | <img src="../assets/branding/creditorlogo.jpg" alt="Logotipo CREDITOR" width="110"> | <img src="../assets/research/tb1/competitor-alegra.png" alt="Logotipo Alegra" width="110"> | <img src="../assets/research/tb1/competitor-odoo.png" alt="Logotipo Odoo" width="110"> | <img src="../assets/research/tb1/competitor-zoho.svg" alt="Logotipo corporativo Zoho, proveedor de Zoho Books" width="110"> |
+| Overview / mercado objetivo | Mypes comerciales, roles de revisión y registro; alcance a validar. | Gestión contable y facturación para pymes peruanas. | Suite empresarial modular, con contabilidad y compras. | Contabilidad para pequeños negocios; se revisa edición US. |
+| Valor y ventaja por explorar | Flujo compra–abono–saldo por moneda. No se acredita exclusividad ni superioridad. | Conjunto integrado de tareas contables y comerciales. | Aplicaciones de gestión bajo una misma suscripción. | Compras, pagos, documentos y reportes conectados. |
+| Marketing observado/propuesto | Propuesto: demostraciones de compra/abono y piloto acotado; sin campañas ejecutadas. | Prueba de 15 días, planes por crecimiento y contenido de ayuda. | Oferta de una aplicación gratis, planes y demostraciones/consultoría. | Prueba, comparación de planes, documentación y recursos de aprendizaje. |
+| Productos y servicios | Landing, frontend conectado, API ASP.NET Core y MySQL locales; préstamos y reportes con alcance descrito. | Contabilidad, facturación y POS, con alcance variable por plan. | Todas las aplicaciones en planes Standard/Custom; opciones de hosting por plan. | Books y ecosistema de aplicaciones; Professional incluye multimoneda y órdenes de compra. |
+| Precios y costos observados | Sin precio; soporte, infraestructura y almacenamiento deben estimarse antes de monetizar. | Perú, PEN, mensual: Emprendedor **S/105**, Pyme **S/152**, IGV incluido. Límite y usuarios dependen del plan. [Fuente oficial](https://www.alegra.com/peru/contabilidad/precios/). | URL pública en USD: Standard **USD24.90/usuario/mes** cobrado anualmente, promoción inicial de 12 meses; regular mostrado **USD31.10**, más impuestos. Región de contratación debe confirmarse. [Planes](https://www.odoo.com/es/pricing), [configurador oficial](https://www.odoo.com/pricing-configurator?plan=standard). | Edición US, USD/organización: Professional **USD50/mes** mensual o **USD40/mes** con cobro anual, 5 usuarios. No acredita adecuación tributaria peruana. [Fuente oficial](https://www.zoho.com/us/books/pricing/). |
+| Canales | Landing y frontend responsive implementados localmente; publicación TB1 pendiente. | Web y acceso a aplicaciones; ver oferta Perú y ayuda. | Odoo Online y canales/partners; Custom contempla otras opciones. | Web y aplicaciones móviles publicitadas en la oferta oficial. |
 
-Las fortalezas siguientes se apoyan en las capacidades documentadas. Las limitaciones de encaje y las oportunidades son interpretaciones del equipo que deberán contrastarse con usuarios; no son defectos demostrados de los competidores.
+Los logos se conservan como recursos identificativos de sus titulares para este análisis académico; su origen y fecha figuran en [registro de fuentes locales](../assets/research/tb1/source-register.md). Su inclusión no expresa respaldo comercial ni una licencia general de marca. Los importes no se convierten entre monedas ni se presentan como condiciones comerciales de CREDITOR.
 
-| Alternativa | Fortaleza relevante | Limitación de encaje o cuestión por validar | Oportunidad propuesta para CREDITOR |
-|---|---|---|---|
-| Alegra Contabilidad | Reúne distintas tareas de gestión y ofrece una propuesta para el mercado peruano. | Determinar si el usuario necesita esa amplitud o busca resolver principalmente el seguimiento de sus pagos. | Evaluar una experiencia centrada en las tareas de consultar deuda y registrar abonos. |
-| Odoo | Cubre tanto obligaciones con proveedores como cronogramas de préstamos. | Evaluar cuánto acompañamiento requiere el segmento para configurar y utilizar el flujo contable descrito. | Probar un registro guiado que emplee el vocabulario cotidiano del comerciante. |
-| Zoho Books | Conecta facturas, pagos y documentos de respaldo. | Comprobar el encaje del flujo y de la edición disponible con la operación concreta del negocio. | Validar una navegación por compra que permita recuperar rápidamente cada voucher y saldo. |
-| Registros manuales y hojas de cálculo | Pueden adaptarse a la forma de trabajo que el negocio ya conoce. | Investigar cómo mantienen consistentes los saldos, fechas y comprobantes cuando participan varias personas. | Comprobar si centralizar los registros reduce búsquedas y conciliaciones manuales. |
+#### Fortalezas, debilidades, oportunidades y amenazas
 
-CREDITOR parte con una propuesta de alcance específico, pero aún debe demostrar utilidad y facilidad de uso. La principal oportunidad planteada es facilitar un flujo continuo de consulta de deuda, registro de abono y recuperación del comprobante. Sus riesgos iniciales son la falta de validación con usuarios, el esfuerzo necesario para mantener los registros al día y la preferencia por herramientas ya adoptadas. No se plantea competir por un precio menor hasta conocer los costos del proyecto y la disposición de pago del segmento.
+Las capacidades documentadas sustentan las fortalezas. Debilidades de encaje, oportunidades y amenazas son **interpretaciones estratégicas del equipo por contrastar**, no defectos demostrados mediante pruebas comparativas.
+
+| Alternativa | Fortalezas | Debilidades o limitaciones de encaje por validar | Oportunidades | Amenazas |
+|---|---|---|---|---|
+| CREDITOR | Alcance propuesto centrado en compras/abonos y vocabulario de la mype. | Investigación incompleta; falta API operativa, despliegue TB1 y evidencia de adopción. | Probar un flujo acotado con negocios que necesitan consultar obligaciones. | Competidores ya ofrecen funciones equivalentes y el usuario puede mantener su herramienta actual. |
+| Alegra | Oferta dirigida a Perú y combinación de contabilidad/facturación. | Para un negocio que solo necesita obligaciones, evaluar el encaje de una oferta más amplia y sus condiciones. | Adoptar gestión integrada cuando el negocio necesita varias tareas. | Otras suites y métodos ya conocidos compiten por costo y esfuerzo de cambio. |
+| Odoo | Suite modular con facturas, pagos y gestión de préstamos documentada. | Configuración e implementación requieren evaluar el acompañamiento necesario para este segmento. | Extender procesos empresariales sobre una plataforma integrada. | Alternativas más acotadas pueden atraer a usuarios que prefieren un flujo reducido. |
+| Zoho Books | Relación entre compras, pagos y reportes; Professional publica multimoneda. | La revisión US no demuestra encaje tributario ni de procesos con una mype peruana. | Integración contable y con su ecosistema cuando existe ese requerimiento. | Productos localizados y herramientas actuales pueden ser preferidos por el negocio. |
+
+Los cuadernos/hojas de cálculo siguen siendo sustitutos por investigar, no medios confirmados de todos los participantes. No se afirma una ventaja comercial de CREDITOR hasta comprobar el flujo y la adopción.
 
 #### Fuentes del análisis
 
@@ -67,7 +77,7 @@ CREDITOR parte con una propuesta de alcance específico, pero aún debe demostra
 - Zoho. (s. f.). [Basic Functions in Bills][zoho-facturas]. Ayuda de Zoho Books, edición estadounidense.
 - Zoho. (s. f.). [Payables Reports][zoho-reportes]. Ayuda de Zoho Books, edición estadounidense.
 
-Todas las fuentes fueron consultadas el 10 de septiembre de 2026.
+Las fuentes funcionales anteriores fueron consultadas el 10 de septiembre de 2026. Precios, logos y contexto secundario se ampliaron el 03/10/2026 con fuentes oficiales; ver registro local de fuentes.
 
 [alegra-peru]: https://www.alegra.com/peru/contabilidad/
 [alegra-cxp]: https://ayuda.alegra.com/int/genera-el-reporte-de-cuentas-por-pagar-en-alegra
@@ -96,12 +106,12 @@ Las estrategias se plantean a partir del análisis anterior y de las hipótesis 
 | Hablar de control de obligaciones y no de contabilidad integral. | Análisis documental; falta validación con entrevistas. | Confirmar que el segmento reconoce el problema y no requiere primero una suite contable completa. |
 | Priorizar compras, abonos, saldos y vencimientos. | Hipótesis Lean UX; falta evaluación de frecuencia e importancia. | Ordenar el backlog después de analizar tareas y entrevistas. |
 | Mantener el precio fuera de la landing inicial. | No existe investigación de disposición de pago. | Definir precio únicamente tras comparar alternativas y recoger criterios de los participantes. |
-| Comunicar una propuesta clara y comprobable. | La landing actual debe ser reescrita para CREDITOR. | Eliminar métricas promocionales sin fuente y vincular los CTA a flujos reales. |
+| Comunicar una propuesta clara y comprobable. | La landing TB1 ya presenta cuentas por pagar y CTA hacia dashboard/nueva compra locales. | Revisar comprensión con participantes y comprobar los enlaces públicos cuando se autorice el despliegue. |
 ## 2.2 Entrevistas
 
 Se propone realizar entrevistas para comprender cómo los usuarios gestionan actualmente las compras a crédito, los pagos a proveedores y los préstamos. La investigación permitirá contrastar los supuestos del capítulo I y las oportunidades del análisis competitivo antes de definir requisitos detallados.
 
-Esta sección presenta el diseño de la investigación. Las entrevistas aún deben ejecutarse; sus registros y hallazgos se documentarán posteriormente en las secciones 2.2.2 y 2.2.3.
+Esta sección presenta el diseño de la investigación y cuatro registros existentes: tres de S1 y uno de S2. La revisión local verifica la presencia de los enlaces y metadatos declarados, no el contenido ni consentimiento de las grabaciones. Faltan al menos dos participantes S2 y el análisis de respuestas de todos los registros.
 
 ### 2.2.1 Diseño de entrevistas
 
@@ -119,7 +129,7 @@ Comprender las prácticas, dificultades y criterios de decisión de dueños y ad
 
 #### Segmentos y selección de participantes
 
-Se propone un muestreo intencional inicial de seis personas: tres dueños de negocio y tres administradores o encargados de finanzas. Es una meta de reclutamiento, no una cantidad de entrevistas realizadas ni una muestra estadísticamente representativa. Se buscarán participantes de al menos tres negocios y dos rubros comerciales; si los relatos revelan procesos distintos o vacíos relevantes, se ampliará la convocatoria.
+La meta mínima es un muestreo intencional de seis personas: tres dueños de negocio y tres administradores o encargados de finanzas. El registro actual contiene tres S1 y un S2; faltan dos S2 para la meta mínima. No constituye una muestra estadísticamente representativa. Se buscarán participantes de al menos tres negocios y dos rubros comerciales; si los relatos revelan procesos distintos o vacíos relevantes, se ampliará la convocatoria.
 
 | Segmento | Perfil y criterios de inclusión | Necesidades que se busca explorar |
 |---|---|---|
@@ -194,150 +204,213 @@ La reacción a esta descripción se registrará como opinión sobre el concepto.
 
 #### Relación del guion con las hipótesis del capítulo I
 
-| Hipótesis | Preguntas relacionadas | Evidencia que se buscará |
-|---|---|---|
-| H1. Dashboard de deudas | G-03, G-04, D-01, D-03 | Cómo consultan obligaciones, priorizan pagos y detectan vencimientos. |
-| H2. Registro de abonos | G-02, G-05, G-06, A-01, A-02, A-03, A-04 | Cómo mantienen saldos y comprobantes, resuelven diferencias y actualizan registros. |
-| H3. Control de préstamos | G-08, D-01 | Tipos de préstamos utilizados y dificultades de seguimiento de cuotas. |
-| H4. Exportación y reportes | G-09, A-05 | Información, filtros, formatos y destinatarios de los reportes. |
+| Hipótesis | Preguntas | Evidencia buscada | Historia |
+|---|---|---|---|
+| H-01 / F-01, dashboard | G-03, G-04, D-01, D-03 | Pasos actuales de consulta y criterios de prioridad. | US-004 |
+| H-02 / F-02, registro de compra | G-02, A-01, A-02, A-03 | Datos mínimos, responsable y manejo de datos faltantes. | US-005 |
+| H-03 / F-03, abonos e historial | G-05, G-06, A-02, A-03, A-04 | Relación pago–compra, comprobantes y resolución de diferencias. | US-006/007 |
+| H-04 / F-04, préstamos | G-08, D-01 | Tipo de préstamo y condiciones/cronograma usados. | US-009, implementación AV2; utilidad por validar |
+| H-05 / F-05, reportes | G-09, A-05 | Destinatario, filtros, formato y esfuerzo de preparación. | US-008, implementación AV2; utilidad por validar |
 
-Por cada entrevista se registrarán el código, segmento, rubro, fecha, modalidad, duración, consentimiento y notas por pregunta. El análisis posterior distinguirá hechos relatados, opiniones e interpretaciones del equipo; incluirá coincidencias y casos que contradigan las hipótesis. Las entrevistas ayudarán a refinar necesidades y prioridades, mientras que la evaluación de facilidad de uso y resultados requerirá pruebas posteriores.
+La matriz no contiene hallazgos. Cada respuesta debe vincularse a código de participante, pregunta y minuto antes de derivar una necesidad. Se distinguirán hechos relatados, opiniones e interpretaciones, incluyendo casos que contradigan las hipótesis.
 
 ### 2.2.2 Registro de entrevistas
 
-La meta de AV1 es registrar entre tres y cinco entrevistas por segmento. Cada entrevista debe tener consentimiento, captura autorizada y enlace del video con minuto de inicio y duración. Los datos personales no necesarios se anonimizan.
+La exigencia de investigación es **3 a 5 entrevistas por segmento**. Hay cuatro entradas existentes (S1: 3; S2: 1). Se conserva la información y los enlaces incorporados por el equipo; la etiqueta **registro existente** evita equiparar una URL con evidencia completa. El paquete final debe añadir captura de video, resúmenes y enlace autorizado en Microsoft Stream con inicio y duración.
 
-| Código | Segmento | Rol y rubro | Fecha | Evidencia requerida | Estado |
+| Código | Segmento | Rol y rubro declarados | Fecha declarada | Video y timing existentes | Estado de revisión |
 |---|---|---|---|---|---|
-| S1-01 | Dueños de mypes | Carlos Mendoza — Propietario y Gerente General (Distribuidora y Ferretería Mendoza — Venta mayorista y minorista de herramientas y materiales de construcción) | 14/09/2026 | [Video de la entrevista](https://youtu.be/Ka9AmFZM3Js) (Inicio: 00:00, Duración: 07:25 min) | Completada |
-| S1-02 | Dueños de mypes | Rocío Paredes — Fundadora y Gerente Comercial (Calzados & Moda Vía Nova — Comercialización de calzado femenino y carteras) | 15/09/2026 | [Video de la entrevista](https://youtu.be/sIYtHGlNyWI) (Inicio: 00:00, Duración: 07:36 min) | Completada |
-| S1-03 | Dueños de mypes | Ernesto Gutarra — Dueño de una tienda de artículos de primera necesidad | 17/09/2026 | [Video de la entrevista](https://youtu.be/NuDAKMMTmaY) (Inicio: 00:00, Duración: 07:58 min) | Completada |
-| S2-01 | Administradores o finanzas | Fernando Terry — Administrador y Encargado de Finanzas (Distribuidora de Alimentos del Sur S.A.C. — Distribución mayorista de abarrotes y consumo masivo) | 16/09/2026 | [Video de la entrevista](https://youtu.be/AkhgaNd8Few) (Inicio: 00:00, Duración: 08:13 min) | Completada |
-| S2-02 | Administradores o finanzas | Pendiente de reclutamiento | Pendiente | Captura autorizada, URL del video, minuto y duración. | Pendiente |
-| S2-03 | Administradores o finanzas | Pendiente de reclutamiento | Pendiente | Captura autorizada, URL del video, minuto y duración. | Pendiente |
+| S1-01 | Dueños de mypes | Carlos Mendoza — Propietario y Gerente General; Distribuidora y Ferretería Mendoza. | 14/09/2026 | [YouTube](https://youtu.be/Ka9AmFZM3Js), 00:00, 07:25. | Registro existente; contenido, captura, consentimiento y Stream pendientes de revisión. |
+| S1-02 | Dueños de mypes | Rocío Paredes — Fundadora y Gerente Comercial; Calzados & Moda Vía Nova. | 15/09/2026 | [YouTube](https://youtu.be/sIYtHGlNyWI), 00:00, 07:36. | Registro existente; contenido, captura, consentimiento y Stream pendientes de revisión. |
+| S1-03 | Dueños de mypes | Ernesto Gutarra — Dueño de tienda de artículos de primera necesidad. | 17/09/2026 | [YouTube](https://youtu.be/NuDAKMMTmaY), 00:00, 07:58. | Registro existente; contenido, captura, consentimiento y Stream pendientes de revisión. |
+| S2-01 | Administradores o finanzas | Fernando Terry — Administrador y Encargado de Finanzas; Distribuidora de Alimentos del Sur S.A.C. | 16/09/2026 | [YouTube](https://youtu.be/AkhgaNd8Few), 00:00, 08:13. | Registro existente; contenido, captura, consentimiento y Stream pendientes de revisión. |
+| S2-02 | Administradores o finanzas | Participante no incorporado. | Pendiente | Sin evidencia. | Entrevista real pendiente. |
+| S2-03 | Administradores o finanzas | Participante no incorporado. | Pendiente | Sin evidencia. | Entrevista real pendiente. |
 
-No se han registrado entrevistas reales en esta versión; por ello no se presentan nombres, hallazgos, porcentajes ni enlaces ficticios.
+#### Resúmenes individuales y metadatos por completar
+
+| Código | Resumen descriptivo de respuestas | Edad/distrito/dispositivo/browser/canales | Evidencia de origen necesaria |
+|---|---|---|---|
+| S1-01 | Pendiente: no se transcriben respuestas que no se han revisado. | Pendiente de registro autorizado. | Respuestas por G/D, minuto, captura y consentimiento. |
+| S1-02 | Pendiente: no se transcriben respuestas que no se han revisado. | Pendiente de registro autorizado. | Respuestas por G/D, minuto, captura y consentimiento. |
+| S1-03 | Pendiente: no se transcriben respuestas que no se han revisado. | Pendiente de registro autorizado. | Respuestas por G/D, minuto, captura y consentimiento. |
+| S2-01 | Pendiente: no se transcriben respuestas que no se han revisado. | Pendiente de registro autorizado. | Respuestas por G/A, minuto, captura y consentimiento. |
+
+El 03/10/2026 se intentó consultar captions públicos automáticos de los cuatro videos únicamente en lectura. La metadata ofreció una pista de subtítulos en español, pero timedtext devolvió contenido vacío; no se obtuvo una transcripción utilizable. Esto no acredita ni invalida las respuestas del video. No se generaron resúmenes, capturas o citas a partir de esa metadata. La revisión humana de los videos originales y la evidencia de Microsoft Stream continúan pendientes. No se subió contenido a servicios externos durante esta ejecución local.
+
+#### Revisión de los registros existentes
+
+El [control de revisión de entrevistas](../assets/research/tb1/interview-review-checklist.csv) concentra las cuatro entradas existentes y las dos entrevistas S2 pendientes. Registra revisor, fecha, comprobaciones y siguiente acción por participante, sin repetir toda la codificación. Cada comprobación se actualizará a **CUMPLE**, **REQUIERE COMPLEMENTO** o **NO VERIFICADO**, indicando la evidencia en el resumen individual. Las dos filas sin participante no se contabilizan como entrevistas realizadas.
+
+| Comprobación | Condición para cerrar la revisión |
+|---|---|
+| Perfil y consentimiento | Confirmar responsabilidad reciente en compras/pagos, segmento principal y autorización de participación, grabación y uso académico de la evidencia. |
+| Grabación y abordaje | Abrir el registro completo; revisar audio/video comprensibles, ambiente, interrupciones y preguntas que no induzcan una respuesta. Registrar incidencias y su efecto en la interpretación. |
+| Cobertura y timing | Relacionar las preguntas efectivamente respondidas con los objetivos del guion y conservar el minuto de cada fragmento útil. La duración declarada de 7–8 minutos exige revisar profundidad; no demuestra por sí sola cobertura suficiente ni invalidez. |
+| Resumen y codificación | Redactar un resumen individual fiel al registro, codificar respuestas con fuente/minuto y revisar inferencias con otro integrante. No convertir ausencia de respuesta en ausencia del problema. |
+| Evidencia de entrega | Añadir captura autorizada y acceso de revisión en Stream con inicio/duración, conservando la relación con el registro original. |
+
+Si una grabación deja objetivos sin responder, se realizará una entrevista complementaria o una repregunta autorizada. Se registrará como continuación del mismo participante para evitar contar dos veces a una persona.
 
 ### 2.2.3 Análisis de entrevistas
 
-El análisis se realizará después de completar los registros. Para cada respuesta se distinguirán: **hecho relatado**, **opinión**, **necesidad**, **dolor** y **oportunidad**. Se calcularán porcentajes solo sobre el número de entrevistas válidas por segmento y se indicará el denominador.
+Se conserva el esquema de codificación como **base reutilizable**. Hasta disponer de respuestas rastreables no se calculan porcentajes ni se atribuyen hallazgos a S1/S2. Las proporciones futuras usarán solo entrevistas válidas, explicitarán `n/N por segmento` y no se extrapolarán a la población de mypes.
 
-| Tema | Código de análisis | Preguntas relacionadas | Resultado por registrar |
+| Tema | Código | Preguntas | Dato concreto que se codificará |
 |---|---|---|---|
-| Consulta de saldos | SALDO | G-03, G-06 | Herramienta actual, pasos y dificultad relatada. |
-| Vencimientos y prioridad | VENCIMIENTO | G-04, D-01, D-03 | Método de seguimiento y criterio de decisión. |
-| Registro de compras y abonos | REGISTRO | G-02, G-05, A-01 a A-04 | Datos requeridos, errores y comprobantes. |
-| Préstamos | PRESTAMO | G-08, D-01 | Uso, frecuencia y necesidad de cronograma. |
+| Consulta de saldos | SALDO | G-03, G-06 | Fuentes consultadas, pasos, contraste con proveedor. |
+| Vencimientos y prioridad | VENCIMIENTO | G-04, D-01, D-03 | Señal de vencimiento y criterio de decisión. |
+| Registro de compra | COMPRA | G-02, A-01, A-02 | Campos, responsable y manejo de información incompleta. |
+| Abonos y comprobantes | ABONO | G-05, G-06, A-02 a A-04 | Asociación pago–compra, recuperación y correcciones. |
+| Préstamos | PRESTAMO | G-08, D-01 | Condiciones, frecuencia y uso de cronograma. |
 | Reportes | REPORTE | G-09, A-05 | Destinatario, filtros, formato y esfuerzo. |
+| Condiciones de uso | CONTEXTO | G-01, A-03, A-04, D-04 | Dispositivo, coordinación y herramienta actual. |
 
-La síntesis final incluirá coincidencias, diferencias entre segmentos y evidencia que contradiga las hipótesis iniciales. Solo entonces se actualizarán Personas, Task Matrix, Journey Maps, historias y backlog.
+[Plantilla CSV de codificación](../assets/research/tb1/interview-coding-template.csv) contiene filas por participante registrado y tema, con evidencia y resultado marcados **pendientes**. [Matriz de trazabilidad de investigación](../assets/research/tb1/research-traceability.csv) conecta las cinco hipótesis con el guion y las historias; no reemplaza el análisis de respuestas.
 
+| Segmento | Registros existentes | Mínimo requerido | Estado del contenido analizado | Síntesis y porcentajes |
+|---|---:|---:|---|---|
+| S1 | 3 | 3 | No hay contenido codificado verificable en esta revisión. | Pendientes. |
+| S2 | 1 | 3 | No hay contenido codificado verificable; faltan 2 registros. | Pendientes. |
 
-#### Criterios de calidad y resguardo
+El criterio de cierre exige resúmenes, citas/minutos y síntesis por segmento antes de convertir hipótesis de Personas y tareas en resultados investigados. No se asigna causalidad ni intención de compra a una muestra cualitativa.
 
-- Confirmar que cada participante cumple los criterios del segmento antes de incluirlo en el análisis.
-- Registrar la fecha, modalidad, duración y consentimiento de cada entrevista.
-- Citar un hallazgo con el código de entrevista y conservar una nota que permita rastrearlo sin revelar datos sensibles.
-- Evitar concluir causalidad, intención de compra o tamaños de mercado con una muestra cualitativa.
-- Reemplazar los registros pendientes por evidencia real antes de exportar el informe final.
+#### Método de análisis y agrupación de participantes
+
+1. **Revisar el material de origen.** Completar el control de revisión y confirmar el rol principal mediante G-01. S1 agrupa a quienes deciden o supervisan obligaciones; S2, a quienes registran o concilian. Los códigos actuales mantienen el segmento declarado hasta revisar esa respuesta. Si una persona cumple ambos roles, se conserva un único código y se anotan responsabilidades secundarias.
+2. **Codificar fragmentos verificables.** En la plantilla de codificación, cada fila corresponde a una respuesta o fragmento, con participante, pregunta equivalente del guion, tema, minuto de inicio/fin y cita breve o paráfrasis anonimizada. Distinguir **RELATO**, **OPINIÓN** e **INFERENCIA DEL EQUIPO**; una inferencia debe conservar los fragmentos que la sustentan. Usar **SIN RESPUESTA** cuando el registro no cubra la pregunta y **NO APLICA** solo cuando la experiencia declarada lo justifique. Los identificadores G/D/A son una equivalencia analítica: no se afirma que los videos antiguos hayan usado literalmente este guion.
+3. **Comparar dentro de cada segmento.** Agrupar por las variables operacionales siguientes y conservar la referencia al fragmento que justifica cada valor. Primero comparar experiencias S1 entre sí y S2 entre sí; después contrastar patrones comunes y diferencias de responsabilidades. Mantener casos discrepantes y revisar si requieren otra Persona o un escenario alternativo.
+4. **Derivar necesidades y decisiones.** Expresar la necesidad como una tarea o resultado del negocio, antes de proponer una función. Relacionarla con una Persona candidata y una historia existente; si no hay encaje, registrar la brecha para revisar el backlog. Un caso individual puede justificar una excepción, pero no se describe como patrón del segmento. Una coincidencia entre al menos dos relatos permite proponer un patrón recurrente del grupo revisado, con sus límites y casos contrarios; no demuestra saturación ni prevalencia poblacional.
+
+| Variable de agrupación | Valores que se registrarán desde las respuestas | Origen de evidencia |
+|---|---|---|
+| Responsabilidad principal | Decide/supervisa; registra/ejecuta; concilia; combinación y rol principal. | G-01, D-02, A-03. |
+| Forma de consultar y conservar datos | Herramienta o fuente nombrada, pasos y personas consultadas; no verificado si no se relata. | G-02, G-03, G-05, D-04. |
+| Frecuencia y criticidad de la tarea | Frecuencia explícita, último caso concreto y consecuencia descrita. No inferir frecuencia por el cargo. | G-04, G-09, D-03, A-05. |
+| Tratamiento de pagos y discrepancias | Pago parcial/completo, vínculo al comprobante y pasos de comprobación/corrección. | G-05, G-06, A-02, A-03. |
+| Condiciones de uso y coordinación | Dispositivo, momento de registro, participantes, delegación y barreras descritas. | A-03, A-04, D-02, D-04. |
+| Complejidad aplicable | Moneda(s), presencia/ausencia declarada de préstamos, destinatario y formato de reporte. | G-07, G-08, G-09, A-05. |
+
+La [matriz de evidencia de Personas](../assets/research/tb1/persona-evidence-matrix.csv) conecta **participante → pregunta → cita/minuto → necesidad → Persona → historia**. Contiene una fila de revisión planificada por registro existente; las preguntas y destinos candidatos orientan dónde buscar evidencia, sin atribuir respuestas ni confirmar asignaciones. Al revisar los videos, se completará o descartará esa relación y se añadirá una fila por necesidad sustentada; no se multiplicarán filas vacías por cada pregunta.
+
+En esa matriz, `question_to_review` indica la pregunta equivalente que se busca, `variable` el tema de codificación, `minute_start`/`minute_end` el intervalo verificable, `quote_or_paraphrase` el fragmento anonimizado y `need` la interpretación del equipo. `persona_candidate` y `story_candidate` solo se confirman tras contrastar el fragmento con el grupo. `reviewer`/`review_date` y `analysis_status` permiten revisar quién cerró o descartó la relación. **PENDIENTE DE REVISIÓN** no es un hallazgo.
+
+La síntesis final de cada segmento debe describir las tareas compartidas, diferencias, excepciones y efecto en el diseño, citando los códigos de participantes. Los conteos se expresarán como `n/N de registros válidos revisados` y se mantendrán separados de la prioridad estimada por el equipo. Las tareas sin una frecuencia explícita permanecerán sin valor observado.
+
 ## 2.3 Needfinding
 
 ### 2.3.1 User Personas
 
-Las siguientes personas son borradores basados en los criterios de segmento del capítulo I. No representan personas investigadas y deberán actualizarse con citas de las entrevistas antes de la entrega.
+Rosa y Diego se conservan como nombres de referencia de los dos segmentos. Las fichas actuales son **Personas provisionales de diseño**, sin porcentajes de mercado, edad, género, marcas, emociones o conducta atribuidos a los entrevistados. Los gráficos locales son SVG declarativos preparados para revisión; **no son exportaciones UXPressia ni evidencia de investigación**. Las fichas finales del curso deben elaborarse en UXPressia después de analizar las entrevistas.
 
-| Persona provisional | Objetivo | Contexto y conducta por validar | Necesidades iniciales |
-|---|---|---|---|
-| **Rosa, dueña de mype** | Conocer sus compromisos antes de autorizar o priorizar pagos. | Puede supervisar compras y pagos sin registrar cada operación personalmente. | Resumen de deuda, vencimientos, consulta por proveedor y préstamos. | 
+![Rosa: Persona local provisional del segmento S1](../assets/research/tb1/persona-rosa-local.svg)
 
-![userpersona1](../assets/research/Rosa%20Vargas.png)
+![Diego: Persona local provisional del segmento S2](../assets/research/tb1/persona-diego-local.svg)
 
-| Persona provisional | Objetivo | Contexto y conducta por validar | Necesidades iniciales |
-|---|---|---|---|
-| **Diego, encargado de finanzas** | Registrar una compra o abono y recuperar su comprobante al conciliar. | Puede operar con información entregada por otras personas y registrar desde distintos dispositivos. | Campos consistentes, historial de pagos, saldo y reportes filtrables. | 
+Los PNG históricos `Rosa Vargas.png` y `Diego Gutiérrez.png` se preservan sin alteración. Sus valores de “market size 80 %” y demografía no cuentan con sustento en esta revisión y se excluyen de las fichas vigentes; no deben usarse para caracterizar el mercado o a los participantes.
 
-![userpersona2](../assets/research/Diego%20Gutiérrez.png)
+#### Criterios para cerrar las Personas investigadas
+
+| Criterio | Evidencia necesaria y decisión |
+|---|---|
+| Base del segmento | Alcanzar 3–5 participantes revisados por segmento y confirmar su responsabilidad principal. Tener tres URLs S1 no equivale a tres entrevistas analizadas. |
+| Conjunto de participantes | Identificar los códigos que sustentan cada Persona y las variables por las que se agrupan. Documentar casos distintos; Rosa/Diego pueden cambiar o dividirse si la evidencia no corresponde a los grupos previstos. |
+| Objetivos y necesidades | Cada objetivo, tarea prioritaria, dificultad y condición de uso debe enlazar al menos una necesidad sustentada en la matriz. Distinguir patrones compartidos de casos individuales y conservar contraejemplos. |
+| Contenido de la ficha | Incluir solo datos relatados o síntesis justificadas. Mantener sin dato la demografía, emociones o frecuencia no recogidas; no completar esos campos con estereotipos del rol. |
+| Coherencia entre artefactos | Actualizar User Task Matrix, Journey As-Is y Empathy con los mismos códigos/fuentes; revisar Lean UX e historias cuando contradigan la evidencia. Las emociones requieren una expresión del participante o una observación claramente identificada. |
+| Revisión y formato | Un segundo integrante revisa correspondencia fuente–necesidad–Persona. Registrar fecha, revisor y enlace/exportación UXPressia con acceso para el curso. |
+
+El [control de entrevistas](../assets/research/tb1/interview-review-checklist.csv) permite comprobar la base válida y la [matriz de evidencia](../assets/research/tb1/persona-evidence-matrix.csv) permite comprobar el contenido de cada ficha. Hasta completar ambos, las Personas conservan su condición provisional. La mejora pendiente consiste en incorporar investigación real y actualizar los artefactos con ella.
 
 ### 2.3.2 User Task Matrix
 
-La matriz usa una valoración inicial para orientar la discusión del backlog; la frecuencia e importancia deben recalibrarse con entrevistas. Escala: 1 = baja, 3 = media, 5 = alta.
+La matriz existente se conserva como **base reutilizable** de hipótesis. Los valores 1 a 5 son prioridades iniciales del equipo (1 baja, 3 media, 5 alta), no frecuencias medidas. Las tareas se redactan como actividades del negocio que pueden existir sin CREDITOR.
 
-| Tarea | Rosa: frecuencia | Rosa: importancia | Diego: frecuencia | Diego: importancia | Validación necesaria |
+| Tarea del negocio | Rosa: frecuencia hipotética | Rosa: importancia hipotética | Diego: frecuencia hipotética | Diego: importancia hipotética | Evidencia por recoger |
 |---|---:|---:|---:|---:|---|
-| Consultar saldo por proveedor | 3 | 5 | 4 | 5 | Confirmar frecuencia y momento de consulta. |
-| Revisar próximos vencimientos | 3 | 5 | 4 | 5 | Identificar método actual de priorización. |
-| Registrar una compra a crédito | 2 | 4 | 5 | 5 | Confirmar campos mínimos y responsables. |
-| Registrar un abono y voucher | 2 | 5 | 5 | 5 | Validar evidencia disponible y excepciones. |
-| Consultar préstamo y cuotas | 2 | 3 | 2 | 3 | Determinar si es una necesidad real de ambos segmentos. |
-| Exportar o compartir un reporte | 2 | 4 | 3 | 4 | Conocer destinatario y formato requerido. |
+| Averiguar el saldo pendiente con un proveedor | 3 | 5 | 4 | 5 | G-03/G-06, momento y pasos. |
+| Revisar compromisos y decidir próximos pagos | 3 | 5 | 4 | 5 | G-04/D-01, criterio real. |
+| Conservar los datos de una compra a crédito | 2 | 4 | 5 | 5 | G-02/A-01, datos y responsables. |
+| Registrar un pago parcial y conservar el comprobante | 2 | 5 | 5 | 5 | G-05/A-02, respaldo y excepciones. |
+| Revisar cuotas de un préstamo | 2 | 3 | 2 | 3 | G-08, existencia y condiciones. |
+| Preparar información para una revisión contable | 2 | 4 | 3 | 4 | G-09/A-05, destinatario/formato. |
+
+Según esta valoración inicial, ambos roles comparten alta importancia de saldos, vencimientos y pagos. Diego tendría mayor participación en conservación de compras y abonos; Rosa en revisión y decisión. Son diferencias **por comprobar**, no resultados del estudio. Ese criterio priorizó compras/abonos/historial en TB1. Préstamos y reportes se implementan en AV2; su prioridad de negocio todavía puede cambiar con evidencia.
 
 ### 2.3.3 User Journey Mapping
 
-El recorrido **As-Is** se documentará en UXPressia a partir de operaciones relatadas. Esta versión identifica puntos a validar, no una secuencia confirmada.
+Se representan dos recorridos **As-Is hipotéticos**, uno por Persona, para orientar la revisión de experiencias actuales. No muestran pantallas de CREDITOR ni una emoción observada. Cada etapa indica preguntas y evidencia faltante; las rutas finales deben documentarse en UXPressia y vincularse a la Persona del mismo proyecto.
 
-| Etapa | Acción que se investigará | Posible fricción | Evidencia a recoger |
-|---|---|---|---|
-| Compra | Acordar una compra a crédito y recibir comprobante. | Datos incompletos o comprobante fuera del registro principal. | Relato de una compra reciente. |
-| Registro | Anotar importe, proveedor, moneda y fecha límite. | Duplicación, olvido o uso de fuentes separadas. | Herramienta actual y responsable. |
-| Seguimiento | Revisar saldo, vencimiento y prioridad de pago. | Dificultad para reunir información actualizada. | Pasos realizados y tiempo aproximado. |
-| Abono | Ejecutar pago parcial y conservar voucher. | Pérdida de trazabilidad entre pago y compra. | Método de registro y recuperación. |
-| Conciliación | Confirmar saldo o preparar información para revisión. | Búsqueda manual o discrepancia con proveedor. | Ejemplo y resultado relatado. |
+![Journey As-Is hipotético de Rosa](../assets/research/tb1/journey-rosa-local.svg)
 
-La captura o enlace de UXPressia se agregará cuando el recorrido use evidencia real de los participantes.
+![Journey As-Is hipotético de Diego](../assets/research/tb1/journey-diego-local.svg)
 
 ### 2.3.4 Empathy Mapping
 
-Los mapas de empatía se construirán después de codificar entrevistas; no se atribuirán pensamientos o emociones a los segmentos sin una cita de evidencia.
+Los dos mapas locales son guías de preguntas. “Dice”, “piensa”, “siente”, “pains” y “gains” no contienen citas fabricadas. El cierre exige reemplazar preguntas por observaciones/citas rastreables y exportar los mapas de UXPressia.
 
-| Área | Pregunta de análisis |
-|---|---|
-| Dice y hace | ¿Qué describe la persona que realiza al registrar o revisar una obligación? |
-| Piensa y siente | ¿Qué preocupación o criterio expresa al decidir un pago? |
-| Ve | ¿Qué documentos, pantallas o canales intervienen en su proceso actual? |
-| Escucha | ¿Qué indicaciones recibe de proveedores, dueños, contadores u otras personas? |
-| Dolores | ¿Qué obstáculo, riesgo o esfuerzo se repite en su relato? |
-| Ganancias | ¿Qué resultado concreto espera al completar una tarea? |
+![Guía local de empatía para Rosa](../assets/research/tb1/empathy-rosa-local.svg)
+
+![Guía local de empatía para Diego](../assets/research/tb1/empathy-diego-local.svg)
 
 ### 2.3.5 As-Is Scenario Mapping
 
-El escenario As-Is final distinguirá actores, acciones, información y sistemas utilizados. La matriz anterior será reemplazada o complementada por una captura de la herramienta elegida y por referencias a los códigos de entrevista.
+| Persona | Escenario de negocio hipotético | Actores e información por verificar | Origen de evidencia previsto |
+|---|---|---|---|
+| Rosa / S1 | Averiguar obligaciones pendientes antes de autorizar un pago. | Dueño, responsable del registro y proveedor; compra, vencimiento, abonos y saldo. | G-03/G-04, D-01/D-02 y cita/minuto. |
+| Diego / S2 | Conservar una compra y registrar un abono para una revisión posterior. | Administrador, dueño y proveedor; comprobante de compra y pago, importe, moneda y fecha. | G-02/G-05/G-06 y A-01 a A-04. |
+
+Los medios concretos utilizados y las rutas alternativas se dejan pendientes; no se afirma que las seis experiencias de la meta mínima ya hayan sido observadas.
 
 ## 2.4 Big Picture Event Storming
 
-El EventStorming inicial delimita conversaciones del dominio; no representa todavía eventos observados en producción. La sesión definitiva debe conservar una captura de FigJam u otra herramienta, participantes, fecha y decisiones tomadas.
+El mapa de dominio es una propuesta local que permite discutir compra, abono y revisión de obligaciones. No es acta de una sesión colaborativa realizada. Se exige registrar participantes, fecha, captura y decisiones de la sesión para cerrar la evidencia del curso. Mermaid es una herramienta permitida para EventStorming; el archivo editable y su exportación local representan el modelado, sin sustituir la sesión.
 
-```mermaid
-flowchart LR
-  A[Purchase Registered] --> B[Payment Due]
-  B --> C[Partial Payment Recorded]
-  C --> D{Balance Settled?}
-  D -- No --> B
-  D -- Yes --> E[Purchase Settled]
-  F[Loan Registered] --> G[Installment Due]
-  G --> H[Loan Installment Recorded]
-```
+![Big Picture EventStorming propuesto: proveedores y compras](../assets/architecture/big-picture-event-storming-part-1.svg)
 
-| Evento de dominio | Comando o actor relacionado | Pregunta abierta |
+![Big Picture EventStorming propuesto: abono y saldo](../assets/architecture/big-picture-event-storming-part-2.svg)
+
+![Big Picture EventStorming propuesto: consulta y alcance futuro](../assets/architecture/big-picture-event-storming-part-3.svg)
+
+[Fuente Mermaid completa](../assets/architecture/big-picture-event-storming.mmd). Vistas parciales del mismo modelado: [proveedores y compras](../assets/architecture/big-picture-event-storming-part-1.mmd), [abono y saldo](../assets/architecture/big-picture-event-storming-part-2.mmd), [consulta y alcance futuro](../assets/architecture/big-picture-event-storming-part-3.mmd). Las referencias entre partes representan la continuidad del mapa propuesto, sin acreditar una sesión ni eventos observados.
+
+| Evento propuesto | Actor o comando | Regla/pregunta abierta |
 |---|---|---|
-| Purchase Registered | Registrar compra / administrador | ¿Qué campos y validaciones son indispensables? |
-| Payment Due | Consultar vencimientos / dueño o administrador | ¿Cómo se calcula o prioriza la fecha? |
-| Partial Payment Recorded | Registrar abono / administrador | ¿Qué evidencia del pago se permite adjuntar? |
-| Purchase Settled | Confirmar saldo / administrador | ¿Cómo se resuelven ajustes o reversos? |
-| Loan Registered | Registrar préstamo / dueño | ¿Qué tipos de préstamos usan realmente los segmentos? |
-| Loan Installment Recorded | Registrar cuota / administrador | ¿Cómo se relaciona con el saldo de préstamo? |
+| Supplier Registered | Administrador / Register Supplier | Proveedor de la misma organización que la compra. |
+| Credit Purchase Registered | Administrador / Register Credit Purchase | Importe positivo, PEN/USD y vencimiento. |
+| Payment Recorded | Administrador / Record Payment | Abono positivo, no mayor al saldo; moneda heredada. |
+| Purchase Settled | Consecuencia de saldo cero | Saldo = total menos suma de abonos válidos. |
+| Obligations Reviewed | Dueño o administrador / Query Obligations | Es observación de consulta propuesta; no crea una deuda por transcurso de fecha. |
+| Loan Registered / Schedule Configured | Owner o FinanceAdmin / registrar acuerdo | Cuotas explícitas mensuales; importe total al menos igual al principal. |
+
+Se debe contrastar si los pasos y excepciones corresponden a la operación real del segmento; no se atribuyen estos eventos a los videos aún no codificados.
+
+**Correspondencia AV2.** El mapa conserva la discusión de negocio histórica. `Payment` pertenece al agregado `Purchase` en el código: un abono guarda el nuevo movimiento y la versión de compra en una transacción. Loans registra importes de cuotas acordados, y Reporting consulta sin mantener un saldo paralelo. Treasury es un contexto adicional para efectivo; el abono a proveedor no genera por sí mismo un movimiento de caja. Los nombres de eventos describen resultados de comandos; no se implementó un broker ni un almacén de eventos.
 
 ## 2.5 Ubiquitous Language
 
-Los términos de dominio se nombran en inglés para mantener consistencia futura entre interfaz, API y modelo de datos. La definición se revisará con el equipo y con hallazgos de investigación.
+Los términos de dominio se nombran en inglés para mantener consistencia entre interfaz, API y modelo de datos. La definición se revisará con el equipo y con hallazgos de investigación.
 
 | Término | Definición | Contexto |
 |---|---|---|
 | **Supplier** | Persona o empresa a la que la mype compra bienes o servicios y a la que puede deber un saldo. | Accounts Payable |
 | **Credit Purchase** | Compra cuya obligación no se cancela por completo en el momento del registro. | Accounts Payable |
 | **Due Date** | Fecha límite acordada para cumplir con una obligación. | Accounts Payable |
-| **Partial Payment** | Abono que reduce, pero no liquida, el saldo de una compra o préstamo. | Payments |
-| **Payment Voucher** | Evidencia digital asociada a un pago registrado. | Payments |
+| **Partial Payment** | Abono que reduce el saldo de una compra, pudiendo liquidarlo; el pago de préstamos requiere un modelo futuro separado. | Accounts Payable |
+| **Payment Voucher** | Evidencia digital asociada a un pago registrado. | Accounts Payable |
 | **Outstanding Balance** | Importe pendiente luego de considerar los pagos aplicados. | Accounts Payable |
-| **Loan** | Obligación financiera registrada con principal, tasa, frecuencia y cronograma cuando aplique. | Loans |
-| **Installment** | Cuota programada de un préstamo. | Loans |
+| **Loan** | Acuerdo de préstamo con principal, moneda, tasa anual opcional informativa y 1–60 cuotas mensuales de importe explícito. | Loans |
+| **Installment** | Importe y vencimiento pactados, numerados dentro de un préstamo; no tiene estado de pago en la API actual. | Loans |
 | **Debt Report** | Consulta filtrada de obligaciones para revisión, seguimiento o exportación. | Reporting |
+
+
+| Término adicional | Definición | Contexto |
+|---|---|---|
+| **Business** | Organización a la que pertenecen proveedores, compras y obligaciones. | Transversal |
+| **Currency** | Moneda de la obligación; PEN y USD se consultan por separado. | Accounts Payable |
+| **Payment** | Registro de un abono de compra; hijo del agregado Purchase. No ejecuta transferencia ni salida automática de caja. | Accounts Payable |
+| **CashAccount / CashMovement** | Cuenta y movimiento de efectivo registrados manualmente; saldo en centavos y moneda propia. | Treasury |
+| **Holder / Economic Owner** | Titular de la cuenta y dueño económico de una asignación; pueden ser distintos. El rol Owner de acceso no equivale al dueño del dinero. | Treasury / Identity |
+| **BusinessId** | Identificador obtenido del usuario autenticado para limitar consultas y relaciones; no lo elige el cuerpo de una compra. | Identity y todos los contextos |
+| **Reference exchange rate** | Cotización atribuida a BCRPData/SBS con fecha de observación; no ejecuta conversión ni liquidación. | Exchange Rates |
+| **Purchase Settled** | Compra cuyo saldo restante es cero tras aplicar abonos válidos. | Accounts Payable |

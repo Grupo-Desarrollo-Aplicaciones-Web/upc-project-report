@@ -1,0 +1,153 @@
+{
+  "verifiedAt": "2026-11-02T14:02:31.634196+00:00",
+  "environment": "real Kestrel / isolated SQLite",
+  "checks": [
+    {
+      "check": "liveness",
+      "status": 200
+    },
+    {
+      "check": "readiness",
+      "status": 200
+    },
+    {
+      "check": "OpenAPI",
+      "status": 200
+    },
+    {
+      "check": "summary requires authentication",
+      "status": 401
+    },
+    {
+      "check": "register synthetic owner",
+      "status": 201
+    },
+    {
+      "check": "create supplier",
+      "status": 201
+    },
+    {
+      "check": "create purchase",
+      "status": 201
+    },
+    {
+      "check": "duplicate reference",
+      "status": 409
+    },
+    {
+      "check": "report maximum amount",
+      "status": 400
+    },
+    {
+      "check": "record payment",
+      "status": 201
+    },
+    {
+      "check": "reject overpayment",
+      "status": 422
+    },
+    {
+      "check": "balance after rejection",
+      "status": 200
+    },
+    {
+      "check": "separate currency summary",
+      "status": 200
+    },
+    {
+      "check": "create treasury holder",
+      "status": 201
+    },
+    {
+      "check": "create economic company owner",
+      "status": 201
+    },
+    {
+      "check": "create second economic owner",
+      "status": 201
+    },
+    {
+      "check": "create planning project without cash",
+      "status": 201
+    },
+    {
+      "check": "create manual USD account",
+      "status": 201
+    },
+    {
+      "check": "record USD1000 split by economic owner",
+      "status": 201
+    },
+    {
+      "check": "replay receipt without double posting",
+      "status": 200
+    },
+    {
+      "check": "request identity rejects a changed amount",
+      "status": 409
+    },
+    {
+      "check": "record USD250 expense against Andes funds",
+      "status": 201
+    },
+    {
+      "check": "holder cannot spend funds it does not own",
+      "status": 422
+    },
+    {
+      "check": "cash USD750 is Andes350 plus Marina400",
+      "status": 200
+    },
+    {
+      "check": "project summary keeps budget and currencies separate",
+      "status": 200
+    },
+    {
+      "check": "create separate manual PEN cash account",
+      "status": 201
+    },
+    {
+      "check": "record unassigned PEN80",
+      "status": 201
+    },
+    {
+      "check": "assign existing PEN80 without another cash entry",
+      "status": 200
+    },
+    {
+      "check": "replay classification without another allocation",
+      "status": 200
+    },
+    {
+      "check": "persistence after process restart",
+      "status": 200
+    },
+    {
+      "check": "cash balances survive process restart",
+      "status": 200
+    },
+    {
+      "check": "receipt identity survives process restart",
+      "status": 200
+    }
+  ],
+  "treasuryScenario": {
+    "currency": "USD",
+    "receipt": 1000,
+    "expense": 250,
+    "cashBalance": 750,
+    "economicOwnerBalances": {
+      "Andes": 350,
+      "Marina": 400,
+      "Holder": 0
+    },
+    "separatePENReceipt": 80
+  },
+  "verifiedBalance": {
+    "currency": "PEN",
+    "amount": 100,
+    "paid": 30,
+    "remaining": 70
+  },
+  "result": "passed"
+}

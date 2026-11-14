@@ -1,16 +1,20 @@
+> Control histórico de su hito. El estado vigente AV2 está en [matriz de implementación](av2/estado-implementacion.md); esta ficha no convierte pruebas antiguas en evidencia actual.
+
 # Control de entrega AV1
+
+Esta ficha conserva pendientes del corte histórico AV1, no describe el avance actual TB1. Consultar el [control TB1](09-tb1-delivery-checklist.md) y [ejecución local](tb1/evidencia-local.md).
 
 Esta lista organiza los entregables de AV1. Un ítem solo se marca como listo al tener su archivo, enlace o evidencia verificable.
 
 | Entregable | Evidencia esperada | Estado actual |
 |---|---|---|
 | Project Report | Informe completo, PDF exportado y repositorio Markdown actualizado. | Estructura y borradores avanzados; faltan evidencias de investigación, prototipos y datos académicos. |
-| Keynote | Archivo editable y PDF con producto, equipo, avance y fotos autorizadas. | Realizado. |
-| Individual Member Performance Report | Documento del líder con aportes verificables de cada integrante. | Realizado. |
+| Keynote | Archivo editable y PDF con producto, equipo, avance y fotos autorizadas. | Pendiente. |
+| Individual Member Performance Report | Documento del líder con aportes verificables de cada integrante. | Pendiente. |
 | Supporting files | ZIP con artefactos necesarios para la evaluación. | Pendiente de definir contenido final. |
-| Landing Page | URL HTTPS, commit desplegado, captura y verificación. | Pendiente de rebranding, correcciones y despliegue. |
-| Video About-the-Product | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Realizado. |
-| Video About-the-Team | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Realizado. |
+| Landing Page | URL HTTPS, commit desplegado, captura y verificación. | Publicación histórica del 18/09/2026, commit `cf734ff`. Correcciones TB1 locales documentadas aparte. |
+| Video About-the-Product (hito AV2) | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Pendiente. |
+| Video About-the-Team (hito AV2) | Video privado de Microsoft Stream y MP4, enlazado en anexos. | Pendiente. |
 
 ## Revisión previa a publicación
 
@@ -31,7 +35,7 @@ El capítulo IV es parte de AV1. «Diseño documentado» significa que hay una e
 |---|---|---|
 | 4.1 Style Guidelines | Guías generales y web documentadas con marca, tipografía, colores y reglas de accesibilidad. | Verificar su aplicación en la landing final. |
 | 4.2 Information Architecture | Mapa visual, organización, etiquetas, metadatos, búsqueda y navegación definidos. | Validar etiquetas y destinos de CTA con usuarios y aplicación real. |
-| 4.3 Landing Page UI Design | Wireframes y mock-ups de referencia adjuntos. | Actualizar y enlazar las vistas finales en Figma. |
+| 4.3 Landing Page UI Design | Wireframes y mock-ups de referencia adjuntos; se identifican textos de CreditFlow que no corresponden a CREDITOR. | Actualizar y enlazar las vistas finales en Figma. |
 | 4.4 Web Applications UX/UI Design | Pantallas, wireflow y cinco User Flows visuales especificados. Se conservaron el wireframe y mock-up aportados por el equipo. | Ajustar el mock-up de préstamo al flujo de compra prioritario, completar pantallas y revisar los flujos en Figma o herramienta equivalente. |
 | 4.5 Web Applications Prototyping | Recorridos y criterios de interacción definidos. | Prototipo navegable de escritorio/móvil, enlace y video de navegación. |
 | 4.6 Domain-Driven Software Architecture | EventStorming de diseño propuesto y diagramas de contexto, contenedores y componentes renderizados. | Sesión colaborativa documentada; revisión de límites de dominio y servicio externo elegido. |

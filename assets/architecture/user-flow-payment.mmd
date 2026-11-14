@@ -1,11 +1,22 @@
 flowchart TB
-  A[Administrador abre detalle de compra] --> B[Registrar abono]
-  B --> C[Ingresa importe, fecha y voucher opcional]
-  C --> D{Importe válido y menor o igual al saldo}
-  D -- No --> E[Mostrar error y conservar datos]
-  E --> C
-  D -- Sí --> F[Confirmar abono]
-  F --> G{Registro completado}
-  G -- No --> H[Conservar datos y ofrecer reintento]
-  H --> F
-  G -- Sí --> I[Mostrar movimiento y saldo recalculado]
+  A["Abrir compra o ruta de nuevo abono"] --> B{"Compra existe en el espacio local"}
+  B -- "No: ABO-02" --> C["Mostrar Compra no encontrada;<br/>ofrecer volver a Compras"]
+  B -- Sí --> D{"Saldo pendiente mayor que cero"}
+  D -- "No: ABO-03" --> E["Mostrar compra pagada;<br/>ocultar acceso o deshabilitar revisión"]
+  D -- Sí --> F["ABO-01 Completar importe, fecha,<br/>nota y archivo opcional"]
+  F --> G{"Acción en formulario"}
+  G -- "Cancelar: ABO-05" --> H["Volver al detalle sin añadir abono"]
+  G -- Revisar --> I{"Importe positivo y no mayor al saldo;<br/>fecha, nota y archivo válidos"}
+  I -- "No: ABO-04" --> J["Mostrar errores y enfocar primer campo;<br/>conservar entrada y no añadir movimiento"]
+  J --> F
+  I -- Sí --> K{"Archivo opcional se puede leer"}
+  K -- "No: ABO-04" --> J
+  K -- Sí --> L["Abrir diálogo con saldo posterior"]
+  L --> M{"Acción en diálogo"}
+  M -- "Cancelar o cerrar: ABO-06" --> F
+  M -- Confirmar --> N["Releer compra, revalidar saldo y guardar"]
+  N --> O{"Registro completado"}
+  O -- "No: ABO-07" --> P["Mostrar fallo en diálogo: validación actualizada,<br/>almacenamiento o revisión desactualizada;<br/>conservar entrada"]
+  P -- "Reintentar confirmación" --> N
+  P -- "Cerrar para corregir" --> F
+  O -- "Sí: ABO-01" --> Q["Volver al detalle con movimiento,<br/>saldo y estado recalculados"]

@@ -1,0 +1,13 @@
+flowchart TD
+  HTTP[Controllers: auth / purchases / payments / loans / treasury] --> App[Servicios de Application]
+  App --> Domain[Domain: Purchase / Loan / CashAccount / Money]
+  App --> Ports[Puertos de repositorio y consultas]
+  EF[Infrastructure: EF Core] -. implementa .-> Ports
+  EF --> DB[(MySQL)]
+  Identity[Identity / JWT] --> HTTP
+  Attach[AttachmentService / almacenamiento privado] --> Files[Contenido de archivos]
+  HTTP --> Attach
+  Rates[Adaptador BCRPData] --> BCRP[HTTPS oficial]
+  HTTP --> Rates
+  Composition[Program: composición y DI] -. registra .-> EF
+  Composition -. registra .-> App

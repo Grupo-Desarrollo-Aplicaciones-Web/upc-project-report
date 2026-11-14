@@ -1,0 +1,19 @@
+%%{init: {"themeVariables":{"fontSize":"16px","fontFamily":"Arial"},"flowchart":{"nodeSpacing":24,"rankSpacing":24,"wrappingWidth":240}}}%%
+flowchart TB
+  Admin["Diego / Finance Administrator"] --> P["Record Payment<br/>Comando"]
+  CE["Credit Purchase Registered<br/>Desde parte 1"] --> P
+  P --> V{"Importe positivo y<br/>no mayor al saldo"}
+  V -- No --> R["Validation rejected<br/>Respuesta sin registrar abono"]
+  V -- Sí --> PE["Payment Recorded<br/>Evento"]
+  PE --> B{"Saldo igual a cero"}
+  B -- Sí --> E["Purchase Settled<br/>Evento"]
+  B -- No --> Next["Consultar obligaciones<br/>Continuar en parte 3"]
+  E --> Next
+  classDef actor fill:#EFF6FF,stroke:#0369A1;
+  classDef command fill:#E8EFFF,stroke:#2563EB;
+  classDef event fill:#FFF1D6,stroke:#B45309;
+  classDef policy fill:#F3E8FF,stroke:#7E22CE;
+  class Admin actor;
+  class P command;
+  class CE,PE,E event;
+  class V,B policy;

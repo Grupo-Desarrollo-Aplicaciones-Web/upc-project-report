@@ -14,9 +14,10 @@ Desktop.ini
 ~$*
 dist/
 build/
+.tb1-build/
+__pycache__/
 
 # Environment and secrets
 .env
 .env.*
 !.env.example
-

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="798" viewBox="0 0 1400 798" role="img" aria-labelledby="title desc">
+<title id="title">Journey As-Is hipotético · Rosa / S1</title>
+<desc id="desc">Guía end-to-end del proceso actual por investigar. Las etapas y fricciones no son hallazgos observados.. Propuesta local provisional; no contiene resultados de entrevistas.</desc>
+<rect width="1400" height="798" fill="#F3F6FB"/>
+<style>text{font-family:Arial,sans-serif;fill:#17233A}.title{font-size:32px;font-weight:700}.sub{font-size:19px}.cardtitle{font-size:21px;font-weight:700}.body{font-size:18px}.note{font-size:16px;fill:#475569}</style>
+<text x="36" y="54" class="title">Journey As-Is hipotético · Rosa / S1</text>
+<text x="36" y="87" class="sub">Guía end-to-end del proceso actual por investigar. Las etapas y fricciones no son hallazgos observados.</text>
+<rect x="36.0" y="154" width="653.0" height="265" rx="15" fill="white" stroke="#D4DFEF"/>
+<rect x="36.0" y="154" width="8" height="265" rx="4" fill="#2563EB"/>
+<text x="60.0" y="192" class="cardtitle">Recibir o buscar información</text>
+<text x="60.0" y="222" class="body">Posible revisión de compras y pagos del negocio.</text>
+<text x="60.0" y="246" class="body">Evidencia pendiente: G-03 y D-02.</text>
+<rect x="711.0" y="154" width="653.0" height="265" rx="15" fill="white" stroke="#D4DFEF"/>
+<rect x="711.0" y="154" width="8" height="265" rx="4" fill="#2563EB"/>
+<text x="735.0" y="192" class="cardtitle">Revisar compromisos</text>
+<text x="735.0" y="222" class="body">Identificar obligaciones y fechas antes de decidir.</text>
+<text x="735.0" y="246" class="body">Evidencia pendiente: G-04 y D-01.</text>
+<rect x="36.0" y="441" width="653.0" height="265" rx="15" fill="white" stroke="#D4DFEF"/>
+<rect x="36.0" y="441" width="8" height="265" rx="4" fill="#2563EB"/>
+<text x="60.0" y="479" class="cardtitle">Decidir y coordinar</text>
+<text x="60.0" y="509" class="body">Comprender quién autoriza y quién ejecuta un pago.</text>
+<text x="60.0" y="533" class="body">Evidencia pendiente: D-02 y ejemplo reciente.</text>
+<rect x="711.0" y="441" width="653.0" height="265" rx="15" fill="white" stroke="#D4DFEF"/>
+<rect x="711.0" y="441" width="8" height="265" rx="4" fill="#2563EB"/>
+<text x="735.0" y="479" class="cardtitle">Comprobar resultado</text>
+<text x="735.0" y="509" class="body">Revisar saldo o respaldo tras la decisión.</text>
+<text x="735.0" y="533" class="body">Evidencia pendiente: G-05/G-06; medios por confirmar.</text>
+<text x="36" y="774" class="note">CREDITOR · revisión local 2026-10-03 · evidencia de campo pendiente · sin publicación en UXPressia</text>
+</svg>

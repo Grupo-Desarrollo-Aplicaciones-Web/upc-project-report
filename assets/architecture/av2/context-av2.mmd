@@ -1,0 +1,7 @@
+flowchart LR
+  Owner[Dueño de mype] --> App[CREDITOR]
+  Admin[Administrador financiero] --> App
+  Viewer[Lector autorizado] --> App
+  Visitor[Visitante] --> Landing[Landing de CREDITOR]
+  Landing --> App
+  App --> BCRP[BCRPData / SBS: cotización referencial]

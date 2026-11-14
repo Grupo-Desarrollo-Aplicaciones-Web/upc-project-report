@@ -1,8 +1,11 @@
 flowchart LR
-  Visitor[Visitante] --> Landing[Landing HTML/CSS/JavaScript]
-  Owner[Propietario] --> Web[Aplicación Vue y PrimeVue]
-  Admin[Administrador] --> Web
-  Landing -. Formulario de contacto futuro .-> Contact[Servicio externo de contacto]
-  Web -->|HTTPS JSON| Api[API REST ASP.NET Core]
-  Api -->|EF Core| Db[(PostgreSQL)]
-  Api -. Archivos autorizados .-> Files[Almacenamiento de comprobantes por definir]
+  Visitor[Visitor] --> Landing[Landing Vue - HTML CSS JavaScript]
+  Owner[Business Owner] --> Web[Frontend Vue PrimeVue Material]
+  Admin[Finance Administrator] --> Web
+  Landing -->|CTA configurable local TB1| Web
+  Web --> Local[Adaptador local TB1]
+  Local --> Browser[(Browser storage - demo)]
+  Web -. HTTPS JSON futuro AV2 .-> Api[REST API ASP.NET Core - prevista]
+  Api -. EF Core previsto .-> Db[(PostgreSQL - modelo)]
+  Api -. Archivos privados previstos .-> Files[Almacenamiento por definir]
+  Landing -. Contacto real pendiente .-> Contact[Proveedor externo por elegir]

@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-03T19:37:15.375Z",
+  "viewportDesktop": "1440×1000",
+  "viewportMobile": "390×844",
+  "contact": "Example checked\n\nNothing was sent or saved. Your entries have been cleared.",
+  "ctas": [
+    "http://localhost:5174/#/dashboard",
+    "http://localhost:5174/#/purchases/new"
+  ],
+  "balance": "PEN 70.00",
+  "rejection": "El abono no puede superar el saldo pendiente.",
+  "landingOverflow": false,
+  "appOverflow": false,
+  "pageErrors": []
+}

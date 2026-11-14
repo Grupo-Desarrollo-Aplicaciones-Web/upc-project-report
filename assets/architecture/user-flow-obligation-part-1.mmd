@@ -1,0 +1,13 @@
+%%{init: {"themeVariables":{"fontSize":"16px","fontFamily":"Arial, sans-serif"},"flowchart":{"nodeSpacing":24,"rankSpacing":24,"wrappingWidth":240}}}%%
+flowchart TB
+  A["CON-01 Dashboard o Compras"] --> B{"Carga local correcta"}
+  B -- Sí --> C["Consultar compras<br/>Continuar en parte 2"]
+  B -- "No: CON-05" --> D["Alerta de acceso o datos corruptos;<br/>ocultar contenido no cargado"]
+  D -- Reintentar --> B
+  D -- Restablecer --> E["Advertir reemplazo<br/>por datos de ejemplo"]
+  E -- Cancelar --> D
+  E -- Confirmar --> F{"Restablecimiento correcto"}
+  F -- Sí --> B
+  F -- No --> G["Error en diálogo conservado"]
+  G -- Reintentar --> F
+  G -- Cancelar --> D

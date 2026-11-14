@@ -1,0 +1,60 @@
+# Registro de crédito y autoría local
+
+Corte: 03/10/2026. Alcance: `creditor-web-app`, sin publicación ni deployment.
+
+## Base del reparto
+
+Miguel confirmó que Juan Manuel Santos Torres, Sebastián Gutarra Velapatiño y él participaron en la planificación del aplicativo, y que Miguel escribió el código. Posteriormente solicitó repartir equitativamente la autoría principal de los commits locales entre los tres.
+
+El campo **Author** representa en esta revisión el reparto solicitado por Miguel del crédito por planificación compartida. **Committer** conserva a Miguel, responsable del registro técnico. Cada mensaje explica que la implementación, preparación documental, ejecución de comprobaciones e integración técnica fueron realizadas por Miguel. La distribución no afirma que Juan o Sebastián hayan escrito el código, ejecutado pruebas o realizado merges.
+
+Se redistribuyeron los 15 commits posteriores a la inicialización con cinco autores principales por integrante, incluyendo los seis merges de features. El registro de esta revisión lleva crédito principal de Juan y su merge, de Sebastián; Miguel prepara y registra ambas operaciones. Contando la inicialización original de Miguel, el historial resultante de `develop` contiene **18 commits: seis por integrante**. Ese total incluye merges; no representa líneas de código, horas trabajadas ni una evaluación académica.
+
+## GitFlow y alcance
+
+`main` conserva `9edfe55966ec0e7ac6328e587370313f0ce3273a`, que contiene solo inicialización (`README.md`, `CONTRIBUTING.md` y `.gitignore`). Las seis features técnicas conservan sus nombres y sus merges con dos padres. La revisión documental se prepara en `feature/shared-planning-credit` y se integra con `--no-ff` en `develop`. No se crea una release, tag ni remoto.
+
+La autorización expresa de Miguel para redistribuir crédito sustituye, solo para este incremento local, la regla anterior de conservar el campo Author sin cambios. Los aportes históricos del report y la landing permanecen intactos. No se modifican firmas ni se declara verificación de identidad mediante claves ajenas.
+
+## Trazabilidad y respaldo
+
+Antes de la modificación, `develop` apuntaba a `f4d367fa18fab41408a37bda873325078618a2d4`. La tabla siguiente y [el mapa CSV](author-credit-map.csv) relacionan los SHA originales y los reasignados. Los SHA nuevos se deben a los mensajes, nombres de autor y padres actualizados; los árboles de archivos de los 15 commits son idénticos a los originales, con el orden de padres, fechas y Committer preservados.
+
+| Original | Reasignado | Author | Tipo | Mensaje |
+|---|---|---|---|---|
+| `e292287` | `51eecf9` | MIguelAngelES7 | Cambio | feat(app): add Vue PrimeVue Material and bilingual application shell |
+| `beeff2a` | `fff7b4f` | JuanManuel312 | Merge | chore(gitflow): integrate application foundation |
+| `65d32b9` | `a308c5c` | SebastianGutarra | Cambio | feat(purchases): enforce tenant scoped credit purchase rules and local persistence |
+| `c545241` | `6efa9fc` | MIguelAngelES7 | Cambio | feat(purchases): add dashboard supplier list filters and purchase registration |
+| `b64c67d` | `921195f` | JuanManuel312 | Merge | chore(gitflow): integrate accounts payable feature |
+| `ee71505` | `f27e3a8` | SebastianGutarra | Cambio | feat(payments): add payment history and enforce remaining balance |
+| `9625af0` | `4fb38a0` | MIguelAngelES7 | Merge | chore(gitflow): integrate purchase payments |
+| `8f50367` | `c2c97ce` | JuanManuel312 | Cambio | fix(payments): connect history records and translated heading |
+| `c907c5a` | `1144d64` | SebastianGutarra | Cambio | test(tb1): verify browser payment flow and accessible navigation |
+| `f9cda20` | `e26eda3` | MIguelAngelES7 | Cambio | docs(tb1): document local execution contracts and release workflow |
+| `5895830` | `69da058` | JuanManuel312 | Merge | chore(gitflow): integrate local quality checks |
+| `fa9155c` | `e6c5721` | SebastianGutarra | Cambio | fix(i18n): preserve UTF-8 Spanish and page metadata |
+| `1cf715d` | `581496a` | MIguelAngelES7 | Merge | chore(gitflow): integrate text encoding correction |
+| `799dbe3` | `b472a7c` | JuanManuel312 | Cambio | fix(payments): make payment history readable on desktop and mobile |
+| `f4d367f` | `6eafa16` | SebastianGutarra | Merge | chore(gitflow): integrate payment history layout |
+
+Los originales y la previsualización anterior se conservan bajo `refs/archive/author-credit-20261003/original/`. Estas referencias son un respaldo local y no están dentro de `refs/heads`; no se publican mediante un push normal de ramas. Para revisar el historial original:
+
+```sh
+git log --graph --oneline refs/archive/author-credit-20261003/original/heads/develop
+git show refs/archive/author-credit-20261003/original/heads/feature/coauthorship-preview:docs/COAUTHORSHIP_REVIEW.md
+```
+
+El PDF, ZIP y manifiesto anteriores del report conservan el corte previo y sus SHA originales. Esos artefactos continúan identificando la versión realmente verificada entonces; esta reasignación no reescribe sus evidencias. El mapa permite vincular ambos historiales y confirma que el código de esos commits sigue idéntico.
+
+## Revisarlo en GitHub Desktop
+
+Abrir `creditor-web-app`, seleccionar `develop` y entrar en **History**. El nombre del autor principal alterna entre los tres; el correo vinculado permite a Desktop resolver el perfil cuando tenga la información disponible. No hace falta realizar un push para leer el historial local.
+
+```sh
+git shortlog -sne develop
+git log --graph --format='%h | %an <%ae> | %s' develop
+git show -s --format=fuller HEAD
+```
+
+Usar `develop` para el conteo. `git log --all` también incluye los respaldos y puede mostrar versiones duplicadas de un mismo cambio. El conteo del campo Author es distinto del conteo de coautores o responsables técnicos.

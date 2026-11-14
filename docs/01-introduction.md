@@ -1,3 +1,5 @@
+> Vista sincronizada del [informe canónico](../README.md), corte AV2 13/11/2026. Para editar contenido, modificar README y ejecutar `python tools/report/sync_chapters.py`.
+
 # Capítulo I: Introducción
 
 ## 1.1 Startup Profile
@@ -6,7 +8,7 @@
 
 CREDITOR es una propuesta de plataforma web para mypes que necesitan organizar sus compras a crédito, cuentas por pagar, abonos parciales, comprobantes y préstamos. Busca reunir en un mismo espacio la información que normalmente se distribuye entre cuadernos, hojas de cálculo, mensajes y archivos, para facilitar la consulta de saldos y vencimientos.
 
-La propuesta contempla un panel de deuda consolidada, registro de compras con proveedor, moneda, fecha límite y comprobante; registro de abonos con voucher; seguimiento de préstamos; y reportes filtrables. Estas capacidades son hipótesis de producto y no deben confundirse con funciones ya validadas o implementadas.
+La propuesta contempla un panel de deuda consolidada, registro de compras con proveedor, moneda, fecha límite y comprobante; registro de abonos con voucher; seguimiento de préstamos; y reportes filtrables. El incremento conectado implementa registro y consulta de esas operaciones; la matriz AV2 distingue implementación técnica de validación con usuarios. La utilidad, adopción y disposición de pago siguen siendo hipótesis de producto.
 
 **Misión.** Desarrollar una herramienta clara y accesible que ayude a las mypes a mantener un control transparente de sus obligaciones financieras.
 
@@ -14,92 +16,108 @@ La propuesta contempla un panel de deuda consolidada, registro de compras con pr
 
 ### 1.1.2 Perfiles de integrantes del equipo
 
-Cada perfil se acompaña de una fotografía autorizada y de una descripción revisada por el integrante antes de la entrega. Las fotografías y confirmaciones personales se incorporarán en `assets/team/` cuando el equipo las autorice.
+Los tres perfiles y fotografías existentes se conservan. El equipo debe confirmar las descripciones y el uso de las fotografías antes de exportar la entrega; la presencia del archivo no acredita esa confirmación.
 
-| Integrante | Código | Perfil y responsabilidad propuesta | Evidencia pendiente |
+| Integrante | Código | Perfil y responsabilidad propuesta | Fotografía existente |
 |---|---|---|---|
-| Juan Manuel Santos Torres | u20221a371 | Estudiante de Ingeniería de Software. Aporta perspectiva de producto e interfaces web a partir de su experiencia en la operación de negocios comerciales. |<img src="../assets/research/foto-juan.jpeg" alt="Sebastián perfil de integrante" width="150">|
-| Sebastián Gutarra Velapatiño | u20241A314 | Estudiante de Ingeniería de Software. Aportaré con mis conocimientos en frontend para esta primera entrega. Mi responsabilidad fue el capítulo 4 Product Design | <img src="../assets/research/20240110_181602.jpg" alt="Sebastián perfil de integrante" width="150">
-| Miguel Angel Egocheaga Suyo | u202215188 | Estudiante de Ingeniería de Software. Organiza avances locales de documentación y landing mediante GitFlow; sus aportes finales se contrastarán con el historial publicado. | <img src="../assets/research/foto-miguel.jpg" alt="Sebastián perfil de integrante" width="150"> |
+| Juan Manuel Santos Torres | u20221a371 | Estudiante de Ingeniería de Software. Aporta perspectiva de producto e interfaces web a partir de su experiencia en la operación de negocios comerciales. |<img src="../assets/research/foto-juan.jpeg" alt="Juan Manuel Santos Torres, integrante" width="150">|
+| Sebastián Gutarra Velapatiño | u20241a314 | Estudiante de Ingeniería de Software. Aportó al capítulo IV Product Design en AV1 y participa en la revisión visual propuesta para TB1. | <img src="../assets/research/20240110_181602.jpg" alt="Sebastián perfil de integrante" width="150"> |
+| Miguel Angel Egocheaga Suyo | u202215188 | Estudiante de Ingeniería de Software. Organiza avances locales de documentación y landing mediante GitFlow; sus aportes finales se contrastarán con el historial publicado. | <img src="../assets/research/foto-miguel.jpg" alt="Miguel Angel Egocheaga Suyo, integrante" width="150"> |
 
 ## 1.2 Solution Profile
 
 ### 1.2.1 Antecedentes y problemática
 
-Las mypes comerciales realizan compras frecuentes a proveedores y, en algunos casos, administran créditos o préstamos para sostener su operación. Cuando las fechas, importes, comprobantes y abonos se registran en medios separados, consultar un saldo o reconstruir una operación puede requerir buscar en múltiples fuentes.
+Las mypes comerciales compran bienes a proveedores y pueden recibir préstamos para su operación. CREDITOR aborda la gestión de **cuentas por pagar del negocio**: registrar una compra a crédito, conservar su comprobante, aplicar abonos y consultar el saldo y vencimiento. Los préstamos representan obligaciones del negocio; el producto no se presenta como plataforma de créditos a clientes o cobranzas.
 
-CREDITOR parte de este problema como una hipótesis. La investigación de campo definirá qué prácticas ocurren realmente, qué información se necesita conservar y qué tareas deben priorizarse.
+La información fragmentada entre cuadernos, hojas de cálculo, mensajes y documentos es una **hipótesis inicial**, no un hallazgo demostrado. Hay cuatro registros de entrevista incorporados al informe (tres S1 y uno S2); sus resúmenes y análisis todavía requieren evidencia de contenido. No se atribuyen ahorros, morosidad o intención de compra a esos participantes sin analizar sus respuestas.
 
 #### Análisis 5W2H
 
-| Pregunta | Hipótesis inicial que debe validarse |
+| Pregunta | Descripción y estado de evidencia |
 |---|---|
-| **What** | Los responsables de negocio pueden carecer de una vista unificada de compras a crédito, abonos y obligaciones pendientes. |
-| **When** | Al registrar una compra, ejecutar un pago parcial, revisar una fecha de vencimiento o preparar una conciliación. |
-| **Where** | En la administración financiera cotidiana de una mype y en la comunicación con proveedores, contadores o entidades financieras. |
-| **Who** | Dueños de negocio y administradores o encargados de finanzas que intervienen directamente en compras o pagos. |
-| **Why** | La información dispersa podría dificultar conocer el saldo vigente, sustentar un pago o priorizar obligaciones. |
-| **How** | Mediante búsquedas manuales en cuadernos, hojas de cálculo, mensajes o carpetas de comprobantes. |
-| **How much** | El impacto económico y de tiempo no se cuantificará hasta contar con datos de entrevistas y fuentes secundarias verificables. |
+| **What** | Posible dificultad para reconstruir compras a crédito, abonos y obligaciones pendientes. Hipótesis por contrastar. |
+| **When** | Al registrar una compra, pagar parcialmente, revisar vencimientos o conciliar con el proveedor. Momentos propuestos para el guion. |
+| **Where** | Administración cotidiana de una mype comercial peruana; distrito y condiciones concretas se registran por participante. |
+| **Who** | S1 dueños de negocio y S2 administradores o encargados de finanzas que participan en compras o pagos. |
+| **Why** | Fuentes separadas podrían aumentar el esfuerzo para conocer el saldo vigente o recuperar un comprobante. |
+| **How** | Se investigarán los medios realmente usados; no se presupone que todos trabajen manualmente. |
+| **How much** | No existe medición del costo del problema. Se recogerán pasos, tiempos relatados y consecuencias, indicando muestra y fuente. |
 
-La validación incluirá entrevistas por segmento y una revisión de fuentes secundarias. No se publicarán cifras de frecuencia, ahorro o morosidad sin indicar su fuente, fecha y alcance.
+**Objetivo:** conservar la relación proveedor–compra–abono y revisar obligaciones por moneda. **Antecedente TB1:** Vue/PrimeVue con datos de demostración locales para US-004–007. **Incremento AV2:** interfaz autenticada, API ASP.NET Core/EF Core, MySQL, comprobantes privados, exportación filtrada US-008 y consulta/registro de préstamos con cronograma US-009. Tesorería añade cuentas, movimientos y asignaciones de fondos. La API integra una cotización referencial BCRPData/SBS; no convierte operaciones históricas automáticamente. Los datos de prueba son ficticios. La verificación local no cierra el criterio de servicios desplegados de AV2.
+
+La solución no suma PEN y USD como si fueran una moneda, no procesa transferencias bancarias y no sustituye contabilidad o asesoría financiera. La ruta de práctica conserva datos ficticios en el navegador. Las rutas `/workspace` usan JWT, roles y aislamiento de negocio en el servidor; iniciar sesión no importa ni mezcla automáticamente los datos de práctica.
 
 ### 1.2.2 Lean UX Process
 
 #### 1.2.2.1 Lean UX Problem Statement
 
-**Brand New Initiative.** CREDITOR busca lograr que los responsables de una mype puedan identificar sus obligaciones próximas y consultar el saldo de una compra sin reconstruir la información desde varias fuentes. Está diseñada para dueños de negocio y administradores o encargados de finanzas que registran compras, abonos o pagos a proveedores. Actualmente, estas personas pueden depender de apuntes, hojas de cálculo, mensajes o archivos separados, lo que puede volver lenta la consulta de un saldo o la verificación de un comprobante.
+**Brand New Initiative.** La gestión de obligaciones de las mypes comerciales puede distribuirse entre registros contables, hojas de cálculo, mensajes y comprobantes. El análisis documental identifica productos que ya ofrecen facturas, abonos y reportes; por ello la brecha propuesta no es la ausencia de esas funciones. La brecha por verificar es si dueños y administradores necesitan una experiencia más acotada a reconstruir rápidamente una compra, sus pagos y su saldo, con el vocabulario y condiciones de su operación.
 
-CREDITOR propone centralizar compras a crédito, abonos, comprobantes, vencimientos y reportes. El primer segmento de evaluación estará formado por dueños de mypes y administradores que hayan participado recientemente en compras o pagos. Se considerará una señal inicial de valor si, durante una prueba posterior con tareas definidas, las personas pueden localizar una obligación y su saldo con menor cantidad de pasos que en su método actual. La métrica, muestra y comparación se definirán después de las entrevistas; no existe todavía una medición de resultado.
+CREDITOR abordará esa brecha con un recorrido continuo de cuentas por pagar: proveedor, compra, comprobante, abonos, saldo y vencimiento por moneda. El enfoque inicial abarca S1, dueños que revisan obligaciones, y S2, administradores que registran o concilian operaciones. Se considerará una señal inicial de valor si, en un piloto autorizado de 30 días con cinco negocios, al menos cuatro pueden localizar saldo y vencimiento sin ayuda y al menos tres realizan una revisión semanal durante tres semanas. Son **metas propuestas**, no resultados; el reclutamiento, la línea base, el consentimiento y el protocolo se acuerdan antes del piloto.
 
 #### 1.2.2.2 Lean UX Assumptions
 
-| Tipo | Supuesto |
-|---|---|
-| Business Assumption | Las mypes con compras a crédito considerarán útil una herramienta enfocada en la consulta de cuentas por pagar. |
-| Business Outcome Assumption | Una vista clara de vencimientos y saldos podría favorecer el uso recurrente de la plataforma para revisar obligaciones. |
-| User Assumption | Los dueños y administradores participan de forma distinta en la decisión, el registro y la ejecución de pagos. |
-| User Outcome & Benefit Assumption | Las personas podrían beneficiarse de consultar la compra, sus abonos y comprobantes en un mismo registro. |
-| Feature Assumption F-01 | Un dashboard con deuda por moneda y estado de vencimiento facilitaría priorizar la revisión de obligaciones. |
-| Feature Assumption F-02 | Un registro de compra con proveedor, importe, moneda, fecha límite y comprobante permitiría conservar información básica de la obligación. |
-| Feature Assumption F-03 | Un historial de abonos con fecha, importe y voucher permitiría reconstruir el saldo de una compra. |
-| Feature Assumption F-04 | Un módulo de préstamos con cuotas y fechas permitiría consultar obligaciones financieras adicionales cuando el segmento las utilice. |
-| Feature Assumption F-05 | Un reporte filtrable por fecha, proveedor y moneda facilitaría preparar una revisión o compartir información con contabilidad. |
+Los IDs permiten rastrear las creencias hasta hipótesis, preguntas e historias. Ningún supuesto se presenta como conclusión de las entrevistas.
 
-
+| Tipo | ID | Creencia por contrastar |
+|---|---|---|
+| Business Assumption | B-01 | Un alcance centrado en cuentas por pagar puede aportar valor aunque existan suites contables más amplias. |
+| Business Assumption | B-02 | Un eventual modelo de suscripción debe cubrir soporte, almacenamiento seguro y operación; precio y disposición de pago no están definidos. |
+| Business Assumption | B-03 | Un piloto con pocas compras puede reducir el esfuerzo inicial de adopción; no se exige migrar toda la contabilidad. |
+| Business Outcome Assumption | BO-01 | Una consulta de obligaciones clara podría favorecer una revisión semanal recurrente. |
+| Business Outcome Assumption | BO-02 | La trazabilidad compra–abono–comprobante podría favorecer que el negocio conserve sus registros en una sola herramienta. |
+| Business Outcome Assumption | BO-03 | Los reportes y préstamos podrían contribuir a la continuidad de uso únicamente si aparecen como necesidades relevantes en la investigación. |
+| User Assumption | U-01 | S1 interviene en decisiones de compra, endeudamiento o priorización de pagos. |
+| User Assumption | U-02 | S2 interviene en el registro, ejecución o conciliación de operaciones. |
+| User Assumption | U-03 | Una persona puede realizar ambas responsabilidades; los segmentos no representan poblaciones demográficas mutuamente excluyentes. |
+| User Outcome & Benefit Assumption | UB-01 | Los usuarios quieren conocer el saldo y el vencimiento sin reconstruir información en varias fuentes. |
+| User Outcome & Benefit Assumption | UB-02 | El registro de campos mínimos y comprobantes podría facilitar una compra rastreable. |
+| User Outcome & Benefit Assumption | UB-03 | Un historial de abonos podría facilitar la verificación del saldo. |
+| User Outcome & Benefit Assumption | UB-04 | Cuando se usan préstamos, un cronograma podría aclarar próximos compromisos. |
+| User Outcome & Benefit Assumption | UB-05 | Cuando se preparan revisiones contables, filtros y exportación podrían reducir búsquedas repetidas. |
+| Feature Assumption | F-01 | Un dashboard con saldos separados por PEN/USD y vencimientos facilitaría revisar obligaciones. |
+| Feature Assumption | F-02 | Un formulario de compra con proveedor, importe, moneda, vencimiento y comprobante facilitaría conservar la obligación. |
+| Feature Assumption | F-03 | Un historial de abonos con fecha, importe y voucher permitiría reconstruir el saldo. |
+| Feature Assumption | F-04 | Un módulo de préstamos con frecuencia y cronograma permitiría consultar otras obligaciones cuando el segmento las utilice. |
+| Feature Assumption | F-05 | Un reporte filtrable por fecha, proveedor y moneda facilitaría preparar una revisión. |
 
 #### 1.2.2.3 Lean UX Hypothesis Statements
 
-| ID | Hipótesis |
-|---|---|
-| **H-01** | Creemos que lograremos una revisión más rápida de las obligaciones pendientes si los propietarios y administradores financieros obtienen visibilidad de los saldos y las fechas de vencimiento mediante un panel consolidado de deudas. |
-| **H-02** | Creemos que lograremos registros de compras más completos si los propietarios y administradores financieros obtienen trazabilidad de una compra a crédito mediante un formulario de compra estructurado y la posibilidad de adjuntar el comprobante. |
-| **H-03** | Creemos que lograremos una verificación más sencilla de los saldos si los propietarios y administradores financieros obtienen un registro cronológico de los pagos parciales mediante un historial de cuotas y la posibilidad de adjuntar el comprobante de pago. |
-| **H-04** | Creemos que lograremos una consulta más clara de los compromisos financieros si los propietarios de negocios obtienen acceso a las fechas y montos de las cuotas mediante un módulo de cronograma de préstamos. |
-| **H-05** | Creemos que lograremos una preparación más rápida de las revisiones de deudas si los administradores financieros obtienen información filtrada sobre las obligaciones mediante reportes exportables por proveedor, fecha y moneda. |
+| ID | Hipótesis | Supuestos y alcance |
+|---|---|---|
+| **H-01** | Creemos que lograremos una revisión recurrente de obligaciones si Rosa (S1) y Diego (S2) obtienen visibilidad de saldos y vencimientos mediante un dashboard por moneda. | BO-01, UB-01, F-01; US-004; TB1 local. |
+| **H-02** | Creemos que lograremos registros más completos si Diego (S2) obtiene trazabilidad de la compra mediante un formulario estructurado y un comprobante asociado. | BO-02, UB-02, F-02; US-005; TB1 local. |
+| **H-03** | Creemos que lograremos una verificación más sencilla del saldo si Rosa (S1) y Diego (S2) obtienen una secuencia de movimientos mediante un historial de abonos y vouchers asociados. | BO-02, UB-03, F-03; US-006/007; TB1 local. |
+| **H-04** | Creemos que lograremos continuidad de uso cuando haya préstamos si Rosa (S1) obtiene claridad de próximos compromisos mediante frecuencia y cronograma de cuotas. | BO-03, UB-04, F-04; US-009; implementación AV2, validación de utilidad pendiente. |
+| **H-05** | Creemos que lograremos continuidad de uso en revisiones financieras si Diego (S2) obtiene información seleccionada mediante reportes filtrados y exportables. | BO-03, UB-05, F-05; US-008; implementación AV2, validación de utilidad pendiente. |
 
-Cada hipótesis relaciona una feature assumption con un resultado que deberá medirse en una iteración posterior. La investigación inicial podrá confirmar relevancia y lenguaje del problema, pero no probará por sí misma los resultados de uso propuestos.
+Existe una hipótesis por cada Feature Assumption. La investigación cualitativa inicial contrasta pertinencia, tareas y lenguaje; los resultados de uso requieren una evaluación posterior. Rosa y Diego son Personas provisionales, sin demografía ni conducta atribuida a entrevistados.
 
 #### 1.2.2.4 Lean UX Canvas
 
-El Lean UX Canvas existente resume el problema, los segmentos, los supuestos y las soluciones iniciales.
+El Canvas local actualizado usa los cinco IDs anteriores y distingue hipótesis, riesgos y experimentos propuestos. Es una representación declarativa local; no acredita una sesión con usuarios ni una exportación de UXPressia.
 
-![Lean UX Canvas de CREDITOR](../assets/research/lean-ux-canvas.jpg)
+![Lean UX Canvas local provisional de CREDITOR](../assets/research/tb1/lean-ux-canvas-local.svg)
+
+La imagen histórica `assets/research/lean-ux-canvas.jpg` se conserva en el repositorio para trazabilidad, pero no constituye el Canvas vigente de TB1.
 
 ## 1.3 Segmentos objetivo
 
-CREDITOR trabajará inicialmente con dos segmentos definidos por responsabilidades, no por tamaño de mercado estimado. La pertenencia al segmento se verificará en la entrevista mediante participación reciente en compras, pagos o revisión de obligaciones.
+Los segmentos se distinguen por responsabilidades, no por tamaño de mercado inventado. El criterio de inclusión es participación reciente en tareas de compras o pagos. Edad exacta, distrito, dispositivos, browser y canales se documentan con permiso y evidencia de cada participante; no se trasladan datos ficticios a las Personas.
 
-| Segmento | Perfil demográfico y operativo | Necesidad por contrastar | Criterio de inclusión para investigación |
+| Segmento | Perfil operativo y demográfico de inclusión | Necesidad por contrastar | Criterio verificable |
 |---|---|---|---|
-| S1. Dueños de mypes comerciales | Personas adultas que dirigen un negocio comercial y toman o supervisan decisiones de compra, endeudamiento o pago. | Consultar obligaciones y decidir qué pago revisar o autorizar. | Haber participado durante los últimos tres meses en una compra a crédito, pago a proveedor o préstamo del negocio. |
-| S2. Administradores o encargados de finanzas | Personas adultas responsables de registrar compras, preparar pagos, conciliar saldos o conservar comprobantes en una mype. | Registrar operaciones, recuperar vouchers y preparar información para una revisión financiera. | Haber realizado durante los últimos tres meses al menos una tarea directa de registro, pago o conciliación. |
+| **S1. Dueños de mypes comerciales** | Persona adulta que dirige un negocio comercial y decide o supervisa compras, endeudamiento o pagos. Localidad y demás características por registrar. | Consultar obligaciones y decidir qué revisar o autorizar. | Participó en una compra a crédito, pago a proveedor o préstamo del negocio durante los últimos tres meses. |
+| **S2. Administradores o encargados de finanzas** | Persona adulta que registra compras, prepara pagos, concilia saldos o conserva comprobantes en una mype. Localidad y demás características por registrar. | Registrar operaciones, recuperar comprobantes y preparar información financiera. | Realizó una tarea directa de registro, pago o conciliación durante los últimos tres meses. |
 
-La investigación secundaria para caracterizar el contexto de las mypes se incorporará con fuentes oficiales, año y universo de medición. Hasta entonces, el informe no atribuye porcentajes, niveles de digitalización ni frecuencia de deuda a estos segmentos.
+### Contexto estadístico y límites de la fuente secundaria
 
-### Relación entre segmentos y propuesta inicial
+El informe oficial **Las Mipyme en cifras 2024** de PRODUCE/OGEIEE, Cuadro A1, registra **2 331 173 Mipyme formales** en Perú frente a **2 346 592 empresas formales** (fuente SUNAT–RUC 2024). Este universo incluye micro, pequeñas **y medianas** empresas; no es el tamaño del mercado de CREDITOR ni cuenta a dueños y administradores como personas. La cifra contextualiza la selección de negocios pequeños; no estima qué proporción usa créditos, tiene dificultades de pago o adoptaría la aplicación. Fuente consultada el 03/10/2026: [publicación oficial](https://www.producempresarial.pe/las-mipyme-en-cifras-2024/) y [informe, Cuadro A1](https://www.producempresarial.pe/wp-content/uploads/2025/11/La-Mipyme-en-Cifras-2024_.pdf).
 
-| Segmento | Tarea principal | Funcionalidad a explorar | Riesgo a validar |
+| Segmento | Tarea a investigar | Funcionalidad propuesta | Riesgo abierto |
 |---|---|---|---|
-| S1 | Revisar obligaciones y decidir prioridades. | Dashboard, consulta por proveedor y cronograma de préstamos. | Que la consulta no sea una tarea frecuente o que se delegue por completo. |
-| S2 | Registrar y verificar operaciones. | Registro de compras, abonos, comprobantes y reportes. | Que el registro se realice en otra herramienta obligatoria o por otra persona. |
+| S1 | Revisar obligaciones y decidir prioridades. | Dashboard, historial y consulta de cronograma AV2. | Que la tarea se delegue o no sea recurrente. |
+| S2 | Registrar y verificar operaciones. | Compra, abono y reportes filtrados AV2. | Que otra herramienta sea obligatoria y la solución duplique trabajo. |
+
+Pendiente de evidencia: caracterización demográfica de los participantes y análisis de su experiencia. No se publican porcentajes poblacionales de S1/S2 ni cifras de demanda a partir de una muestra cualitativa.

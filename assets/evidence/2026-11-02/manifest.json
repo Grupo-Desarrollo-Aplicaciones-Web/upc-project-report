@@ -1,0 +1,83 @@
+{
+  "reviewed_on": "2026-11-02",
+  "scope": "Existing local evidence inspected; product tests were not rerun by this documentation review. Snapshots are byte-identical; .txt files retain original Markdown as archival text.",
+  "files": [
+    {
+      "source": "creditor-backend/artifacts/test-results/backend-domain.trx",
+      "snapshot": "backend-domain.trx",
+      "bytes": 52212,
+      "sha256": "a9c8e96f2d09a90a4e1f87409f23289d24b8ed872a9779df596de1e3806d5223"
+    },
+    {
+      "source": "creditor-backend/artifacts/test-results/backend-integration.trx",
+      "snapshot": "backend-integration.trx",
+      "bytes": 184041,
+      "sha256": "10db047345bafc3ae3fcc1344947fafdd56b034d2f6e3c1fb50017f4418aeb92"
+    },
+    {
+      "source": "creditor-backend/artifacts/treasury-http-smoke.json",
+      "snapshot": "treasury-http-smoke.json",
+      "bytes": 3236,
+      "sha256": "a9a6c4a0eb6f57fe036aeed88aa3f21569df271b23b05435ed01d4f0796e6ddf"
+    },
+    {
+      "source": "creditor-backend/docs/local-verification.md",
+      "snapshot": "backend-local-verification.txt",
+      "bytes": 9376,
+      "sha256": "86e6ca686859e8722b62b7322d7dff844fb12af238d524742d2aeb2705997ebc"
+    },
+    {
+      "source": "creditor-web-app/docs/finance-demo/VALIDATION.md",
+      "snapshot": "frontend-validation.txt",
+      "bytes": 3225,
+      "sha256": "cd20c3a32c95a7417e16681aba92c6e89a6842b95fcedae01ee5926b1222af9e"
+    },
+    {
+      "source": "creditor-web-app/docs/FINANCIAL_DEMO.md",
+      "snapshot": "frontend-financial-demo.txt",
+      "bytes": 15477,
+      "sha256": "323751f1f3497674f3c8549cdaf9e989c601e15f316d1f00357c6e5e0037f85f"
+    },
+    {
+      "source": "creditor-web-app/docs/AUTHORSHIP_ALLOCATION.md",
+      "snapshot": "frontend-authorship-allocation.txt",
+      "bytes": 5906,
+      "sha256": "fb6fd69451e22b0d60c710832752637dcd5e9aaa2c2579f628a656fb2991ca93"
+    },
+    {
+      "source": "creditor-backend/docs/architecture.md",
+      "snapshot": "backend-architecture.txt",
+      "bytes": 7633,
+      "sha256": "69c3e5fb6a6580e2bc0cd2761519719de25f84ebb31c28559cf757145761e21b"
+    },
+    {
+      "source": "creditor-backend/docs/treasury-api.md",
+      "snapshot": "backend-treasury-api.txt",
+      "bytes": 10280,
+      "sha256": "18d443639e40cb6e05ee1532eac7ec195ffab6a0dc7993b3ec7ae7c98ba40d7e"
+    },
+    {
+      "source": "C:/Users/migue/Documents/Codex/2026-11-02/task-2/US005-supplier-and-amount.png",
+      "snapshot": "US005-supplier-and-amount.png",
+      "bytes": 114396,
+      "sha256": "457a9cb77dc6f4100c5af292155d925e8a253a14e2ba3cc0e599221cf541b3d7"
+    },
+    {
+      "source": "C:/Users/migue/Documents/Codex/2026-11-02/task-2/US005-currency-and-due-date.png",
+      "snapshot": "US005-currency-and-due-date.png",
+      "bytes": 117055,
+      "sha256": "854c12bf7976158d6cff9c0b731d5b3e5a0fd9e681b128bbffbeec9ec8f3849e"
+    },
+    {
+      "source": "C:/Users/migue/Documents/Codex/2026-11-02/task-2/US005-credit-purchase-review.png",
+      "snapshot": "US005-credit-purchase-review.png",
+      "bytes": 115803,
+      "sha256": "e152015c29a49fbdda6bf1351c643c06c1d2c50bfcfc20fca51f78a0126d04e6"
+    }
+  ],
+  "us005_supplement": {
+    "received_on": "2026-11-02",
+    "scope": "Three supplied screenshots visually inspected. A local functional check was reported to register a payable without a cash movement; this documentation review did not rerun that flow. Screenshots show the form and review before saving.",
+    "limits": "Does not establish final Figma, RUC, attachment, product line details, user validation, API integration or deployment."
+  }
+}

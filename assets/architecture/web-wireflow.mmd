@@ -1,13 +1,19 @@
-flowchart LR
-  A[Dashboard] --> B[Compras]
-  B --> C[Detalle de compra]
-  B --> D[Nueva compra]
-  D --> E{Datos válidos}
-  E -- Sí --> C
-  E -- No --> D
-  C --> F[Registrar abono]
-  F --> G{Importe válido y no mayor al saldo}
-  G -- Sí --> C
-  G -- No --> F
-  A --> H[Préstamos]
-  A --> I[Reportes]
+%%{init: {"themeVariables":{"fontSize":"16px"},"flowchart":{"nodeSpacing":24,"rankSpacing":24}}}%%
+flowchart TB
+  A["Dashboard local"] --> B["Compras y filtros"]
+  B -- "Elegir compra" --> C["Detalle e historial"]
+  B -- "Nueva compra" --> D["Formulario de compra"]
+  D -- "Cancelar" --> B
+  D -- "Revisar datos válidos" --> E["Diálogo de compra"]
+  E -- "Cancelar o corregir" --> D
+  E -- "Confirmar y guardar" --> C
+  C -- "Con saldo positivo" --> F["Formulario de abono"]
+  F -- "Cancelar" --> C
+  F -- "Revisar datos válidos" --> G["Diálogo de abono"]
+  G -- "Cancelar o corregir" --> F
+  G -- "Confirmar y guardar" --> C
+  D -- "Datos inválidos" --> D
+  F -- "Datos inválidos" --> F
+  E -- "Fallo al guardar" --> E
+  G -- "Fallo al guardar" --> G
+  H["Alcance futuro: Préstamos y Reportes<br/>sin recorrido activo en TB1"]

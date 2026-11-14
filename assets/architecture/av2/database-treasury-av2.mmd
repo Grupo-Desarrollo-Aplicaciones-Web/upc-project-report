@@ -1,0 +1,64 @@
+erDiagram
+  businesses ||--o{ treasury_parties : owns
+  businesses ||--o{ treasury_accounts : owns
+  treasury_parties ||--o{ treasury_accounts : holder
+  treasury_parties ||--o{ treasury_projects : owner_and_responsible
+  treasury_accounts ||--o{ treasury_movements : ledger
+  treasury_accounts ||--o{ treasury_operations : request_receipts
+  treasury_movements ||--o{ treasury_allocations : allocates
+  treasury_parties ||--o{ treasury_allocations : economic_owner
+  treasury_projects |o--o{ treasury_allocations : optional_project
+  treasury_accounts {
+    Guid Id PK
+    Guid BusinessId FK
+    Guid HolderId FK
+    string Name
+    string Currency
+    string Kind
+    string Ending
+    Guid Version
+  }
+  treasury_movements {
+    Guid Id PK
+    Guid BusinessId FK
+    Guid AccountId FK
+    long SignedCents
+    DateOnly BookedOn
+    string Kind
+    string Reference
+    string NormalizedReference
+    Guid CounterpartyId FK
+    Guid CreatedBy
+  }
+  treasury_allocations {
+    Guid Id PK
+    Guid BusinessId FK
+    Guid AccountId FK
+    Guid MovementId FK
+    Guid OwnerId FK
+    Guid ResponsibleId FK
+    Guid ProjectId FK
+    long Cents
+  }
+  treasury_operations {
+    Guid Id PK
+    Guid BusinessId FK
+    Guid RequestId UK
+    Guid AccountId FK
+    Guid MovementId FK
+    string RequestHash
+  }
+  treasury_parties {
+    Guid Id PK
+    Guid BusinessId FK
+    string Name
+    string Type
+  }
+  treasury_projects {
+    Guid Id PK
+    Guid BusinessId FK
+    Guid OwnerId FK
+    Guid ResponsibleId FK
+    string Currency
+    long BudgetCents
+  }

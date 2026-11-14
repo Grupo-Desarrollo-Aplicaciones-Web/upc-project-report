@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="d3c8fb79-6679-41ef-9aa2-1772413e70eb" name="migue@LAPTOP-65FFKRJG 2026-11-13 17:15:29" runUser="LAPTOP-65FFKRJG\migue" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-11-13T17:15:29.8963627-05:00" queuing="2026-11-13T17:15:29.8963632-05:00" start="2026-11-13T17:15:18.7060082-05:00" finish="2026-11-13T17:16:42.8929823-05:00" />
+  <TestSettings name="default" id="9cb8b212-8022-4cb0-af31-a2111ac207e2">
+    <Deployment runDeploymentRoot="migue_LAPTOP-65FFKRJG_2026-11-13_17_15_29" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="057fe389-2db4-4019-913e-dde81a7ece31" testId="8aa14a69-b306-c7c5-d14c-32f65e4f2944" testName="Creditor.IntegrationTests.MySqlMigrationTests.NormalizedReferencesPreserveAccentsButDeduplicateCaseAndWhitespace" computerName="LAPTOP-65FFKRJG" duration="00:00:05.8428759" startTime="2026-11-13T17:16:31.2829648-05:00" endTime="2026-11-13T17:16:31.2829656-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="057fe389-2db4-4019-913e-dde81a7ece31" />
+    <UnitTestResult executionId="4703d28e-a56b-46e3-aebf-d1a5b7867f1b" testId="48c383d8-717b-29a0-1728-766bfec384ea" testName="Creditor.IntegrationTests.MySqlMigrationTests.InvalidRowsAreRejectedWithoutLosingSyntheticRecords(sql: &quot;UPDATE purchases SET Currency = 'EUR'&quot;, constraint: &quot;ck_purchases_currency&quot;)" computerName="LAPTOP-65FFKRJG" duration="00:00:04.2858767" startTime="2026-11-13T17:15:47.1395177-05:00" endTime="2026-11-13T17:15:47.1395185-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4703d28e-a56b-46e3-aebf-d1a5b7867f1b" />
+    <UnitTestResult executionId="02ce3865-d593-4eab-991a-6c9e236182aa" testId="5e95e0d7-3f2b-1ddc-f48b-4936443463f6" testName="Creditor.IntegrationTests.MySqlMigrationTests.InvalidRowsAreRejectedWithoutLosingSyntheticRecords(sql: &quot;UPDATE payments SET Amount = 0&quot;, constraint: &quot;ck_payments_amount&quot;)" computerName="LAPTOP-65FFKRJG" duration="00:00:04.2986000" startTime="2026-11-13T17:15:38.5194252-05:00" endTime="2026-11-13T17:15:38.5194260-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="02ce3865-d593-4eab-991a-6c9e236182aa" />
+    <UnitTestResult executionId="4841ad61-30ec-48aa-b4d2-ce51575c5209" testId="88073ff6-f726-0933-e6fe-596c5ee20d87" testName="Creditor.IntegrationTests.MySqlMigrationTests.UpgradePreservesSeededPurchasesPaymentsAndTreasuryReferences" computerName="LAPTOP-65FFKRJG" duration="00:00:05.2705468" startTime="2026-11-13T17:16:42.7049150-05:00" endTime="2026-11-13T17:16:42.7049157-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4841ad61-30ec-48aa-b4d2-ce51575c5209" />
+    <UnitTestResult executionId="09075106-7c0c-4d3c-ac86-25da9782259e" testId="ec005e4f-6cdb-1317-97b1-b64e47a33788" testName="Creditor.IntegrationTests.MySqlMigrationTests.InvalidRowsAreRejectedWithoutLosingSyntheticRecords(sql: &quot;UPDATE purchases SET Amount = 10000000&quot;, constraint: &quot;ck_purchases_amount&quot;)" computerName="LAPTOP-65FFKRJG" duration="00:00:04.3827965" startTime="2026-11-13T17:15:34.2199984-05:00" endTime="2026-11-13T17:15:34.2199992-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="09075106-7c0c-4d3c-ac86-25da9782259e" />
+    <UnitTestResult executionId="eb7ee62d-8d83-4a7b-8f8b-1aedd8c4c655" testId="8bd87620-55f3-7b3a-03b4-03c5a05579db" testName="Creditor.IntegrationTests.MySqlMigrationTests.CompetingAbonosCannotOverpayMigratedPurchase" computerName="LAPTOP-65FFKRJG" duration="00:00:09.2089786" startTime="2026-11-13T17:15:29.8353548-05:00" endTime="2026-11-13T17:15:29.8353969-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eb7ee62d-8d83-4a7b-8f8b-1aedd8c4c655" />
+    <UnitTestResult executionId="3640ff28-23fc-45a6-82e8-869ab41cde24" testId="18583f4c-7cbb-fcb5-d0a1-2f566420475a" testName="Creditor.IntegrationTests.MySqlMigrationTests.ConcurrentReceiptUploadsYieldOneDocumentAndOneConflict" computerName="LAPTOP-65FFKRJG" duration="00:00:05.4703919" startTime="2026-11-13T17:16:14.9039297-05:00" endTime="2026-11-13T17:16:14.9039301-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3640ff28-23fc-45a6-82e8-869ab41cde24" />
+    <UnitTestResult executionId="d3632ed4-0386-4add-9708-9918082f9aa9" testId="3d5672c4-d783-f60e-9d22-3096fca3da6e" testName="Creditor.IntegrationTests.MySqlMigrationTests.ApiRestartPreservesIdentityAbonosLoansAndTreasury" computerName="LAPTOP-65FFKRJG" duration="00:00:06.1494087" startTime="2026-11-13T17:16:37.4331205-05:00" endTime="2026-11-13T17:16:37.4331211-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d3632ed4-0386-4add-9708-9918082f9aa9" />
+    <UnitTestResult executionId="fdeb6b7a-603e-4bfc-85c3-a3b03c3de385" testId="e6e89748-8265-7d0d-a2ea-c403523bf008" testName="Creditor.IntegrationTests.MySqlMigrationTests.InvalidRowsAreRejectedWithoutLosingSyntheticRecords(sql: &quot;UPDATE purchases SET DueOn = '2101-01-01'&quot;, constraint: &quot;ck_purchases_date_bounds&quot;)" computerName="LAPTOP-65FFKRJG" duration="00:00:04.4836181" startTime="2026-11-13T17:15:51.6245538-05:00" endTime="2026-11-13T17:15:51.6245545-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fdeb6b7a-603e-4bfc-85c3-a3b03c3de385" />
+    <UnitTestResult executionId="75d01a80-51d9-4acc-baf3-1381e281fd43" testId="70e6adc7-e94e-e22b-85c9-a8d70c31aeba" testName="Creditor.IntegrationTests.MySqlMigrationTests.EmptyDatabaseAppliesAndReappliesMySqlMigrations" computerName="LAPTOP-65FFKRJG" duration="00:00:04.6477993" startTime="2026-11-13T17:15:56.2732216-05:00" endTime="2026-11-13T17:15:56.2732228-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="75d01a80-51d9-4acc-baf3-1381e281fd43" />
+    <UnitTestResult executionId="eb8e231f-10db-4042-a6d2-3bd645d7ff9f" testId="53ba2fcf-6b46-397d-ffce-14eaf314507f" testName="Creditor.IntegrationTests.MySqlMigrationTests.GeneratedIdempotentScriptCanBeAppliedTwiceWithSeededData" computerName="LAPTOP-65FFKRJG" duration="00:00:08.7954687" startTime="2026-11-13T17:16:09.4326671-05:00" endTime="2026-11-13T17:16:09.4326680-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eb8e231f-10db-4042-a6d2-3bd645d7ff9f" />
+    <UnitTestResult executionId="df0c01b3-927f-4172-b09e-90982382ce4c" testId="80af9b62-7dd2-2efd-ea32-e540bd4866a1" testName="Creditor.IntegrationTests.MySqlMigrationTests.ReceiptAndMultiplePaymentVouchersCoexistAndRejectDuplicateUpload" computerName="LAPTOP-65FFKRJG" duration="00:00:05.5856354" startTime="2026-11-13T17:16:20.4905910-05:00" endTime="2026-11-13T17:16:20.4905917-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df0c01b3-927f-4172-b09e-90982382ce4c" />
+    <UnitTestResult executionId="750f1ffa-5c4a-4d0f-8020-040a76f60703" testId="7f10a38c-ceaf-0de3-b803-bf2f33e55517" testName="Creditor.IntegrationTests.MySqlMigrationTests.MonetaryEndpointsRetainOneCentAndMaximumAmountExactly" computerName="LAPTOP-65FFKRJG" duration="00:00:04.9474047" startTime="2026-11-13T17:16:25.4390388-05:00" endTime="2026-11-13T17:16:25.4390397-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="750f1ffa-5c4a-4d0f-8020-040a76f60703" />
+    <UnitTestResult executionId="244f6317-be34-4b47-b569-963e821dfca4" testId="aabaf7f3-2fd9-409f-1140-bd18249abd04" testName="Creditor.IntegrationTests.MySqlMigrationTests.CompositeForeignKeyRejectsCrossBusinessSupplier" computerName="LAPTOP-65FFKRJG" duration="00:00:04.3620139" startTime="2026-11-13T17:16:00.6361081-05:00" endTime="2026-11-13T17:16:00.6361090-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="244f6317-be34-4b47-b569-963e821dfca4" />
+    <UnitTestResult executionId="752cbada-0606-4f1d-9119-c9113c99dddc" testId="53560689-46d3-0a93-4b8b-771b45b18a51" testName="Creditor.IntegrationTests.MySqlMigrationTests.InvalidRowsAreRejectedWithoutLosingSyntheticRecords(sql: &quot;UPDATE purchases SET Amount = 0&quot;, constraint: &quot;ck_purchases_amount&quot;)" computerName="LAPTOP-65FFKRJG" duration="00:00:04.3319834" startTime="2026-11-13T17:15:42.8524899-05:00" endTime="2026-11-13T17:15:42.8524906-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="752cbada-0606-4f1d-9119-c9113c99dddc" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.ReceiptAndMultiplePaymentVouchersCoexistAndRejectDuplicateUpload" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="80af9b62-7dd2-2efd-ea32-e540bd4866a1">
+      <Execution id="df0c01b3-927f-4172-b09e-90982382ce4c" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="ReceiptAndMultiplePaymentVouchersCoexistAndRejectDuplicateUpload" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.MonetaryEndpointsRetainOneCentAndMaximumAmountExactly" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="7f10a38c-ceaf-0de3-b803-bf2f33e55517">
+      <Execution id="750f1ffa-5c4a-4d0f-8020-040a76f60703" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="MonetaryEndpointsRetainOneCentAndMaximumAmountExactly" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.ConcurrentReceiptUploadsYieldOneDocumentAndOneConflict" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="18583f4c-7cbb-fcb5-d0a1-2f566420475a">
+      <Execution id="3640ff28-23fc-45a6-82e8-869ab41cde24" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="ConcurrentReceiptUploadsYieldOneDocumentAndOneConflict" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.EmptyDatabaseAppliesAndReappliesMySqlMigrations" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="70e6adc7-e94e-e22b-85c9-a8d70c31aeba">
+      <Execution id="75d01a80-51d9-4acc-baf3-1381e281fd43" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="EmptyDatabaseAppliesAndReappliesMySqlMigrations" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.UpgradePreservesSeededPurchasesPaymentsAndTreasuryReferences" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="88073ff6-f726-0933-e6fe-596c5ee20d87">
+      <Execution id="4841ad61-30ec-48aa-b4d2-ce51575c5209" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="UpgradePreservesSeededPurchasesPaymentsAndTreasuryReferences" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.ApiRestartPreservesIdentityAbonosLoansAndTreasury" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="3d5672c4-d783-f60e-9d22-3096fca3da6e">
+      <Execution id="d3632ed4-0386-4add-9708-9918082f9aa9" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="ApiRestartPreservesIdentityAbonosLoansAndTreasury" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.InvalidRowsAreRejectedWithoutLosingSyntheticRecords(sql: &quot;UPDATE purchases SET Amount = 10000000&quot;, constraint: &quot;ck_purchases_amount&quot;)" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="ec005e4f-6cdb-1317-97b1-b64e47a33788">
+      <Execution id="09075106-7c0c-4d3c-ac86-25da9782259e" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="InvalidRowsAreRejectedWithoutLosingSyntheticRecords" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.CompositeForeignKeyRejectsCrossBusinessSupplier" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="aabaf7f3-2fd9-409f-1140-bd18249abd04">
+      <Execution id="244f6317-be34-4b47-b569-963e821dfca4" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="CompositeForeignKeyRejectsCrossBusinessSupplier" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.InvalidRowsAreRejectedWithoutLosingSyntheticRecords(sql: &quot;UPDATE payments SET Amount = 0&quot;, constraint: &quot;ck_payments_amount&quot;)" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="5e95e0d7-3f2b-1ddc-f48b-4936443463f6">
+      <Execution id="02ce3865-d593-4eab-991a-6c9e236182aa" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="InvalidRowsAreRejectedWithoutLosingSyntheticRecords" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.GeneratedIdempotentScriptCanBeAppliedTwiceWithSeededData" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="53ba2fcf-6b46-397d-ffce-14eaf314507f">
+      <Execution id="eb8e231f-10db-4042-a6d2-3bd645d7ff9f" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="GeneratedIdempotentScriptCanBeAppliedTwiceWithSeededData" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.CompetingAbonosCannotOverpayMigratedPurchase" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="8bd87620-55f3-7b3a-03b4-03c5a05579db">
+      <Execution id="eb7ee62d-8d83-4a7b-8f8b-1aedd8c4c655" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="CompetingAbonosCannotOverpayMigratedPurchase" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.NormalizedReferencesPreserveAccentsButDeduplicateCaseAndWhitespace" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="8aa14a69-b306-c7c5-d14c-32f65e4f2944">
+      <Execution id="057fe389-2db4-4019-913e-dde81a7ece31" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="NormalizedReferencesPreserveAccentsButDeduplicateCaseAndWhitespace" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.InvalidRowsAreRejectedWithoutLosingSyntheticRecords(sql: &quot;UPDATE purchases SET Amount = 0&quot;, constraint: &quot;ck_purchases_amount&quot;)" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="53560689-46d3-0a93-4b8b-771b45b18a51">
+      <Execution id="752cbada-0606-4f1d-9119-c9113c99dddc" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="InvalidRowsAreRejectedWithoutLosingSyntheticRecords" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.InvalidRowsAreRejectedWithoutLosingSyntheticRecords(sql: &quot;UPDATE purchases SET DueOn = '2101-01-01'&quot;, constraint: &quot;ck_purchases_date_bounds&quot;)" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="e6e89748-8265-7d0d-a2ea-c403523bf008">
+      <Execution id="fdeb6b7a-603e-4bfc-85c3-a3b03c3de385" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="InvalidRowsAreRejectedWithoutLosingSyntheticRecords" />
+    </UnitTest>
+    <UnitTest name="Creditor.IntegrationTests.MySqlMigrationTests.InvalidRowsAreRejectedWithoutLosingSyntheticRecords(sql: &quot;UPDATE purchases SET Currency = 'EUR'&quot;, constraint: &quot;ck_purchases_currency&quot;)" storage="c:\users\migue\documents\github\grupo-desarrollo-aplicaciones-web\creditor-backend\tests\creditor.integrationtests\bin\release\net8.0\creditor.integrationtests.dll" id="48c383d8-717b-29a0-1728-766bfec384ea">
+      <Execution id="4703d28e-a56b-46e3-aebf-d1a5b7867f1b" />
+      <TestMethod codeBase="C:\Users\migue\Documents\GitHub\Grupo-Desarrollo-Aplicaciones-Web\creditor-backend\tests\Creditor.IntegrationTests\bin\Release\net8.0\Creditor.IntegrationTests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Creditor.IntegrationTests.MySqlMigrationTests" name="InvalidRowsAreRejectedWithoutLosingSyntheticRecords" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="8aa14a69-b306-c7c5-d14c-32f65e4f2944" executionId="057fe389-2db4-4019-913e-dde81a7ece31" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="48c383d8-717b-29a0-1728-766bfec384ea" executionId="4703d28e-a56b-46e3-aebf-d1a5b7867f1b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5e95e0d7-3f2b-1ddc-f48b-4936443463f6" executionId="02ce3865-d593-4eab-991a-6c9e236182aa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="88073ff6-f726-0933-e6fe-596c5ee20d87" executionId="4841ad61-30ec-48aa-b4d2-ce51575c5209" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ec005e4f-6cdb-1317-97b1-b64e47a33788" executionId="09075106-7c0c-4d3c-ac86-25da9782259e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8bd87620-55f3-7b3a-03b4-03c5a05579db" executionId="eb7ee62d-8d83-4a7b-8f8b-1aedd8c4c655" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18583f4c-7cbb-fcb5-d0a1-2f566420475a" executionId="3640ff28-23fc-45a6-82e8-869ab41cde24" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3d5672c4-d783-f60e-9d22-3096fca3da6e" executionId="d3632ed4-0386-4add-9708-9918082f9aa9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6e89748-8265-7d0d-a2ea-c403523bf008" executionId="fdeb6b7a-603e-4bfc-85c3-a3b03c3de385" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="70e6adc7-e94e-e22b-85c9-a8d70c31aeba" executionId="75d01a80-51d9-4acc-baf3-1381e281fd43" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="53ba2fcf-6b46-397d-ffce-14eaf314507f" executionId="eb8e231f-10db-4042-a6d2-3bd645d7ff9f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="80af9b62-7dd2-2efd-ea32-e540bd4866a1" executionId="df0c01b3-927f-4172-b09e-90982382ce4c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7f10a38c-ceaf-0de3-b803-bf2f33e55517" executionId="750f1ffa-5c4a-4d0f-8020-040a76f60703" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aabaf7f3-2fd9-409f-1140-bd18249abd04" executionId="244f6317-be34-4b47-b569-963e821dfca4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="53560689-46d3-0a93-4b8b-771b45b18a51" executionId="752cbada-0606-4f1d-9119-c9113c99dddc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Resultados sin formato de lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="15" executed="15" passed="15" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.8.2+699d445a1a (64-bit .NET 8.0.8)&#xD;
+[xUnit.net 00:00:00.97]   Discovering: Creditor.IntegrationTests&#xD;
+[xUnit.net 00:00:01.08]   Discovered:  Creditor.IntegrationTests&#xD;
+[xUnit.net 00:00:01.08]   Starting:    Creditor.IntegrationTests&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113220305_InitialMySqlWorkspace'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113221419_PreserveNormalizedReferenceAccents'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113220305_InitialMySqlWorkspace'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113221419_PreserveNormalizedReferenceAccents'.&#xD;
+warn: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware[9]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpMaxRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware[9]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpMaxRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Mvc.Filters.RequestSizeLimitFilter[1]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Mvc.Filters.RequestSizeLimitFilter[1]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpRequestBodySizeFeature.&#xD;
+fail: Microsoft.EntityFrameworkCore.Database.Command[20102]&#xD;
+      Failed executing DbCommand (23ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (Size = 40), @p3='?' (DbType = DateTime), @p4='?' (Size = 160), @p5='?' (DbType = Int64), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid), @p8='?' (Size = 37)], CommandType='Text', CommandTimeout='30']&#xD;
+      INSERT INTO `attachments` (`Id`, `BusinessId`, `ContentType`, `CreatedAt`, `FileName`, `Length`, `PaymentId`, `PurchaseId`, `StoredName`)&#xD;
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);&#xD;
+      SELECT `ReceiptPurchaseId`&#xD;
+      FROM `attachments`&#xD;
+      WHERE ROW_COUNT() = 1 AND `Id` = @p0;&#xD;
+fail: Microsoft.EntityFrameworkCore.Update[10000]&#xD;
+      An exception occurred in the database while saving changes for context type 'Creditor.Infrastructure.Persistence.CreditorDbContext'.&#xD;
+      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.&#xD;
+       ---&gt; MySqlConnector.MySqlException (0x80004005): Duplicate entry '59c7969d-b509-4a5e-82c5-2e79c6c5b25f-f99eaf2d-2756-4631-ae90-9cf' for key 'attachments.ux_attachments_purchase_receipt'&#xD;
+         at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894&#xD;
+         at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37&#xD;
+         at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130&#xD;
+         at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483&#xD;
+         at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56&#xD;
+         at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357&#xD;
+         at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350&#xD;
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)&#xD;
+         --- End of inner exception stack trace ---&#xD;
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)&#xD;
+         at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)&#xD;
+      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.&#xD;
+       ---&gt; MySqlConnector.MySqlException (0x80004005): Duplicate entry '59c7969d-b509-4a5e-82c5-2e79c6c5b25f-f99eaf2d-2756-4631-ae90-9cf' for key 'attachments.ux_attachments_purchase_receipt'&#xD;
+         at MySqlConnector.Core.ServerSession.ReceiveReplyAsync(IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/ServerSession.cs:line 894&#xD;
+         at MySqlConnector.Core.ResultSet.ReadResultSetHeaderAsync(IOBehavior ioBehavior) in /_/src/MySqlConnector/Core/ResultSet.cs:line 37&#xD;
+         at MySqlConnector.MySqlDataReader.ActivateResultSet(CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 130&#xD;
+         at MySqlConnector.MySqlDataReader.InitAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, IDictionary`2 cachedProcedures, IMySqlCommand command, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlDataReader.cs:line 483&#xD;
+         at MySqlConnector.Core.CommandExecutor.ExecuteReaderAsync(CommandListPosition commandListPosition, ICommandPayloadCreator payloadCreator, CommandBehavior behavior, Activity activity, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/Core/CommandExecutor.cs:line 56&#xD;
+         at MySqlConnector.MySqlCommand.ExecuteReaderAsync(CommandBehavior behavior, IOBehavior ioBehavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 357&#xD;
+         at MySqlConnector.MySqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken) in /_/src/MySqlConnector/MySqlCommand.cs:line 350&#xD;
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)&#xD;
+         --- End of inner exception stack trace ---&#xD;
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)&#xD;
+         at Pomelo.EntityFrameworkCore.MySql.Storage.Internal.MySqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)&#xD;
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113220305_InitialMySqlWorkspace'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113221419_PreserveNormalizedReferenceAccents'.&#xD;
+warn: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware[9]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpMaxRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Mvc.Filters.RequestSizeLimitFilter[1]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware[9]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpMaxRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Mvc.Filters.RequestSizeLimitFilter[1]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware[9]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpMaxRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Mvc.Filters.RequestSizeLimitFilter[1]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware[9]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpMaxRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Mvc.Filters.RequestSizeLimitFilter[1]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware[9]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpMaxRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Mvc.Filters.RequestSizeLimitFilter[1]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware[9]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpMaxRequestBodySizeFeature.&#xD;
+warn: Microsoft.AspNetCore.Mvc.Filters.RequestSizeLimitFilter[1]&#xD;
+      A request body size limit could not be applied. This server does not support the IHttpRequestBodySizeFeature.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113220305_InitialMySqlWorkspace'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113221419_PreserveNormalizedReferenceAccents'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113220305_InitialMySqlWorkspace'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113221419_PreserveNormalizedReferenceAccents'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113220305_InitialMySqlWorkspace'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20402]&#xD;
+      Applying migration '20261113221419_PreserveNormalizedReferenceAccents'.&#xD;
+info: Microsoft.EntityFrameworkCore.Migrations[20405]&#xD;
+      No migrations were applied. The database is already up to date.&#xD;
+[xUnit.net 00:01:23.23]   Finished:    Creditor.IntegrationTests&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

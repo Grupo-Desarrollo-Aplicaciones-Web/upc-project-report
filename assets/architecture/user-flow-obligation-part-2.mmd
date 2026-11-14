@@ -1,0 +1,13 @@
+%%{init: {"themeVariables":{"fontSize":"16px","fontFamily":"Arial, sans-serif"},"flowchart":{"nodeSpacing":24,"rankSpacing":24,"wrappingWidth":240}}}%%
+flowchart TB
+  A["Carga correcta<br/>Desde parte 1"] --> B["Aplicar filtros de compras"]
+  B --> C{"Hay compras"}
+  C -- "No: CON-03" --> D["Lista vacía;<br/>acceso a Nueva compra"]
+  C -- Sí --> E{"Hay coincidencias"}
+  E -- "No: CON-02" --> F["Sin resultados;<br/>limpiar o cambiar filtros"]
+  F --> B
+  E -- Sí --> G["Seleccionar compra<br/>o abrir su enlace"]
+  G --> H{"Compra disponible"}
+  H -- "No: CON-04" --> I["Compra no encontrada;<br/>volver a Compras"]
+  I --> B
+  H -- "Sí: CON-01" --> J["Consultar saldo, vencimiento,<br/>comprobante y movimientos"]
