@@ -268,7 +268,7 @@ El cotejo de las referencias Git añade aportes posteriores al corte original: *
 
 <!-- REPORT_TOC_END -->
 
-## Student Outcome 5
+# Student Outcome 5
 
 El curso contribuye al cumplimiento del Student Outcome ABET:
 
