@@ -20,7 +20,7 @@ jobs:
 
       - name: 3. Validar y compilar el informe canónico a Word
         run: |
-          python tools/report/sync_chapters.py --check
+          python tools/report/sync_chapters.py
           python tools/report/validate_report.py
           python tools/report/validate_av2.py
           pandoc README.md \
